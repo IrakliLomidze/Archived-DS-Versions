@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="yes"?>
+<Files>
+
+<ZipFileName> <File>DataBaseDS.Zip</File> </ZipFileName>
+<Version> <info>6.5</info></Version>
+
+<MainDatabaseRegister>
+	<Catalog>codex2007DS</Catalog>
+</MainDatabaseRegister>
+
+
+<MainDataBase>
+	<FILE>codex2007DS_data.mdf</FILE>
+</MainDataBase>
+<MainDataBase>
+	<FILE>codex2007DS_blobs_data.ndf</FILE>
+</MainDataBase>
+<MainDataBase>
+	<FILE>codex2007DS_log.ldf</FILE>
+</MainDataBase>
+
+
+<Information>
+	<DisplayString> Codex DS Initial Database </DisplayString>
+</Information>
+</Files>
+
+

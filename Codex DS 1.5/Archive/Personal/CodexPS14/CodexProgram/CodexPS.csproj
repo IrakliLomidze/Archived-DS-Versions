@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{751A9B2E-766F-4402-94D2-3E9F3870DDF4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ILG.Codex.Codex2007</RootNamespace>
+    <AssemblyName>CodexPS</AssemblyName>
+    <ApplicationIcon>DS.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\x86\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\CodexDS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\x86\CodexDS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.C1Zip.2, Version=2.1.20111.74, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="CodexListBoxDS, Version=6.10.2011.1019, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CodexCommon14\CodexListBox\bin\x86\Release\CodexListBoxDS.dll</HintPath>
+    </Reference>
+    <Reference Include="CodexString">
+      <HintPath>..\..\..\Codex 2007 R3\CodexCommon\CodexString\bin\x86\Release\CodexString.dll</HintPath>
+    </Reference>
+    <Reference Include="DatePickerg">
+      <HintPath>..\..\..\Codex 2007 R3\CodexCommon\DatePickerg\bin\x86\Release\DatePickerg.dll</HintPath>
+    </Reference>
+    <Reference Include="ILFormContainer, Version=6.5.2008.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Codex 2007 R3\CodexCommon\ILFormContainer\bin\x86\Release\ILFormContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="ILGMessageBox, Version=6.10.2010.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Codex 2007 R3\CodexCommon\ILGMessageBox\bin\x86\Release\ILGMessageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.UltraWinToolbars.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.UltraWinStatusBar.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Shared.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTree.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.UltraWinTree.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.UltraWinTabControl.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinListView.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.UltraWinListView.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.UltraWinGrid.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.UltraWinEditors.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinDock.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.UltraWinDock.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.Misc.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.AppStylistSupport.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.AppStylistSupport.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Win.UltraWinGrid.ExcelExport.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Infragistics2.Excel.v10.2, Version=10.2.20102.1004, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\NetAdvantage 2010.2\Windows Forms\Bin\Infragistics2.Excel.v10.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="CODEXLINKXML, Version=6.5.2008.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CodexCommon\CODEXLINKXML\bin\Release\CODEXLINKXML.dll</HintPath>
+    </Reference>
+    <Reference Include="KeyLang, Version=6.7.2009.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Codex 2007 R3\CodexCommon\KeyLang\bin\x86\Release\KeyLang.dll</HintPath>
+    </Reference>
+    <Reference Include="LinkListBoxDS, Version=6.10.2011.100, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CodexCommon\LinkListBox\bin\x86\Release\LinkListBoxDS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Sellpickerg, Version=6.7.2009.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Codex 2007 R3\CodexCommon\Sellpickerg\bin\x86\Release\Sellpickerg.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TXTextControl, Version=15.1.800.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\The Imaging Source Europe GmbH\TX Text Control 15.1.NET\Bin\TXTextControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.FileSystem, Version=4.2.10304.10260, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL" />
+    <Reference Include="Xceed.Zip, Version=4.2.10304.10260, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Codex.Document.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codex.Document.Designer.cs">
+      <DependentUpon>Codex.Document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentAddEdit.Designer.cs">
+      <DependentUpon>DocumentAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorReport.Designer.cs">
+      <DependentUpon>ErrorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FavoritesWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Codex.Find.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Codex.List.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration.Designer.cs">
+      <DependentUpon>Configuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.Document.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Navigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Tree.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertBreak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryPreview.designer.cs">
+      <DependentUpon>HistoryPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDFinder.Designer.cs">
+      <DependentUpon>IDFinder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License.cs" />
+    <Compile Include="LookUps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LookUps.Designer.cs">
+      <DependentUpon>LookUps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageSetup.cs" />
+    <Compile Include="PrintDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintDoc.Designer.cs">
+      <DependentUpon>PrintDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\CodexSplash3.jpg" />
+    <None Include="Resources\DS.ico" />
+    <None Include="Resources\bullet_triangle_glass_yellow.png" />
+    <None Include="Resources\bullet_triangle_glass_red.png" />
+    <None Include="Resources\bullet_triangle_glass_grey.png" />
+    <None Include="Resources\bullet_triangle_glass_green.png" />
+    <None Include="Resources\bullet_triangle_glass_blue.png" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codex.Document.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Codex.Document.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentAddEdit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DocumentAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ErrorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FavoritesWindows.resx">
+      <DependentUpon>FavoritesWindows.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Configuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertBreak.resx">
+      <DependentUpon>frmInsertBreak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertTable.resx">
+      <DependentUpon>frmInsertTable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryPreview.resx">
+      <DependentUpon>HistoryPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDFinder.resx">
+      <DependentUpon>IDFinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LookUps.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LookUps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintDoc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PrintDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestDoc.Document.resx">
+      <DependentUpon>TestDoc.Document.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Images\ToolBars\ICONS\Back.ico" />
+    <None Include="Images\ToolBars\ICONS\bACK32.ico" />
+    <None Include="Images\ToolBars\ICONS\Forward32.ico" />
+    <None Include="Images\ToolBars\ICONS\hOME32.ico" />
+    <None Include="Images\ToolBars\ICONS\fAVORITES32.ico" />
+    <None Include="Images\ToolBars\ICONS\bACK32png.png" />
+    <None Include="Images\ToolBars\ICONS\V2\B_Normal.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\B_Hover.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\F_Normal.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\F_Hover.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\H_Normal.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\H_Hover.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\FV1_Normal.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\FV1_Hover.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\Home1.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\Home2.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\HomeV2_1.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\HomeV2_2.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\HomeV3_2.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\HomeV3_1.ico" />
+    <None Include="Images\ToolBars\ICONS\V2\HomeV4_1.ico" />
+    <None Include="Images\ErrorReporting\Top1.jpg" />
+    <None Include="Images\ErrorReporting\tOP2.jpg" />
+    <None Include="Images\Configuration\Top1.jpg" />
+    <None Include="Images\Configuration\Tabs\bt9rbmy_0.gif" />
+    <None Include="Images\ToolBars\Home\Home1.ico" />
+    <None Include="Images\ToolBars\Home\Home1_H.ico" />
+    <None Include="Images\ListBox\Filter.ico" />
+    <None Include="Images\ListBox\ClearFilter2.ico" />
+    <None Include="Images\ListBox\Filter2.ico" />
+    <None Include="Images\ListBox\ClearFilter.ico" />
+    <None Include="Images\ListBox\ButtonT2.png" />
+    <None Include="Images\Favorites\address book_16x16.png" />
+    <None Include="Images\Favorites\Button\favorites_16x16.png" />
+    <None Include="Images\2007Arrow\Up3.png" />
+    <None Include="Images\2007Arrow\OK.png" />
+    <None Include="Images\2007Arrow\Cancel.png" />
+    <None Include="Images\Ribbon\data.png" />
+    <None Include="Images\Ribbon\clock.png" />
+    <None Include="Images\Ribbon\arrow_right_green.png" />
+    <None Include="Images\Ribbon\message.png" />
+    <None Include="Images\Ribbon\sort_descending.png" />
+    <None Include="Images\Ribbon\pie-chart.png" />
+    <None Include="Images\Ribbon\index.png" />
+    <None Include="Images\SearchToolBar\funnel.png" />
+    <None Include="Images\Ribbon\disk_blue.png" />
+    <None Include="Images\Ribbon2\Document\document.png" />
+    <None Include="Images\Ribbon2\Document\scroll.png" />
+    <None Include="Images\Ribbon2\Document\copy.png" />
+    <None Include="Images\Ribbon2\Document\small\document_plain.png" />
+    <None Include="Images\Ribbon2\Document\small\scroll.png" />
+    <None Include="Images\Ribbon2\Document\small\view.png" />
+    <None Include="Images\Ribbon2\Word.png" />
+    <None Include="Images\Ribbon2\PDF.png" />
+    <None Include="Images\Ribbon2\Document\small\find.png" />
+    <None Include="Images\Ribbon2\Document\small\selection.png" />
+    <None Include="Images\Ribbon2\Document\small\star_yellow.png" />
+    <None Include="Images\Ribbon2\Document\small\printer.png" />
+    <None Include="Images\Ribbon2\Document\printer.png" />
+    <None Include="Images\Ribbon\Big\disk_blue.png" />
+    <None Include="Images\Ribbon2\printer.png" />
+    <None Include="Images\Ribbon2\help_32x32.png" />
+    <None Include="Images\Ribbon2\internet-search_32x32.png" />
+    <None Include="Images\Ribbon2\phone-button-blue_32x32.png" />
+    <None Include="Images\Ribbon2\forward_32x32.png" />
+    <None Include="Images\MainMenuIcon.png" />
+    <None Include="Images\MainMenuIcon3.png" />
+    <None Include="Images\MainMenuIcon4.png" />
+    <None Include="Images\MainMenuICON5.png" />
+    <None Include="Images\About\Midle1.jpg" />
+    <None Include="Images\About\Midle.jpg" />
+    <None Include="Images\About\Left.jpg" />
+    <None Include="Images\MainMenuICON6.png" />
+    <None Include="Images\Live\Back1.png" />
+    <None Include="Images\Live\Forwared1.png" />
+    <None Include="Images\Live\Stop.png" />
+    <None Include="Images\Live\Refresh.png" />
+    <None Include="Images\Live\Home1.png" />
+    <None Include="Images\Menus\redo_16x16.png" />
+    <None Include="Images\Menus\options_16x16.png" />
+    <None Include="Images\MainMenuICON6_1.png" />
+    <None Include="New Folder\document_plain.png" />
+    <None Include="New Folder\folder_document.png" />
+    <None Include="New Folder\copy.png" />
+    <None Include="New Folder\cut.png" />
+    <None Include="New Folder\paste.png" />
+    <None Include="New Folder\document.png" />
+    <None Include="New Folder\font.png" />
+    <None Include="New Folder\document_edit.png" />
+    <None Include="New Folder\preferences.png" />
+    <None Include="New Folder\text_marked.png" />
+    <None Include="New Folder\text_tree.png" />
+    <None Include="New Folder\column.png" />
+    <None Include="New Folder\column_edit.png" />
+    <None Include="New Folder\photo_scenery.png" />
+    <None Include="New Folder\find.png" />
+    <None Include="New Folder\redo.png" />
+    <None Include="New Folder\undo.png" />
+    <None Include="New Folder\Lookups\administrator_48.png" />
+    <None Include="New Folder\Lookups\administrator_add_16.png" />
+    <None Include="New Folder\Lookups\administrator_close_16.png" />
+    <None Include="New Folder\Lookups\administrator_config_16.png" />
+    <None Include="New Folder\Lookups\administrator_save_16.png" />
+    <None Include="New Folder\Lookups\hand_16.png" />
+    <None Include="New Folder\Lookups\refresh_16.png" />
+    <None Include="New Folder\Lookups\copy_48.png" />
+    <None Include="New Folder\Lookups\copy_add_16.png" />
+    <None Include="New Folder\Lookups\copy_close_16.png" />
+    <None Include="New Folder\Lookups\copy_config_16.png" />
+    <None Include="New Folder\Lookups\copy_save_16.png" />
+    <None Include="New Folder\Lookups\book_48.png" />
+    <None Include="New Folder\Lookups\book_add_16.png" />
+    <None Include="New Folder\Lookups\book_close_16.png" />
+    <None Include="New Folder\Lookups\book_config_16.png" />
+    <None Include="New Folder\Lookups\book_save_16.png" />
+    <None Include="New Folder\Lookups\group_48.png" />
+    <None Include="New Folder\Lookups\group_add_16.png" />
+    <None Include="New Folder\Lookups\group_close_16.png" />
+    <None Include="New Folder\Lookups\group_config_16.png" />
+    <None Include="New Folder\Lookups\group_save_16.png" />
+    <None Include="New Folder\Lookups\lamp_48.png" />
+    <None Include="New Folder\Lookups\lamp_add_16.png" />
+    <None Include="New Folder\Lookups\lamp_close_16.png" />
+    <None Include="New Folder\Lookups\lamp_config_16.png" />
+    <None Include="New Folder\Lookups\lamp_save_16.png" />
+    <None Include="New Folder\Lookups\notepad_add_16.png" />
+    <None Include="New Folder\Lookups\notepad_close_16.png" />
+    <None Include="New Folder\Lookups\notepad_config_16.png" />
+    <None Include="New Folder\Lookups\notepad_refresh_16.png" />
+    <None Include="New Folder\Lookups\notepad_save_16.png" />
+    <None Include="New Folder\Lookups\notepad_write_48.png" />
+    <None Include="New Folder\Lookups\Menu\administrator_16.png" />
+    <None Include="New Folder\Lookups\Menu\book_16.png" />
+    <None Include="New Folder\Lookups\Menu\copy_16.png" />
+    <None Include="New Folder\Lookups\Menu\group_16.png" />
+    <None Include="New Folder\Lookups\Menu\lamp_16.png" />
+    <None Include="New Folder\Lookups\Menu\notepad_write_16.png" />
+    <None Include="New Folder\2\AcroRd32.ico" />
+    <None Include="New Folder\3\redo.png" />
+    <None Include="New Folder\3\folder_out.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column_add_after.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column_add_before.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column_delete.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column_edit.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row_add_after.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row_add_before.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row_delete.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row_edit.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_edit.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_preferences.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_replace.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_selection_all.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_selection_column.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_selection_row.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row.png" />
+    <None Include="New Folder\POPUOPDOC\Table\SpliotDown.png" />
+    <None Include="New Folder\POPUOPDOC\Table\SplitUp.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_add.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_delete.png" />
+    <None Include="New Folder\Links\window_add_32.png" />
+    <None Include="New Folder\Links\window_close_32.png" />
+    <None Include="New Folder\Links\window_config_32.png" />
+    <None Include="New Folder\Links\window_info_32.png" />
+    <None Include="New Folder\Links\window_ok_32.png" />
+    <None Include="New Folder\Links\cancel_16.png" />
+    <None Include="New Folder\Attach\paper_clip_add_32.png" />
+    <None Include="New Folder\Attach\paper_clip_close_32.png" />
+    <None Include="New Folder\BIGICON\delete2.png" />
+    <None Include="New Folder\BIGICON\disk_blue.png" />
+    <None Include="New Folder\BIGICON\disk_blue_delete.png" />
+    <None Include="New Folder\BIGICON\disk_blue_edit.png" />
+    <None Include="New Folder\BIGICON\disk_green.png" />
+    <None Include="New Folder\BIGICON\disk_yellow.png" />
+    <None Include="New Folder\BIGICON\document.png" />
+    <None Include="New Folder\BIGICON\New Folder\administrator_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\book_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\copy_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\group_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\lamp_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\paste_32.png" />
+    <None Include="New Folder\DOCUMENTEDIT\document_edit.png" />
+    <None Include="New Folder\DOCUMENTEDIT\document_delete.png" />
+    <None Include="Images\SEconProjec.png" />
+    <None Include="Images\DocumentSmall\document_delete.png" />
+    <None Include="Images\DocumentSmall\document_edit.png" />
+    <None Include="Images\Dock\window_add_16.png" />
+    <None Include="Images\Dock\paper_clip_16.png" />
+    <None Include="Images\Dock\write_16.png" />
+    <None Include="Images\Dock\pyramid_16.png" />
+    <None Include="Images\Document\Green2.jpg" />
+    <None Include="Images\up_down.png" />
+    <None Include="Images\text_columns.png" />
+    <None Include="Images\close_a_32.png" />
+    <None Include="Images\zoom_32.png" />
+    <None Include="Images\clock_zoom_16.png" />
+    <None Include="Images\calendar_16.png" />
+    <None Include="Images\caution_16.png" />
+    <None Include="Images\document_16.png" />
+    <None Include="Images\hand_back_16.png" />
+    <Content Include="C_ICON1.ico" />
+    <Content Include="DS.ico" />
+    <None Include="Images\ErrorReporting\ErrorLeft4.jpg" />
+    <None Include="Images\Wizard\LeftL1.jpg" />
+    <None Include="Images\Wizard\pin_blue.png" />
+    <None Include="Images\SplashScreen\CodexSplashClean.jpg" />
+    <None Include="Images\NewRibbon\16\home.png" />
+    <None Include="Images\NewRibbon\32\home.png" />
+    <None Include="Images\NewRibbon\32\navigate_left.png" />
+    <None Include="Images\NewRibbon\16\navigate_left.png" />
+    <None Include="Images\NewRibbon\16\navigate_right.png" />
+    <None Include="Images\NewRibbon\32\navigate_right.png" />
+    <None Include="Images\NewRibbon\16\star_yellow.png" />
+    <None Include="Images\NewRibbon\16\data.png" />
+    <None Include="Images\NewRibbon\16\clock.png" />
+    <None Include="Images\NewRibbon\16\sort_descending.png" />
+    <None Include="Images\NewRibbon\16\chart_pie2.png" />
+    <None Include="Images\NewRibbon\32\copy.png" />
+    <None Include="Images\NewRibbon\16\copy.png" />
+    <None Include="Images\NewRibbon\16\selection.png" />
+    <None Include="Images\NewRibbon\16\floppy_disk_blue.png" />
+    <None Include="Images\NewRibbon\32\floppy_disk_blue.png" />
+    <None Include="Images\NewRibbon\32\printer.png" />
+    <None Include="Images\NewRibbon\16\printer.png" />
+    <None Include="Images\NewRibbon\32\signal_flag_checkered.png" />
+    <None Include="Images\NewRibbon\16\signal_flag_checkered.png" />
+    <None Include="Images\Office2010\0015.ico" />
+    <None Include="Images\Office2010\0095.ico" />
+    <None Include="Images\Office2010\0010.ico" />
+    <None Include="Images\Office2010\0009.ico" />
+    <None Include="Images\Office2010\0008.ico" />
+    <None Include="Images\Office2010\0014.ico" />
+    <None Include="Images\Office2010\0032.ico" />
+    <None Include="Images\Office2010\0036.ico" />
+    <None Include="Images\Office2010\0107.ico" />
+    <None Include="Images\Office2010\0108.ico" />
+    <None Include="Images\Office2010\0109.ico" />
+    <None Include="Images\Office2010\0088.ico" />
+    <None Include="Images\Office2010\0691.ico" />
+    <None Include="Images\Office2010\0360.ico" />
+    <None Include="Images\Office2010\0359.ico" />
+    <None Include="Images\Office2010\0332.ico" />
+    <None Include="Images\Office2010\0331.ico" />
+    <None Include="Images\Office2010\0856.ico" />
+    <None Include="Images\Office2010\0885.ico" />
+    <None Include="Images\Office2010\0857.ico" />
+    <None Include="Images\Office2010\IL0108.ico" />
+    <None Include="Images\Office2010\IL0856.ico" />
+    <None Include="Images\Office2010\IL0885.ico" />
+    <None Include="Images\Office2010\IL0332.ico" />
+    <None Include="Images\Office2010\IL0331.ico" />
+    <None Include="Images\Office2010\0392.ico" />
+    <None Include="Images\Office2010\0022.ico" />
+    <None Include="Images\Office2010\0023.ico" />
+    <None Include="Images\Office2010\0037.ico" />
+    <None Include="Images\Office2010\0024.ico" />
+    <None Include="Images\Office2010\il0044.ico" />
+    <None Include="Images\Office2010\0446.ico" />
+    <None Include="Images\Office2010\0393.ico" />
+    <None Include="Images\Office2010\0143.ico" />
+    <None Include="Images\Office2010\1320.ico" />
+    <None Include="Images\Office2010\0234.ico" />
+    <None Include="Images\Office2010\0232.ico" />
+    <None Include="Images\Office2010\Large\L0032.ico" />
+    <None Include="Images\Office2010\Large\L1518.ico" />
+    <None Include="Images\Office2010\Large\L007.ico" />
+    <None Include="Images\NewFlags\flag_usa.png" />
+    <None Include="Images\NewFlags\flag_georgia.png" />
+    <None Include="Images\NewFlags\flag_russia.png" />
+    <None Include="Images\NewRibbon\32\floppy_disk_yellow.png" />
+    <None Include="Images\NewRibbon\32\floppy_disk_green.png" />
+    <None Include="Images\NewRibbon\32\1\delete.png" />
+    <None Include="Images\Office2010\sign_1710.ico" />
+    <None Include="Images\SplashScreen\CodexSplash3.jpg" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="q1.ico" />
+    <Content Include="q3.ico" />
+    <Content Include="q5.ico" />
+    <None Include="Resources\Word16.png" />
+    <None Include="Resources\Adobe16.png" />
+    <None Include="Resources\q5.ico" />
+    <None Include="Resources\aa3.bmp" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestDoc.Document.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestDoc.Document.designer.cs">
+      <DependentUpon>TestDoc.Document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UltraTree DropHightLight DrawFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\LanguageCombo\_UFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\LanguageCombo\_GFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\LanguageCombo\_RFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\HomeTab\" />
+    <Folder Include="Images\ToolBars\Tabs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

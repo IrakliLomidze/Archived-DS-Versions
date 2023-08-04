@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Codex</title>
+</head>
+
+<body>
+
+<p><b><font face="Arial" size="6">Codex.net 2007 Installation System</font></b></p>
+<p><font face="Arial" size="2">Codex.net 2007 is designed for Windows 
+,XP,2003,2003R2,Vista both for 32bit and 64 bit system.<br>
+For Installing Codex.net 2007 you must install pre requisites components on 
+target machine.</font></p>
+<p><font face="Arial" size="2">When you start installation you may see message
+<font color="#000080">&quot;Setup has detected that another program requires the 
+computer to reboot. You must reboot the computer before installing Codex.NET 
+2007 Prerequisites. Once the system reboots, you need to restart setup. Click OK 
+to reboot. Click Cancel to exit setup and install later. For force installing 
+software check force check box on form and please read readme document..&nbsp; Force 
+installing has some risks.&nbsp; Be sure&nbsp; your system will work fine if you 
+install in force mode &quot;. </font>You can continue installation process but you 
+not have guaranty that all components will install on target machine ( not 
+only codex.net 2007 installation has reboot detector). setup detected another 
+program requires the computer to be rebooted. </font></p>
+<p><b><font face="Arial" size="2">How programs&nbsp; detect that reboot is 
+required and why it is 
+recommended to do restart action.</font></b></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">If 
+application wants to change files witch are&nbsp; in use, they write&nbsp; it in 
+following registry key</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">
+<font color="#000080"><b>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session 
+Manager\PendingFileRenameOperations</b></font><br>
+Operation system does operations listed on that registry 
+key before loading those files. So force install is dangerous because you may loose new versions of some files.</font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">If you 
+want to cancel this operation just delete that key (do not empty it, delete it).</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">The 
+following registry key is contains same kind of information </font></p>
+<p style="margin-top: 0; margin-bottom: 0"><b>
+<font face="Arial" size="2" color="#000080">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce</font></b></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">
+<font color="#000080"><b>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx<br>
+</b></font>If you want cancel this operation just empty that keys (do not delete 
+it).</font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p><b><font face="Arial" size="5">Pre requisites</font></b></p>
+<table border="0" width="100%" id="table1">
+	<tr>
+		<td width="41" bgcolor="#000080">&nbsp;</td>
+		<td bgcolor="#000080"><b><font face="Arial" color="#FFFFFF" size="2">Pre 
+		requisites components</font></b></td>
+	</tr>
+	<tr>
+		<td width="41">&nbsp;</td>
+		<td><font face="Arial" size="2">.NET Framework 3.0 Redistributive</font></td>
+	</tr>
+	<tr>
+		<td width="41" bgcolor="#99CCFF">&nbsp;</td>
+		<td bgcolor="#99CCFF"><font face="Arial" size="2">SQL Server 2005 
+		Express With Advances Services</font></td>
+	</tr>
+	<tr>
+		<td width="41">&nbsp;</td>
+		<td><font face="Arial" size="2">Microsoft Windows Installer 3.1</font></td>
+	</tr>
+	<tr>
+		<td width="41" bgcolor="#99CCFF">&nbsp;</td>
+		<td bgcolor="#99CCFF"><font size="2" face="Arial">Font Actions</font></td>
+	</tr>
+</table>
+<p><font face="Arial" size="2">&nbsp;<br>
+</font><font face="Arial"><b>.NET Framework 3.0 redistributive</b></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">Codex.net 2007 is based on .NET Framework 
+3.0,&nbsp;
+<font color="#000080">&nbsp;<i>This component is required to be installed</i>.</font> </font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">This module is installing using quiet 
+mode, you can change installation parameters for the installation process by pressing 
+configuration button.</font></p>
+<p><font face="Arial" size="2"><a href="FX.htm">For more information how to configure 
+installation parameters see documentation.</a></font></p>
+<p><font face="Arial" size="2">&nbsp;</font><font face="Arial" size="4"><b>MSI Installer 
+3.1 (Microsoft Installer SDK)</b></font></p>
+<p><font face="Arial" size="2">For installing codex 2007 software you need to 
+have on target machine MSI 3.1 component. this component is requred alose for .net 
+framework 3.0.</font></p>
+<p><font face="Arial" size="2"><a href="MSI.htm">For more information how to configure 
+installation parameters see documentation.</a></font></p>
+<table border="0" width="100%" id="table2">
+	<tr>
+		<td bgcolor="#C0C0C0"><b><font face="Arial" size="2">All this component 
+		may is already installing on you computer if you use a automatic windows 
+		update.</font></b></td>
+	</tr>
+</table>
+<p><b><font face="Arial">SQL Server 2005 Express Edition with Advances Services 
+SP2 &quot;Codex2007&quot; instance</font></b></p>
+<p><font face="Arial" size="2">SQL 2005 Express w/adv 
+with an integrated service pack 2.This is a required component for codex 2007. 
+This component can not e installed by windows update. This module is installing 
+using quiet mode, you can change installation parameters for installation. by 
+press configuration button. </font></p>
+<p><font face="Arial" size="2">This component installing only in Codex.net 2007 
+workstation edition. Codex.net 2007 Client and Codex.net 2007 Server is not 
+required this component.</font></p>
+<p><font face="Arial" size="2"><a href="sp3readme.htm">For more information how to configure 
+installation parameters see documentation.</a></font></p>
+<p><font face="Arial"><b>Font Action</b></font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">Codex.net 2007 using font &quot;Geo ABC&quot; font file 
+name of this font is geoabc.ttf. If in target machine is exists font <b>&quot;GeoABC&quot; 
+</b><span lang="ka">(</span>Not &quot;Geo ABC&quot;) that is 
+different font with a same file name geoabc.ttf. </font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="2">For 
+installing Codex.net 2007 Please Remove Font &quot;GEOABC&quot; Manually.</font></p>
+<p><font face="Arial" size="2">This action is avoid font conflict.</font></p>
+<p>&nbsp;</p>
+<p><font size="2" face="Arial"><a href="MSI1.htm">Appendix 1:</a></font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><font face="Arial"><br>
+<br>
+<br>
+<br>
+&nbsp;</font></p>
+
+</body>
+
+</html>

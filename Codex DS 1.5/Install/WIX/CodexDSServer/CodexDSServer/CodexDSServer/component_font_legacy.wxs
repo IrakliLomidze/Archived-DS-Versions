@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<!-- TODO: Put your code here. -->
+
+    <ComponentGroup Id="id_CodexLegacyFonts">
+      
+    
+    <Component Id="Afkhazuri" SharedDllRefCount="yes" KeyPath="yes" Guid="{AF8954C6-7CB4-4769-8FA5-2B2447386433}" Permanent="yes" Directory="FontsFolder">
+      <File Name="apxazury.ttf" Id="apxazury.ttf" Source="$(var.SourceDir)\Fonts\AbkhazFont\apxazury.ttf"  TrueType="yes"/>
+    </Component>
+
+
+    <Component Id="GeoABC" SharedDllRefCount="yes" KeyPath="yes" Guid="{47118960-8902-4DF0-B753-5774E1E22F50}" Permanent="yes" Directory="FontsFolder">
+      <File Name="Codexgeoabc.ttf" Id="Codexgeoabc.ttf" Source="$(var.SourceDir)\Fonts\GeoABCFont\Codexgeoabc.ttf" TrueType="yes" />
+    </Component>
+
+    </ComponentGroup>
+
+
+  </Fragment>
+</Wix>

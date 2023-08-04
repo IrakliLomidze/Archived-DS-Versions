@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+  
+      <Directory Id="TARGETDIR" Name="SourceDir">
+        <Directory Id='DesktopFolder'/>
+        
+        <Directory Id="FontsFolder" />
+        
+        <Directory Id="ProgramMenuFolder">
+          <Directory Id="GeorgianMicrosystemsMenu" Name="Georgian Microsystems" >
+            <Directory Id="CodexDSServerMenu" Name="Codex DS Server 1.7"/>
+          </Directory>
+        </Directory>
+
+        <Directory Id="ProgramFilesFolder">
+          <Directory Id="GeorgianMicrosystems" Name="Georgian Microsystems" >
+            <Directory Id="INSTALLDIR" Name="Codex DS Server 17">
+              <Directory Id="Styles" Name="Styles"/>
+              <Directory Id="HelpDir" Name="Help" />
+            </Directory>
+          </Directory>
+         </Directory>
+
+        
+      </Directory>
+ 
+  </Fragment>
+</Wix>

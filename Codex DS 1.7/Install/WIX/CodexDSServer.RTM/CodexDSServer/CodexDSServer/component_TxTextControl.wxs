@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="id_textcontrol" Directory="INSTALLDIR">
+      <!--<Component Id="TXDocumentServer.Windows.Forms.dll" Guid="{B3490A3C-2780-445B-B570-2A6A35DAD6AF}" Location="either">
+        <File Id="txdocumentserver.windows.for" Name="TXDocumentServer.Windows.Forms.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TXDocumentServer.Windows.Forms.dll" />
+      </Component>-->
+      <Component Id="txdocumentserver.windows.for1" Guid="{8BB56D40-DD4A-4309-B32C-8894F3D9AE6F}" Location="either">
+        <File Id="txdocumentserver.windows.for1" Name="TXDocumentServer.Windows.Forms.xml" Source="$(var.SourceDir)\Components\TX29\TXDocumentServer.Windows.Forms.xml" />
+      </Component>
+
+      <Component Id="TXTextControl.Server.dll" Guid="{F6CA6104-D616-47BC-80CA-D709CDD7DB83}" Location="either">
+        <File Id="txtextcontrol.server.dll" Name="TXTextControl.Server.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TXTextControl.Server.dll" />
+      </Component>
+      <Component Id="txdocumentserver.windows.for3" Guid="{19576607-C5DE-4A6F-A8BA-C288FBF3936A}" Location="either">
+        <File Id="txtextcontrol.server.xml" Name="TXTextControl.Server.xml" Source="$(var.SourceDir)\Components\TX29\TXTextControl.Server.xml" />
+      </Component>
+
+      <Component Id="TXTextControl.Windows.Forms.dll" Guid="{71685072-57F7-453A-8238-3B49C9157583}" Location="either">
+        <File Id="txtextcontrol.windows.forms." Name="TXTextControl.Windows.Forms.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TXTextControl.Windows.Forms.dll" />
+      </Component>
+      <Component Id="txdocumentserver.windows.for4" Guid="{360CB8A4-9166-477F-A18C-B070A1F65BE7}" Location="either">
+        <File Id="txtextcontrol.windows.forms.1" Name="TXTextControl.Windows.Forms.xml" Source="$(var.SourceDir)\Components\TX29\TXTextControl.Windows.Forms.xml" />
+      </Component>
+
+      <!--<Component Id="TXDocumentServer.dll" Guid="{B37BEEC1-366C-4AFE-B2D6-5E0328DC267E}" Location="either">
+        <File Id="txdocumentserver.dll" Name="TXDocumentServer.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TXDocumentServer.dll" />
+      </Component>-->
+      <Component Id="txdocumentserver.windows.for2" Guid="{1B7FD573-3916-475B-AA62-E219C9370041}" Location="either">
+        <File Id="txdocumentserver.xml" Name="TXDocumentServer.xml" Source="$(var.SourceDir)\Components\TX29\TXDocumentServer.xml" />
+      </Component>
+
+      <Component Id="TXTextControl.dll" Guid="{7E8417BC-D819-411A-A1C6-0AEF45E99CFC}" Location="either">
+        <File Id="txtextcontrol.dll" Name="TXTextControl.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TXTextControl.dll" />
+      </Component>
+      <Component Id="txdocumentserver.windows.for5" Guid="{BDADF93D-0193-4995-8336-7DC1EE31311F}" Location="either">
+        <File Id="txtextcontrol.xml" Name="TXTextControl.xml" Source="$(var.SourceDir)\Components\TX29\TXTextControl.xml" />
+      </Component>
+
+
+
+      <Component Id="TXDrawing.Windows.Forms.dll" Guid="{2FD155CF-1FAF-45F6-86F9-C580741C2037}" Location="either">
+        <File Id="txdrawing.windows.forms.dll" Name="TXDrawing.Windows.Forms.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TXDrawing.Windows.Forms.dll" />
+      </Component>
+      <Component Id="TXDrawing.Windows.Forms.xml" Guid="{A24D42CB-CAE1-4D48-A0A8-DC91833FFA6C}" Location="either">
+        <File Id="txdrawing.windows.forms.xml" Name="TXDrawing.Windows.Forms.xml" Source="$(var.SourceDir)\Components\TX29\TXDrawing.Windows.Forms.xml" />
+      </Component>
+
+
+      <Component Id="TXDrawing.dll" Guid="{876C88A4-B503-48F0-A719-3EBE5DEADA7D}" Location="either">
+        <File Id="txdrawing.dll" Name="TXDrawing.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TXDrawing.dll" />
+      </Component>
+      <Component Id="TXDrawing.xml" Guid="{DD0F103C-51EC-4BA8-A1F1-A872B4497504}" Location="either">
+        <File Id="txdrawing.xml" Name="TXDrawing.xml" Source="$(var.SourceDir)\Components\TX29\TXDrawing.xml" />
+      </Component>
+
+
+      <Component Id="TXImageProvider.dll" Guid="{0A821096-FD56-4AAC-B456-E8276CA89887}" Location="either">
+        <File Id="TXImageProvider.dll" Name="TXImageProvider.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TXImageProvider.dll" />
+      </Component>
+
+
+      <Component Id="TX29_css.dll" Guid="{EC8EC0EA-AB6B-4342-8343-5B9A3D811413}" Location="either">
+        <File Id="TX29_css.dll" Name="TX29_css.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TX29_css.dll" />
+      </Component>
+      <!--<Component Id="TX29_doc.dll" Guid="{0A821096-FD56-4AAC-B456-E8276CA89887}" Location="either">
+        <File Id="TX29_doc.dll" Name="TX29_doc.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TX29_doc.dll" />
+      </Component>
+      <Component Id="TX29_dox.dll" Guid="{A3F67D77-AF6F-484E-A469-E0D44ACE5AE1}" Location="either">
+        <File Id="TX29_dox.dll" Name="TX29_dox.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TX29_dox.dll" />
+      </Component>-->
+      <Component Id="TX29_htm.dll" Guid="{8B61EEF0-AF20-4833-87A5-371EEBEAC916}" Location="either">
+        <File Id="TX29_htm.dll" Name="TX29_htm.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TX29_htm.dll" />
+      </Component>
+      <!--<Component Id="TX29_pdf.dll" Guid="{A8E92245-44F0-4604-9B93-4B160BF41171}" Location="either">
+        <File Id="TX29_pdf.dll" Name="TX29_pdf.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TX29_pdf.dll" />
+      </Component>-->
+      <Component Id="TX29_rtf.dll" Guid="{33075A30-06A8-4959-B7EA-3F7A14F4661A}" Location="either">
+        <File Id="TX29_rtf.dll" Name="TX29_rtf.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TX29_rtf.dll" />
+      </Component>
+      <!--<Component Id="TX29_xml.dll" Guid="{323D848B-FDA7-4B8B-B0EC-6D1D6C01C855}" Location="either">
+        <File Id="TX29_xml.dll" Name="TX29_xml.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\TX29_xml.dll" />
+      </Component>-->
+
+      <Component Id="txic.dll" Guid="{B3E1A2CA-2580-4C58-B16E-23F7EC3197B6}" Location="either">
+        <File Id="txic.dll" Name="txic.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\txic.dll" />
+      </Component>
+      <Component Id="txkernel.dll" Guid="{B6C606CA-1CB9-41D0-8249-1054D072364B}" Location="either">
+        <File Id="txkernel.dll" Name="txkernel.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\txkernel.dll" />
+      </Component>
+      <!--<Component Id="txpdf.dll" Guid="{69FD9F06-BC2F-4CF2-8A48-7F1A5F52FECB}" Location="either">
+        <File Id="txpdf.dll" Name="txpdf.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\txpdf.dll" />
+      </Component>-->
+      <Component Id="txtools.dll" Guid="{7AAA33C0-1327-4585-B2E9-E2DA85AA2405}" Location="either">
+        <File Id="txtools.dll" Name="txtools.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\TX29\txtools.dll" />
+      </Component>
+
+
+
+    </ComponentGroup>
+  </Fragment>
+</Wix>

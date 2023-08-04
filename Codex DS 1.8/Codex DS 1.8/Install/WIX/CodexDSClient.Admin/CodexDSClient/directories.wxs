@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+  
+      <Directory Id="TARGETDIR" Name="SourceDir">
+        <Directory Id='DesktopFolder'/>
+        
+        <Directory Id="FontsFolder" />
+        
+        <Directory Id="ProgramMenuFolder">
+          
+            <Directory Id="CodexDSClientMenu" Name="Codex DS Client 1.8"/>
+          
+        </Directory>
+
+        <Directory Id="ProgramFilesFolder">
+          
+            <Directory Id="INSTALLDIR" Name="Codex DS Client 18">
+              <!--<Directory Id="HelpDir" Name="Help" />-->
+            </Directory>
+          
+         </Directory>
+
+        
+      </Directory>
+ 
+  </Fragment>
+</Wix>

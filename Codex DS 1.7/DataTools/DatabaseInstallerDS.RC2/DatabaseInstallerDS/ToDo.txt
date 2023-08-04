@@ -1,0 +1,3 @@
+﻿Date 2015 07 21
+
+VNext >> ) Add Creatrion Date When Create Database

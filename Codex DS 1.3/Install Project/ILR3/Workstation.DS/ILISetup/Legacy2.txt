@@ -1,0 +1,27 @@
+	#pragma region Legacy Code
+	/*
+	// Legacy Code
+	if (VCPP == true)
+	{
+		WaitLabelText = _T("Installing runtime components of Visual C++ Libraries ...");
+		
+		ShowBillboard(&g_dwThread, &g_hThread);
+		//int netsetupstatus = 0;
+		CString runcommand = theApp.CurrentPathStr;
+		
+		if (CC_X64 == 0) runcommand.Append(_T("\\wcu\\VC2008\\X86\\vcredist_x86.exe"));
+		else runcommand.Append(_T("\\wcu\\VC2008\\X64\\vcredist_x64.exe "));
+		runcommand.Append(_T(" /q"));
+		
+		DWORD d = ExecCmd2(runcommand);
+		// Run AGain on X64
+
+		runcommand = theApp.CurrentPathStr;
+		if (CC_X64 != 0)
+		{ runcommand.Append(_T("\\wcu\\VC2008\\X86\\vcredist_x86.exe"));
+		runcommand.Append(_T(" /q"));
+		
+		DWORD d = ExecCmd2(runcommand);
+		}
+		*/
+	#pragma endregion Legacy Code

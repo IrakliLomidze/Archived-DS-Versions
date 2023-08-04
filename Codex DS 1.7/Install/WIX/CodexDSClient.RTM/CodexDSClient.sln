@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "CodexDS17Client", "CodexDSClient\CodexDS17Client.wixproj", "{86F9DBEC-22D6-45C1-9B06-A6033964504F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86F9DBEC-22D6-45C1-9B06-A6033964504F}.Debug|x86.ActiveCfg = Debug|x86
+		{86F9DBEC-22D6-45C1-9B06-A6033964504F}.Debug|x86.Build.0 = Debug|x86
+		{86F9DBEC-22D6-45C1-9B06-A6033964504F}.Release|x86.ActiveCfg = Release|x86
+		{86F9DBEC-22D6-45C1-9B06-A6033964504F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D923251-C920-4278-A80E-051F5D5D5888}
+	EndGlobalSection
+EndGlobal

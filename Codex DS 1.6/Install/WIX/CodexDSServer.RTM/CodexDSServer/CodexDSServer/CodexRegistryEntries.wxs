@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+
+    <Component Id="RegistryValueWorkstaion" Guid="{913519C6-099D-439D-B3EE-2E101157297F}" KeyPath="yes" Directory="INSTALLDIR" >
+
+      <RegistryValue Id="Registry2" Root="HKLM" Key="SOFTWARE\Georgian Microsystems\Codex DS\Server" Name="VersionMajor" Value="7" Type="integer" />
+      <RegistryValue Id="Registry3" Root="HKLM" Key="SOFTWARE\Georgian Microsystems\Codex DS\Server" Name="VersionMinor" Value="2017" Type="integer" />
+      <RegistryValue Id="Registry4" Root="HKLM" Key="SOFTWARE\Georgian Microsystems\Codex DS\Server" Name="Version" Value="7.2017.2017.8200" Type="string" />
+
+    </Component>
+
+  </Fragment>
+</Wix>

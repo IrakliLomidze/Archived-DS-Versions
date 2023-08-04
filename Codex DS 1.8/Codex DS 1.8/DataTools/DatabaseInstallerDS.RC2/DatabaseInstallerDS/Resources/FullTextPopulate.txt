@@ -1,0 +1,21 @@
+-- Codex DS Scripts
+-- Full Text from all Database
+-- Version 1.0 
+-- (C) Copyright By Gergian Microsystems 2005-2017 
+-- V 2017 October 5
+
+
+
+
+USE [Codex2007DS]
+
+
+-- POPULATE FULL TEXT
+
+EXEC sp_fulltext_table CodexDS_DDOCS, 'Start_change_tracking'
+EXEC sp_fulltext_table CodexDS_DDOCS, 'Start_background_updateindex'
+
+
+
+
+

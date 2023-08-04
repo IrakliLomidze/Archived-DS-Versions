@@ -1,0 +1,1474 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{751A9B2E-766F-4402-94D2-3E9F3870DDF4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ILG.Codex.CodexR4</RootNamespace>
+    <AssemblyName>CodexDS</AssemblyName>
+    <ApplicationIcon>DSAPPICON.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\x86\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\CodexDS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\x86\CodexDS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics4.Documents.Excel.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Shared.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.AppStylistSupport.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinDock.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinListView.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinStatusBar.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTree.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v17.1, Version=17.1.20171.1008, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TXDocumentServer, Version=29.0.1500.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL" />
+    <Reference Include="TXDocumentServer.Windows.Forms, Version=29.0.1200.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL" />
+    <Reference Include="TXTextControl, Version=29.0.2200.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL" />
+    <Reference Include="TXTextControl.Windows.Forms, Version=29.0.1400.500, Culture=neutral, PublicKeyToken=6b83fe9a75cfb638, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutDS.designer.cs">
+      <DependentUpon>AboutDS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Codex.Document.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Codex.Document.Designer.cs">
+      <DependentUpon>Codex.Document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodexOpenBugs.cs" />
+    <Compile Include="CodexSettings\CodexConfigurationStatic1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>CodexConfigurationStatic.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodexSettings\CodexDSBehavioral.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>CodexDSBehavioral.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodexSettings\CodexGlobalVariables1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>CodexGlobalVariables.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodexSettings\CodexStatusSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>CodexStatusSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodexSettings\DirectoryConfigurations1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>DirectoryConfigurations.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodexSettings\SQLConnectionStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SQLConnectionStrings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodexSettings\SQLDatabaseConfiguration1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SQLDatabaseConfiguration.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodexSettings\SQLServerConfigurationStatic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SQLServerConfigurationStatic.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CodexWordPIA.cs" />
+    <Compile Include="Configurations\StatusAttributeConfiguration.cs" />
+    <Compile Include="CommondSourceCode\CodexString.cs" />
+    <Compile Include="CommondSourceCode\CodexXML.cs" />
+    <Compile Include="CommondSourceCode\CodexZip.cs" />
+    <Compile Include="CommondSourceCode\CryptoLibrary.cs" />
+    <Compile Include="CommondSourceCode\FileExtension.cs" />
+    <Compile Include="Configurations\ConfigurationCodex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configurations\ConfigurationCodex.Designer.cs">
+      <DependentUpon>ConfigurationCodex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configurations\ConfigurationSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configurations\ConfigurationSQL.Designer.cs">
+      <DependentUpon>ConfigurationSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configurations\ConfigurationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configurations\ConfigurationUI.Designer.cs">
+      <DependentUpon>ConfigurationUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configurations\DirectoryConfiguration.cs" />
+    <Compile Include="DBDocumentOperations\DBOperation.cs" />
+    <Compile Include="DocumentAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentAddEdit.Designer.cs">
+      <DependentUpon>DocumentAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentForm\BaseTxDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm\BaseTxDocument.Designer.cs">
+      <DependentUpon>BaseTxDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentForm\TxSpecified\frmInsertBreak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm\TxSpecified\frmInsertTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm\TX\CommonHelpers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm\TX\DragDropHandler.cs" />
+    <Compile Include="DocumentForm\TX\FileHandler.cs" />
+    <Compile Include="DocumentForm\TX\FileHandler_Toolbar.cs" />
+    <Compile Include="DocumentForm\TX\InputBoxDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm\TX\InsertBreakDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm\TX\PageSetup.cs" />
+    <Compile Include="DocumentForm\TX\SaveDocumentFileDialog.cs" />
+    <Compile Include="DocumentForm\TX\TextControlEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm\Utils\TwipsConverter.cs" />
+    <Compile Include="DocumentForm\ZoomDialog\DocumentZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm\ZoomDialog\DocumentZoom.Designer.cs">
+      <DependentUpon>DocumentZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorReport.Designer.cs">
+      <DependentUpon>ErrorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FavoritesWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForAdmin\HistoryForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForAdmin\HistoryForm1.Designer.cs">
+      <DependentUpon>HistoryForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.Codex.Find.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Codex.List.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.Document.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Navigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Tree.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryDocument.Designer.cs">
+      <DependentUpon>HistoryDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History\HistoryModels.cs" />
+    <Compile Include="IDFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDFinder.Designer.cs">
+      <DependentUpon>IDFinder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JsonConfigurations\Attributes\BehaviourModels\SubjectAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\BehaviourModels\StatusAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\BehaviourModels\NumberAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\BehaviourModels\CategoryAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\DisplayModels\AdditinalAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\DisplayModels\CommentsAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\DisplayModels\StatusAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\DisplayModels\SubjectAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\DisplayModels\CategoryAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\DisplayModels\KeyWordsAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\DisplayModels\TypeAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\DisplayModels\AuthorAttribute.cs" />
+    <Compile Include="JsonConfigurations\Attributes\Search\DefaultSearchParameters.cs" />
+    <Compile Include="JsonConfigurations\CodexDSOrganizationSettings.cs" />
+    <Compile Include="JsonConfigurations\CodexDSOrganizationModel.cs" />
+    <Compile Include="JsonConfigurations\CodexDSModel.cs" />
+    <Compile Include="JsonConfigurations\CodexDSOrganizationConfigurationFile.cs" />
+    <Compile Include="License.cs" />
+    <Compile Include="LookUps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LookUps.Designer.cs">
+      <DependentUpon>LookUps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintDoc.Designer.cs">
+      <DependentUpon>PrintDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\CodexNewDSIcon.ico" />
+    <None Include="CodexSettings\CodexDSBehavioral.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>CodexDSBehavioral.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CodexSettings\CodexStatusSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>CodexStatusSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Images\ImagesR4\About\About.psd" />
+    <None Include="Images\ImagesR4\About\HelloSampleImage.psd" />
+    <None Include="Images\ImagesR4\Logos\JustLogo_WithText.psd" />
+    <None Include="Images\ImagesR4\Splash\CodexSplashR41.psd" />
+    <None Include="Images\Images\bACK32jpg.jp2" />
+    <None Include="Images\Images\Configuration\Source.psd" />
+    <None Include="Images\Images\ErrorReporting\12.psd" />
+    <None Include="Images\Images\Logo\Blue.psd" />
+    <None Include="CodexSettings\CodexConfigurationStatic.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>CodexConfigurationStatic1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CodexSettings\CodexGlobalVariables.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>CodexGlobalVariables1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CodexSettings\DirectoryConfigurations.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>DirectoryConfigurations1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CodexSettings\SQLConnectionStrings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SQLConnectionStrings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CodexSettings\SQLDatabaseConfiguration.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SQLDatabaseConfiguration1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CodexSettings\SQLServerConfigurationStatic.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SQLServerConfigurationStatic.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\DS.ico" />
+    <None Include="Resources\bullet_triangle_glass_yellow.png" />
+    <None Include="Resources\bullet_triangle_glass_red.png" />
+    <None Include="Resources\bullet_triangle_glass_grey.png" />
+    <None Include="Resources\bullet_triangle_glass_green.png" />
+    <None Include="Resources\bullet_triangle_glass_blue.png" />
+    <EmbeddedResource Include="AboutDS.resx">
+      <DependentUpon>AboutDS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codex.Document.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Codex.Document.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configurations\ConfigurationCodex.resx">
+      <DependentUpon>ConfigurationCodex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configurations\ConfigurationSQL.resx">
+      <DependentUpon>ConfigurationSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configurations\ConfigurationUI.resx">
+      <DependentUpon>ConfigurationUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentAddEdit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DocumentAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentForm\BaseTxDocument.resx">
+      <DependentUpon>BaseTxDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentForm\TxSpecified\frmInsertBreak.resx" />
+    <EmbeddedResource Include="DocumentForm\TxSpecified\frmInsertTable.resx">
+      <DependentUpon>frmInsertTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentForm\TX\InputBoxDialog.resx">
+      <DependentUpon>InputBoxDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentForm\TX\InsertBreakDialog.resx">
+      <DependentUpon>InsertBreakDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentForm\ZoomDialog\DocumentZoom.resx">
+      <DependentUpon>DocumentZoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ErrorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FavoritesWindows.resx">
+      <DependentUpon>FavoritesWindows.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForAdmin\HistoryForm1.resx">
+      <DependentUpon>HistoryForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryDocument.resx">
+      <DependentUpon>HistoryDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDFinder.resx">
+      <DependentUpon>IDFinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LookUps.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LookUps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintDoc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PrintDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestDoc.Document.resx">
+      <DependentUpon>TestDoc.Document.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="New Folder\document_plain.png" />
+    <None Include="New Folder\folder_document.png" />
+    <None Include="New Folder\copy.png" />
+    <None Include="New Folder\cut.png" />
+    <None Include="New Folder\paste.png" />
+    <None Include="New Folder\document.png" />
+    <None Include="New Folder\font.png" />
+    <None Include="New Folder\document_edit.png" />
+    <None Include="New Folder\preferences.png" />
+    <None Include="New Folder\text_marked.png" />
+    <None Include="New Folder\text_tree.png" />
+    <None Include="New Folder\column.png" />
+    <None Include="New Folder\column_edit.png" />
+    <None Include="New Folder\photo_scenery.png" />
+    <None Include="New Folder\find.png" />
+    <None Include="New Folder\redo.png" />
+    <None Include="New Folder\undo.png" />
+    <None Include="New Folder\Lookups\administrator_48.png" />
+    <None Include="New Folder\Lookups\administrator_add_16.png" />
+    <None Include="New Folder\Lookups\administrator_close_16.png" />
+    <None Include="New Folder\Lookups\administrator_config_16.png" />
+    <None Include="New Folder\Lookups\administrator_save_16.png" />
+    <None Include="New Folder\Lookups\hand_16.png" />
+    <None Include="New Folder\Lookups\refresh_16.png" />
+    <None Include="New Folder\Lookups\copy_48.png" />
+    <None Include="New Folder\Lookups\copy_add_16.png" />
+    <None Include="New Folder\Lookups\copy_close_16.png" />
+    <None Include="New Folder\Lookups\copy_config_16.png" />
+    <None Include="New Folder\Lookups\copy_save_16.png" />
+    <None Include="New Folder\Lookups\book_48.png" />
+    <None Include="New Folder\Lookups\book_add_16.png" />
+    <None Include="New Folder\Lookups\book_close_16.png" />
+    <None Include="New Folder\Lookups\book_config_16.png" />
+    <None Include="New Folder\Lookups\book_save_16.png" />
+    <None Include="New Folder\Lookups\group_48.png" />
+    <None Include="New Folder\Lookups\group_add_16.png" />
+    <None Include="New Folder\Lookups\group_close_16.png" />
+    <None Include="New Folder\Lookups\group_config_16.png" />
+    <None Include="New Folder\Lookups\group_save_16.png" />
+    <None Include="New Folder\Lookups\lamp_48.png" />
+    <None Include="New Folder\Lookups\lamp_add_16.png" />
+    <None Include="New Folder\Lookups\lamp_close_16.png" />
+    <None Include="New Folder\Lookups\lamp_config_16.png" />
+    <None Include="New Folder\Lookups\lamp_save_16.png" />
+    <None Include="New Folder\Lookups\notepad_add_16.png" />
+    <None Include="New Folder\Lookups\notepad_close_16.png" />
+    <None Include="New Folder\Lookups\notepad_config_16.png" />
+    <None Include="New Folder\Lookups\notepad_refresh_16.png" />
+    <None Include="New Folder\Lookups\notepad_save_16.png" />
+    <None Include="New Folder\Lookups\notepad_write_48.png" />
+    <None Include="New Folder\Lookups\Menu\administrator_16.png" />
+    <None Include="New Folder\Lookups\Menu\book_16.png" />
+    <None Include="New Folder\Lookups\Menu\copy_16.png" />
+    <None Include="New Folder\Lookups\Menu\group_16.png" />
+    <None Include="New Folder\Lookups\Menu\lamp_16.png" />
+    <None Include="New Folder\Lookups\Menu\notepad_write_16.png" />
+    <None Include="New Folder\2\AcroRd32.ico" />
+    <None Include="New Folder\3\redo.png" />
+    <None Include="New Folder\3\folder_out.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column_add_after.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column_add_before.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column_delete.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column_edit.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row_add_after.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row_add_before.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row_delete.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row_edit.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_edit.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_preferences.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_replace.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_selection_all.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_selection_column.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_selection_row.png" />
+    <None Include="New Folder\POPUOPDOC\Table\column.png" />
+    <None Include="New Folder\POPUOPDOC\Table\row.png" />
+    <None Include="New Folder\POPUOPDOC\Table\SpliotDown.png" />
+    <None Include="New Folder\POPUOPDOC\Table\SplitUp.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_add.png" />
+    <None Include="New Folder\POPUOPDOC\Table\table_delete.png" />
+    <None Include="New Folder\Links\window_add_32.png" />
+    <None Include="New Folder\Links\window_close_32.png" />
+    <None Include="New Folder\Links\window_config_32.png" />
+    <None Include="New Folder\Links\window_info_32.png" />
+    <None Include="New Folder\Links\window_ok_32.png" />
+    <None Include="New Folder\Links\cancel_16.png" />
+    <None Include="New Folder\Attach\paper_clip_add_32.png" />
+    <None Include="New Folder\Attach\paper_clip_close_32.png" />
+    <None Include="New Folder\BIGICON\delete2.png" />
+    <None Include="New Folder\BIGICON\disk_blue.png" />
+    <None Include="New Folder\BIGICON\disk_blue_delete.png" />
+    <None Include="New Folder\BIGICON\disk_blue_edit.png" />
+    <None Include="New Folder\BIGICON\disk_green.png" />
+    <None Include="New Folder\BIGICON\disk_yellow.png" />
+    <None Include="New Folder\BIGICON\document.png" />
+    <None Include="New Folder\BIGICON\New Folder\administrator_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\book_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\copy_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\group_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\lamp_32.png" />
+    <None Include="New Folder\BIGICON\New Folder\paste_32.png" />
+    <None Include="New Folder\DOCUMENTEDIT\document_edit.png" />
+    <None Include="New Folder\DOCUMENTEDIT\document_delete.png" />
+    <None Include="Images\Document\document.png" />
+    <None Include="Images\Document\32\document.png" />
+    <None Include="Images\Document\folder_open.png" />
+    <None Include="Images\Document\save.png" />
+    <None Include="Images\Document\clipboard_copy.png" />
+    <None Include="Images\Document\clipboard_paste.png" />
+    <None Include="Images\Document\clipboard_cut.png" />
+    <None Include="Images\Document\undo.png" />
+    <None Include="Images\Document\redo.png" />
+    <None Include="Images\Document\search.png" />
+    <None Include="Images\Document\document_flat-gear.png" />
+    <None Include="Images\Document\margins.png" />
+    <None Include="Images\Document\document_header_footer.png" />
+    <None Include="Images\Document\styles.png" />
+    <None Include="Images\Document\font.png" />
+    <None Include="Images\Document\document_text_write.png" />
+    <None Include="Images\Document\table.png" />
+    <None Include="Images\Document\document_text2-picture.png" />
+    <None Include="Images\Document\text_box.png" />
+    <None Include="Images\Document\text_box-add2.png" />
+    <None Include="Images\Document\picture-edit.png" />
+    <None Include="Images\Document\page_break.png" />
+    <None Include="Images\Document\table_column_left.png" />
+    <None Include="Images\Document\table_column_right.png" />
+    <None Include="Images\Document\table_column_extract.png" />
+    <None Include="Images\Document\table_row_down.png" />
+    <None Include="Images\Document\table_row_up.png" />
+    <None Include="Images\Document\table_cell-delete2.png" />
+    <None Include="Images\Document\table-delete2.png" />
+    <None Include="Images\Document\table_column_delete.png" />
+    <None Include="Images\Document\table_row-delete2.png" />
+    <None Include="Images\Document\Table-Select.png" />
+    <None Include="Images\Document\table_column.png" />
+    <None Include="Images\Document\table_row.png" />
+    <None Include="Images\Document\document_text_table-delete2.png" />
+    <None Include="Images\Document\32\folder_open.png" />
+    <None Include="Images\Document\32\undo.png" />
+    <None Include="Images\Document\page_landscape-arrow_right.png" />
+    <None Include="Images\Attachments\16\remove_button.png" />
+    <None Include="Images\Attachments\attach_Add.png" />
+    <None Include="Images\Attachments\attach_Delete.png" />
+    <None Include="Images\Attachments\attach_Download.png" />
+    <None Include="Images\Attributes\16\secure.png" />
+    <None Include="Images\Attributes\16\calendar.png" />
+    <None Include="Images\Attributes\16\comment.png" />
+    <None Include="Images\Attributes\16\tag_blue.png" />
+    <None Include="Images\Attributes\16\attach.png" />
+    <None Include="Images\Attributes\16\link.png" />
+    <None Include="Images\Attributes\16\add.png" />
+    <None Include="Images\Attributes\16\pin_blue.png" />
+    <None Include="Images\Attributes\32\pin_blue.png" />
+    <None Include="Images\Attributes\16\refresh_update.png" />
+    <None Include="Images\Attributes\16\database.png" />
+    <None Include="Images\Attributes\16\install.png" />
+    <None Include="Images\Attributes\16\employee.png" />
+    <None Include="Images\Attributes\32\employee.png" />
+    <None Include="Images\Attributes\48\pin_blue.png" />
+    <None Include="Images\Attributes\48\book_open.png" />
+    <None Include="Images\Attributes\16\book_open.png" />
+    <None Include="Images\Attributes\32\book_open.png" />
+    <None Include="Images\Attributes\48\archive.png" />
+    <None Include="Images\Attributes\16\archive.png" />
+    <None Include="Images\Attributes\48\list.png" />
+    <None Include="Images\Attributes\48\notepad_open.png" />
+    <None Include="Images\Attributes\48\documents.png" />
+    <None Include="Images\Attributes\16\documents.png" />
+    <None Include="Images\Attributes\16\notepad_open.png" />
+    <None Include="Images\Attributes\32\documents.png" />
+    <None Include="Images\Attributes\32\notepad_open.png" />
+    <Content Include="DSAPPICON.ico" />
+    <None Include="Images\Attributes\32\archive.png" />
+    <None Include="Images\ImagesR4\32\delete.png" />
+    <None Include="Images\ImagesR4\32\clock.png" />
+    <None Include="Images\ImagesR4\16\clock.png" />
+    <None Include="Images\ImagesR4\32\refresh_update.png" />
+    <None Include="Images\ImagesR4\32\clock-edit.png" />
+    <None Include="Images\ImagesR4\32\help2.png" />
+    <Content Include="Images\ImagesR4\About\About.jpg" />
+    <Content Include="Images\ImagesR4\About\About2.jpg" />
+    <Content Include="Images\ImagesR4\About\AboutTop.jpg" />
+    <Content Include="Images\ImagesR4\About\HelloSampleImage.jpg" />
+    <Content Include="Images\ImagesR4\About\internet.png" />
+    <Content Include="Images\ImagesR4\About\internet_grey.png" />
+    <Content Include="Images\ImagesR4\About\nav_blue_right.png" />
+    <None Include="Images\ImagesR4\About\place.png" />
+    <None Include="Images\ImagesR4\About\place_blue.png" />
+    <None Include="Images\ImagesR4\About\place_green.png" />
+    <None Include="Images\ImagesR4\About\place_red.png" />
+    <Content Include="Images\ImagesR4\Archive\16\database-save.png" />
+    <Content Include="Images\ImagesR4\Archive\16\database.png" />
+    <Content Include="Images\ImagesR4\Archive\16\databases.png" />
+    <Content Include="Images\ImagesR4\Archive\16\database_backup.png" />
+    <Content Include="Images\ImagesR4\Archive\16\info.png" />
+    <Content Include="Images\ImagesR4\Archive\16\nav_blue_right.png" />
+    <Content Include="Images\ImagesR4\Archive\16\refresh_update.png" />
+    <Content Include="Images\ImagesR4\Archive\48\database-steps.png" />
+    <Content Include="Images\ImagesR4\Archive\64\button_circle_blue_right.png" />
+    <Content Include="Images\ImagesR4\Configuration\16\button_rounded_blue_right.png" />
+    <Content Include="Images\ImagesR4\Configuration\16\help.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\button_circle_blue_right.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\button_circle_red_right.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\calendar.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\clipboard-edit.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\database-arrow_right.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\database-gear.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\database-info.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\database-new.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\database-update.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\database.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\delete_button_error.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\document.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\documents-info.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\document_color_blue-info.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\document_flat-attach.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\document_flat-up.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\gear.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\gears.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\info.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\key.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\keyboard.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\light_off.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\list.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\mail.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\nav_green_right.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\user.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\view.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\windows.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_arrange_horizontal.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_arrange_vertical.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_create.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_font.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_gear.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_hide.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_panel_bottom.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_panel_left.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_panel_right.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_panel_top.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_picture.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_sel.png" />
+    <Content Include="Images\ImagesR4\Configuration\48\window_separate_horizontal.png" />
+    <Content Include="Images\ImagesR4\Configuration\icon\gears.ico" />
+    <Content Include="Images\ImagesR4\DocumentComparation\16\document_flat-edit.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\16\document_flat.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\16\warning.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\24\document_flat-edit.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\24\document_flat.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\32\document.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\32\document_flat-edit.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\32\document_flat.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\48\document-arrow_leftright.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\48\document_flat-edit.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\48\document_flat.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\64\document-arrow_leftright.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\64\view_page_two.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\arrow_right.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\document_flat-edit.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\document_flat.png" />
+    <Content Include="Images\ImagesR4\DocumentComparation\ILG_SWipe.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\24\arrow_right.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\24\clock.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\24\document-steps.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\24\document-warn.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\24\document_color_red-error.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\24\info.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\24\info24Red.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\24\nav_green_right.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\arrow_right.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\DargGrayDownArrow.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\DargGrayUpArrow.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\delete.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\delete_Black.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\find.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\Left_Green_Arrow_Scquare_Withe.ico" />
+    <Content Include="Images\ImagesR4\DocumentForm\Left_Green_Arrow_Square_Withe.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\Left_Green_Arrow_Wide_Withe.ico" />
+    <Content Include="Images\ImagesR4\DocumentForm\Left_Green_Arrow_Wide_Withe.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\Red_arrow_right_32.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\search.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\White_Arrow_16.ico" />
+    <Content Include="Images\ImagesR4\DocumentForm\White_Arrow_Down_16.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\White_Arrow_Right_16.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\White_Inf_16.ico" />
+    <Content Include="Images\ImagesR4\DocumentForm\White_Inf_16.png" />
+    <Content Include="Images\ImagesR4\DocumentForm\White_Inf_16a.ico" />
+    <Content Include="Images\ImagesR4\DocumentForm\White_Inf_16a.png" />
+    <Content Include="Images\ImagesR4\DocumentInfo\document_flat-info.png" />
+    <Content Include="Images\ImagesR4\DocumentZoom\zoom.png" />
+    <None Include="Images\ImagesR4\DS\16\document_flat-add2.png" />
+    <None Include="Images\ImagesR4\DS\16\document_flat-edit.png" />
+    <Content Include="Images\ImagesR4\Error\48\button_circle_red_right.png" />
+    <Content Include="Images\ImagesR4\Error\48\icon\delete.ico" />
+    <Content Include="Images\ImagesR4\Error\48\mail.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\48\favorite-add2.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\add.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\document_color_blue.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\document_color_green.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\document_flat.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\favorite-add.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\favorite.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\folder_open.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\history.png" />
+    <Content Include="Images\ImagesR4\FavoritesDialog\info.png" />
+    <Content Include="Images\ImagesR4\FeedBack\emoticon_frown.png" />
+    <Content Include="Images\ImagesR4\FeedBack\emoticon_smile.png" />
+    <Content Include="Images\ImagesR4\FeedBack\emoticon_straight_face.png" />
+    <Content Include="Images\ImagesR4\History\document_flat-edit.png" />
+    <Content Include="Images\ImagesR4\History\document_flat_arrow_down.png" />
+    <Content Include="Images\ImagesR4\History\document_flat_arrow_up.png" />
+    <Content Include="Images\ImagesR4\History\document_flat_delete.png" />
+    <Content Include="Images\ImagesR4\History\docuument_flat_edit.png" />
+    <Content Include="Images\ImagesR4\icon\BetaICONR4.ico" />
+    <Content Include="Images\ImagesR4\Internal\16\delete.png" />
+    <Content Include="Images\ImagesR4\Internal\16\document_color_blue-remove2.png" />
+    <Content Include="Images\ImagesR4\Internal\16\document_color_red-delete.png" />
+    <Content Include="Images\ImagesR4\Internal\16\document_color_red-delete2.png" />
+    <Content Include="Images\ImagesR4\Internal\16\document_color_red-remove.png" />
+    <Content Include="Images\ImagesR4\Internal\16\document_color_red-remove2.png" />
+    <Content Include="Images\ImagesR4\Internal\16\document_flat-add.png" />
+    <Content Include="Images\ImagesR4\Internal\16\document_flat-edit.png" />
+    <Content Include="Images\ImagesR4\Internal\32\delete.png" />
+    <Content Include="Images\ImagesR4\Internal\32\document_color_red-delete2.png" />
+    <Content Include="Images\ImagesR4\Internal\32\document_color_red-remove2.png" />
+    <Content Include="Images\ImagesR4\Internal\32\document_flat-add.png" />
+    <Content Include="Images\ImagesR4\Internal\32\document_flat-edit.png" />
+    <Content Include="Images\ImagesR4\Internal\32\document_flat-remove2.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\calendar.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\clipboard-export.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\clipboard-info.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\clipboard-internet.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\clipboard-new.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\clipboard-warn.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\clipboard_copy.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\clipboard_cut.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\clipboard_paste.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\column_left.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\database-check.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\document_flag-remove.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\document_flat-gear.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\document_header_footer.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\folder_open.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\font.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\list_bullets.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\page_borders.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\page_break.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\paragraph_marker.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\paragraph_marker_small.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\picture-add2.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\picture-edit.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\redo.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\save.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\search.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\styles.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\table-add2.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\table-edit.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableColumnsDelete_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableColumnSelect_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableColumnsInsertLeft_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableColumnsInsertRight_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableDelete_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableRowSelect_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableRowsInsertAboveWord_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableRowsInsertBelowWord_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableRowsOrColumnsOrCellsDelete_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableSelect_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\TableSplitTable_16x16.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\text_box.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\16\undo.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\clipboard-export.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\clipboard-info.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\clipboard-internet.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\clipboard-new.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\clipboard_paste.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\column_two.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\document_flag-remove.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\document_flat-gear.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\document_header_footer.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\font.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\page_borders.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\page_break.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\page_number-remove.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\paragraph_marker.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\picture-add2.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\save.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\styles.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\table-add2.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\table-edit.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\table-gear.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\text_box.png" />
+    <Content Include="Images\ImagesR4\Internal\Editor\32\view_zoom.png" />
+    <Content Include="Images\ImagesR4\Internal\Status_bar_HeaderFooter.ico" />
+    <Content Include="Images\ImagesR4\Internal\Status_bar_HeaderFooter.png" />
+    <Content Include="Images\ImagesR4\Internal\symbols.png" />
+    <Content Include="Images\ImagesR4\License\barcode-database.png" />
+    <Content Include="Images\ImagesR4\License\certificate.png" />
+    <Content Include="Images\ImagesR4\Logos\JustLogo_Withouttext.jpg" />
+    <Content Include="Images\ImagesR4\Logos\JustLogo_WithText_Cofified.jpg" />
+    <Content Include="Images\ImagesR4\Logos\JustLogo_WithText_Contracts.jpg" />
+    <Content Include="Images\ImagesR4\Logos\JustLogo_WithText_Contracts_V2.jpg" />
+    <Content Include="Images\ImagesR4\Logos\JustLogo_WithText_Laws.jpg" />
+    <Content Include="Images\ImagesR4\Logos\JustLogo_WithText_none.jpg" />
+    <Content Include="Images\ImagesR4\Logos\JustLogo_WithText_Normatives.jpg" />
+    <Content Include="Images\ImagesR4\NewLogo\BlueZ.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\calendar-check.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\calendar-export.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\clipboard_copy.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\Copy_16_16_Blue.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\Copy_16_16_Red.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\database-info.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\database-share.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\database-steps.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\document-arrow_leftright.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\document-export.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\favorite-add2.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\favorite.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\find.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\footsteps.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\gear.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\gears.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\help.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\home.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\info.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\internet.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\item_enable.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\keyboard.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\light_off.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\light_on.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\list-export.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\list-info.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\nav_blue_left.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\nav_blue_right.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\print-export.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\print-internet.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\print.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\refresh_update.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\save-import.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\sort.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\sort2.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\sort_down.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\sort_up.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\stop.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\storage_floppy-list.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\storage_floppy.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\window-search.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\window_arrange_horizontal.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\window_arrange_vertical.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\window_hide.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\window_panel_bottom.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\window_panel_left.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\window_panel_right.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\window_panel_top.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\window_sel.png" />
+    <Content Include="Images\ImagesR4\Ribbon\16\Word.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\calendar-check.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\calendar-export.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\clipboard_copy.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\CodexNewIcon_32.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\Copy_32x32.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\Copy_32_32_Red.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\database-attach.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\database-check.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\database-info.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\database-internet.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\database-mail.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\database-option.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\database-steps.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\database.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\document-arrow_leftright.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\document-export.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\favorite.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\find.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\footsteps.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\gear.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\gears.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\help.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\home.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\info.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\internet.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\item_enable.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\list-export.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\list-info.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\nav_blue_left.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\nav_blue_right.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\print-export.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\print-internet.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\print.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\refresh_update.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\save-import.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\sort.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\sort2.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\sort_down.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\sort_up.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\stop.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\storage_floppy-list.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\storage_floppy.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\window-search.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\window_arrange_horizontal.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\window_arrange_vertical.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\window_hide.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\window_panel_bottom.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\window_panel_left.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\window_panel_right.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\window_panel_top.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\window_sel.png" />
+    <Content Include="Images\ImagesR4\Ribbon\32\Word_32.png" />
+    <Content Include="Images\ImagesR4\Splash\CodexSplashR4.jpg" />
+    <Content Include="Images\ImagesR4\Splash\CodexSplashR41.jpg" />
+    <Content Include="Images\ImagesR4\StatusBar\Connected_16_White.png" />
+    <Content Include="Images\ImagesR4\StatusBar\Disconnecting_16_White.png" />
+    <Content Include="Images\ImagesR4\StatusBar\Processing_Connect16_White.png" />
+    <Content Include="Images\ImagesR4\TrackBar\icons\Symbol_Minus.ico" />
+    <Content Include="Images\ImagesR4\TrackBar\icons\Symbol_Plus.ico" />
+    <Content Include="Images\ImagesR4\TrackBar\icons\Symbol_Separate.ico" />
+    <Content Include="Images\ImagesR4\TrackBar\Symbol_Minus.png" />
+    <Content Include="Images\ImagesR4\TrackBar\Symbol_Minus2.png" />
+    <Content Include="Images\ImagesR4\TrackBar\Symbol_Plus.png" />
+    <Content Include="Images\ImagesR4\TrackBar\Symbol_Plus2.png" />
+    <Content Include="Images\ImagesR4\TrackBar\Symbol_Separate.png" />
+    <Content Include="Images\ImagesR4\Update\24\database-info.png" />
+    <Content Include="Images\ImagesR4\Update\24\internet.png" />
+    <Content Include="Images\ImagesR4\Update\48\internet_grey.png" />
+    <Content Include="Images\ImagesR4\Update\64\info.png" />
+    <Content Include="Images\ImagesR4\Update\database-update.png" />
+    <Content Include="Images\Images\2007Arrow\Cancel.png" />
+    <Content Include="Images\Images\2007Arrow\Left3.png" />
+    <Content Include="Images\Images\2007Arrow\OK.png" />
+    <Content Include="Images\Images\2007Arrow\Roght3.png" />
+    <Content Include="Images\Images\2007Arrow\Up3.png" />
+    <Content Include="Images\Images\About\CodexBall3.jpg" />
+    <Content Include="Images\Images\About\JustLogo3.jpg" />
+    <Content Include="Images\Images\About\Left.jpg" />
+    <Content Include="Images\Images\About\Midle.jpg" />
+    <Content Include="Images\Images\About\Midle1.jpg" />
+    <Content Include="Images\Images\ApplicationICON1.ico" />
+    <Content Include="Images\Images\ApplicationICON1.png" />
+    <Content Include="Images\Images\Buttons\ICGFind\V2\bt8l48w_0.gif" />
+    <Content Include="Images\Images\Buttons\ICGFind\V2\bt8l48w_1.gif" />
+    <Content Include="Images\Images\Buttons\ICGFind\V2\bt8l48w_2.gif" />
+    <Content Include="Images\Images\Buttons\LockUp\V2\btlt5hm_0.gif" />
+    <Content Include="Images\Images\Buttons\LockUp\V2\btlt5hm_1.gif" />
+    <Content Include="Images\Images\Buttons\LockUp\V2\btlt5hm_2.gif" />
+    <Content Include="Images\Images\Buttons\News\news_0.gif" />
+    <Content Include="Images\Images\Buttons\News\news_1.gif" />
+    <Content Include="Images\Images\Buttons\News\news_2.gif" />
+    <Content Include="Images\Images\calendar_16.png" />
+    <Content Include="Images\Images\caution_16.png" />
+    <Content Include="Images\Images\clock_16.png" />
+    <Content Include="Images\Images\clock_32.png" />
+    <Content Include="Images\Images\clock_zoom_16.png" />
+    <Content Include="Images\Images\close_a_32.png" />
+    <Content Include="Images\Images\Configuration\data.png" />
+    <Content Include="Images\Images\Configuration\data_connection.png" />
+    <Content Include="Images\Images\Configuration\data_copy.png" />
+    <Content Include="Images\Images\Configuration\keyboard_key.png" />
+    <Content Include="Images\Images\Configuration\lightbulb_on.png" />
+    <Content Include="Images\Images\Configuration\notebook.png" />
+    <Content Include="Images\Images\Configuration\Tabs\bt9rbmy_0.gif" />
+    <Content Include="Images\Images\Configuration\Tabs\bt9rbmy_1.gif" />
+    <Content Include="Images\Images\Configuration\Tabs\bt9rbmy_2.gif" />
+    <Content Include="Images\Images\Configuration\text_binary.png" />
+    <Content Include="Images\Images\Configuration\Top1.jpg" />
+    <Content Include="Images\Images\Configuration\user1.png" />
+    <Content Include="Images\Images\contrast_128.png" />
+    <Content Include="Images\Images\contrast_zoom_256.png" />
+    <Content Include="Images\Images\contrast_zoom_64.png" />
+    <Content Include="Images\Images\copy_16.png" />
+    <Content Include="Images\Images\copy_clock_32.png" />
+    <Content Include="Images\Images\copy_info_48.png" />
+    <Content Include="Images\Images\copy_level_16.png" />
+    <Content Include="Images\Images\copy_refresh_16.png" />
+    <Content Include="Images\Images\copy_zoom_48.png" />
+    <Content Include="Images\Images\data_disk.png" />
+    <Content Include="Images\Images\disk_green.png" />
+    <Content Include="Images\Images\disk_yellow.png" />
+    <Content Include="Images\Images\Dock\paper_clip_16.png" />
+    <Content Include="Images\Images\Dock\pyramid_16.png" />
+    <Content Include="Images\Images\Dock\window_add_16.png" />
+    <Content Include="Images\Images\Dock\write_16.png" />
+    <Content Include="Images\Images\DocumentSmall\close_b_32.png" />
+    <Content Include="Images\Images\DocumentSmall\document_delete.png" />
+    <Content Include="Images\Images\DocumentSmall\document_edit.png" />
+    <Content Include="Images\Images\Document\Green2.jpg" />
+    <Content Include="Images\Images\document_16.png" />
+    <Content Include="Images\Images\ErrorReporting\attach_next_16.png" />
+    <Content Include="Images\Images\ErrorReporting\copy_16.png" />
+    <Content Include="Images\Images\ErrorReporting\diskette_16.png" />
+    <Content Include="Images\Images\ErrorReporting\error.png" />
+    <Content Include="Images\Images\ErrorReporting\ErrorLeft.jpg" />
+    <Content Include="Images\Images\ErrorReporting\ErrorLeft2.jpg" />
+    <Content Include="Images\Images\ErrorReporting\ErrorLeft3.jpg" />
+    <Content Include="Images\Images\ErrorReporting\ErrorLeft4.jpg" />
+    <Content Include="Images\Images\ErrorReporting\ErrorNEw.png" />
+    <Content Include="Images\Images\ErrorReporting\help_16.png" />
+    <Content Include="Images\Images\ErrorReporting\mail_16.png" />
+    <Content Include="Images\Images\ErrorReporting\Project2.ico" />
+    <Content Include="Images\Images\ErrorReporting\Project3.ico" />
+    <Content Include="Images\Images\ErrorReporting\Top1.jpg" />
+    <Content Include="Images\Images\ErrorReporting\tOP2.jpg" />
+    <Content Include="Images\Images\Favorites\address book_16x16.png" />
+    <Content Include="Images\Images\Favorites\Button\address book_16x16.png" />
+    <Content Include="Images\Images\Favorites\Button\favorites_16x16.png" />
+    <Content Include="Images\Images\Favorites\documents2_16x16.png" />
+    <Content Include="Images\Images\Favorites\documents_16x16.png" />
+    <Content Include="Images\Images\Favorites\document_16x16.png" />
+    <Content Include="Images\Images\folder2_green.png" />
+    <Content Include="Images\Images\font.png" />
+    <Content Include="Images\Images\Green2.jpg" />
+    <Content Include="Images\Images\hand_back_16.png" />
+    <Content Include="Images\Images\help_16.png" />
+    <Content Include="Images\Images\info_16.png" />
+    <Content Include="Images\Images\lamp_16.png" />
+    <Content Include="Images\Images\LanguageCombo\_GFlag.bmp" />
+    <Content Include="Images\Images\LanguageCombo\_RFlag.bmp" />
+    <Content Include="Images\Images\LanguageCombo\_UFlag.bmp" />
+    <Content Include="Images\Images\Lines\44-165723913.gif" />
+    <Content Include="Images\Images\ListBox\ButtonT1.png" />
+    <Content Include="Images\Images\ListBox\ButtonT2.png" />
+    <Content Include="Images\Images\ListBox\ClearFilter.ico" />
+    <Content Include="Images\Images\ListBox\ClearFilter2.ico" />
+    <Content Include="Images\Images\ListBox\Filter.ico" />
+    <Content Include="Images\Images\ListBox\Filter2.ico" />
+    <Content Include="Images\Images\ListBox\Images\caution_32x32.png" />
+    <Content Include="Images\Images\ListBox\Images\documents_32x32.png" />
+    <Content Include="Images\Images\ListBox\Images\edit-script_32x32.png" />
+    <Content Include="Images\Images\ListBox\Images\edit_32x32.png" />
+    <Content Include="Images\Images\ListBox\Images\file_32x32.png" />
+    <Content Include="Images\Images\ListBox\Images\yellow-button_16x16.png" />
+    <Content Include="Images\Images\ListBox\Sort1.ico" />
+    <Content Include="Images\Images\ListBox\Sort3.ico" />
+    <Content Include="Images\Images\Live\Back1.png" />
+    <Content Include="Images\Images\Live\Forwared1.png" />
+    <Content Include="Images\Images\Live\Home1.png" />
+    <Content Include="Images\Images\Live\Refresh.png" />
+    <Content Include="Images\Images\Live\Stop.png" />
+    <Content Include="Images\Images\Logo\Blue copy.jpg" />
+    <Content Include="Images\Images\Logo\BlueZ.png" />
+    <Content Include="Images\Images\MainMenuIcon.png" />
+    <Content Include="Images\Images\MainMenuIcon2.png" />
+    <Content Include="Images\Images\MainMenuIcon3.png" />
+    <Content Include="Images\Images\MainMenuIcon4.png" />
+    <Content Include="Images\Images\MainMenuICON5.png" />
+    <Content Include="Images\Images\MainMenuICON6.png" />
+    <Content Include="Images\Images\MainMenuICON6_1.png" />
+    <Content Include="Images\Images\Menus\options_16x16.png" />
+    <Content Include="Images\Images\Menus\redo_16x16.png" />
+    <Content Include="Images\Images\MessageBox\Confirmation.ico" />
+    <Content Include="Images\Images\MessageBox\Error.ico" />
+    <Content Include="Images\Images\MessageBox\Information.ico" />
+    <Content Include="Images\Images\MessageBox\Warrning.ico" />
+    <Content Include="Images\Images\NewFlags\flag_georgia.png" />
+    <Content Include="Images\Images\NewFlags\flag_russia.png" />
+    <Content Include="Images\Images\NewFlags\flag_usa.png" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_blue.bmp" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_blue.ico" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_green.bmp" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_green.ico" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_grey.bmp" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_grey.ico" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_red.bmp" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_red.ico" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_yellow.bmp" />
+    <Content Include="Images\Images\NewImages\About\bullet_triangle_glass_yellow.ico" />
+    <Content Include="Images\Images\NewRibbon\16\arrow_right_green.png" />
+    <Content Include="Images\Images\NewRibbon\16\chart_pie2.png" />
+    <Content Include="Images\Images\NewRibbon\16\clock.png" />
+    <Content Include="Images\Images\NewRibbon\16\copy.png" />
+    <Content Include="Images\Images\NewRibbon\16\data.png" />
+    <Content Include="Images\Images\NewRibbon\16\data_floppy_disk.png" />
+    <Content Include="Images\Images\NewRibbon\16\document_plain.png" />
+    <Content Include="Images\Images\NewRibbon\16\floppy_disk_blue.png" />
+    <Content Include="Images\Images\NewRibbon\16\floppy_disk_green.png" />
+    <Content Include="Images\Images\NewRibbon\16\floppy_disk_yellow.png" />
+    <Content Include="Images\Images\NewRibbon\16\home.png" />
+    <Content Include="Images\Images\NewRibbon\16\navigate_left.png" />
+    <Content Include="Images\Images\NewRibbon\16\navigate_right.png" />
+    <Content Include="Images\Images\NewRibbon\16\nav_down_left_blue.png" />
+    <Content Include="Images\Images\NewRibbon\16\nav_left_blue.png" />
+    <Content Include="Images\Images\NewRibbon\16\nav_right_blue.png" />
+    <Content Include="Images\Images\NewRibbon\16\printer.png" />
+    <Content Include="Images\Images\NewRibbon\16\scroll.png" />
+    <Content Include="Images\Images\NewRibbon\16\scroll2.png" />
+    <Content Include="Images\Images\NewRibbon\16\selection.png" />
+    <Content Include="Images\Images\NewRibbon\16\server.png" />
+    <Content Include="Images\Images\NewRibbon\16\signal_flag_checkered.png" />
+    <Content Include="Images\Images\NewRibbon\16\sort_descending.png" />
+    <Content Include="Images\Images\NewRibbon\16\star_yellow.png" />
+    <Content Include="Images\Images\NewRibbon\32\1\delete.png" />
+    <Content Include="Images\Images\NewRibbon\32\arrow_right_green.png" />
+    <Content Include="Images\Images\NewRibbon\32\copy.png" />
+    <Content Include="Images\Images\NewRibbon\32\data.png" />
+    <Content Include="Images\Images\NewRibbon\32\delete.png" />
+    <Content Include="Images\Images\NewRibbon\32\floppy_disk_blue.png" />
+    <Content Include="Images\Images\NewRibbon\32\floppy_disk_green.png" />
+    <Content Include="Images\Images\NewRibbon\32\floppy_disk_yellow.png" />
+    <Content Include="Images\Images\NewRibbon\32\home.png" />
+    <Content Include="Images\Images\NewRibbon\32\navigate_left.png" />
+    <Content Include="Images\Images\NewRibbon\32\navigate_right.png" />
+    <Content Include="Images\Images\NewRibbon\32\nav_left_blue.png" />
+    <Content Include="Images\Images\NewRibbon\32\nav_right_blue.png" />
+    <Content Include="Images\Images\NewRibbon\32\printer.png" />
+    <Content Include="Images\Images\NewRibbon\32\refresh.png" />
+    <Content Include="Images\Images\NewRibbon\32\signal_flag_checkered.png" />
+    <Content Include="Images\Images\NewRibbon\32\star_yellow.png" />
+    <Content Include="Images\Images\NewRibbon\48\star_yellow_add.png" />
+    <Content Include="Images\Images\New\24\find_text.png" />
+    <Content Include="Images\Images\New\24\funnel.png" />
+    <Content Include="Images\Images\New\48\document_information.png" />
+    <Content Include="Images\Images\New\address_book.png" />
+    <Content Include="Images\Images\New\funnel.png" />
+    <Content Include="Images\Images\Office2010\0008.ico" />
+    <Content Include="Images\Images\Office2010\0009.ico" />
+    <Content Include="Images\Images\Office2010\0010.ico" />
+    <Content Include="Images\Images\Office2010\0014.ico" />
+    <Content Include="Images\Images\Office2010\0015.ico" />
+    <Content Include="Images\Images\Office2010\0022.ico" />
+    <Content Include="Images\Images\Office2010\0023.ico" />
+    <Content Include="Images\Images\Office2010\0024.ico" />
+    <Content Include="Images\Images\Office2010\0032.ico" />
+    <Content Include="Images\Images\Office2010\0036.ico" />
+    <Content Include="Images\Images\Office2010\0037.ico" />
+    <Content Include="Images\Images\Office2010\0044.ico" />
+    <Content Include="Images\Images\Office2010\0088.ico" />
+    <Content Include="Images\Images\Office2010\0095.ico" />
+    <Content Include="Images\Images\Office2010\0107.ico" />
+    <Content Include="Images\Images\Office2010\0108.ico" />
+    <Content Include="Images\Images\Office2010\0109.ico" />
+    <Content Include="Images\Images\Office2010\0143.ico" />
+    <Content Include="Images\Images\Office2010\0148.ico" />
+    <Content Include="Images\Images\Office2010\0232.ico" />
+    <Content Include="Images\Images\Office2010\0234.ico" />
+    <Content Include="Images\Images\Office2010\0331.ico" />
+    <Content Include="Images\Images\Office2010\0332.ico" />
+    <Content Include="Images\Images\Office2010\0359.ico" />
+    <Content Include="Images\Images\Office2010\0360.ico" />
+    <Content Include="Images\Images\Office2010\0392.ico" />
+    <Content Include="Images\Images\Office2010\0393.ico" />
+    <Content Include="Images\Images\Office2010\0440.ico" />
+    <Content Include="Images\Images\Office2010\0446.ico" />
+    <Content Include="Images\Images\Office2010\0691.ico" />
+    <Content Include="Images\Images\Office2010\0856.ico" />
+    <Content Include="Images\Images\Office2010\0857.ico" />
+    <Content Include="Images\Images\Office2010\0885.ico" />
+    <Content Include="Images\Images\Office2010\0886.ico" />
+    <Content Include="Images\Images\Office2010\0897.ico" />
+    <Content Include="Images\Images\Office2010\1320.ico" />
+    <Content Include="Images\Images\Office2010\1500.ico" />
+    <Content Include="Images\Images\Office2010\24\24-117.ico" />
+    <Content Include="Images\Images\Office2010\24\24-119.ico" />
+    <Content Include="Images\Images\Office2010\24\24-121.ico" />
+    <Content Include="Images\Images\Office2010\2661.ico" />
+    <Content Include="Images\Images\Office2010\2983.ico" />
+    <Content Include="Images\Images\Office2010\il0044.ico" />
+    <Content Include="Images\Images\Office2010\IL0108.ico" />
+    <Content Include="Images\Images\Office2010\IL0331.ico" />
+    <Content Include="Images\Images\Office2010\IL0332.ico" />
+    <Content Include="Images\Images\Office2010\IL0856.ico" />
+    <Content Include="Images\Images\Office2010\IL0885.ico" />
+    <Content Include="Images\Images\Office2010\Large\L0011.ico" />
+    <Content Include="Images\Images\Office2010\Large\L0032.ico" />
+    <Content Include="Images\Images\Office2010\Large\L007.ico" />
+    <Content Include="Images\Images\Office2010\Large\L1518.ico" />
+    <Content Include="Images\Images\Office2010\sign_1682.ico" />
+    <Content Include="Images\Images\Office2010\sign_1710.ico" />
+    <Content Include="Images\Images\paperclip.png" />
+    <Content Include="Images\Images\q1.ico" />
+    <Content Include="Images\Images\q5.ico" />
+    <Content Include="Images\Images\Red2.jpg" />
+    <Content Include="Images\Images\Ribbon2\Document\copy.png" />
+    <Content Include="Images\Images\Ribbon2\Document\document.png" />
+    <Content Include="Images\Images\Ribbon2\Document\printer.png" />
+    <Content Include="Images\Images\Ribbon2\Document\scroll.png" />
+    <Content Include="Images\Images\Ribbon2\Document\small\document_plain.png" />
+    <Content Include="Images\Images\Ribbon2\Document\small\find.png" />
+    <Content Include="Images\Images\Ribbon2\Document\small\printer.png" />
+    <Content Include="Images\Images\Ribbon2\Document\small\scroll.png" />
+    <Content Include="Images\Images\Ribbon2\Document\small\selection.png" />
+    <Content Include="Images\Images\Ribbon2\Document\small\star_yellow.png" />
+    <Content Include="Images\Images\Ribbon2\Document\small\view.png" />
+    <Content Include="Images\Images\Ribbon2\forward_32x32.png" />
+    <Content Include="Images\Images\Ribbon2\help_32x32.png" />
+    <Content Include="Images\Images\Ribbon2\internet-search_32x32.png" />
+    <Content Include="Images\Images\Ribbon2\PDF.png" />
+    <Content Include="Images\Images\Ribbon2\phone-button-blue_32x32.png" />
+    <Content Include="Images\Images\Ribbon2\printer.png" />
+    <Content Include="Images\Images\Ribbon2\Word.png" />
+    <Content Include="Images\Images\Ribbon\arrow_right_green.png" />
+    <Content Include="Images\Images\Ribbon\Big\disk_blue.png" />
+    <Content Include="Images\Images\Ribbon\clock.png" />
+    <Content Include="Images\Images\Ribbon\data.png" />
+    <Content Include="Images\Images\Ribbon\disk_blue.png" />
+    <Content Include="Images\Images\Ribbon\index.png" />
+    <Content Include="Images\Images\Ribbon\message.png" />
+    <Content Include="Images\Images\Ribbon\pie-chart.png" />
+    <Content Include="Images\Images\Ribbon\sort_descending.png" />
+    <Content Include="Images\Images\SearchToolBar\funnel.png" />
+    <Content Include="Images\Images\SEconProjec.png" />
+    <Content Include="Images\Images\SplashScreen\CodexSplashV1_5.jpg" />
+    <Content Include="Images\Images\SplashScreen\Splash3J.jpg" />
+    <Content Include="Images\Images\SplashScreen\Splash41.jpg" />
+    <Content Include="Images\Images\SplashScreen\Splash42.jpg" />
+    <Content Include="Images\Images\SplashScreen\Splash44 copy.jpg" />
+    <Content Include="Images\Images\text_columns.png" />
+    <Content Include="Images\Images\ToolBars\bts5ott_0.gif" />
+    <Content Include="Images\Images\ToolBars\bts5ott_0M.gif" />
+    <Content Include="Images\Images\ToolBars\bts5ott_0M2.gif" />
+    <Content Include="Images\Images\ToolBars\bts5ott_1.gif" />
+    <Content Include="Images\Images\ToolBars\bts5ott_2.gif" />
+    <Content Include="Images\Images\ToolBars\Home\Home1.ico" />
+    <Content Include="Images\Images\ToolBars\Home\Home1_H.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\Back.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\bACK32.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\bACK32png.png" />
+    <Content Include="Images\Images\ToolBars\ICONS\BF.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\BF_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\B_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\B_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\fAVORITES32.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\Forward.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\Forward32.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\FV1_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\FV1_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\FV_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\FV_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\F_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\F_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\hOME32.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\H_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\H_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\BF.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\BF_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\B_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\B_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\FV1_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\FV1_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\FV_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\FV_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\F_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\F_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\Home1.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\Home2.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\HomeV2_1.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\HomeV2_2.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\HomeV3_1.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\HomeV3_2.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\HomeV4_1.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\HomeV4_2.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\H_Hover.ico" />
+    <Content Include="Images\Images\ToolBars\ICONS\V2\H_Normal.ico" />
+    <Content Include="Images\Images\ToolBars\Tabs\bt4txru_0.gif" />
+    <Content Include="Images\Images\ToolBars\Tabs\bt4txru_1.gif" />
+    <Content Include="Images\Images\ToolBars\Tabs\bt4txru_2.gif" />
+    <Content Include="Images\Images\ToolBars\Tabs\btstxru_0.gif" />
+    <Content Include="Images\Images\up_down.png" />
+    <Content Include="Images\Images\WarningBar\information.png" />
+    <Content Include="Images\Images\WarningBar\information2.png" />
+    <Content Include="Images\Images\WarningBar\information3.png" />
+    <Content Include="Images\Images\windows_next_16.png" />
+    <Content Include="Images\Images\window_32.png" />
+    <Content Include="Images\Images\Wizard\animation_48.png" />
+    <Content Include="Images\Images\Wizard\atom.png" />
+    <Content Include="Images\Images\Wizard\Big\calendar.png" />
+    <Content Include="Images\Images\Wizard\Big\calendar_1.png" />
+    <Content Include="Images\Images\Wizard\Big\data_blue.png" />
+    <Content Include="Images\Images\Wizard\Big\document_view.png" />
+    <Content Include="Images\Images\Wizard\briefcase_48.png" />
+    <Content Include="Images\Images\Wizard\data.png" />
+    <Content Include="Images\Images\Wizard\data_blue.png" />
+    <Content Include="Images\Images\Wizard\data_connection.png" />
+    <Content Include="Images\Images\Wizard\data_information.png" />
+    <Content Include="Images\Images\Wizard\data_into.png" />
+    <Content Include="Images\Images\Wizard\data_new.png" />
+    <Content Include="Images\Images\Wizard\data_next.png" />
+    <Content Include="Images\Images\Wizard\data_scroll.png" />
+    <Content Include="Images\Images\Wizard\diskette_48.png" />
+    <Content Include="Images\Images\Wizard\disk_blue.png" />
+    <Content Include="Images\Images\Wizard\disk_green.png" />
+    <Content Include="Images\Images\Wizard\distribute_bottom_edge_128.png" />
+    <Content Include="Images\Images\Wizard\document_notebook.png" />
+    <Content Include="Images\Images\Wizard\document_plain_blue.png" />
+    <Content Include="Images\Images\Wizard\document_plain_new.png" />
+    <Content Include="Images\Images\Wizard\document_pulse.png" />
+    <Content Include="Images\Images\Wizard\document_view.png" />
+    <Content Include="Images\Images\Wizard\files_48.png" />
+    <Content Include="Images\Images\Wizard\flash_yellow.png" />
+    <Content Include="Images\Images\Wizard\folder3_document.png" />
+    <Content Include="Images\Images\Wizard\form_blue_plain.png" />
+    <Content Include="Images\Images\Wizard\gear.png" />
+    <Content Include="Images\Images\Wizard\gears_run.png" />
+    <Content Include="Images\Images\Wizard\gear_32.png" />
+    <Content Include="Images\Images\Wizard\gear_48.png" />
+    <Content Include="Images\Images\Wizard\hand_help_48.png" />
+    <Content Include="Images\Images\Wizard\help_16.png" />
+    <Content Include="Images\Images\Wizard\information2.png" />
+    <Content Include="Images\Images\Wizard\keyboard.png" />
+    <Content Include="Images\Images\Wizard\keyboard_key.png" />
+    <Content Include="Images\Images\Wizard\lamp_32.png" />
+    <Content Include="Images\Images\Wizard\lamp_48.png" />
+    <Content Include="Images\Images\Wizard\Left1.jpg" />
+    <Content Include="Images\Images\Wizard\Left2.jpg" />
+    <Content Include="Images\Images\Wizard\LeftL1.jpg" />
+    <Content Include="Images\Images\Wizard\lightbulb_on.png" />
+    <Content Include="Images\Images\Wizard\next_48.png" />
+    <Content Include="Images\Images\Wizard\ok_48.png" />
+    <Content Include="Images\Images\Wizard\pin_blue.png" />
+    <Content Include="Images\Images\Wizard\play_16.png" />
+    <Content Include="Images\Images\Wizard\play_48.png" />
+    <Content Include="Images\Images\Wizard\potion_green.png" />
+    <Content Include="Images\Images\Wizard\scissors_info_48.png" />
+    <Content Include="Images\Images\Wizard\square_add_48.png" />
+    <Content Include="Images\Images\Wizard\square_info_48.png" />
+    <Content Include="Images\Images\Wizard\text.png" />
+    <Content Include="Images\Images\Wizard\user.png" />
+    <Content Include="Images\Images\Wizard\view.png" />
+    <Content Include="Images\Images\Wizard\window2.png" />
+    <Content Include="Images\Images\Wizard\window_split_hor.png" />
+    <Content Include="Images\Images\zoom_32.png" />
+    <Content Include="C_ICON1.ico" />
+    <Content Include="DS.ico" />
+    <None Include="Images\Internal\32\save_Green.png" />
+    <None Include="Images\Internal\32\save.png" />
+    <None Include="Images\Internal\32\save_Blue.png" />
+    <None Include="Images\Links\link-add.png" />
+    <None Include="Images\Links\link-warn.png" />
+    <None Include="Images\Links\link-delete.png" />
+    <None Include="Images\Links\link-ok.png" />
+    <None Include="Images\Links\16\link-add.png" />
+    <None Include="Images\Links\16\link-warn.png" />
+    <None Include="Images\Links\16\link-delete.png" />
+    <None Include="Images\Links\16\link-ok.png" />
+    <None Include="Images\Links\16\remove_button.png" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="q1.ico" />
+    <Content Include="q3.ico" />
+    <Content Include="q5.ico" />
+    <None Include="Resources\Word16.png" />
+    <None Include="Resources\Adobe16.png" />
+    <None Include="Resources\q5.ico" />
+    <None Include="Resources\aa3.bmp" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestDoc.Document.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestDoc.Document.designer.cs">
+      <DependentUpon>TestDoc.Document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WaitCursor.cs" />
+    <Compile Include="UltraTree DropHightLight DrawFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\ImagesR4\Find\" />
+    <Folder Include="Images\Images\Configuration\Top\" />
+    <Folder Include="Images\Images\HomeTab\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ComdexCommon16\CodexDialogControls\CodexCommonDialogs\CodexCommonDialogs\CodexDSCommonDialogs.csproj">
+      <Project>{1e7f7e25-237d-4321-8f82-452f0cd5c746}</Project>
+      <Name>CodexDSCommonDialogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ComdexCommon16\CodexDSHistoryListBox\CodexHisotryDSListBox.csproj">
+      <Project>{9ddc61b2-ac6f-404a-a854-883b4a086e9d}</Project>
+      <Name>CodexHisotryDSListBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ComdexCommon16\CodexDSLinksListBox\CodexDSLinksListBox.csproj">
+      <Project>{bdc90805-f3a8-4c66-a092-dc68ed756acc}</Project>
+      <Name>CodexDSLinksListBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ComdexCommon16\CodexDSListBox\CodexDSListBox.csproj">
+      <Project>{046e4a14-d599-4588-824e-6a19fd6eba57}</Project>
+      <Name>CodexDSListBox</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

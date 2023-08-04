@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     >
+
+  
+  <Product Id="{39416874-5877-4FD7-994B-8E1BF085FFA0}" Name="Codex DS Server 1.7" 
+           Language="1033" Version="7.30.701" 
+           Manufacturer="Georgian Microsystems" 
+           UpgradeCode="{327974CE-BD49-494E-AD43-31E5E4BB0ACA}"
+           >
+
+  
+    <Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" Platform="x86" InstallPrivileges="elevated"
+             Description="Codex DS Server"
+             Manufacturer="Georgian Microsystems"
+             />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <MediaTemplate EmbedCab="yes"  />
+
+    <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+    <Property Id="WIX_IS_NETFRAMEWORK_461_OR_LATER_INSTALLED" Value="1" />
+
+    <Icon Id="theicon.ico" SourceFile="$(var.SourceDir)\icon\CodexNewDSIcon2.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="theicon.ico" />
+
+    <!--<Property Id="Windows7SP1">
+      <![CDATA[(VersionNT = 600 OR VersionNT64 = 600) AND (ServicePackLevel >= 1)]]>
+    </Property>-->
+
+    
+    <!--<Condition Message="This Codex DS is only supported on Windows 7 SP1 or higher.">
+      <![CDATA[NOT ((VersionNT = 600 OR VersionNT64 = 600) AND (ServicePackLevel >= 1))]]>
+    </Condition>-->
+
+    <!--<Condition Message="This Codex DS requires .NET Framework 4.6.1 Please install the .NET Framework then run this installer again.">
+      <![CDATA[(Installed OR WIX_IS_NETFRAMEWORK_461_OR_LATER_INSTALLED)]]>
+    </Condition>-->
+
+
+
+
+    <Property Id="CODEXR4OLDVAL1">
+      <RegistrySearch Id="CodexR4Old32"
+                      Root="HKLM"
+                      Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\{0943C686-FB9B-49FA-9139-7D1C1647AE1D}"
+                      Name="DisplayVersion"
+                      Type="raw" />
+    </Property>
+
+    <Property Id="CODEXR4OLDVAL2">
+      <RegistrySearch Id="CodexR4Old64"
+                      Root="HKLM"
+                      Key="SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{0943C686-FB9B-49FA-9139-7D1C1647AE1D}"
+                      Name="DisplayVersion"
+                      Type="raw" />
+    </Property>
+
+
+    <Condition Message="Please Uninstall older Version of Codex DS Servr to Install new Codex DS Server Update #1">
+      <![CDATA[(Installed OR (NOT CODEXR4OLDVAL1 OR NOT CODEXR4OLDVAL2))]]>
+    </Condition>
+
+
+
+    <!--<Property Id="ALLUSERS"><![CDATA[2]]></Property>-->
+    
+    <UI>
+     <!--<DialogRef Id="FeaturesDlg"/>-->
+  
+      <UIRef Id="WixUI_FeatureTree" />
+      <UIRef Id="WixUI_ErrorProgressText" />
+    
+    </UI>
+
+   <WixVariable Id="WixUIDialogBmp" Value="Codex_Banner_Server.bmp"/>
+   <WixVariable Id="WixUIBannerBmp" Value="CodexTopBanner.bmp" />
+   <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+   <Property Id="WIXUI_INSTALLDIR"  Value="INSTALLDIR" />
+    
+   <Feature Id="ProductFeature" Title="Codex DS Server" Level="1" Display="expand">
+
+
+    <Feature Id="Application" Title="Codex DS Server" Level="1" Absent="disallow" ConfigurableDirectory="INSTALLDIR"  >
+      <ComponentGroupRef Id="ProductComponents" />
+      <!--<ComponentGroupRef Id="id_CodexWebLink" />-->
+      <ComponentRef Id="HelpDirecotry" />
+    </Feature>
+
+
+     <!--<Feature Id="License" Title="Codex DS License" Level ="1" Absent="disallow" ConfigurableDirectory="INSTALLDIR" >
+       <Feature Id="ServerLicense" Title="Codex DS Server License" Level ="1" Absent="disallow" ConfigurableDirectory="INSTALLDIR" >
+         <ComponentGroupRef Id="id_codex_license" />
+      </Feature>
+     </Feature>-->
+
+     <Feature Id="Fonts" Title="Fonts" Level ="1" >
+
+      <Feature Id="Codex_Legacy_Font" Title="Codex Legacy Fonts" Level ="1" >
+
+        <Feature Id="Codex_Legacy_8Bit" Title="Codex GeoABC and Abkhazian Fonts" Level ="1" Description="Geo ABC, Abkhazuri " >
+          <ComponentGroupRef Id="id_CodexLegacyFonts" />
+        </Feature>
+
+        <Feature Id="Codex_Legacy_8BitRussian" Title="Codex Russain Fornts" Level ="10" Description="Baltica, Baltica TD" >
+          <ComponentGroupRef Id="id_Russian_Codex" />
+        </Feature>
+
+      </Feature>
+
+      <Feature Id="Other_Fonts" Title="Other Fonts" Level ="10" Description="Old Georgian Fonts " >
+        
+        <Feature Id="Acad_Fonts" Title="Academiuri Fonts" Level ="10" Description="Geo Academiuri ... " >
+          <ComponentGroupRef Id="id_OTHER_Acad" />
+        </Feature>
+        
+        <Feature Id="Chveulebrivi_Fonts" Title="Chveulebrivi Fonts" Level ="10" Description="Geo Chveulebrivi ... " >
+          <ComponentGroupRef Id="id_OTHER_Chveul" />
+        </Feature>
+     
+        <Feature Id="Litnusx_Fonts" Title="LitNusk and Dumbadze Fonts" Level ="10" Description="Geo LitNusk and Dumbadze ... " >
+          <ComponentGroupRef Id="id_OTHER_GEO" />
+        </Feature>
+
+        <Feature Id="Geo8_Fonts" Title="Georgian 8 Bit Fonts" Level ="10" Description="Geo_Arial, Geo_Times, Geo_Curier ..." >
+          <ComponentGroupRef Id="id_OTHER_GEO8" />
+        </Feature>
+
+        <Feature Id="SP8_Fonts" Title="Georgian SP Fonts 8 Bit Fonts" Level ="10" Description="SP_Chveulebrivi, SP_LitNusk, SP_Kholketi ..." >
+          <ComponentGroupRef Id="id_OTHER_SP8" />
+        </Feature>
+
+
+          
+        </Feature>
+ 
+     </Feature>
+   
+  
+  </Feature>
+
+
+  </Product>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">
+      <ComponentGroupRef Id="id_codexdsserver" />
+      <ComponentGroupRef Id="id_Infragistics"/>
+      <ComponentGroupRef Id="id_textcontrol"/>
+      <!--<ComponentGroupRef Id="id_c1"/>-->
+      <!--<ComponentGroupRef Id="id_codex_license"/>-->
+      <ComponentGroupRef Id="id_codexdsdatabaseInsaller"/>
+      <ComponentGroupRef Id ="id_reg" />
+    </ComponentGroup>
+  </Fragment>
+
+
+    
+
+
+
+
+  
+  
+</Wix>

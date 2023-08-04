@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+          xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Fragment>
+
+    <Icon Id="icon_codexicon.exe" SourceFile="$(var.SourceDir)\CodexApplication\CodexDS.exe" />
+
+
+    <ComponentGroup Id="id_codexdsclient" Directory="INSTALLDIR">
+
+      <!-- ********************************************************************************************************************* -->
+      <!-- CodexR4 Execution Start -->
+
+      <Component Id="CodexDS.exe" Guid="{194F2F74-4117-4FC9-B3FF-12E8869CB4CB}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="codexds.exe" Name="CodexDS.exe" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\CodexDS.exe" >
+
+          <netfx:NativeImage Id="ngen_CodexDS.exe" Platform="32bit" Priority="0" AppBaseDirectory="INSTALLDIR"/>
+
+
+          <Shortcut Id="CodexdsShortcut"
+                  Directory="CodexDSClientMenu"
+                  Name="Codex DS Client"
+                  Description="Codex DS Client"
+                  Icon="icon_codexicon.exe"
+                  IconIndex="0"
+                  Show="normal"
+                  WorkingDirectory="INSTALLDIR"
+                  Advertise="yes" />
+
+          <Shortcut Id="CodexDSDesktopShortcut"
+                    Directory="DesktopFolder"
+                    Name="Codex DS Client"
+                    Description="Codex DS Client"
+                    Icon="icon_codexicon.exe"
+                    IconIndex="0"
+                    Show="normal"
+                    WorkingDirectory="INSTALLDIR"
+                    Advertise="yes" />
+        </File>
+
+        <RemoveFolder Id="Remove_Folder_Codex_DS_Client"
+                      Directory="CodexDSClientMenu"
+                      On="uninstall" />
+
+
+
+      </Component>
+
+      <!-- Codex DS Wokstaion Configuration File -->
+      <Component Id="Codexds.exe.config" Guid="{B6B32B65-9BA9-419D-8ED4-89EADDC5CB97}" Location="either">
+
+        <File Id="codexds.exe.config" Name="CodexDS.exe.config"  Source="$(var.SourceDir)\CodexApplication\CodexDS.exe.config" />
+
+      </Component>
+
+
+      <Component Id="c_links.xsd" Guid="{62CDB8ED-6477-4A63-A706-B3CF05FDC193}" >
+        <File Id="links.xsd" Name="links.xsd"  Source="$(var.SourceDir)\CodexApplication\links.xsd" />
+      </Component>
+
+      <Component Id="LinkListBoxDS.dll" Guid="{17010A5A-8C07-4208-9B78-D53B092A546B}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="linklistboxds.dll" Name="LinkListBoxDS.dll" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\LinkListBoxDS.dll" />
+      </Component>
+
+      <Component Id="CodexListBoxDS.dll" Guid="{4A1C808E-ADB9-437B-A534-E653FC3D4982}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="codexlistboxds.dll" Name="CodexListBoxDS.dll" KeyPath="yes"   Source="$(var.SourceDir)\CodexApplication\CodexListBoxDS.dll" />
+      </Component>
+
+      <Component Id="AxInterop.AcroPDFLib.dll" Guid="{CFF6AF6C-AC50-40EB-9896-B96D140F7909}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="axinterop.acropdflib.dll" Name="AxInterop.AcroPDFLib.dll" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\AxInterop.AcroPDFLib.dll" />
+      </Component>
+
+      <Component Id="Interop.AcroPDFLib.dll" Guid="{C1F502D4-761A-416E-A425-DB9A84A26515}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="interop.acropdflib.dll" Name="Interop.AcroPDFLib.dll" KeyPath="yes"   Source="$(var.SourceDir)\CodexApplication\Interop.AcroPDFLib.dll" />
+      </Component>
+
+      <Component Id="Role.lxs" Guid="{DD4C4D10-0FDB-41CA-B412-837FBB11357F}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="role.lxs" Name="Role.lxs" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\Role.lxs" />
+      </Component>
+
+      <Component Id="Rule1.RXS" Guid="{8A77A493-74A7-45E1-A61E-9A86E89E295C}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="rule1.rxs" Name="Rule1.RXS" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\Rule1.RXS" />
+      </Component>
+
+      <Component Id="Rule2.RXS" Guid="{711615CF-E65B-4A15-94BD-FA2B85026B7D}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="rule2.rxs" Name="Rule2.RXS" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\Rule2.RXS" />
+      </Component>
+
+
+
+
+
+      <Component Id="CodexCommonDialogs.dll" Guid="{9BB80BC9-7B95-40EC-8C7D-69E74BE77159}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="codexcommondialogs.dll" Name="CodexCommonDialogs.dll" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\CodexCommonDialogs.dll" />
+      </Component>
+
+
+      <Component Id="History_Role.json" Guid="{48B25457-8D4E-4A2E-8AF6-25B585F98F42}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="history_role.json" Name="History_Role.json" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\History_Role.json" />
+      </Component>
+
+
+      <Component Id="CodexDSHistoryListBox.dll" Guid="{3936BDA3-94E5-4290-AFA5-A5B6A24C224A}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="codexdshistorylistBox.dll" Name="CodexDSHistoryListBox.dll" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\CodexDSHistoryListBox.dll" />
+      </Component>
+
+
+      <Component Id="CodexDSOrganizationSettings.json" Guid="{25862BC7-C8EB-47A7-B35D-6DA403D77AC0}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="CodexDSOrganizationSettings.json" Name="CodexDSOrganizationSettings.json" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\CodexDSOrganizationSettings.json" />
+      </Component>
+
+      <!--<Component Id="LinkListBoxDS.dll" Guid="{11C6DAE5-2179-46E9-9742-E79D4D92312A}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="LinkListBoxDS.dll" Name="LinkListBoxDS.dll" KeyPath="yes"  Source="$(var.SourceDir)\CodexApplication\LinkListBoxDS.dll" />
+      </Component>-->
+
+      
+
+    </ComponentGroup>
+
+    
+   
+
+  </Fragment>
+</Wix>

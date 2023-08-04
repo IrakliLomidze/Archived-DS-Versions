@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ILG.Codex.CodexR4.CodexSettings" GeneratedClassName="CodexConfigurationStatic">
+  <Profiles />
+  <Settings>
+    <Setting Name="LiveServiceAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.codex.ge/Products/Codex/Live/Index</Value>
+    </Setting>
+    <Setting Name="BugTraqMail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">support@codex.ge</Value>
+    </Setting>
+    <Setting Name="WebAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">www.codex.ge</Value>
+    </Setting>
+    <Setting Name="SupportAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">support@codex.ge</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

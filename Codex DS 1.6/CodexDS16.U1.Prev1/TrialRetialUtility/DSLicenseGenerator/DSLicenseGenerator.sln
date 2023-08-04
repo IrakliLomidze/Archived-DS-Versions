@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSLicenseGenerator", "DSLicenseGenerator\DSLicenseGenerator.csproj", "{A6498BFD-9A82-48A7-9602-FFE88B2D6F37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6498BFD-9A82-48A7-9602-FFE88B2D6F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6498BFD-9A82-48A7-9602-FFE88B2D6F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6498BFD-9A82-48A7-9602-FFE88B2D6F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6498BFD-9A82-48A7-9602-FFE88B2D6F37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4165A79-E154-4CFF-A182-2E08911C4DE0}
+	EndGlobalSection
+EndGlobal

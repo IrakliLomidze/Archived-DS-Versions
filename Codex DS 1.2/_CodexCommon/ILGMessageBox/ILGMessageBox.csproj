@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='Windows-1252'?>
+<VisualStudioProject>
+  <CSHARP ProjectType='Local' ProductVersion='7.10.3077' SchemaVersion='2.0' ProjectGuid='{C86EC613-7DCA-4A7A-914B-C67B1AD31851}'>
+    <Build>
+      <Settings ApplicationIcon='' AssemblyKeyContainerName='' AssemblyName='ILGMessageBox' AssemblyOriginatorKeyFile='' DefaultClientScript='JScript' DefaultHTMLPageLayout='Grid' DefaultTargetSchema='IE50' DelaySign='false' OutputType='Library' PreBuildEvent='' PostBuildEvent='' RootNamespace='ILGMessageBox' RunPostBuildEvent='OnBuildSuccess' StartupObject=''>
+        <Config Name='Debug' AllowUnsafeBlocks='false' BaseAddress='285212672' CheckForOverflowUnderflow='false' ConfigurationOverrideFile='' DefineConstants='DEBUG;TRACE' DocumentationFile='' DebugSymbols='true' FileAlignment='4096' IncrementalBuild='false' NoStdLib='false' NoWarn='' Optimize='false' OutputPath='bin\Debug\' RegisterForComInterop='false' RemoveIntegerChecks='false' TreatWarningsAsErrors='false' WarningLevel='4' />
+        <Config Name='Release' AllowUnsafeBlocks='false' BaseAddress='285212672' CheckForOverflowUnderflow='false' ConfigurationOverrideFile='' DefineConstants='TRACE' DocumentationFile='' DebugSymbols='false' FileAlignment='4096' IncrementalBuild='false' NoStdLib='false' NoWarn='' Optimize='true' OutputPath='bin\Release\' RegisterForComInterop='false' RemoveIntegerChecks='false' TreatWarningsAsErrors='false' WarningLevel='4' />
+      </Settings>
+      <References>
+        <Reference Name='System' AssemblyName='System' HintPath='..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.dll' />
+        <Reference Name='System.Data' AssemblyName='System.Data' HintPath='..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Data.dll' />
+        <Reference Name='System.XML' AssemblyName='System.Xml' HintPath='..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.XML.dll' />
+        <Reference Name='System.Drawing' AssemblyName='System.Drawing' HintPath='..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll' />
+        <Reference Name='System.Windows.Forms' AssemblyName='System.Windows.Forms' HintPath='..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll' />
+        <Reference Name='Infragistics.Win.Misc.v5.2' AssemblyName='Infragistics.Win.Misc.v5.2' HintPath='C:\Program Files\Infragistics\NetAdvantage 2005 Volume 2\windows forms\bin\Infragistics.Win.Misc.v5.2.dll' AssemblyFolderKey='hklm\Infragistics.WinAssemblies.20052' />
+        <Reference Name='Infragistics.Win.v5.2' AssemblyName='Infragistics.Win.v5.2' HintPath='C:\Program Files\Infragistics\NetAdvantage 2005 Volume 2\windows forms\bin\Infragistics.Win.v5.2.dll' AssemblyFolderKey='hklm\Infragistics.WinAssemblies.20052' />
+        <Reference Name='Infragistics.Shared.v5.2' AssemblyName='Infragistics.Shared.v5.2' HintPath='C:\Program Files\Infragistics\NetAdvantage 2005 Volume 2\windows forms\bin\Infragistics.Shared.v5.2.dll' AssemblyFolderKey='hklm\Infragistics.WinAssemblies.20052' />
+        <Reference Name='System.Design' AssemblyName='System.Design' HintPath='..\..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Design.dll' />
+      </References>
+    </Build>
+    <Files>
+      <Include>
+        <File RelPath='AssemblyInfo.cs' SubType='Code' BuildAction='Compile' />
+        <File RelPath='Class1.cs' SubType='Code' BuildAction='Compile' />
+        <File RelPath='ILGMessageBox.cs' SubType='Form' BuildAction='Compile' />
+        <File RelPath='ILGMessageBox.resx' DependentUpon='ILGMessageBox.cs' BuildAction='EmbeddedResource' />
+        <File RelPath='licenses.licx' BuildAction='EmbeddedResource' />
+      </Include>
+    </Files>
+  </CSHARP>
+</VisualStudioProject>

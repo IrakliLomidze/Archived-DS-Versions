@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+
+    <ComponentGroup Id="id_OTHER_Acad" >
+  
+      <Component Id="Font1.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{4E2ECE41-75DB-401F-B22B-24FB40E4D45E}" Directory="FontsFolder" Permanent="yes">
+        <File Name="ACAD_GMT.TTF" Id="acad_gmt.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\ACAD_GMT.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font2.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{BC31F8A2-950C-4EB4-98FD-34FD00F7095A}" Directory="FontsFolder" Permanent="yes">
+        <File Name="ACAD_GNT.TTF" Id="acad_gnt.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\ACAD_GNT.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font3.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{4415DB7E-DD39-43B1-9C2A-70BF43C11934}" Directory="FontsFolder" Permanent="yes">
+          <File Name="ACAD-N.TTF" Id="acad_n.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\ACAD-N.TTF"  TrueType="yes" />
+      </Component>
+      
+      <Component Id="Font4.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{FA777D0D-9726-4DD4-80AF-5D793DE6820B}" Directory="FontsFolder" Permanent="yes">
+            <File Name="ACADMTAV.TTF" Id="acadmtav.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\ACADMTAV.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font5.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{93DD33E8-E4B1-4503-B4A6-76198A146CFA}" Directory="FontsFolder" Permanent="yes">
+              <File Name="ACADNUSX.TTF" Id="acadnusx.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\ACADNUSX.TTF"  TrueType="yes" />
+      </Component>
+  
+    </ComponentGroup>
+
+    <ComponentGroup Id="id_OTHER_Chveul" >
+
+      <Component Id="Font10.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{FB2CFD44-F3E8-4EFC-8672-5ED191599E3F}" Directory="FontsFolder" Permanent="yes">
+        <File Name="chveu.ttf" Id="chveu.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveu.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font11.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{38B5C86C-1F36-419F-B491-D4AEDA823A90}" Directory="FontsFolder" Permanent="yes">
+        <File Name="chveu1.ttf" Id="chveu1.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveu1.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font12.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{6B4875A5-C428-48FF-9BC6-E0A636DACA3C}" Directory="FontsFolder" Permanent="yes">
+          <File Name="chveu2.ttf" Id="chveu2.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveu2.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font13.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{28547FB7-3F48-4CAE-8AE1-B9F7C13FC4F0}" Directory="FontsFolder" Permanent="yes">
+            <File Name="chveu3.ttf" Id="chveu3.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveu3.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font14.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{D56C9BA0-B92A-4F56-9FD2-A52F730FAEE9}" Directory="FontsFolder" Permanent="yes">
+                <File Name="chveu3_0.ttf" Id="chveu3_0.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveu3_0.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font15.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{7958F5B7-30E7-45AA-BA5E-1246DB1556CA}" Directory="FontsFolder" Permanent="yes">
+                  <File Name="chveu4.ttf" Id="chveu4.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveu4.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font16.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{04FCD68A-7A1F-408E-9151-D55429F317D3}" Directory="FontsFolder" Permanent="yes">
+                  <File Name="chveu4_0.ttf" Id="chveu4_0.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveu4_0.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font17.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{5D7AED87-296B-4C5B-8CFE-C05CB96B9A78}" Directory="FontsFolder" Permanent="yes">
+               <File Name="chveu(c).ttf" Id="chveu_c_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveu(c).ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font18.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{107946C1-E6D6-4B63-ABF0-7C221A6CAF5C}" Directory="FontsFolder" Permanent="yes">
+            <File Name="chveul.ttf" Id="chveul.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveul.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font19.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{BB42BAD8-16F9-4646-AA10-A2BB8CAA1004}" Directory="FontsFolder" Permanent="yes">
+                <File Name="chveum.ttf" Id="chveum.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveum.ttf"  TrueType="yes" />
+        </Component>
+
+      <Component Id="Font110.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{F23568BB-1CE1-4C89-8551-1A386B265FC8}" Directory="FontsFolder" Permanent="yes">
+        <File Name="chveun.ttf" Id="chveun.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\chveun.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font111.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{8AFFF413-5D95-401B-9579-E8A6C84F1090}" Directory="FontsFolder" Permanent="yes">
+        <File Name="cvbb.ttf" Id="cvbb.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\cvbb.ttf"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font112.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{2974FB20-F3A3-458B-8241-CF05928595E4}" Directory="FontsFolder" Permanent="yes">
+         <File Name="cvbm.ttf" Id="cvbm.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\cvbm.ttf"  TrueType="yes" />
+        </Component>
+
+      <Component Id="Font113.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{4AD3B3AF-7D4B-4B28-BB3E-2CA90E46A62C}" Directory="FontsFolder" Permanent="yes">
+        <File Name="cveulb.ttf" Id="cveulb.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\cveulb.ttf"  TrueType="yes" />
+      </Component>
+    
+      <Component Id="Font114.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{FD718ED6-E653-4224-9662-A2991B182AB2}" Directory="FontsFolder" Permanent="yes">
+        <File Name="cveulh_1.ttf" Id="cveulh_1.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\cveulh_1.ttf"  TrueType="yes" />
+      </Component>
+            
+    </ComponentGroup>
+
+    <ComponentGroup Id="id_OTHER_GEO8" >
+
+        <Component Id="Font20.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{6C0592F4-0D76-4CC4-9169-5923B4278CD0}" Directory="FontsFolder" Permanent="yes">
+          <File Name="Geo_a___.ttf" Id="geo_a___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_a___.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font21.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{58E1B43A-A384-419D-99C9-72E7780C6DB2}" Directory="FontsFolder" Permanent="yes">
+          <File Name="Geo_ab__.ttf" Id="geo_ab__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_ab__.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font22.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{E1170425-7E48-4828-8C1C-359EC830F2B3}" Directory="FontsFolder" Permanent="yes">
+              <File Name="Geo_abi_.ttf" Id="geo_abi_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_abi_.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font23.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{B0068387-1541-46D5-87B6-C32A8298F836}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_ac__.ttf" Id="geo_ac__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_ac__.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font24.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{3A9E61AD-E6FA-450B-BDD9-CBB34902B720}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_aci_.ttf" Id="geo_aci_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_aci_.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font25.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{1A6F19AF-AB5E-4628-B02C-A1986CDE530D}" Directory="FontsFolder" Permanent="yes">
+          <File Name="Geo_ai__.ttf" Id="geo_ai__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_ai__.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font26.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{CF13D5E7-7E4B-4528-AA52-BE205352628F}" Directory="FontsFolder" Permanent="yes">
+        <File Name="Geo_c___.ttf" Id="geo_c___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_c___.ttf"  TrueType="yes" />
+      </Component>
+
+        <Component Id="Font27.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{8CBB3090-04F0-47E1-A781-6D599D2E4314}" Directory="FontsFolder" Permanent="yes">
+          <File Name="Geo_cb__.ttf" Id="geo_cb__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_cb__.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font28.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{58C99FF4-48C8-4C44-BA9B-9C0C0AC6017D}" Directory="FontsFolder" Permanent="yes">
+          <File Name="Geo_cbi_.ttf" Id="geo_cbi_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_cbi_.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font29.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{CD66AA4C-F6CA-436B-8E05-E0614352AC26}" Directory="FontsFolder" Permanent="yes">
+         <File Name="Geo_ci__.ttf" Id="geo_ci__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_ci__.ttf"  TrueType="yes" />
+        </Component>
+     
+        <Component Id="Font210.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{AF85FEEC-0AA0-4B74-89F0-9B03F01984FD}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_d___.ttf" Id="geo_d___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_d___.ttf"  TrueType="yes" />
+        </Component>
+  
+        <Component Id="Font211.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{369920AC-B7AD-4C2B-87FE-0D98EB32F2F8}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_di__.ttf" Id="geo_di__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_di__.ttf"  TrueType="yes" />
+        </Component>
+  
+        <Component Id="Font212.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{7B57C31F-45FA-4FAE-8D77-3967E03C87E8}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_k___.ttf" Id="geo_k___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_k___.ttf"  TrueType="yes" />
+        </Component>
+     
+        <Component Id="Font213.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{CA1E58D6-4C6A-41E9-AF2F-5751A3E6B9F9}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_kb__.ttf" Id="geo_kb__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_kb__.ttf"  TrueType="yes" />
+        </Component>
+        
+        <Component Id="Font214.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{ECAE3CA8-7ADD-4BC9-983D-598E9676579B}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_kbi_.ttf" Id="geo_kbi_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_kbi_.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font215.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{7C676955-7437-4C48-A30B-37D30346BA15}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_ki__.ttf" Id="geo_ki__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_ki__.ttf"  TrueType="yes" />
+        </Component>
+
+       <Component Id="Font216.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{6C44E625-CB81-4432-9C6F-12025CE2DC58}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_l___.ttf" Id="geo_l___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_l___.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font217.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{7E3C69F9-EC0F-4E84-968A-8790433BCA21}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_lb__.ttf" Id="geo_lb__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_lb__.ttf"  TrueType="yes" />
+        </Component>
+
+        <Component Id="Font218.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{3839A961-BA07-4EF0-9035-C1FC3EB97B46}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_lbi_.ttf" Id="geo_lbi_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_lbi_.ttf"  TrueType="yes" />
+        </Component>
+     
+        <Component Id="Font219.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{1381585A-70B2-483E-95B3-E36EEB75A95D}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_li__.ttf" Id="geo_li__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_li__.ttf"  TrueType="yes" />
+        </Component>
+        
+        <Component Id="Font220.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{61053C30-759B-4E0F-9147-05F796926F4C}" Directory="FontsFolder" Permanent="yes">
+          <File Name="Geo_t___.ttf" Id="geo_t___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_t___.ttf"  TrueType="yes" />
+        </Component>
+    
+        <Component Id="Font221.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{1971FF36-F35B-47A3-87B2-DE3DE9A2AB7E}" Directory="FontsFolder" Permanent="yes">
+          <File Name="Geo_tb__.ttf" Id="geo_tb__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_tb__.ttf"  TrueType="yes" />
+        </Component>
+    
+        <Component Id="Font222.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{797BAB40-E4EE-4749-B083-F008F1C16119}" Directory="FontsFolder" Permanent="yes">
+          <File Name="Geo_tbi_.ttf" Id="geo_tbi_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_tbi_.ttf"  TrueType="yes" />
+        </Component>
+        
+        <Component Id="Font223.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{4A92C13F-7305-40A1-BFC3-86E3D746EFD8}" Directory="FontsFolder" Permanent="yes">
+          <File Name="Geo_ti__.ttf" Id="geo_ti__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\Geo_ti__.ttf"  TrueType="yes" />
+        </Component>
+        
+        <Component Id="Font224.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{8054AFC0-AE5C-4F49-A24E-B2AEC9C090E1}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_v___.ttf" Id="geo_v___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_v___.ttf"  TrueType="yes" />
+        </Component>
+      
+        <Component Id="Font225.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{BEAEDABA-2AB3-46C8-9629-97E13B949C4B}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_vb__.ttf" Id="geo_vb__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_vb__.ttf"  TrueType="yes" />
+        </Component>
+        
+        <Component Id="Font226.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{4053234D-0CA1-4E26-B4C2-E14BD9D46454}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_vbi_.ttf" Id="geo_vbi_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_vbi_.ttf"  TrueType="yes" />
+        </Component>
+        
+        <Component Id="Font227.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{25CD0853-F24F-44F4-B7C0-9806AC3E97F3}" Directory="FontsFolder" Permanent="yes">
+          <File Name="geo_vi__.ttf" Id="geo_vi__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\geo_vi__.ttf"  TrueType="yes" />
+        </Component>
+   
+      </ComponentGroup>
+
+    <ComponentGroup Id="id_OTHER_SP8" >
+
+     <Component Id="Font30.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{2A378BB8-C827-4072-918E-DB93A44816E0}" Directory="FontsFolder" Permanent="yes">
+            <File Name="spacadem.ttf" Id="spacadem.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spacadem.ttf"  TrueType="yes" />
+          </Component>
+
+     <Component Id="Font31.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{15DE9094-4AFE-4B37-9B3B-8D541FBCE401}" Directory="FontsFolder" Permanent="yes">
+            <File Name="spacb___.ttf" Id="spacb___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spacb___.ttf"  TrueType="yes" />
+          </Component>
+
+     <Component Id="Font32.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{14C0B219-84FB-47A3-84EA-8F856D9E8129}" Directory="FontsFolder" Permanent="yes">
+            <File Name="spacm___.ttf" Id="spacm___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spacm___.ttf"  TrueType="yes" />
+          </Component>
+
+     <Component Id="Font33.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{C532A426-4DB0-41FC-A403-4F81F79F180F}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spacmb__.ttf" Id="spacmb__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spacmb__.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font34.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{6D28DBD8-376C-4E7B-927E-6C9D1FB7B4FB}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spbalava.ttf" Id="spbalava.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spbalava.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font35.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{9C80D0D7-E6BE-40DB-AFA8-021A151016E9}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spchv1.ttf" Id="spchv1.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spchv1.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font36.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{5510CB81-4DEB-418F-9BA7-545D243E1F71}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spchv2.ttf" Id="spchv2.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spchv2.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font37.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{DB32D8B9-ACD3-4114-9942-127C54CDFF5A}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spchv3.ttf" Id="spchv3.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spchv3.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font38.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{6BDB7F8D-885D-4DA1-9133-7F0002D12A1D}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spchv4.ttf" Id="spchv4.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spchv4.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font39.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{A7EA30EF-1D56-4D88-A35B-4D5041349067}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spdub___.ttf" Id="spdub___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spdub___.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font310.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{EA9C01FA-FC0E-4E73-A760-77344E7C290B}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spdumb__.ttf" Id="spdumb__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spdumb__.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font311.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{880169DE-DDB0-4A25-B567-F6B3EC751C5B}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spfebos_.ttf" Id="spfebos_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spfebos_.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font312.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{59B440E0-42E1-4CC0-84F1-8F08040C5F60}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spgob___.ttf" Id="spgob___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spgob___.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font313.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{08BF77ED-D141-4F9C-BD9D-A67F1BC398EB}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spgogeba.ttf" Id="spgogeba.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spgogeba.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font314.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{4426A061-3534-45C5-B0BA-4731583208B4}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spgorda_.ttf" Id="spgorda_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spgorda_.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font315.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{F08BEB15-993A-45DE-886B-753647A7D811}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spgrb___.ttf" Id="spgrb___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spgrb___.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font316.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{5860C381-93AC-4E72-8D98-9F5F8642A592}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spgremi_.ttf" Id="spgremi_.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spgremi_.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font317.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{93D477E5-9271-4BF9-9737-4CC26E5869D9}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spgrigol.ttf" Id="spgrigol.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spgrigol.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font318.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{2F5F83CE-7F37-4758-BCF5-8B29A8E6EFEE}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spgrm___.ttf" Id="spgrm___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spgrm___.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font319.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{524C9A3F-32D9-4706-B8B3-C421BC96A044}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spgrmb__.ttf" Id="spgrmb__.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spgrmb__.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font320.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{D14F4005-AD0B-4671-AC0F-61113AAF7DD6}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spgrotes.ttf" Id="spgrotes.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spgrotes.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font321.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{E444661C-DEBA-4CDB-A47F-C9AFA0014B3F}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spkol10.ttf" Id="spkol10.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spkol10.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font322.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{F88ED402-3103-4931-A0AD-CE45EE3A2D99}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spkol5.ttf" Id="spkol5.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spkol5.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font323.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{C0F222BA-B5BF-45AE-8DF8-D3A8B1E700D2}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spkol6.ttf" Id="spkol6.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spkol6.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font324.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{6FEC146F-8CD9-4542-B4E1-8C17C2503F8F}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spkol9.ttf" Id="spkol9.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spkol9.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font325.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{2C4D83A1-2039-4852-AAA0-206BE9967FDE}" Directory="FontsFolder" Permanent="yes">
+       <File Name="splib___.ttf" Id="splib___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\splib___.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font326.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{5157C69E-FDF5-4D7D-96D0-0924DFFFC068}" Directory="FontsFolder" Permanent="yes">
+       <File Name="splim___.ttf" Id="splim___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\splim___.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font327.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{CF8AD26E-8A09-477A-804F-12C6CE650938}" Directory="FontsFolder" Permanent="yes">
+       <File Name="splitera.ttf" Id="splitera.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\splitera.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font328.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{128E7C49-CAFB-48CE-A5A5-866A1A9F811C}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spmdzime.ttf" Id="spmdzime.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spmdzime.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font329.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{348E1690-FAF1-4322-BD89-37A95D77E168}" Directory="FontsFolder" Permanent="yes">
+       <File Name="sppakizi.ttf" Id="sppakizi.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\sppakizi.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font330.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{DA9735F7-521D-4DE3-B222-89EBFB6D9884}" Directory="FontsFolder" Permanent="yes">
+
+       <File Name="sppar11.ttf" Id="sppar11.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\sppar11.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font331.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{5A5F5096-1D18-43F8-A4DD-2EB77286F97F}" Directory="FontsFolder" Permanent="yes">
+       <File Name="sppar12.ttf" Id="sppar12.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\sppar12.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font332.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{EC6403CE-9827-443B-B938-8E32408F0740}" Directory="FontsFolder" Permanent="yes">
+       <File Name="sppar13.ttf" Id="sppar13.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\sppar13.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font333.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{871F3814-9E07-4B3D-BD4B-6D8B9029640A}" Directory="FontsFolder" Permanent="yes">
+       <File Name="sppar14.ttf" Id="sppar14.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\sppar14.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font334.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{AD7B9269-2B3E-4A06-8A37-C939F0B1079A}" Directory="FontsFolder" Permanent="yes">
+       <File Name="sprustav.ttf" Id="sprustav.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\sprustav.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font335.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{C62B2044-8E86-42A4-9036-8322C911AFA8}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spsakart.ttf" Id="spsakart.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spsakart.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font336.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{0B705350-A394-4C6D-BA73-EFE4D5E0BC8A}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spshemok.ttf" Id="spshemok.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spshemok.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font337.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{925BD332-6F2A-4A67-8351-62893167596D}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spsib___.ttf" Id="spsib___.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spsib___.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font338.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{7943D589-2284-479F-B462-814EC5FEF18E}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spsiradz.ttf" Id="spsiradz.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spsiradz.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font339.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{EBE9CC93-71E9-4FD7-9EE3-6B0CE2AF0584}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spven1.ttf" Id="spven1.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spven1.ttf"  TrueType="yes" />
+     </Component>
+
+     <Component Id="Font340.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{21DC8BC4-5713-4E4C-8F53-CA6B821A019E}" Directory="FontsFolder" Permanent="yes">
+       <File Name="spven2.ttf" Id="spven2.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\spven2.ttf"  TrueType="yes" />
+     </Component>
+     
+     
+        </ComponentGroup>
+
+    <ComponentGroup Id="id_OTHER_GEO">
+      <Component Id="Font40.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{143A89C4-34BC-4155-B08A-C4A34927B18A}" Directory="FontsFolder" Permanent="yes">
+
+        <File Name="DUMBAN.TTF" Id="dumban.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\DUMBAN.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font41.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{280C4D3E-3C55-4CE8-B996-47EE2B0056FB}" Directory="FontsFolder" Permanent="yes">
+
+        <File Name="LITNUSXP.TTF" Id="litnusxp.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\LITNUSXP.TTF"  TrueType="yes" />
+      </Component>
+     
+    </ComponentGroup>
+
+    <ComponentGroup Id="id_Russian_Codex">
+      
+      <Component Id="Font50.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{62023203-45F5-41DD-90CC-C1328A86AC1F}" Directory="FontsFolder" Permanent="yes">
+        <File Name="NC20003D.TTF" Id="nc20003d.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\NC20003D.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font51.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{73055FC7-D2F0-44A7-9111-7929FF18D87C}" Directory="FontsFolder" Permanent="yes">
+        <File Name="NC20004D.TTF" Id="nc20004d.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\NC20004D.TTF"  TrueType="yes" />
+      </Component>
+   
+      <Component Id="Font52.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{568558B1-E129-44CF-B64D-B2AB124065C3}" Directory="FontsFolder" Permanent="yes">
+        <File Name="NC20023D.TTF" Id="nc20023d.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\NC20023D.TTF"  TrueType="yes" />
+      </Component>
+ 
+      <Component Id="Font53.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{EF2A6EB6-9494-4944-BCC7-D4ED5C7EB3C8}" Directory="FontsFolder" Permanent="yes">
+        <File Name="NC20024D.TTF" Id="nc20024d.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\NC20024D.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font54.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{0108BE33-4D3F-4A81-8A62-94A430D068D6}" Directory="FontsFolder" Permanent="yes">
+        <File Name="BALTI1.TTF" Id="balti1.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\BALTI1.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font55.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{F368E1BF-1489-403D-B12A-DDF14A83C055}" Directory="FontsFolder" Permanent="yes">
+        <File Name="BALTI15.TTF" Id="balti15.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\BALTI15.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font56.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{178CF7DF-E890-490A-B13A-999D5038E8A3}" Directory="FontsFolder" Permanent="yes">
+        <File Name="BALTI16.TTF" Id="balti16.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\BALTI16.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font57.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{5FF2127C-E704-41B5-ABB8-518C2815E958}" Directory="FontsFolder" Permanent="yes">
+        <File Name="BALTICA.TTF" Id="baltica.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\BALTICA.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font58.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{9CD16459-D6B5-41CB-920B-434DD6BEF64D}" Directory="FontsFolder" Permanent="yes">
+        <File Name="BALTICA0.TTF" Id="baltica0.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\BALTICA0.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font59.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{C2DD663B-991B-443B-A6B7-5BF262D7C896}" Directory="FontsFolder" Permanent="yes">
+        <File Name="BALTICA1.TTF" Id="baltica1.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\BALTICA1.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font60.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{415E2002-E5C2-4878-AB60-06ECEFD75661}" Directory="FontsFolder" Permanent="yes">
+        <File Name="BALTICA2.TTF" Id="baltica2.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\BALTICA2.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font61.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{285E1022-5168-4572-808A-71C0E1D9348C}" Directory="FontsFolder" Permanent="yes">
+        <File Name="BDBOKLOO.TTF" Id="bdbokloo.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\BDBOKLOO.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font62.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{1366170A-279B-4312-8209-3542603F93F4}" Directory="FontsFolder" Permanent="yes">
+        <File Name="RUST_B.TTF" Id="rust_b.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\RUST_B.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font63.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{ED144C2E-669A-4664-BC1A-C994B3020E0F}" Directory="FontsFolder" Permanent="yes">
+          <File Name="RUST_BI.TTF" Id="rust_bi.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\RUST_BI.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font64.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{F3F4D111-4A8C-4CA9-8F87-EA495CAFAC6A}" Directory="FontsFolder" Permanent="yes">
+            <File Name="RUST_R.TTF" Id="rust_r.ttf" Source="$(var.SourceDir)\Fonts\OtherFonts\RUST_R.TTF"  TrueType="yes" />
+      </Component>
+
+      <Component Id="Font65.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{EF505E63-7E1E-4A15-BF43-38E46938F457}" Directory="FontsFolder" Permanent="yes">
+            <File Name="RSCodex.FON" Id="rscodex.fon" Source="$(var.SourceDir)\Fonts\OtherFonts\RSCodex.FON"   FontTitle="RSCodex Serif 8,10,12,14,18,24 (VGA res) Cyrillic"/>
+      </Component>
+      
+      <Component Id="Font66.ttf" SharedDllRefCount="yes" KeyPath="yes" Guid="{AD4EB29F-44E4-4611-9476-18735B457D8C}" Directory="FontsFolder" Permanent="yes">
+            <File Name="RSWWWNT1.FON" Id="rswwwnt1.fon" Source="$(var.SourceDir)\Fonts\OtherFonts\RSWWWNT1.FON"   FontTitle="RSwwwNet 9, 10, 14, 18 (96 dpi)"/>
+      </Component>
+
+    </ComponentGroup>
+
+    
+
+
+  <!--<File Name="PRMHELVR.FON" Id="prmhelvr.fon" Source="$(var.SourceDir)\Fonts\OtherFonts\PRMHELVR.FON"   FontTitle="PROMT Helv Cyr 8,10,12,14,18,24 (VGA res)"/>
+
+      <File Name="Prmhelvw.fon" Id="prmhelvw.fon" Source="$(var.SourceDir)\Fonts\OtherFonts\Prmhelvw.fon"   FontTitle="PROMT Helv WE 8,10 (VGA res)"/>
+
+      <File Name="procourr.fon" Id="procourr.fon" Source="$(var.SourceDir)\Fonts\OtherFonts\procourr.fon"   FontTitle="PROMT OEM Courier Cyr 8,10,12,14 (VGA res)"/>
+
+      <File Name="prohelvr.fon" Id="prohelvr.fon" Source="$(var.SourceDir)\Fonts\OtherFonts\prohelvr.fon"   FontTitle="Promt OEM Helv Cyr 8,10,12,14,18,24 (VGA res"/>
+
+      <File Name="prohelvw.fon" Id="prohelvw.fon" Source="$(var.SourceDir)\Fonts\OtherFonts\prohelvw.fon"   FontTitle="Promt OEM Helv WE 8,10,12,14,18,24 (VGA res)"/>-->
+
+
+
+
+
+    
+	</Fragment>
+</Wix>

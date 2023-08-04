@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ColorStatic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DOTNET.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneralRun.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ILISetup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ILISetupDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MDAC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MSI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Page1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQL5Expr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteCheck.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WhitePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteStatic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XPWarning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerShell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IniFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQLCLI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ColorStatic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DOTNET.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneralRun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ILISetup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ILISetupDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MDAC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MSI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Page1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL5Expr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteCheck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WhitePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteStatic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XPWarning.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerShell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IniFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQLCLI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\123.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\arrow_right_blue.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\BAN1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\Ban2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\bitmap3.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\bitmap9.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\CodexV1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\CodexV2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\ErrorAlertBMP.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\Hand.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\HotFix.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\HotFox_2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ILISetup.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ILISetup.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\Midle51.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\OLD_1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\OLDVersion.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\Top1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\WindowsLogo.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+    <None Include="Images2\Installer3.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\windows-logo1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\CodexBall.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\windows-logo64.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\CodexBall64.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\Minimum-1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\ErrorLeft4.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\Top.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\shell32.030.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\shell32.168.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images2\ICON\Installer.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ILISetup.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

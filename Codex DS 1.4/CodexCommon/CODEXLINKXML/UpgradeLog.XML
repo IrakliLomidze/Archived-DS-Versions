@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CODEXLINKXML">
+</Property><Property Name="Solution File" Value="G:\Documents and Settings\Irakli Lomidze\My Documents\Visual Studio 2005\Projects\Codecx 2007\CodexCommon\CODEXLINKXML\CODEXLINKXML.sln">
+</Property><Property Name="Date" Value="Friday, December 01, 2006">
+</Property><Property Name="Time" Value="16:47 PM">
+</Property></Properties><Event ErrorLevel="0" Project="CODEXLINKXML" Source="CODEXLINKXML.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="CODEXLINKXML" Source="CODEXLINKXML.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="CODEXLINKXML.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="CODEXLINKXML.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="CODEXLINKXML" Source="CODEXLINKXML.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

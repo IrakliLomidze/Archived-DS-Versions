@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    
+    <ComponentGroup Id="id_codex_license" Directory="INSTALLDIR" >
+      <Component Id="codex_license" Guid="{635358C6-F3D7-4B62-9064-2B746AD27A2D}" KeyPath="yes" >
+        <File Id="r4.codexlicense" Name="R4.CodexLicense" Vital="yes"  Source="$(var.SourceDir)\License\Server\R4.CodexLicense" />
+      </Component>
+                         
+    </ComponentGroup>
+    
+  	</Fragment>
+</Wix>

@@ -1,0 +1,186 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{20A8B093-A38A-4303-91F1-8C4A03537F48}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = "App.ico"
+                AssemblyKeyContainerName = ""
+                AssemblyName = "WindowsApplication5"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "WinExe"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "WindowsApplication5"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "C1.Win.C1Input"
+                    AssemblyName = "C1.Win.C1Input"
+                    HintPath = "..\..\..\..\..\Program Files\ComponentOne Studio.NET\bin\C1.Win.C1Input.dll"
+                    AssemblyFolderKey = "hklm\dn\c1studio"
+                />
+                <Reference
+                    Name = "System.Design"
+                    AssemblyName = "System.Design"
+                    HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Design.dll"
+                />
+                <Reference
+                    Name = "C1.Common"
+                    AssemblyName = "C1.Common"
+                    HintPath = "..\..\..\..\..\Program Files\ComponentOne Studio.NET\bin\C1.Common.dll"
+                    AssemblyFolderKey = "hklm\dn\c1studio"
+                />
+                <Reference
+                    Name = "Infragistics.Win.UltraWinSchedule.v3"
+                    AssemblyName = "Infragistics.Win.UltraWinSchedule.v3"
+                    HintPath = "..\..\..\..\..\Program Files\Infragistics\UltraWinSchedule\v3.00\Infragistics.Win.UltraWinSchedule.v3.dll"
+                    AssemblyFolderKey = "hklm\infragistics.win.ultrawinschedule.v3.00.20033"
+                />
+                <Reference
+                    Name = "Infragistics.Shared.v3"
+                    AssemblyName = "Infragistics.Shared.v3"
+                    HintPath = "..\..\..\..\..\Program Files\Common Files\Infragistics\Shared\v3.00\Infragistics.Shared.v3.dll"
+                    AssemblyFolderKey = "hklm\infragistics.shared.v3.00.20033"
+                />
+                <Reference
+                    Name = "Infragistics.Win.v3"
+                    AssemblyName = "Infragistics.Win.v3"
+                    HintPath = "..\..\..\..\..\Program Files\Common Files\Infragistics\Win\v3.00\Infragistics.Win.v3.dll"
+                    AssemblyFolderKey = "hklm\infragistics.win.v3.00.20033"
+                />
+                <Reference
+                    Name = "System.Runtime.Serialization.Formatters.Soap"
+                    AssemblyName = "System.Runtime.Serialization.Formatters.Soap"
+                    HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\System.Runtime.Serialization.Formatters.Soap.dll"
+                />
+                <Reference
+                    Name = "Infragistics.Win.Misc.v3"
+                    AssemblyName = "Infragistics.Win.Misc.v3"
+                    HintPath = "..\..\..\..\..\Program Files\Infragistics\UltraWinMisc\v3.00\Infragistics.Win.Misc.v3.dll"
+                    AssemblyFolderKey = "hklm\infragistics.win.ultrawinmisc.v3.00.20033"
+                />
+                <Reference
+                    Name = "Infragistics.Win.UltraWinEditors.v3"
+                    AssemblyName = "Infragistics.Win.UltraWinEditors.v3"
+                    HintPath = "..\..\..\..\..\Program Files\Infragistics\UltraWinEditors\v3.00\Infragistics.Win.UltraWinEditors.v3.dll"
+                    AssemblyFolderKey = "hklm\infragistics.win.ultrawineditors.v3.00.20033"
+                />
+                <Reference
+                    Name = "Microsoft.VisualBasic"
+                    AssemblyName = "Microsoft.VisualBasic"
+                    HintPath = "..\..\..\..\..\Windows\Microsoft.NET\Framework\v1.1.4322\Microsoft.VisualBasic.dll"
+                />
+                <Reference
+                    Name = "Infragistics.Win.UltraWinGrid.v3"
+                    AssemblyName = "Infragistics.Win.UltraWinGrid.v3"
+                    HintPath = "..\..\..\..\..\Program Files\Infragistics\UltraWinGrid\v3.00\Infragistics.Win.UltraWinGrid.v3.dll"
+                    AssemblyFolderKey = "hklm\infragistics.win.ultrawinmaskededit.v3.00.20033"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "App.ico"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Form1.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Form1.resx"
+                    DependentUpon = "Form1.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "licenses.licx"
+                    BuildAction = "EmbeddedResource"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

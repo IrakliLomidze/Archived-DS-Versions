@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+          xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+	<Fragment>
+
+    <Icon Id="databaseicon.exe" SourceFile="$(var.SourceDir)\CodexDatabaseInstaller\DataBaseInstallerDS.exe" />
+
+    <ComponentGroup Id="id_codexdsdatabaseInsaller" Directory="INSTALLDIR">
+
+      <Component Id="DataBaseInstallerDS.exe" Guid="{A92F0FDF-3F69-48F5-A687-D673D7EFC209}" >
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="databaseinstallerds.exe" Name="DataBaseInstallerDS.exe" KeyPath="yes"  Source="$(var.SourceDir)\CodexDatabaseInstaller\DataBaseInstallerDS.exe" >
+
+          <netfx:NativeImage Id="ngen_databaseinstallerds.exe" Platform="32bit" Priority="0" AppBaseDirectory="INSTALLDIR"/>
+
+
+          <Shortcut Id="DatabaseInstallericon"
+                  Directory="CodexDSServerMenu"
+                  Name="Codex DS Database Installer"
+                  Description="Codex DS Database Installer"
+                  Icon="databaseicon.exe"
+                  IconIndex="0"
+                  Show="normal"
+                  WorkingDirectory="INSTALLDIR"
+                  Advertise="yes" />
+        </File>
+
+        <RemoveFolder Id="Remove_Folder_Codex_DS_Worksation2"
+              Directory="CodexDSServerMenu"
+              On="uninstall" />
+
+        <RemoveFolder Id="Remove_Folder_Georgian_Microsystems2"
+                      Directory="GeorgianMicrosystemsMenu"
+                      On="uninstall"   />
+      </Component>
+
+      <Component Id="databaseinstallerr4.exe.conf" Guid="{BDDA11DE-E904-464F-8249-39B350A8B2EE}" KeyPath="yes" >
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="databaseinstallerds.exe.conf" Name="DataBaseInstallerDS.exe.config"  Source="$(var.SourceDir)\CodexDatabaseInstaller\DataBaseInstallerDS.exe.config" />
+      </Component>
+
+  
+    
+    </ComponentGroup>
+    
+  </Fragment>
+</Wix>

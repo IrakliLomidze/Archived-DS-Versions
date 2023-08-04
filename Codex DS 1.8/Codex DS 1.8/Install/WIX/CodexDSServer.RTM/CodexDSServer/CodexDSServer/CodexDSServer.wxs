@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     >
+
+  
+  <Product Id="{39416874-5877-4FD7-994B-8E1BF085FFA0}" Name="Codex DS Server 1.8" 
+           Language="1033" Version="8.200.4001" 
+           Manufacturer="Georgian Microsystems" 
+           UpgradeCode="{FB5CD385-FFC9-4B87-A9E7-0F4DE8CD8FB8}"
+           >
+
+  
+    <Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" Platform="x86" InstallPrivileges="elevated"
+             Description="Codex DS Server"
+             Manufacturer="Georgian Microsystems"
+             />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <MediaTemplate EmbedCab="yes"  />
+
+    <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+    <Property Id="WIX_IS_NETFRAMEWORK_461_OR_LATER_INSTALLED" Value="1" />
+
+    <Icon Id="theicon.ico" SourceFile="$(var.SourceDir)\icon\CodexNewDSIcon2.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="theicon.ico" />
+
+    <!--<Property Id="Windows7SP1">
+      <![CDATA[(VersionNT = 600 OR VersionNT64 = 600) AND (ServicePackLevel >= 1)]]>
+    </Property>-->
+
+    
+    <!--<Condition Message="This Codex DS is only supported on Windows 7 SP1 or higher.">
+      <![CDATA[NOT ((VersionNT = 600 OR VersionNT64 = 600) AND (ServicePackLevel >= 1))]]>
+    </Condition>-->
+
+    <!--<Condition Message="This Codex DS requires .NET Framework 4.6.1 Please install the .NET Framework then run this installer again.">
+      <![CDATA[(Installed OR WIX_IS_NETFRAMEWORK_461_OR_LATER_INSTALLED)]]>
+    </Condition>-->
+
+
+
+
+    <Property Id="CODEXR4OLDVAL1">
+      <RegistrySearch Id="CodexR4Old32"
+                      Root="HKLM"
+                      Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\{0943C686-FB9B-49FA-9139-7D1C1647AE1D}"
+                      Name="DisplayVersion"
+                      Type="raw" />
+    </Property>
+
+    <Property Id="CODEXR4OLDVAL2">
+      <RegistrySearch Id="CodexR4Old64"
+                      Root="HKLM"
+                      Key="SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{0943C686-FB9B-49FA-9139-7D1C1647AE1D}"
+                      Name="DisplayVersion"
+                      Type="raw" />
+    </Property>
+
+
+    <Condition Message="Please Uninstall older Version of Codex DS Servr to Install new Codex DS Server Update #1">
+      <![CDATA[(Installed OR (NOT CODEXR4OLDVAL1 OR NOT CODEXR4OLDVAL2))]]>
+    </Condition>
+
+
+
+    <!--<Property Id="ALLUSERS"><![CDATA[2]]></Property>-->
+    
+    <UI>
+     <!--<DialogRef Id="FeaturesDlg"/>-->
+  
+      <UIRef Id="WixUI_FeatureTree" />
+      <UIRef Id="WixUI_ErrorProgressText" />
+    
+    </UI>
+
+   <WixVariable Id="WixUIDialogBmp" Value="Codex_Banner_Server.bmp"/>
+   <WixVariable Id="WixUIBannerBmp" Value="CodexTopBanner.bmp" />
+   <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+   <Property Id="WIXUI_INSTALLDIR"  Value="INSTALLDIR" />
+    
+   <Feature Id="ProductFeature" Title="Codex DS Server" Level="1" Display="expand">
+
+
+    <Feature Id="Application" Title="Codex DS Server" Level="1" Absent="disallow" ConfigurableDirectory="INSTALLDIR"  >
+      <ComponentGroupRef Id="ProductComponents" />
+      
+      
+    </Feature>
+
+
+   
+  
+  </Feature>
+
+
+  </Product>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">
+      <ComponentGroupRef Id="Infragistics221"/>
+      <ComponentGroupRef Id="id_codexdsdatabaseInsaller"/>
+    </ComponentGroup>
+  </Fragment>
+
+
+    
+
+
+
+
+  
+  
+</Wix>

@@ -1,0 +1,7 @@
+
+
+1) Crate DB Configuration (JSON files)				0:40
+2) Remove Windows Service Start (Invoie service.msc)		0:20
+3) WIX								1:00
+4) Installer							0:30
+

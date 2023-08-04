@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+>
+	
+<?define NetFx480MinRelease = 528033 ?>
+
+	<!--<Product Id="{6F74413C-50D5-4FB0-91D3-60C8B88A8E79}" Name="Codex DS Client 1.8"-->
+
+	<!--<Product Id="{CDAC537A-61BF-4BD4-9E65-FB085A6780FB}" Name="Codex DS Client 1.8"-->
+	
+	<!--<Product Id="{945F1310-0198-4FFD-86D2-C2A0E2FA9994}" Name="Codex DS Client 1.8"-->
+	<Product Id="{E233E31C-74F1-4995-BB07-D351C226ECA5}" Name="Codex DS Client 1.8"
+            Language="1033" Version="8.10.241"
+  
+           Manufacturer="Georgian Microsystems" 
+           UpgradeCode="{71E6FFB2-FF79-447E-84BA-0B2882FDCCF8}"
+           >
+
+  <Package InstallerVersion="405" InstallScope="perMachine" Platform="x86" InstallPrivileges="elevated"
+             Description="Codex DS Client 1.8"
+             Manufacturer="Georgian Microsystems"
+		     AdminImage="yes"
+             ReadOnly="no"
+		    />
+
+
+	
+
+	<!--არ მუშაობს, როცა ლიცენზიის ცვილებას ვახდენ ინსტლააციისთ, ვაცილებ განახლების ლიცენზიაც და ვტოვებ მხოლოდ კლიენტის ლიცენზიას--> 
+    
+   <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+ 
+  <Condition Message="[ProductName] Requires .NET Framework 4.8.0 or later to be installed. Please install from the `Pre-Reqs` folder.">
+    <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_480_OR_LATER_INSTALLED]]>
+  </Condition>
+
+   <!--Client CAB MSI-->
+   <!--<MediaTemplate  EmbedCab="yes"   />-->
+
+<!--Client Admin Image-->
+	<MediaTemplate  DiskPrompt="1" VolumeLabel="DISK1"  EmbedCab ="no"   />
+	<Property Id="DiskPrompt" Value="[1]" />
+
+
+	<Property Id="INSTALLDATABASE" Value="false"/>
+    
+    <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+    <Property Id="WIX_IS_NETFRAMEWORK_480_OR_LATER_INSTALLED" Value="1" />
+    
+    <Icon Id="theicon.ico" SourceFile="$(var.SourceDir)\icon\CodexNewDSIcon2.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="theicon.ico" />
+
+  
+
+ 
+
+ 
+    
+    <!--<Property Id="ALLUSERS"><![CDATA[2]]></Property>-->
+    
+    <UI>
+     <!--<DialogRef Id="FeaturesDlg"/>-->
+
+      <UIRef Id="WixUI_FeatureTree" />
+      
+      <UIRef Id="WixUI_ErrorProgressText" />
+    
+    </UI>
+
+   <WixVariable Id="WixUIDialogBmp" Value="Codex_Banner_Client.bmp"/>
+   <WixVariable Id="WixUIBannerBmp" Value="CodexTopBanner.bmp" />
+   <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+   <Property Id="WIXUI_INSTALLDIR"  Value="INSTALLDIR" />
+    
+   <Feature Id="ProductFeature" Title="Codex DS 1.8 Client" Level="1" Display="expand">
+
+
+    <Feature Id="Application" Title="Codex DS 1.8 Client" Level="1" Absent="disallow" ConfigurableDirectory="INSTALLDIR"  >
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+   
+  
+  </Feature>
+
+
+  </Product>
+
+  
+  <Fragment>
+    <!--<util:RegistrySearch Id="CurrentBuild"
+                       Variable="CBNumber"
+                       Root="HKLM"
+                       Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+                       Result="value" />-->
+
+    <Condition Message="Codex DS 1.8 is supported on Windows 10 version 1903 (build 18362) or higher.">
+      WindowsBuild &lt; 18362
+    </Condition>
+    
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">
+      <ComponentGroupRef Id="id_codexdsclient" />
+      <ComponentGroupRef Id="Infragistics221"/>
+      <ComponentGroupRef Id="TX31G"/>
+      <ComponentGroupRef Id ="id_reg" />
+    </ComponentGroup>
+  </Fragment>
+
+
+    
+
+
+
+
+  
+  
+</Wix>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) .NET Foundation and contributors. All rights reserved. Licensed under the Microsoft Reciprocal License. See LICENSE.TXT file in the project root for full license information. -->
+
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  
+	<Fragment>
+    <ComponentGroup Id="id_CodexWebLink" Directory="GeorgianMicrosystemsMenu">
+
+      <Component Id="CodexWebLink" Guid="{9DCCD494-1D3E-4850-998A-52D93D18B929}" Permanent="yes"  >
+        <util:InternetShortcut Id="OnlineDocumentationShortcut"
+                               Type="url"
+                            Name="www.codex.GE"
+                            Target="http://www.codex.GE/"/>
+        <RegistryValue Root="HKCU" Key="Software\Georgian Microsystems\CodexDS" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

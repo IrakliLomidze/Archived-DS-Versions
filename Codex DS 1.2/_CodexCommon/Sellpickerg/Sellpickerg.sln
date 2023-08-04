@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sellpickerg", "Sellpickerg.csproj", "{E6D1AC3F-7E37-4499-B461-4C0E224D34AF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E6D1AC3F-7E37-4499-B461-4C0E224D34AF}.Debug.ActiveCfg = Debug|.NET
+		{E6D1AC3F-7E37-4499-B461-4C0E224D34AF}.Debug.Build.0 = Debug|.NET
+		{E6D1AC3F-7E37-4499-B461-4C0E224D34AF}.Release.ActiveCfg = Release|.NET
+		{E6D1AC3F-7E37-4499-B461-4C0E224D34AF}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

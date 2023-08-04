@@ -1,0 +1,69 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ILG.Codex.CodexR4.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TemporaryDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WhenCrash" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="WhenCrashNew" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="InstallConfiguration" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DotNetFx35Windows8" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://msdn.microsoft.com/en-us/library/hh506443%28v=vs.110%29.aspx</Value>
+    </Setting>
+    <Setting Name="DotNetFx35Windows2012" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://technet.microsoft.com/en-us/library/dn482071.aspx</Value>
+    </Setting>
+    <Setting Name="SQLServer_InstallCommand" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/QS /ACTION=Install /Hideconsole=TRUE /FEATURES=SQL,Tools /IACCEPTSQLSERVERLICENSETERMS=TRUE  /INSTANCENAME=CodexR4 /SECURITYMODE=SQL /SAPWD="Codex$12345678" /SQLCOLLATION="SQL_Latin1_General_CP1_CI_AS" /SQLSYSADMINACCOUNTS="BUILTIN\ADMINISTRATORS" /SQLSVCACCOUNT="NT AUTHORITY\SYSTEM" /AGTSVCACCOUNT="NT AUTHORITY\Network Service" /UPDATEENABLED=FALSE</Value>
+    </Setting>
+    <Setting Name="SQLServerAdvanced_InstallCommand" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PowerShell_InstallCommnad" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Postgress_InstallCommand" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Client_Install" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Library_Install" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CodexR4_Install" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Font_Install" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Database_Install" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Enable_FX35_Windows81" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://msdn.microsoft.com/en-us/library/hh506443(v=vs.110).aspx</Value>
+    </Setting>
+    <Setting Name="Enable_FX35_Windows8" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://support.microsoft.com/en-us/kb/2785188</Value>
+    </Setting>
+    <Setting Name="Enable_FX35_Windows2012" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://blogs.msdn.com/b/sql_shep/archive/2012/08/01/windows-2012-and-net-3-5-feature-install.aspx</Value>
+    </Setting>
+    <Setting Name="WebAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">www.codex.ge</Value>
+    </Setting>
+    <Setting Name="SupportAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">support@codex.ge</Value>
+    </Setting>
+    <Setting Name="BugTraqMail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">support@codex.ge</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

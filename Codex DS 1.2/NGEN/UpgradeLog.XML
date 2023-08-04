@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="NGEN">
+</Property><Property Name="Solution File" Value="C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\NGEN.sln">
+</Property><Property Name="User Options File" Value="C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\NGEN.suo">
+</Property><Property Name="Date" Value="Friday, March 28, 2008">
+</Property><Property Name="Time" Value="15:49 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="NGEN.sln" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN.sln">
+</Event><Event ErrorLevel="0" Project="" Source="NGEN.suo" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN.suo">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\NGEN.csproj" Description="Project file successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\NGEN.csproj">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Form1.cs" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Form1.cs">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Form1.Designer.cs" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Program.cs" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Program.cs">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Properties\Settings.settings" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\app.config" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\app.config">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\images\Midle.jpg" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\images\Midle.jpg">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Form1.resx" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Form1.resx">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Properties\licenses.licx" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Properties\licenses.licx">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\Properties\Resources.resx" Description="File successfully backed up as C:\Users\Irakli Lomidze\Documents\Visual Studio 2008\Codex 2007 R2 Rus\NGEN\Backup\NGEN\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\NGEN.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="NGEN" Source="NGEN\NGEN.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="NGEN.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="NGEN.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="NGEN" Source="NGEN\NGEN.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

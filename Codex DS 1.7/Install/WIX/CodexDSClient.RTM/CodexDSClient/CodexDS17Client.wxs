@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+>
+	
+<?define NetFx480MinRelease = 528033 ?>
+  
+
+<Product Id="{FB5DDE73-5850-4FE1-BFEA-245E9F294CC1}" Name="Codex DS Client 1.7" 
+           Language="1033" Version="7.50.220" 
+           Manufacturer="Georgian Microsystems" 
+           UpgradeCode="{45E44428-3EE0-4225-9B0C-55B32D42DD38}"
+           >
+
+  <Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" Platform="x86" InstallPrivileges="elevated"
+             Description="Codex DS Client 1.7"
+             Manufacturer="Georgian Microsystems"/>
+ 
+    
+   
+    <!--არ მუშაობს, როცა ლიცენზიის ცვილებას ვახდენ ინსტლააციისთ, ვაცილებ განახლების ლიცენზიაც და ვტოვებ მხოლოდ კლიენტის ლიცენზიას--> 
+    
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+ 
+  <Condition Message="[ProductName] Requires .NET Framework 4.8.0 or later to be installed. Please install from the `Pre-Reqs` folder.">
+    <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_480_OR_LATER_INSTALLED]]>
+  </Condition>
+
+  <MediaTemplate  EmbedCab="yes"   />
+    <!--<MediaTemplate  DiskPrompt="1" VolumeLabel="DISK1"  EmbedCab ="no"   />
+    <Property Id="DiskPrompt" Value="[1]" />-->
+
+
+    <Property Id="INSTALLDATABASE" Value="false"/>
+    
+    <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+    <Property Id="WIX_IS_NETFRAMEWORK_480_OR_LATER_INSTALLED" Value="1" />
+    
+    <Icon Id="theicon.ico" SourceFile="$(var.SourceDir)\icon\CodexNewDSIcon2.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="theicon.ico" />
+
+    <!--<Property Id="Windows7SP1">
+      <![CDATA[(VersionNT = 600 OR VersionNT64 = 600) AND (ServicePackLevel >= 1)]]>
+    </Property>-->
+  
+  
+
+ 
+
+  <!--<Condition Message="Codex DS 1.7 is only supported on Windows 10 version 1903 (build 18362) or higher.">
+    <![CDATA[Installed OR (WINDOWSBUILDNUMBER >= 18362)]]>
+  </Condition>-->
+
+  <!--<Property Id="OFFICE365DETECT">
+    <RegistrySearch Id="Office365Search" Root="HKLM" Key="SOFTWARE\Microsoft\Office\ClickToRun\Configuration" Name="ProductReleaseIds" Type="raw"/>
+  </Property>
+  <Property Id="OFFICE365VERSIONDETECT">
+    <RegistrySearch Id="Office365VersionSearch" Root="HKLM" Key="SOFTWARE\Microsoft\Office\ClickToRun\Configuration" Name="ClientVersionToReport" Type="raw" />
+  </Property>
+  --><!--Windows Anniversary Edition corresponds to CurentBuildNumber 14000 and above-->
+    <!--
+  <Property Id="WINDOWSANNIVERSARYEDITIONDETECT">
+    <RegistrySearch Id="WindowsAnniversarySearch" Root="HKLM" Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion" Name="CurrentBuildNumber" Type="raw"/>
+  </Property>
+  
+      <![CDATA[((OFFICE365DETECT = "O365ProPlusRetail" OR OFFICE365DETECT = "O365BusinessRetail" OR OFFICE365DETECT = "O365SmallBusPremRetail" ) AND OFFICE365VERSIONDETECT = "16.0.6965.2092" AND WINDOWSANNIVERSARYEDITIONDETECT = "14393")]]>
+
+  -->
+
+ 
+    
+    <!--<Property Id="ALLUSERS"><![CDATA[2]]></Property>-->
+    
+    <UI>
+     <!--<DialogRef Id="FeaturesDlg"/>-->
+
+      <UIRef Id="WixUI_FeatureTree" />
+      
+      <UIRef Id="WixUI_ErrorProgressText" />
+    
+    </UI>
+
+   <WixVariable Id="WixUIDialogBmp" Value="Codex_Banner_Client.bmp"/>
+   <WixVariable Id="WixUIBannerBmp" Value="CodexTopBanner.bmp" />
+   <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+   <Property Id="WIXUI_INSTALLDIR"  Value="INSTALLDIR" />
+    
+   <Feature Id="ProductFeature" Title="Codex DS 1.7 Client" Level="1" Display="expand">
+
+
+    <Feature Id="Application" Title="Codex DS 1.7 Client" Level="1" Absent="disallow" ConfigurableDirectory="INSTALLDIR"  >
+      <ComponentGroupRef Id="ProductComponents" />
+      <!--<ComponentGroupRef Id="id_CodexWebLink" />-->
+      <ComponentRef Id="HelpDirecotry" />
+      <!--<ComponentGroupRef Id="id_windows7_style" />-->
+    </Feature>
+
+     <!--<Feature Id="License" Title="Codex DS License" Level ="1" Absent="disallow" ConfigurableDirectory="INSTALLDIR"   >
+       <Feature Id="ClinetLicense" Title="Codex DS Client License" Level ="1"  ConfigurableDirectory="INSTALLDIR" Description="CodexR4 Client Access License Only" Absent="allow"  AllowAdvertise="no">
+         <ComponentRef Id="id_codexclient_license" />
+      </Feature>
+       <Feature Id="ClientUpdateLicense" Title="Codex DS Client With Update License" Level ="2"  ConfigurableDirectory="INSTALLDIR" Description="CodexR4 Client Access and Updater License" Absent="allow"  AllowAdvertise="no">
+         --><!--<Condition Level="1" Action="disable"> &ClientUpdateLicense = 1    </Condition>--><!--
+         <ComponentRef Id="id_codexupdate_license" />
+       </Feature>
+     </Feature>-->
+
+     <Feature Id="Fonts" Title="Fonts" Level ="1" >
+
+      <Feature Id="Codex_Legacy_Font" Title="Codex Legacy Fonts" Level ="10" >
+
+        <Feature Id="Codex_Legacy_8Bit" Title="Codex GeoABC and Abkhazian Fonts" Level ="10" Description="Geo ABC, Abkhazuri " >
+          <ComponentGroupRef Id="id_CodexLegacyFonts" />
+        </Feature>
+
+        <Feature Id="Codex_Legacy_8BitRussian" Title="Codex Russain Fornts" Level ="10" Description="Baltica, Baltica TD" >
+          <ComponentGroupRef Id="id_Russian_Codex" />
+        </Feature>
+
+      </Feature>
+
+      <Feature Id="Other_Fonts" Title="Other Fonts" Level ="10" Description="Old Georgian Fonts " >
+        
+        <Feature Id="Acad_Fonts" Title="Academiuri Fonts" Level ="10" Description="Geo Academiuri ... " >
+          <ComponentGroupRef Id="id_OTHER_Acad" />
+        </Feature>
+        
+        <Feature Id="Chveulebrivi_Fonts" Title="Chveulebrivi Fonts" Level ="10" Description="Geo Chveulebrivi ... " >
+          <ComponentGroupRef Id="id_OTHER_Chveul" />
+        </Feature>
+     
+        <Feature Id="Litnusx_Fonts" Title="LitNusk and Dumbadze Fonts" Level ="10" Description="Geo LitNusk and Dumbadze ... " >
+          <ComponentGroupRef Id="id_OTHER_GEO" />
+        </Feature>
+
+        <Feature Id="Geo8_Fonts" Title="Georgian 8 Bit Fonts" Level ="10" Description="Geo_Arial, Geo_Times, Geo_Curier ..." >
+          <ComponentGroupRef Id="id_OTHER_GEO8" />
+        </Feature>
+
+        <Feature Id="SP8_Fonts" Title="Georgian SP Fonts 8 Bit Fonts" Level ="10" Description="SP_Chveulebrivi, SP_LitNusk, SP_Kholketi ..." >
+          <ComponentGroupRef Id="id_OTHER_SP8" />
+        </Feature>
+
+
+          
+        </Feature>
+ 
+     </Feature>
+   
+  
+  </Feature>
+
+
+  </Product>
+
+  
+  <Fragment>
+    <!--<util:RegistrySearch Id="CurrentBuild"
+                       Variable="CBNumber"
+                       Root="HKLM"
+                       Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+                       Result="value" />-->
+
+    <Condition Message="Codex DS 1.7 is supported on Windows 10 version 1903 (build 18362) or higher.">
+      WindowsBuild &lt; 18362
+    </Condition>
+    
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">
+      <ComponentGroupRef Id="id_codexdsclient" />
+      <ComponentGroupRef Id="id_Infragistics"/>
+      <ComponentGroupRef Id="id_textcontrol"/>
+      <!--<ComponentGroupRef Id="id_c1"/>-->
+      <!--<ComponentGroupRef Id="id_codex_license"/>-->
+      <!--<ComponentGroupRef Id="id_codexr4databaseInsaller"/>-->
+      <ComponentGroupRef Id ="id_reg" />
+    </ComponentGroup>
+  </Fragment>
+
+
+    
+
+
+
+
+  
+  
+</Wix>

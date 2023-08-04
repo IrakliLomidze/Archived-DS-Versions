@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Codex R4 Update #2  -->
+<!-- (C) Copyright 2016-2017 By Georgian Microsystems  -->
+<!-- Date: 2017 September 15  -->
+
+<!-- Infragistics 7.1  -->
+
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="id_Infragistics" Directory="INSTALLDIR">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <!-- <Component Id="ProductComponent"> -->
+      <!-- TODO: Insert files, registry keys, and other resources here. -->
+      <!-- </Component> -->
+
+      <!--heat.exe dir C:\_CodexDistR4Update2\Components\Infra71\ -scom -sreg -gg -sfrag -suid -dr INSTALLLOCATION -var var.SourceDir -out "C:\_CodexDistR4Update2\Components\infra.wsx"-->
+
+      <Component Id="Infragistics4.Documents.Core.v17.1.dll" Guid="{1D494063-B1D0-40A7-88BB-4F9F86095F75}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.Core.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.Core.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Documents.Core.v17.1.xml" Guid="{4ADB98E8-0A25-4580-98ED-BEFA2D5F0C7A}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.Core.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.Core.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Documents.Excel.v17.1.dll" Guid="{5F3C0DDA-3123-4651-A23B-83E3A00DAEDC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.Excel.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.Excel.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Documents.Excel.v17.1.xml" Guid="{F2B3D691-64FC-481A-AAFE-E44387D76DED}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.Excel.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.Excel.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Documents.IO.v17.1.dll" Guid="{3AAEB238-7721-4707-9458-499D6FAC023C}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.IO.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.IO.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Documents.IO.v17.1.xml" Guid="{ED932E12-9932-484F-94B0-435D59E9E5A4}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.IO.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.IO.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Documents.Reports.v17.1.dll" Guid="{0BD3FA08-223E-4473-B3EB-76DFB03FEF86}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.Reports.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.Reports.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Documents.Reports.v17.1.XML" Guid="{0DFFD5FF-445E-48D3-9EEB-78F8814E1F98}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.Reports.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.Reports.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Documents.TextDocument.CSharp.v17.1.dll" Guid="{E407328F-70C9-4932-89FB-D6EB80AF0E94}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.TextDocument.CSharp.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.TextDocument.CSharp.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Documents.TextDocument.CSharp.v17.1.XML" Guid="{DF4C894A-3656-4B38-BF0D-0CB74372A0FC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.TextDocument.CSharp.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.TextDocument.CSharp.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Documents.TextDocument.TSql.v17.1.dll" Guid="{C2204CF5-A7F3-4BFA-B0BB-2C5CE6EC6EEB}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.TextDocument.TSql.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.TextDocument.TSql.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Documents.TextDocument.TSql.v17.1.XML" Guid="{AEA91CB6-2C3C-4486-AFF7-48DD426E5D10}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.TextDocument.TSql.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.TextDocument.TSql.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Documents.TextDocument.v17.1.dll" Guid="{7365A4A9-B694-4BFD-B7DF-756243884FD2}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.TextDocument.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.TextDocument.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Documents.TextDocument.v17.1.XML" Guid="{E59A4CE1-98C8-4467-A9A3-1560F7039172}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.TextDocument.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.TextDocument.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Documents.TextDocument.VisualBasic.v17.1.dll" Guid="{2ACA8ED7-CC4D-4FF0-BADB-3B4DC90BDD58}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.TextDocument.VisualBasic.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.TextDocument.VisualBasic.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Documents.TextDocument.VisualBasic.v17.1.XML" Guid="{B4CC8AAC-6FE1-4AE1-AC13-33985B301ECB}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.TextDocument.VisualBasic.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.TextDocument.VisualBasic.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Documents.Word.v17.1.dll" Guid="{C7EF2F3A-3B76-444C-B24B-BDF43785A40F}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.Word.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.Word.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Documents.Word.v17.1.xml" Guid="{2B41243A-A6AE-4BEA-BAD0-AE163B1E03A8}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Documents.Word.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Documents.Word.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Math.v17.1.dll" Guid="{0507C42D-6BEA-4434-908E-21623BC63142}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Math.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Math.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Math.v17.1.XML" Guid="{D415B617-99A4-42E4-A263-D0564670E940}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Math.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Math.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Olap.Core.v17.1.dll" Guid="{BF93EE31-ABA3-49EE-B78B-B3A8BF77BEB4}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.Core.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.Core.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Olap.Core.v17.1.XML" Guid="{EC522D22-3963-4BAA-948C-6CBC3EB8DA1C}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.Core.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.Core.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataProvider.Adomd.v17.1.dll" Guid="{D084D0ED-6187-442C-86C4-26BDE1629D8A}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataProvider.Adomd.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataProvider.Adomd.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataProvider.Adomd.v17.1.XML" Guid="{DA49ABEE-9545-4E48-A048-D80952554FF2}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataProvider.Adomd.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataProvider.Adomd.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataProvider.Flat.v17.1.dll" Guid="{702581F8-1258-4A42-B134-FD60D7D91C6F}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataProvider.Flat.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataProvider.Flat.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataProvider.Flat.v17.1.XML" Guid="{3E9857F5-8A02-4F04-84A9-AF8876A7120E}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataProvider.Flat.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataProvider.Flat.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataProvider.v17.1.dll" Guid="{936C48CA-23A6-41EF-8909-6AC22FCFDF19}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataProvider.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataProvider.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataProvider.v17.1.XML" Guid="{263AAB9C-4940-4F2B-AA66-0B4B4CC4A5BB}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataProvider.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataProvider.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataProvider.Xmla.v17.1.dll" Guid="{648FA7D0-0C25-4A6D-A607-C8B346238959}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataProvider.Xmla.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataProvider.Xmla.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataProvider.Xmla.v17.1.XML" Guid="{F749CF30-6B2B-455B-B558-EA42077F01CE}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataProvider.Xmla.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataProvider.Xmla.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataSource.Flat.v17.1.dll" Guid="{95479940-4184-4B39-83C6-794FA1B00409}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataSource.Flat.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataSource.Flat.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataSource.Flat.v17.1.XML" Guid="{E4BEEFDD-2E38-467C-9F25-3613A774D0EE}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataSource.Flat.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataSource.Flat.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataSource.Mdx.v17.1.dll" Guid="{21000E69-4296-4F43-B06D-8736EEBD250C}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataSource.Mdx.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataSource.Mdx.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataSource.Mdx.v17.1.XML" Guid="{175DDA29-1A84-4049-933C-F835BA4B3E4D}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataSource.Mdx.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataSource.Mdx.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataSource.v17.1.dll" Guid="{A6E1DD6E-BB45-4B23-9D6D-F45677581EC1}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataSource.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataSource.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataSource.v17.1.XML" Guid="{511DFDD0-2BCF-433A-852A-D7D6AC58210B}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataSource.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataSource.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataSource.Xmla.v17.1.dll" Guid="{FA09D618-8A24-4C0F-9A27-CAEC3899AFB4}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataSource.Xmla.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataSource.Xmla.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Olap.DataSource.Xmla.v17.1.XML" Guid="{A5FBFCAB-BC94-4C3A-BB0E-186992744457}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Olap.DataSource.Xmla.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Olap.DataSource.Xmla.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Shared.v17.1.dll" Guid="{BC68380F-3820-4C66-A56E-1CF1A52CAB5C}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Shared.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Shared.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Shared.v17.1.XML" Guid="{2732CC87-4ACF-4CEC-887D-B4B859DC443E}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Shared.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Shared.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Undo.v17.1.dll" Guid="{3B96D1E9-3714-4199-B4F4-10EEB82A71C6}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Undo.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Undo.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Undo.v17.1.XML" Guid="{7E3CF181-4F26-4B16-9FC9-0BCF97EADF41}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Undo.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Undo.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.AppStylistSupport.v17.1.dll" Guid="{5738851E-AF06-4AA1-B194-BF4CB8A76321}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.AppStylistSupport.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.AppStylistSupport.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.AppStylistSupport.v17.1.xml" Guid="{3091A312-A82D-4076-8783-2565D439E49C}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.AppStylistSupport.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.AppStylistSupport.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.Barcode.v17.1.dll" Guid="{E94D23AD-52ED-405F-851C-AA1CA480DDB6}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.Barcode.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.Barcode.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.Barcode.v17.1.XML" Guid="{FA5D7064-09E3-4418-9BE3-5FED566C74C1}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.Barcode.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.Barcode.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.Shared.v17.1.dll" Guid="{B24A1B7C-9062-45C8-A0A7-B9ACCF01B8F2}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.Shared.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.Shared.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.Shared.v17.1.XML" Guid="{34B2900D-BE08-4B6C-8011-885D6238BDEC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.Shared.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.Shared.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.UltraDataChart.v17.1.dll" Guid="{79BBB2C0-482B-4BE2-A15F-9A514C2505C3}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.UltraDataChart.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.UltraDataChart.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.UltraDataChart.v17.1.XML" Guid="{DA7C27AF-8ECE-4670-8736-3373035EC81E}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.UltraDataChart.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.UltraDataChart.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.UltraGauges.v17.1.dll" Guid="{A5FB606B-87BF-4B1F-906D-183A3256880E}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.UltraGauges.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.UltraGauges.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.UltraGauges.v17.1.xml" Guid="{B3928A32-F1D6-48FD-B40B-0BDC28A0454D}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.UltraGauges.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.UltraGauges.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.UltraGeographicMap.v17.1.dll" Guid="{E265888F-1639-4081-85A9-3EDF9367122B}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.UltraGeographicMap.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.UltraGeographicMap.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.DataVisualization.UltraGeographicMap.v17.1.XML" Guid="{4904E051-8E39-42C0-8DA0-85AA4826315C}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.DataVisualization.UltraGeographicMap.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.DataVisualization.UltraGeographicMap.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.Misc.v17.1.dll" Guid="{84ED7333-58E5-4017-872C-C17FBD4FD6B9}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.Misc.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.Misc.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.Misc.v17.1.xml" Guid="{F07ABFB9-DC70-41A2-A89B-78E0E17A5033}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.Misc.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.Misc.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.Portable.Core.v17.1.dll" Guid="{4035EE24-1686-4BCA-A24B-03BA0005EFD9}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.Portable.Core.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.Portable.Core.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.Portable.Core.v17.1.XML" Guid="{401F0B78-2A5C-4156-8E4D-FE24A954A1CC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.Portable.Core.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.Portable.Core.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.SupportDialogs.v17.1.dll" Guid="{258F5385-3CC2-4E2D-930B-30F1A22A8DF7}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.SupportDialogs.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.SupportDialogs.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.SupportDialogs.v17.1.XML" Guid="{E997D5C0-52F5-4546-B12B-28916C52767B}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.SupportDialogs.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.SupportDialogs.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraChart.v17.1.Design.dll" Guid="{BE6BE17D-2A7F-41AF-9726-C06FE9A676FA}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraChart.v17.1.Design.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraChart.v17.1.Design.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraGauge.v17.1.Design.dll" Guid="{CC61CF44-6422-43C1-84EA-B69B593173F0}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraGauge.v17.1.Design.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraGauge.v17.1.Design.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinCalcManager.v17.1.dll" Guid="{AA19C322-E320-49BB-AD09-0269BE6E0AEC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinCalcManager.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinCalcManager.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinCalcManager.v17.1.FormulaBuilder.dll" Guid="{935D8D27-DB04-476A-A110-E09BD214DFBC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinCalcManager.v17.1.FormulaBuilder.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinCalcManager.v17.1.FormulaBuilder.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinCalcManager.v17.1.FormulaBuilder.xml" Guid="{BB473591-6A32-4119-9152-1ED7B1BD57A6}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinCalcManager.v17.1.FormulaBuilder.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinCalcManager.v17.1.FormulaBuilder.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinCalcManager.v17.1.xml" Guid="{43CDEFA5-60F8-47E1-82F5-9B1967C4B44D}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinCalcManager.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinCalcManager.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinCarousel.v17.1.dll" Guid="{D791E3BB-2049-4AB8-9EFD-319F885CEF5B}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinCarousel.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinCarousel.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinCarousel.v17.1.XML" Guid="{A4AA9043-FEA5-4428-AE46-774B04EE30EA}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinCarousel.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinCarousel.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinChart.v17.1.dll" Guid="{E4AA8883-FD88-46F6-BC74-9CD8607314B4}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinChart.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinChart.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinChart.v17.1.XML" Guid="{F037DAFC-29AA-4CB9-9D31-2FCC91C29B03}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinChart.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinChart.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinDataSource.v17.1.dll" Guid="{36FFE0D8-8036-43E1-9DE5-10CC61B37A19}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinDataSource.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinDataSource.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinDataSource.v17.1.XML" Guid="{C55099BC-EC7E-422F-B7E5-332844942B6D}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinDataSource.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinDataSource.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinDock.v17.1.dll" Guid="{DCA1529E-2C98-4301-B2DD-B9C0845F074C}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinDock.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinDock.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinDock.v17.1.xml" Guid="{684CE2A4-388B-47CD-91BD-C4407BD37629}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinDock.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinDock.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinEditors.v17.1.dll" Guid="{4B3E4EB7-6F35-4AA7-A5B3-2D542066932A}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinEditors.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinEditors.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinEditors.v17.1.xml" Guid="{EC181865-75C8-48B1-A7E6-3E0F22EF3A59}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinEditors.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinEditors.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinExplorerBar.v17.1.dll" Guid="{E88965C2-DD5F-4F1F-8F70-0FDBD344AFBA}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinExplorerBar.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinExplorerBar.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinExplorerBar.v17.1.XML" Guid="{EF457902-F037-401A-B334-C4E9D0A0E4AC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinExplorerBar.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinExplorerBar.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinFormattedText.WordWriter.v17.1.dll" Guid="{86CCE099-A249-4BD8-944D-EEA58FF5E838}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinFormattedText.WordWriter.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinFormattedText.WordWriter.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinFormattedText.WordWriter.v17.1.XML" Guid="{8C5E4F9D-28E2-49F1-835C-57D8488E53FF}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinFormattedText.WordWriter.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinFormattedText.WordWriter.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGanttView.v17.1.dll" Guid="{1C92676F-486E-4068-8B2D-33735D04ABD3}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGanttView.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGanttView.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGanttView.v17.1.XML" Guid="{AA648795-4D10-4D3C-B3D1-03EE424B8450}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGanttView.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGanttView.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGauge.v17.1.dll" Guid="{83CA2126-061C-458B-A9A4-3C345BE9F2FF}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGauge.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGauge.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGauge.v17.1.xml" Guid="{D8309B9B-AD27-43CC-AB17-2E21605E650C}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGauge.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGauge.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGrid.DocumentExport.v17.1.dll" Guid="{A6A724E3-4656-4F1D-A323-9E7E756DE550}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGrid.DocumentExport.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGrid.DocumentExport.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGrid.DocumentExport.v17.1.XML" Guid="{FD824E18-FC28-477D-93FD-24FCDF15A66D}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGrid.DocumentExport.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGrid.DocumentExport.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGrid.ExcelExport.v17.1.dll" Guid="{6AF3673C-C925-4806-90CD-C7EAC72F9FAC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGrid.ExcelExport.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGrid.ExcelExport.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGrid.ExcelExport.v17.1.XML" Guid="{FD97F9C2-01C9-4F44-80C8-F58911B7DA1D}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGrid.ExcelExport.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGrid.ExcelExport.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGrid.v17.1.dll" Guid="{74459B7B-6F19-4497-AD1D-F1133065222A}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGrid.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGrid.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGrid.v17.1.XML" Guid="{72D5ADD5-B4EE-45A5-915F-E9D0CA659B54}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGrid.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGrid.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGrid.WordWriter.v17.1.dll" Guid="{073F32AF-2CC9-46D8-AF4E-B0010A137343}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGrid.WordWriter.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGrid.WordWriter.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinGrid.WordWriter.v17.1.XML" Guid="{8B86A05F-4860-48F7-BB91-CC1E79D5E807}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinGrid.WordWriter.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinGrid.WordWriter.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinInkProvider.Ink17.v17.1.dll" Guid="{15E02F76-7A8E-43CA-927C-CC155979A2F6}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinInkProvider.Ink17.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinInkProvider.Ink17.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinInkProvider.Ink17.v17.1.XML" Guid="{F11B4678-496E-4938-89F8-FCA8DF34EE68}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinInkProvider.Ink17.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinInkProvider.Ink17.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinListBar.v17.1.dll" Guid="{B381E17D-AA44-4F2A-BBBB-2477E4929760}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinListBar.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinListBar.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinListBar.v17.1.XML" Guid="{4FFF7E4F-04A9-4589-B955-904FB89A1B69}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinListBar.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinListBar.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinListView.v17.1.dll" Guid="{E0DB8FF6-344E-4FB3-B7DA-5435845E336B}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinListView.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinListView.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinListView.v17.1.XML" Guid="{9DD27E5C-5B58-4062-ACD8-C549596D4FE6}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinListView.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinListView.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinLiveTileView.v17.1.dll" Guid="{A3A8C06C-FD30-40D3-86AB-B7BC7AD9736F}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinLiveTileView.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinLiveTileView.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinLiveTileView.v17.1.XML" Guid="{CF0766C7-C92E-4173-A257-29FFE7BD236E}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinLiveTileView.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinLiveTileView.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinMaskedEdit.v17.1.dll" Guid="{170FC952-3B02-44E7-9C9E-3C2E6BB49BB2}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinMaskedEdit.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinMaskedEdit.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinMaskedEdit.v17.1.xml" Guid="{BAB1DD16-9A99-4706-A2FC-BD2003C97286}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinMaskedEdit.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinMaskedEdit.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinOfficeNavBar.v17.1.dll" Guid="{2F690384-290D-45B8-94CF-B8DC98B7E771}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinOfficeNavBar.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinOfficeNavBar.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinOfficeNavBar.v17.1.XML" Guid="{3DF0274A-B1AD-438D-B77B-3CE7C99AC639}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinOfficeNavBar.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinOfficeNavBar.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinPivotGrid.v17.1.dll" Guid="{932305AC-3DAA-4920-9531-CCA7DF452743}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinPivotGrid.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinPivotGrid.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinPivotGrid.v17.1.XML" Guid="{3623F5CF-D923-4DD1-9EB1-0937D6A3DF1F}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinPivotGrid.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinPivotGrid.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinPrintPreviewDialog.v17.1.dll" Guid="{3070BDEA-E0F1-4038-B0A9-13DB7E6047E2}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinPrintPreviewDialog.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinPrintPreviewDialog.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinPrintPreviewDialog.v17.1.XML" Guid="{7A55F967-AAD8-4840-B905-54182E7B83B0}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinPrintPreviewDialog.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinPrintPreviewDialog.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinRadialMenu.v17.1.dll" Guid="{8617EDE3-90F9-4F16-8D01-D80AF2E38077}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinRadialMenu.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinRadialMenu.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinRadialMenu.v17.1.XML" Guid="{05F17C95-FA5A-4F1B-8394-4D76239D8DFF}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinRadialMenu.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinRadialMenu.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinSchedule.v17.1.dll" Guid="{F2011EB8-E30E-495B-9517-EB3333FBED85}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinSchedule.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinSchedule.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinSchedule.v17.1.xml" Guid="{1AB8EF2E-860E-4D2B-A139-2CED8455076E}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinSchedule.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinSchedule.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinSpellChecker.v17.1.dll" Guid="{8E40452E-B0FD-4B04-8342-93EAE8268897}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinSpellChecker.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinSpellChecker.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinSpellChecker.v17.1.xml" Guid="{5ECB48B4-6FAA-4284-90A9-D3A0094BEBF5}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinSpellChecker.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinSpellChecker.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinSpreadsheet.v17.1.dll" Guid="{024EEA67-3D55-4BE9-876B-C0A1DAFE6987}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinSpreadsheet.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinSpreadsheet.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinSpreadsheet.v17.1.XML" Guid="{5D8AE3C4-24D7-4EB2-911B-740ABC0D914F}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinSpreadsheet.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinSpreadsheet.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinStatusBar.v17.1.dll" Guid="{D791EB3A-2AB3-44AE-B9D3-8713156DCE18}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinStatusBar.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinStatusBar.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinStatusBar.v17.1.xml" Guid="{E163E340-A491-412A-B204-A556104218BC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinStatusBar.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinStatusBar.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinTabbedMdi.v17.1.dll" Guid="{AE0A0362-33BA-4BCF-818C-01AD3AB34FDC}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinTabbedMdi.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinTabbedMdi.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinTabbedMdi.v17.1.xml" Guid="{1CA3FE01-9473-4684-B7BB-B5FBA569A913}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinTabbedMdi.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinTabbedMdi.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinTabControl.v17.1.dll" Guid="{7A38D9D0-CF3F-400F-88FF-72B30B3358C2}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinTabControl.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinTabControl.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinTabControl.v17.1.xml" Guid="{E3BB3CC2-8D33-4E3D-B577-9424AF92C49E}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinTabControl.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinTabControl.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinToolbars.v17.1.dll" Guid="{9F489E7E-310B-4C73-AA1A-9937C3BAB61F}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinToolbars.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinToolbars.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinToolbars.v17.1.xml" Guid="{D04065F7-3071-46FC-9811-BF14944E8690}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinToolbars.v17.1.xml" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinToolbars.v17.1.xml" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinTree.v17.1.dll" Guid="{BC859111-4415-4335-BBE5-EB4B2925D481}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinTree.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinTree.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.UltraWinTree.v17.1.XML" Guid="{9DA6DF50-060B-4EEF-B5E4-E75F1E452F3D}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.UltraWinTree.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.UltraWinTree.v17.1.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.v17.1.Design.dll" Guid="{1FD23938-F23C-44C9-AE46-7DA32556481B}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.v17.1.Design.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.v17.1.Design.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.v17.1.Design.XML" Guid="{84305174-3544-4281-B56B-55D9082984F5}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.v17.1.Design.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.v17.1.Design.XML" />
+      </Component>
+      <Component Id="Infragistics4.Win.v17.1.dll" Guid="{18FFAE21-2997-426D-8657-A306DFE0F4D0}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.v17.1.dll" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.v17.1.dll" />
+      </Component>
+      <Component Id="Infragistics4.Win.v17.1.XML" Guid="{9EAD9D03-3E0F-4AB4-95A5-F4A52E762CD9}">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="Infragistics4.Win.v17.1.XML" KeyPath="yes" Source="$(var.SourceDir)\Components\Infra71\Infragistics4.Win.v17.1.XML" />
+      </Component>
+
+
+    </ComponentGroup>
+  </Fragment>
+</Wix>

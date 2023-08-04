@@ -1,0 +1,20 @@
+Codex 2007 Document Storage 
+-----------------------------------------------------------------------------
+(C) Copyright 1990-2008 By Georgian Microsystems
+(C) Copyright 1990-2008 By Irakli Lomidze
+-----------------------------------------------------------------------------
+Codex License Generator Version 7.4
+License File (Version = 6.5.2008.1)
+
+LID= [18592893A14D5FF2BB14202C6C864ED8C706D34DEA609E5379F5B3CF455F3C02]
+XSt= [49CCE20E6E24C93E12323C763684E3A41D16A1FCEF3C2037BD12668110DA57E4]
+
+Type = MIDVZXT
+JPX  = FALXC
+
+BOR= [70D7297FE561A794C2084D8D2717B35C58C37DD29B9BBC427C5697708FD689FB]
+MOD = [5A1BE948991573CC]
+
+{ShowConfidentialDocumentInList} = False;
+
+AcceptCode = A98D102912342FE6F076F75481DF73D03EC1429951746F4F6159AE4C18FA066A

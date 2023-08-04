@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ILISetup">
+</Property><Property Name="Solution File" Value="W:\Install Project\ILR3\Workstation.R3\ILISetup\ILISetup.sln">
+</Property><Property Name="User Options File" Value="W:\Install Project\ILR3\Workstation.R3\ILISetup\ILISetup.suo">
+</Property><Property Name="Date" Value="Friday, June 18, 2010">
+</Property><Property Name="Time" Value="1:34 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="ILISetup.sln" Description="File successfully backed up as W:\Install Project\ILR3\Workstation.R3\ILISetup\ILISetup.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="ILISetup.suo" Description="File successfully backed up as W:\Install Project\ILR3\Workstation.R3\ILISetup\ILISetup.suo.old">
+</Event><Event ErrorLevel="0" Project="ILISetup" Source="ILISetup\ILISetup.vcproj" Description="Converting project file 'W:\Install Project\ILR3\Workstation.R3\ILISetup\ILISetup\ILISetup.vcproj'.">
+</Event><Event ErrorLevel="1" Project="ILISetup" Source="ILISetup\ILISetup.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="ILISetup" Source="ILISetup\ILISetup.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="ILISetup" Source="ILISetup\ILISetup.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="0" Project="ILISetup" Source="ILISetup\ILISetup.vcproj" Description="Done converting to new project file 'W:\Install Project\ILR3\Workstation.R3\ILISetup\ILISetup\ILISetup.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="ILISetup" Source="ILISetup\ILISetup.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ILISetup.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="ILISetup.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,132 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ILG.Codex.Codex2007.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SQLServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SQLAuthMethod" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SQLUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CodexDSUser</Value>
+    </Setting>
+    <Setting Name="SQLPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CodexDS2007</Value>
+    </Setting>
+    <Setting Name="SQLPort" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="TemporaryDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CodexDocumentDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WebAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">www.codexserver.com</Value>
+    </Setting>
+    <Setting Name="SupportAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">support@codexserver.com</Value>
+    </Setting>
+    <Setting Name="KeyboardLayout" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MaximumDocListCodex" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="CodexFavoritesDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UseFullTextSearch" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WhenCrash" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="IsConnectionString" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AppConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="IsFullText" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IsLimitation" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="IsOptions" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AppMaxCodList" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="AuthoDefineConnectionString" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BugTraqMail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BugDS@codexserver.net</Value>
+    </Setting>
+    <Setting Name="AppUseFullTextSearch" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="isDefault" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AppDefault" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IsKeyboard" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AppKeyboardLayout" Type="System.UInt32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="CodexCurrentDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LiveServiceAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://live.codexserver.net/live.aspx</Value>
+    </Setting>
+    <Setting Name="DefaTheme" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DSAfterSaveNewDoc" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CodexPrintLogic" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DocumentPageMarginLeft" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">70</Value>
+    </Setting>
+    <Setting Name="DocumentPageMarginRight" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">70</Value>
+    </Setting>
+    <Setting Name="DocumentPageMarginTop" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">70</Value>
+    </Setting>
+    <Setting Name="DocumentPageMarginBottom" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">70</Value>
+    </Setting>
+    <Setting Name="DocumentPageHeight" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1169</Value>
+    </Setting>
+    <Setting Name="DocumentPageWidth" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">827</Value>
+    </Setting>
+    <Setting Name="DocumentEncogingPolicy" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DocumentDefaultEncoding" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ShowAdvancedAttributes" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

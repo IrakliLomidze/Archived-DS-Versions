@@ -1,0 +1,80 @@
+	#pragma region Legacy Code
+
+/*	if (m_sql2005 == true)
+	{
+		
+		WaitLabelText = _T("Installing SQL Server 2008 R2 Express, this may take a several time ...");
+		
+		ShowBillboard(&g_dwThread, &g_hThread);
+		
+		int sqlsetupstatus = 0;
+		if (SQLCOMBO.GetCurSel() == 1)
+		{
+		   // Without Advances Services
+			// ======================================== 
+			if (this->_SQLEXPRESS == 0)	
+			{
+					OSVERSIONINFOEX OSversion;
+					ZeroMemory(&OSversion, sizeof(OSVERSIONINFOEX));
+					OSversion.dwOSVersionInfoSize=sizeof(OSVERSIONINFOEX);
+					GetVersionEx((OSVERSIONINFO *)&OSversion);
+					if ((OSversion.dwMajorVersion == 5) && (OSversion.dwMinorVersion == 2)) 
+					{
+						ILI_SXS *iliz = new ILI_SXS();
+						iliz->ILI_check();
+						if (iliz->BuildVersion < 3295) 
+						{
+							TeardownBillboard(g_dwThread, g_hThread);
+							MessageBox(_T("FATAL ERROR:SXS.DLL is not Compatible to this Version of SQL Server"));
+							
+							return;
+						}
+					}
+
+			}
+			
+			CString runcommand = theApp.CurrentPathStr;
+            if (this->_SQLEXPRESS == 0)	
+			{
+			   if (CC_X64 == 0) runcommand.Append(_T("\\wcu\\SQL2005\\EXPRESS\\X86\\SQLEXPR32.EXE"));
+		       else runcommand.Append(_T("\\wcu\\SQL2005\\EXPRESS\\X64\\SQLEXPR.EXE"));
+			}
+			else
+			{
+			if (CC_X64 == 0) runcommand.Append(_T("\\wcu\\XPSP2\\SQL2005\\EXPRESS\\X86\\SQLEXPR32.EXE"));
+		       else runcommand.Append(_T("\\wcu\\XPSP2\\SQL2005\\EXPRESS\\X64\\SQLEXPR.EXE"));
+			}
+
+
+			runcommand.Append(_T(" /qb INSTANCENAME=Codex2007 ADDLOCAL=All"));
+		
+			DWORD d = ExecCmd2(runcommand);
+			TeardownBillboard(g_dwThread, g_hThread);
+			if (d == 0) sqlsetupstatus = 0; else sqlsetupstatus = 1;
+		}
+		else
+		{
+			// With Advaces Service
+				//ShowBillboard(&g_dwThread, &g_hThread);
+			CString runcommand = theApp.CurrentPathStr;
+			if (this->_SQLEXPRESS == 0)	
+			{
+		 	    runcommand.Append(_T("\\wcu\\SQL2005\\Express\\Adv\\SQLEXPR_ADV.EXE"));
+			}
+			else
+			{
+				   runcommand.Append(_T("\\wcu\\XPSP2\\SQL2005\\Express\\Adv\\SQLEXPR_ADV.EXE"));
+			}
+			runcommand.Append(_T(" /qb INSTANCENAME=Codex2007 ADDLOCAL=All"));
+		
+			DWORD d = ExecCmd2(runcommand);
+			TeardownBillboard(g_dwThread, g_hThread);
+			if (d == 0) sqlsetupstatus = 0; else sqlsetupstatus = 1;
+
+		}
+		
+		
+		}
+	m_progress1.SetPos(5);
+	*/
+	#pragma endregion Legacy Code

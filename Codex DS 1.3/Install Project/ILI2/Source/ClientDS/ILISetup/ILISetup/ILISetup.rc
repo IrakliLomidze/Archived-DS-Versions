@@ -1,0 +1,279 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\ILISetup.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ILISetup.ico"
+IDI_ICON1               ICON                    "Images\\arrow_right_blue.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 328, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About ILISetup"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         137,IDC_STATICABOUTIMG,"Static",SS_BITMAP | SS_REALSIZEIMAGE,7,7,43,39
+    LTEXT           "Copyright (C) 1990-2009 By Irakli Lomidze",IDC_STATIC4,9,57,152,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 1990-2009 By Georgian Microsystems",IDC_STATIC3,9,47,171,8
+    DEFPUSHBUTTON   "OK",IDOK,271,78,50,15,WS_GROUP
+    LTEXT           "Codex.net 2007 DS Installation system",IDC_STATIC1,57,9,126,8
+    LTEXT           "Version 6.7 (build 6.7.2009..2476)",IDC_STATIC2,57,19,159,8
+    LTEXT           "Based on ILI Version 3.0",IDC_STATIC5,7,82,163,8
+END
+
+IDD_ILISETUP_DIALOG DIALOGEX 0, 0, 318, 230
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Codex 2007 DS Setup"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         132,IDB_Header,"Static",SS_BITMAP | SS_REALSIZEIMAGE,0,0,318,47
+    CONTROL         "",IDC_STATIC1,"Static",SS_BLACKFRAME,0,47,318,183
+    CONTROL         "Codex.net 2007 DS Prerequisites",IDC_BUTTON1,"Button",BS_OWNERDRAW | BS_LEFT | WS_TABSTOP,52,74,126,14
+    CONTROL         136,IDC_STATIC,"Static",SS_BITMAP,11,70,36,33
+    CONTROL         "Codex.net 2007 DS Client",IDC_BUTTON2,"Button",BS_OWNERDRAW | BS_LEFT | WS_TABSTOP,54,170,127,14,WS_EX_TRANSPARENT
+    CONTROL         138,IDC_STATIC,"Static",SS_BITMAP,9,165,43,39
+    LTEXT           "Codex 2007 Document Storage Installer for Win32  and Win64",IDC_STATIC2,5,50,274,8
+    CONTROL         "Help",IDC_BUTTON6,"Button",BS_OWNERDRAW | BS_LEFT | WS_TABSTOP,295,48,23,14
+    CONTROL         "Exit",IDC_BUTTON7,"Button",BS_OWNERDRAW | WS_TABSTOP,296,216,22,14
+    LTEXT           "Re/Install Codex.net 2007 DS Prerequisites to repair system components required Codex.net 2007 DS or Install new version of the Prerequisites.",IDC_STATIC10,54,88,258,24
+    LTEXT           "Repair, Reinstall or Install Codex.Net 2007 DS Client",IDC_STATIC11,54,185,244,8
+    CONTROL         "",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | BS_FLAT | NOT WS_VISIBLE | WS_DISABLED | WS_GROUP | WS_TABSTOP,264,215,8,8,WS_EX_TRANSPARENT
+    CONTROL         "View Readme",IDC_BUTTON3,"Button",BS_OWNERDRAW | WS_TABSTOP,89,215,64,14
+    LTEXT           "Force Install",IDC_STATICForceInstall,17,216,66,8
+    CONTROL         "",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,216,9,10
+    CONTROL         145,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,10,119,32,30,WS_EX_TRANSPARENT
+    CONTROL         "Adobe Acrobat Reader 8.1",IDC_BUTTON4,"Button",BS_OWNERDRAW | BS_LEFT | WS_TABSTOP,52,120,132,14
+    LTEXT           "Codex.net 2007 DS require to run Adobe Reader 8.1, you should to install it before install Codex.net 2007 DS",IDC_STATIC17,54,134,259,23
+END
+
+IDD_PAGEDIALOG1 DIALOGEX 0, 0, 504, 245
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Codex 2007 Document Storage Prerequesties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Codex 2007 Document Storage Prerequesties",IDC_STATICCodex2007Pre,172,12,318,20,0,WS_EX_TRANSPARENT
+    LTEXT           "Windows Version",IDC_STATIC,172,51,55,8,0,WS_EX_TRANSPARENT
+    LTEXT           "Win Ver",IDC_STATIC_WinVersion,295,51,185,8,0,WS_EX_TRANSPARENT
+    LTEXT           "Windows Installer",IDC_STATIC,172,64,58,8,0,WS_EX_TRANSPARENT
+    LTEXT           "MSI Ver",IDC_STATICMSIVER,295,64,186,8,0,WS_EX_TRANSPARENT
+    LTEXT           "GeoABC Dublicate Font Status",IDC_STATIC,172,90,98,8,NOT WS_VISIBLE | WS_DISABLED,WS_EX_TRANSPARENT
+    LTEXT           "Static",IDC_FONTLABEL,295,89,188,8,NOT WS_VISIBLE | WS_DISABLED,WS_EX_TRANSPARENT
+    GROUPBOX        "Windows Information",IDC_STATIC,166,35,325,77,0,WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_STATIC,7,117,490,70,0,WS_EX_TRANSPARENT
+    CONTROL         ".NET Framework 3.0",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,132,81,10,WS_EX_TRANSPARENT
+    LTEXT           "Static",IDC_NETFXSTATIC,287,132,201,8,0,WS_EX_TRANSPARENT
+    CONTROL         "SQL Server Native Client",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,150,95,10,WS_EX_TRANSPARENT
+    LTEXT           "Static",IDC_SQLSTATIC,287,150,204,8,0,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,12,218,477,14,WS_EX_TRANSPARENT
+    LTEXT           "Installation Process",IDC_STATIC,19,208,63,8,0,WS_EX_TRANSPARENT
+    PUSHBUTTON      "Install",IDC_BUTTON3,431,194,60,14,0,WS_EX_TRANSPARENT
+    LTEXT           "MDAC",IDC_STATICMDACLABEL,172,77,20,8,0,WS_EX_TRANSPARENT
+    LTEXT           "MDAC Ver",IDC_MDACLABEL,295,77,186,8,0,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_STATICWP,"Static",SS_OWNERDRAW,0,0,503,5,WS_EX_TRANSPARENT
+    CONTROL         140,IDC_STATIC,"Static",SS_BITMAP,6,20,155,94
+    LTEXT           "",IDC_STATICPanelW1,183,194,26,17,0,WS_EX_TRANSPARENT
+    CONTROL         "Microsoft Visual C++ 2008 Redistributable Package  (runtime components of Visual C++ Libraries)",IDC_CHECK3,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,169,328,10
+    CONTROL         "Click here to Install .NET Framework 3.0",IDC_BUTTON1,
+                    "Button",BS_OWNERDRAW | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,97,132,170,14
+END
+
+IDD_DIALOG1 DIALOGEX 0, 0, 428, 49
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_BORDER | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Installing Codex.net 2007 DS prerequistes component, this procedure may take a several time ",IDC_WHAITLABEL,40,21,379,8
+    ICON            IDI_ICON1,IDC_STATIC11122,12,15,20,20,0,WS_EX_TRANSPARENT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 6,7,2009,2476
+ PRODUCTVERSION 6,7,2009,2476
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Georgian Microsystems"
+            VALUE "FileDescription", "Codex 2007 DS Client Installer"
+            VALUE "FileVersion", "6.7.2009.2476"
+            VALUE "InternalName", "ILISetup.exe"
+            VALUE "LegalCopyright", "(C) Copyright 2003-2009 By Irakli Lomidze"
+            VALUE "OriginalFilename", "Setup.exe"
+            VALUE "ProductName", "Codex 2007 DS Client Installer"
+            VALUE "ProductVersion", "6.7.2009.2476"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+
+    IDD_ILISETUP_DIALOG, DIALOG
+    BEGIN
+        HORZGUIDE, 47
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 421
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "Images\\123.bmp"
+IDB_BITMAP2             BITMAP                  "Images\\Midle51.bmp"
+IDB_BITMAP4             BITMAP                  "Images\\Top1.bmp"
+IDB_BITMAP3             BITMAP                  "Images\\WindowsLogo.bmp"
+IDB_BITMAP5             BITMAP                  "Images\\CodexV1.bmp"
+IDB_BITMAP6             BITMAP                  "Images\\CodexV2.bmp"
+IDB_BITMAP7             BITMAP                  "Images\\BAN1.bmp"
+IDB_BITMAP8             BITMAP                  "Images\\Ban2.bmp"
+IDB_BITMAP9             BITMAP                  "images\\bitmap9.bmp"
+IDB_BITMAP10            BITMAP                  "Images\\Adobe1.bmp"
+IDB_BITMAP11            BITMAP                  "Images\\Adobe2.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About ILISetup..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\ILISetup.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

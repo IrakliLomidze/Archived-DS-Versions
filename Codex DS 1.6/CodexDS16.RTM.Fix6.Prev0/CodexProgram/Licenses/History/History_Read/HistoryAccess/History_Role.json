@@ -1,0 +1,24 @@
+{
+  "License": 
+  {
+    "Header": 
+    {
+    "For": "Codex Document Storage",
+    "Copyright" : {
+      "Line1" : "(C) Copyright 1990-2018 By Georgian Microsystems",
+      "Line2" : "(C) Copyright 1990-2018 By Irakli Lomidze"
+                  },
+    "LicenseGenerator" : "Codex License Generator Version 10.1"
+    },
+  
+  "Version": "License File (Version = 7.8)",
+  "LID": "4BE8AA8F-61E5-46DC-8210-443D761B4345",
+  "XSt": "5BC3AD3C-B86D-484F-BB38-76270FAC47AE",
+  "AccessCategory" : "History",
+  "Access": "History Read Only",
+  "Description": "Read Access On Public History",
+  "DefCode1" : "ccabf795c815537354d5ce22c1a60723b904ba5f",
+  "DefCode2" : "8b14b6c37c8038e7ff06778d6bb70c7bbe34afbe"
+  
+  }
+}

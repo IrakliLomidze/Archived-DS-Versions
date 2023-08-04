@@ -1,0 +1,2055 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Text;
+using System.IO;
+using System.Windows.Forms;
+
+namespace ILG.Codex.Codex2007
+{
+    public partial class Form_Codex_Document : Form
+    {
+        public Form1 MainForm;
+
+        public Form_Codex_Document()
+        {
+            InitializeComponent();
+        }
+
+        private void CodexInText_TextChanged(object sender, EventArgs e)
+        {
+            MainForm.CodexInText_TextChanged(sender, e);
+        }
+
+        private void CodexInText_KeyUp(object sender, KeyEventArgs e)
+        {
+            MainForm.CodexInText_KeyUp(sender, e);
+        }
+
+        private void CodexInText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = ILG.Codex.KeyBoard.Layout.U[e.KeyChar];
+        }
+
+        private void CodexSerachInCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            MainForm.CodexSerachInCheck_CheckedChanged(sender, e);
+        }
+
+        private void ultraButton1_Click(object sender, EventArgs e)
+        {
+            MainForm.ultraButton1_Click(sender, e);
+        }
+
+        private void CodexZoomingCombo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //MainForm.CodexZoomingCombo_SelectionChangeCommitted(sender, e);
+        }
+
+        private void CodexZoomingCombo_KeyUp(object sender, KeyEventArgs e)
+        {
+            //MainForm.CodexZoomingCombo_KeyUp(sender, e);
+        }
+
+        private void textControl_Codex_InputPositionChanged(object sender, EventArgs e)
+        {
+            MainForm.textControl_Codex_InputPositionChanged(sender, e);
+        }
+
+        private void CodexLinkBox_DocumentClick(object sender, ILG.Codex.LinkListBox.LinkListEventArgs e)
+        {
+           // MainForm.CodexLinkBox_DocumentClick(sender, e);
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            MainForm.CodexToolBar.ShowPopup("DocumenPopUp"); 
+        }
+
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
+            MainForm.CodexToolBar.ShowPopup("Keyboard3"); 
+        }
+
+        private void contextMenuStrip3_Opening(object sender, CancelEventArgs e)
+        {
+            MainForm.CodexToolBar.ShowPopup("LinkPopUp"); 
+        }
+
+        private void ultraDockManager1_AfterDockChange(object sender, Infragistics.Win.UltraWinDock.PaneEventArgs e)
+        {
+            MainForm.ZoomingCodex();
+        }
+
+
+        #region Direct Tx Opeation
+        public void TX_Copy()
+        {
+            if (textControl_Codex.CanCopy == false) return;
+            if (textControl_Codex.Focused == false) textControl_Codex.Focus();
+            textControl_Codex.Copy();
+        }
+
+
+        public void TX_Cut()
+        {
+            if (textControl_Codex.CanCopy == false) return;
+            if (textControl_Codex.Focused == false) textControl_Codex.Focus();
+            textControl_Codex.Cut();
+        }
+
+
+        public void TX_Paste()
+        {
+            if (textControl_Codex.CanPaste == false) return;
+            if (textControl_Codex.Focused == false) textControl_Codex.Focus();
+            textControl_Codex.Paste();
+        }
+
+        public void TX_Paste(TXTextControl.ClipboardFormat format)
+        {
+            if (textControl_Codex.CanPaste == false) return;
+            if (textControl_Codex.Focused == false) textControl_Codex.Focus();
+            textControl_Codex.Paste(format);
+        }
+
+
+        public void TX_Undo()
+        {
+            if (textControl_Codex.CanUndo == false) return;
+            textControl_Codex.Undo();
+        }
+
+        public void TX_Redo()
+        {
+            if (textControl_Codex.CanRedo == false) return;
+            textControl_Codex.Redo();
+        }
+
+        public void TX_Sellect()
+        {
+            textControl_Codex.SelectAll();
+        }
+
+
+        public void TX_FormatTable()
+        {
+            try
+            {
+                this.textControl_Codex.TableFormatDialog();
+            }
+            catch
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მონიშნეთ ცხრილი");
+            }
+
+        }
+
+
+
+        public void TX_FormatList()
+        {
+            try
+            {
+                this.textControl_Codex.ListFormatDialog();
+            }
+            catch
+            {
+                
+            }
+
+        }
+
+        public void TX_FormatFont()
+        {
+            try
+            {
+                textControl_Codex.FontDialog();
+            }
+            catch
+            {
+            }
+        }
+
+
+        public void TX_FormatParagraph()
+        {
+            try
+            {
+                textControl_Codex.ParagraphFormatDialog();
+            }
+            catch
+            {
+            }
+        }
+
+        public void TX_FormatImage()
+        {
+            try
+            {
+                textControl_Codex.ImageAttributesDialog();
+            }
+            catch
+            {
+            }
+        }
+
+        public void TX_Open(bool WithCodexSettings)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            //fd.InitialDirectory = startdir;
+            fd.Filter = "All files (*.*)|*.*";
+
+            fd.Title = "Open Document";
+            fd.Filter = "Microsoft Word (*.doc)|*.doc|Microsoft Word 2007(*.docx)|*.docx|Rich Text Format (*.rtf)|*.rtf|txt files (*.txt)|*.txt|All files (*.*)|*.*";
+
+
+            fd.FilterIndex = 0;
+            fd.RestoreDirectory = true;
+            fd.Multiselect = false;
+            fd.Title = "Open File";
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                string str = System.IO.Path.GetExtension(fd.FileName).Trim().ToUpper();
+                TXTextControl.LoadSettings LoadSettings = new TXTextControl.LoadSettings();
+
+                switch (str)
+                {
+                    case ".RTF": textControl_Codex.Load(fd.FileName, TXTextControl.StreamType.RichTextFormat, LoadSettings); break;
+                    case ".DOC": textControl_Codex.Load(fd.FileName, TXTextControl.StreamType.MSWord, LoadSettings); break;
+                    case ".DOCX": textControl_Codex.Load(fd.FileName, TXTextControl.StreamType.WordprocessingML, LoadSettings); break;
+                    case ".TXT": textControl_Codex.Load(fd.FileName, TXTextControl.StreamType.PlainText, LoadSettings); break;
+                    default: ILG.Windows.Forms.ILGMessageBox.Show("ფაილი უცნობ ფორმატშია"); return; break;
+                }
+
+                if (WithCodexSettings == true)
+                {
+                    textControl_Codex.PageSize = new Size(850, 1100);
+                    textControl_Codex.PageMargins.Bottom = 79;
+                    textControl_Codex.PageMargins.Left = 79;
+                    textControl_Codex.PageMargins.Right = 79;
+                    textControl_Codex.PageMargins.Top = 79;
+                }
+
+
+            }
+        }
+
+
+        public void TX_Save()
+        {
+            TXTextControl.SaveSettings SaveSettings = new TXTextControl.SaveSettings();
+
+            SaveSettings.PageMargins = this.textControl_Codex.PageMargins;
+            SaveSettings.PageSize = textControl_Codex.PageSize;
+
+            SaveFileDialog fd = new SaveFileDialog();
+            //fd.InitialDirectory = startdir;
+            fd.Filter = fd.Filter = "Microsoft Word (*.doc)|*.doc|Microsoft Word (*.docx)|*.docx|Rich Text Format (*.rtf)|*.rtf|txt files (*.txt)|*.txt";
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                string str = System.IO.Path.GetExtension(fd.FileName).Trim().ToUpper();
+
+                //if (str == ".RTF") { textControl_CGL.Save(fd.FileName, TXTextControl.StreamType.RichTextFormat, SaveSettings); return; }
+                //if (str == ".DOC") { textControl_CGL.Save(fd.FileName, TXTextControl.StreamType.MSWord, SaveSettings); return; }
+                //if (str == ".DOCX") { textControl_CGL.Save(fd.FileName, TXTextControl.StreamType.WordprocessingML, SaveSettings); return; }
+                //if (str == ".TXT") { textControl_CGL.Save(fd.FileName, TXTextControl.StreamType.PlainText, SaveSettings); return; }
+                if (str == ".RTF") { textControl_Codex.Save(fd.FileName, TXTextControl.StreamType.RichTextFormat); return; }
+                if (str == ".DOC") { textControl_Codex.Save(fd.FileName, TXTextControl.StreamType.MSWord); return; }
+                if (str == ".DOCX") { textControl_Codex.Save(fd.FileName, TXTextControl.StreamType.WordprocessingML); return; }
+                if (str == ".TXT") { textControl_Codex.Save(fd.FileName, TXTextControl.StreamType.PlainText); return; }
+            }
+        }
+
+
+        public void TX_PColumnLeft()
+        {
+            textControl_Codex.Tables.GetItem().Columns.Add(TXTextControl.TableAddPosition.Before); 
+        }
+
+        public void TX_PInsertColumntRight()
+        {
+            textControl_Codex.Tables.GetItem().Columns.Add(TXTextControl.TableAddPosition.After);
+        }
+
+
+        public void TX_PRowAbove()
+        {
+            textControl_Codex.Tables.GetItem().Rows.Add(TXTextControl.TableAddPosition.Before, 1);
+        }
+
+        public void TX_PRowBelow()
+        {
+            textControl_Codex.Tables.GetItem().Rows.Add(TXTextControl.TableAddPosition.After, 1);
+        }
+
+
+
+        public void TX_GridLines()
+        {
+            textControl_Codex.Tables.GridLines = !textControl_Codex.Tables.GridLines;
+        }
+
+        public void TX_PDelTable()
+        {
+            textControl_Codex.Tables.Remove();
+        }
+
+        public void TX_PDelColumn()
+        {
+            textControl_Codex.Tables.GetItem().Columns.Remove();
+        }
+
+        public void TX_PDelRow()
+        {
+            textControl_Codex.Tables.GetItem().Rows.Remove();
+        }
+
+        public void TX_PSplitAbove()
+        {
+            textControl_Codex.Tables.GetItem().Split(TXTextControl.TableAddPosition.Before);
+        }
+
+
+        public void TX_PSplitBelow()
+        {
+            textControl_Codex.Tables.GetItem().Split(TXTextControl.TableAddPosition.After);
+        }
+
+
+        public void TX_PSelectTable()
+        {
+            textControl_Codex.Tables.GetItem().Select();
+        }
+
+
+        public void TX_PSelectColumn()
+        {
+            textControl_Codex.Tables.GetItem().Cells.GetItem().Select();
+        }
+
+
+        public void TX_PSelectRow()
+        {
+            textControl_Codex.Tables.GetItem().Rows.GetItem().Select();
+        }
+
+
+        public void TX_InsertTable()
+        {
+            frmInsertTable InsertTableDialog2 = new frmInsertTable();
+            InsertTableDialog2.tx = textControl_Codex;
+            InsertTableDialog2.ShowDialog();
+
+        }
+
+        public void TX_HeaderFooter()
+        {
+            try
+            {
+                frmHeaderSettings HeaderSettingsDialog = new frmHeaderSettings();
+
+                HeaderSettingsDialog.tx = textControl_Codex;
+                HeaderSettingsDialog.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Codex 2007 ");
+            }
+        }
+
+        public void TX_TextColor()
+        {
+            ColorDialog ColorDialog1 = new ColorDialog();
+            ColorDialog1.ShowDialog();
+            textControl_Codex.Selection.ForeColor = ColorDialog1.Color;
+        }
+
+        public void TX_DocumentBackgroundColor()
+        {
+            ColorDialog ColorDialog3 = new ColorDialog();
+            ColorDialog3.ShowDialog();
+            textControl_Codex.BackColor = ColorDialog3.Color;
+        }
+
+        public void TX_TextBackgroundColor()
+        {
+            ColorDialog ColorDialog2 = new ColorDialog();
+            ColorDialog2.ShowDialog();
+            textControl_Codex.Selection.TextBackColor = ColorDialog2.Color;
+        }
+
+        public void TX_InsertImage()
+        {
+            TXTextControl.Image NewImage = new TXTextControl.Image();
+            textControl_Codex.Images.Add(NewImage, TXTextControl.HorizontalAlignment.Left, -1, TXTextControl.ImageInsertionMode.DisplaceText);
+        }
+
+        public void TX_DocumentFormat()
+        {
+            PageSetup ps = new PageSetup();
+            ps.ShowDialog(this.textControl_Codex);
+
+        }
+
+        public void TX_Styles()
+        {
+            textControl_Codex.FormattingStylesDialog();
+        }
+
+        public void SwitchBetweenHeaderAndFooter()
+        {
+            //if (m_ActiveHeaderFooter != null)
+            //{
+            //    if (m_ActiveHeaderFooter.Type == TXTextControl.HeaderFooterType.Header)
+            //        textControl1.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.Footer).Activate();
+            //    else if (m_ActiveHeaderFooter.Type == TXTextControl.HeaderFooterType.Footer)
+            //        textControl1.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.Header).Activate();
+            //    else if (m_ActiveHeaderFooter.Type == TXTextControl.HeaderFooterType.FirstPageHeader)
+            //        textControl1.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.FirstPageFooter).Activate();
+            //    else if (m_ActiveHeaderFooter.Type == TXTextControl.HeaderFooterType.FirstPageFooter)
+            //        textControl1.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.FirstPageHeader).Activate();
+            //}
+        }
+
+        public void GoToFirstPage()
+        {
+            //if (m_ActiveHeaderFooter != null)
+            //{
+            //    if (m_ActiveHeaderFooter.Type == TXTextControl.HeaderFooterType.Header)
+            //        textControl1.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.FirstPageHeader).Activate();
+            //    else if (m_ActiveHeaderFooter.Type == TXTextControl.HeaderFooterType.Footer)
+            //        textControl1.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.FirstPageFooter).Activate();
+            //}
+        }
+
+        public void GoToDefault()
+        {
+            //if (m_ActiveHeaderFooter != null)
+            //{
+            //    if (m_ActiveHeaderFooter.Type == TXTextControl.HeaderFooterType.FirstPageHeader)
+            //        textControl1.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.Header).Activate();
+            //   else if (m_ActiveHeaderFooter.Type == TXTextControl.HeaderFooterType.FirstPageFooter)
+            //        textControl1.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.Footer).Activate();
+            //}
+        }
+
+
+
+        public void RemoveAllSections()
+        {
+            TXTextControl.SectionCollection.SectionEnumerator sectionEnum =  textControl_Codex.Sections.GetEnumerator();
+            int sectionCounter = textControl_Codex.Sections.Count;
+
+
+
+            sectionEnum.Reset();
+            sectionEnum.MoveNext();
+            for (int i = 0; i < sectionCounter; i++)
+            {
+                TXTextControl.Section curSection = (TXTextControl.Section)sectionEnum.Current;
+
+                if (curSection.Number == 1)
+                {
+                    sectionEnum.MoveNext();
+                    continue;
+                }
+
+                textControl_Codex.Selection.Start = curSection.Start - 2;
+                textControl_Codex.Selection.Length = 1;
+                textControl_Codex.Selection.Text = "";
+            }
+
+            textControl_Codex.PageSize = new Size(850, 1100);
+            textControl_Codex.PageMargins.Bottom = 79;
+            textControl_Codex.PageMargins.Left = 79;
+            textControl_Codex.PageMargins.Right = 79;
+            textControl_Codex.PageMargins.Top = 79;
+            
+        }
+
+
+        #endregion Direct Tx Opeation
+
+
+        public void Document_New()
+        {
+            if (ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტის ტექტის და კავშირების გასუფთავება ? ", "", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) != System.Windows.Forms.DialogResult.Yes) return;
+            // Clear Text
+                this.textControl_Codex.Load("", TXTextControl.StringStreamType.PlainText);
+            
+            
+            try
+            {
+                while (this.textControl_Codex.Tables.Count != 0)
+                {
+                    this.textControl_Codex.Tables.Remove();
+                }
+                
+            }
+            catch
+            {
+            }
+            
+            ActiveCodexDoc.Links.Tables[0].Rows.Clear();
+            Document_Caption.Text = "";
+
+            textControl_Codex.PageSize = new Size(850, 1100);
+            textControl_Codex.PageMargins.Bottom = 79;
+            textControl_Codex.PageMargins.Left = 79;
+            textControl_Codex.PageMargins.Right = 79;
+            textControl_Codex.PageMargins.Top = 79;
+            
+        }
+
+        private void ultraButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        public void ViewLayout(int CodexViewLayout)
+        {
+            
+            if (CodexViewLayout == 0)
+            {
+                textControl_Codex.ViewMode = TXTextControl.ViewMode.PageView;
+                MainForm.CodexViewLayout = 0;
+                this.CodexDocumentStatusBar.ButtonClick -= new Infragistics.Win.UltraWinStatusBar.PanelEventHandler(this.CodexDocumentStatusBar_ButtonClick);
+                try
+                {
+                    CodexDocumentStatusBar.Panels["PageLayout"].Checked = true;
+                    CodexDocumentStatusBar.Panels["WebLayout"].Checked = false;
+                }
+                finally
+                {
+                    this.CodexDocumentStatusBar.ButtonClick += new Infragistics.Win.UltraWinStatusBar.PanelEventHandler(this.CodexDocumentStatusBar_ButtonClick);
+                }
+
+            }
+            else
+            {
+                textControl_Codex.ViewMode = TXTextControl.ViewMode.Normal;
+                MainForm.CodexViewLayout = 1;
+                this.CodexDocumentStatusBar.ButtonClick -= new Infragistics.Win.UltraWinStatusBar.PanelEventHandler(this.CodexDocumentStatusBar_ButtonClick);
+                try
+                {
+                    CodexDocumentStatusBar.Panels["PageLayout"].Checked = false;
+                    CodexDocumentStatusBar.Panels["WebLayout"].Checked = true;
+                }
+                finally
+                {
+                    this.CodexDocumentStatusBar.ButtonClick += new Infragistics.Win.UltraWinStatusBar.PanelEventHandler(this.CodexDocumentStatusBar_ButtonClick);
+                }
+
+            }
+       }
+
+        private void CodexDocumentStatusBar_ButtonClick(object sender, Infragistics.Win.UltraWinStatusBar.PanelEventArgs e)
+        {
+
+            
+
+            if (e.Panel.Key.ToUpper() == "ShowSymbols".ToUpper())
+            {
+                this.textControl_Codex.ControlChars = !this.textControl_Codex.ControlChars;
+                return;
+            }
+
+
+
+            if (e.Panel.Key.ToUpper() == "HeaderFooter".ToUpper())
+            {
+                try
+                {
+                    TXTextControl.HeaderFooter Header;
+                    
+                    // Insert headers and footers if the document does not yet contain them
+                    if (textControl_Codex.HeadersAndFooters.Count == 0)
+                        textControl_Codex.HeadersAndFooters.Add(TXTextControl.HeaderFooterType.All);
+                    textControl_Codex.HeaderFooterActivationStyle = TXTextControl.HeaderFooterActivationStyle.ActivateClick;// .HeadersAndFooters.Styles = TXTextControl.HeaderFooterStyles.ActivateClick;
+
+                    // Activate first page header. If there is no first page header, try normal header
+                    Header = textControl_Codex.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.FirstPageHeader);
+                    if (Header == null)
+                        Header = textControl_Codex.HeadersAndFooters.GetItem(TXTextControl.HeaderFooterType.Header);
+
+                    if (Header != null)
+                        Header.Activate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "არ ხერხდება კოლონტიტულის ფორმირება");
+                }
+                return;
+            }
+
+
+
+            if (e.Panel.Key.ToUpper() == "Zoom".ToUpper())
+            {
+                ZoomingDialog zd1 = new ZoomingDialog();
+                zd1.CurrentZoom = this.textControl_Codex.ZoomFactor;
+                if (zd1.ShowDialog() == DialogResult.OK)
+                {
+                    MainForm.CodexZoomFactor = zd1.CurrentZoom;
+                    MainForm.ZoomingCodex();
+                    return;
+                }
+            }
+
+            if (e.Panel.Key.ToUpper() == "WebLayout".ToUpper())
+            {
+                    ViewLayout(1);
+                    return;
+            }
+
+
+            if (e.Panel.Key.ToUpper() == "PageLayout".ToUpper())
+            {
+
+                ViewLayout(0);
+                return;
+            }
+
+
+
+        }
+
+        private void ultraTrackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            if (MainForm.CodexZoomFactor < 0) return;
+            MainForm.modify_zoomfactor(this.ultraTrackBar1.Value);
+        }
+
+        private void ultraTrackBar1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ultraTrackBar1_MouseDown(object sender, MouseEventArgs e)
+        {
+            MainForm.CodexZoomFactor = textControl_Codex.ZoomFactor;
+        }
+
+        private void Form_Codex_Document_Load(object sender, EventArgs e)
+        {
+            this.textControl_Codex.ButtonBar = this.buttonBar2;
+            this.textControl_Codex.RulerBar = this.rulerBar1;
+            this.textControl_Codex.VerticalRulerBar = this.rulerBar2;
+        }
+
+        private void ultraTabPageControl5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textControl_Codex_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = ILG.Codex.KeyBoard.Layout.U[e.KeyChar];
+        }
+
+
+        // Text Box Internal Functionality
+
+        // Edit/New Doc
+        
+        #region Attributes
+        public DataSet ds;
+        public  DataTable Link_dtc1; // Authors
+        public  DataTable Link_dtc2; // Types
+
+        public DataTable Attr_dtc1; // 
+        public DataTable Attr_dtc2;
+        public DataTable Attr_dtc3;
+        public DataTable Attr_dtc4;
+
+        public void InitData()
+        {
+            string strConn = ILG.Codex.Codex2007.Properties.Settings.Default.ConnectionStringUpdate;
+            //string strcmd = "SELECT * FROM Codex_DAUTHOR where A_ID <> 0 ORDER By A_Order ";
+            string strcmd = "SELECT * FROM Codex_DAUTHOR  ORDER By A_Order ";
+            SqlDataAdapter da = new SqlDataAdapter(strcmd, @strConn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            Link_dtc1 = ds.Tables[0];
+
+            //strcmd = "SELECT * FROM Codex_DTYPE where T_ID <> 0 ORDER By T_Order";
+            strcmd = "SELECT * FROM Codex_DTYPE ORDER By T_Order";
+            da = new SqlDataAdapter(strcmd, @strConn);
+            ds = new DataSet();
+            da.Fill(ds);
+            Link_dtc2 = ds.Tables[0];
+
+            strConn = ILG.Codex.Codex2007.Properties.Settings.Default.ConnectionStringUpdate;
+            //strcmd = "SELECT * FROM Codex_DAUTHOR where A_ID <> 0 ORDER By A_Order";
+            strcmd = "SELECT * FROM Codex_DAUTHOR ORDER By A_Order";
+
+            da = new SqlDataAdapter(strcmd, @strConn);
+            ds = new DataSet();
+            da.Fill(ds);
+            Attr_dtc1 = ds.Tables[0];
+
+            //strcmd = "SELECT * FROM Codex_DTYPE  where T_ID <> 0 ORDER By T_Order";
+            strcmd = "SELECT * FROM Codex_DTYPE ORDER By T_Order";
+            da = new SqlDataAdapter(strcmd, @strConn);
+            ds = new DataSet();
+            da.Fill(ds);
+            Attr_dtc2 = ds.Tables[0];
+
+            //strcmd = "SELECT * FROM Codex_DSubject  where S_ID <> 0 ORDER By S_Order";
+            strcmd = "SELECT * FROM Codex_DSubject ORDER By S_Order";
+            da = new SqlDataAdapter(strcmd, @strConn);
+            ds = new DataSet();
+            da.Fill(ds);
+            Attr_dtc3 = ds.Tables[0];
+
+            //strcmd = "SELECT * FROM Codex_DWords where W_ID <> 0 ORDER By W_Order";
+            strcmd = "SELECT * FROM Codex_DWords ORDER By W_Order";
+            da = new SqlDataAdapter(strcmd, @strConn);
+            ds = new DataSet();
+            da.Fill(ds);
+            Attr_dtc4 = ds.Tables[0];
+
+
+        }
+
+        #endregion Attributes;
+
+        public void LoadAttributes()
+        {
+            Link_Author.DataSource = Link_dtc1;
+            Link_Author.ValueMember = "A_ID";
+            Link_Author.DataMember = "";
+            Link_Author.DisplayMember = "A_Caption";
+            Link_Author.DisplayLayout.Bands[0].Columns["A_ID"].Hidden = true;
+            Link_Author.DisplayLayout.Bands[0].Columns["A_Order"].Hidden = true;
+            Link_Author.DisplayLayout.Bands[0].Columns["A_Caption"].Header.Caption = "მიმღები ორგანო";
+            Link_Author.DisplayLayout.Bands[0].Columns["A_Caption"].Width = 320;
+            Link_Author.DisplayLayout.Bands[0].Columns["A_Caption"].AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            Link_Author.Value = ActiveCodexDoc.L_Author; 
+
+            Link_Type.DataSource = Link_dtc2;
+            Link_Type.DisplayMember = "T_Caption";
+            Link_Type.ValueMember = "T_ID";
+            Link_Type.DataMember = "";
+            Link_Type.DisplayLayout.Bands[0].Columns["T_ID"].Hidden = true;
+            Link_Type.DisplayLayout.Bands[0].Columns["T_Order"].Hidden = true;
+            Link_Type.DisplayLayout.Bands[0].Columns["T_Caption"].Header.Caption = "დოკუმენტის ტიპი";
+            Link_Type.DisplayLayout.Bands[0].Columns["T_Caption"].Width = 320;
+            Link_Type.DisplayLayout.Bands[0].Columns["T_Caption"].AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            Link_Type.Value = ActiveCodexDoc.L_Type;
+
+            Document_Author.DataSource = Attr_dtc1;
+            Document_Author.ValueMember = "A_ID";
+            Document_Author.DataMember = "";
+            Document_Author.DisplayMember = "A_Caption";
+            Document_Author.DisplayLayout.Bands[0].Columns["A_ID"].Hidden = true;
+            Document_Author.DisplayLayout.Bands[0].Columns["A_Order"].Hidden = true;
+            Document_Author.DisplayLayout.Bands[0].Columns["A_Caption"].Header.Caption = "მიმღები ორგანო";
+            Document_Author.DisplayLayout.Bands[0].Columns["A_Caption"].Width = 320;
+            Document_Author.DisplayLayout.Bands[0].Columns["A_Caption"].AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            Document_Author.Value = ActiveCodexDoc.Author;
+            
+            Document_Type.DataSource = Attr_dtc2;
+            Document_Type.DisplayMember = "T_Caption";
+            Document_Type.ValueMember = "T_ID";
+            Document_Type.DataMember = "";
+            Document_Type.DisplayLayout.Bands[0].Columns["T_ID"].Hidden = true;
+            Document_Type.DisplayLayout.Bands[0].Columns["T_Order"].Hidden = true;
+            Document_Type.DisplayLayout.Bands[0].Columns["T_Caption"].Header.Caption = "დოკუმენტის ტიპი";
+            Document_Type.DisplayLayout.Bands[0].Columns["T_Caption"].Width = 320;
+            Document_Type.DisplayLayout.Bands[0].Columns["T_Caption"].AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            Document_Type.Value = ActiveCodexDoc.Type;
+
+            Document_Subject.DataSource = Attr_dtc3;
+            Document_Subject.DisplayMember = "S_Caption";
+            Document_Subject.ValueMember = "S_ID";
+            Document_Subject.DataMember = "";
+            Document_Subject.DisplayLayout.Bands[0].Columns["S_ID"].Hidden = true;
+            Document_Subject.DisplayLayout.Bands[0].Columns["S_Order"].Hidden = true;
+            Document_Subject.DisplayLayout.Bands[0].Columns["S_Caption"].Header.Caption = "დარგი";
+            Document_Subject.DisplayLayout.Bands[0].Columns["S_Caption"].Width = 320;
+            Document_Subject.DisplayLayout.Bands[0].Columns["S_Caption"].AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            Document_Subject.Value = ActiveCodexDoc.Subject;
+
+            Document_Word.DataSource = Attr_dtc4;
+            Document_Word.DisplayMember = "W_Caption";
+            Document_Word.ValueMember = "W_ID";
+            Document_Word.DataMember = "";
+            Document_Word.DisplayLayout.Bands[0].Columns["W_ID"].Hidden = true;
+            Document_Word.DisplayLayout.Bands[0].Columns["W_Order"].Hidden = true;
+            Document_Word.DisplayLayout.Bands[0].Columns["W_Caption"].Header.Caption = "ძირეული სიტყვები";
+            Document_Word.DropDownWidth = 0;
+            Document_Word.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
+            Document_Word.DisplayLayout.Bands[0].Columns["W_Caption"].AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            Document_Word.Value = ActiveCodexDoc.Words;
+
+            this.ultraGrid1.DataSource = ActiveCodexDoc.Links.Tables["LinkTable"];
+            this.ultraGrid1.DataBind();
+            //ultraGrid1.DisplayLayout.AutoFitColumns = true;
+            ultraGrid1.DisplayLayout.Key = "Link";
+            ultraGrid1.FlatMode = true;
+
+            ultraGrid1.DisplayLayout.Bands[0].HeaderVisible = true;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Link"].Hidden = false;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Link"].Header.Caption = "Link To";
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Link"].Width = 64;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Link"].Header.VisiblePosition = 0;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Link"].AutoEdit = false;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Link"].Header.Fixed = true;
+
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Order"].Hidden = true;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Order"].AutoEdit = false;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Order"].Header.Caption = "მიმდევრობა";
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Order"].Header.VisiblePosition = 1;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Order"].Width = 16;
+
+            ultraGrid1.DisplayLayout.Bands[0].Columns["LinkType"].Hidden = false;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["LinkType"].AutoEdit = false;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["LinkType"].Width = 110;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["LinkType"].Header.VisiblePosition = 2;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["LinkType"].Header.Caption = "კავშირის ტიპი";
+            ultraGrid1.DisplayLayout.Bands[0].Columns["LinkType"].Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Edit; ;
+
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Status"].Hidden = true;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Status"].AutoEdit = false;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Status"].Width = 110;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Status"].Header.VisiblePosition = 3;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Status"].Header.Caption = "სტატუსი";
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Status"].Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Edit; ;
+
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Caption"].Hidden = false;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Caption"].AutoEdit = false;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Caption"].Width = 80;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Caption"].Header.VisiblePosition = 4;
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Caption"].Header.Caption = "კავშირის სახელი";
+            //ultraGrid1.DisplayLayout.Bands[0].Columns["Caption"].AutoSizeMode = Infragistics.Win.UltraWinGrid.ColumnAutoSizeMode.SiblingRowsOnly;ultraGrid1.DisplayLayout.Bands[0].Columns["Caption"].Header.Caption = "კავშირის სახელი";
+            ultraGrid1.DisplayLayout.Bands[0].Columns["Caption"].Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Edit; ;
+
+            ultraGrid1.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn;
+            //ultraGrid1.DisplayLayout.AutoFitColumns = true;
+            ultraGrid1.DisplayLayout.Bands[0].Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
+            ultraGrid1.DisplayLayout.Bands[0].Override.RowAlternateAppearance.BackColor = Color.AliceBlue;//.LightSteelBlue;// .Wheat;
+            //ultraGrid1.DisplayLayout.Bands[0].Override.RowSizing = Infragistics.Win.UltraWinGrid.RowSizing.Fixed;
+
+
+            ultraGrid1.DisplayLayout.MaxColScrollRegions = 1;
+            ultraGrid1.DisplayLayout.MaxRowScrollRegions = 1;
+
+            if (ultraGrid1.Rows.Count != 0) ultraGrid1.Rows[0].Selected = true;
+
+            // Attach Others
+
+            if (ActiveCodexDoc.Number == -1) Document_Number.Text = "";
+            else { Document_Number.Text = ActiveCodexDoc.Number.ToString(); }
+
+            this.Document_Caption.Text = ActiveCodexDoc.Caption;
+            this.Document_Word_Edit.Text = ActiveCodexDoc.Words;
+
+            DocumentDate = ActiveCodexDoc.DocDate;
+            DocumentDate_Enter.Text = ILG.Codex.WindowsForms.PickDate.DateToString(DocumentDate);
+
+            EnterDate = ActiveCodexDoc.EntDate;
+            Enter_Date_Edit.Text = ILG.Codex.WindowsForms.PickDate.DateToString(EnterDate);
+
+            // FASKUNJI: CRITICAL CODE MIGHT BE CHANGED WHEN STATUS = -1 OR STATUS = 2;
+            if ((ActiveCodexDoc.Status != 0) && (ActiveCodexDoc.Status != 1)) ActiveCodexDoc.Status = 0;
+
+            this.Document_Status.SelectedIndex = ActiveCodexDoc.Status;
+
+
+            this.Document_Encoding.SelectedIndex = 0;
+            if (ActiveCodexDoc.DocEncoding.ToString() == "1252")
+                this.Document_Encoding.SelectedIndex = 0;
+            else this.Document_Encoding.SelectedIndex = 1;
+            Document_Format.SelectedIndex = 0;
+
+        }
+
+        // public IntCodexDoc  icodexdoc;
+        public void IntCodexLocalVars()
+		{
+			ActiveCodexDoc = new CodexDocumentInfo();
+		    InitData();
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            this.Document_Caption.Text = ILG.Codex.Codex2007.Tools.converttoGuni(Document_Caption.Text);
+        }
+
+        public void TX_Caption()
+        {
+            this.Document_Caption.Text = this.textControl_Codex.Selection.Text;
+        }
+
+        #region DateTime
+        DateTime EnterDate = DateTime.Now;
+
+        private void Enter_Date_Button_Click(object sender, EventArgs e)
+        {   
+            ILG.Codex.WindowsForms.PickDate dlg2 = new ILG.Codex.WindowsForms.PickDate(EnterDate);
+            Point dc2 = new Point(Enter_Date_Edit.Location.X, Enter_Date_Edit.Location.Y);
+            Point dc = ultraTabPageControl9.PointToScreen(dc2);
+            dlg2.Location = dc;
+            dlg2.ShowDialog();
+            Enter_Date_Edit.Text = dlg2.ToString();
+            EnterDate = dlg2.PickedDate;
+        }
+
+        DateTime DocumentDate = DateTime.Now;
+        private void DocumentDate_Enter_Button_Click(object sender, EventArgs e)
+        {
+            ILG.Codex.WindowsForms.PickDate dlg2 = new ILG.Codex.WindowsForms.PickDate(DocumentDate);
+            Point dc2 = new Point(DocumentDate_Enter.Location.X, DocumentDate_Enter.Location.Y);
+            Point dc = ultraTabControl4.PointToScreen(dc2);
+            dlg2.Location = dc;
+            dlg2.ShowDialog();
+            DocumentDate_Enter.Text = dlg2.ToString();
+            DocumentDate = dlg2.PickedDate;
+        }
+
+        DateTime LinkDate = DateTime.Now;
+        private void Link_Date_Button_Click(object sender, EventArgs e)
+        {
+            ILG.Codex.WindowsForms.PickDate dlg2 = new ILG.Codex.WindowsForms.PickDate(LinkDate);
+            Point dc2 = new Point(Link_Date_Edit.Location.X, Link_Date_Edit.Location.Y);
+            Point dc = ultraTabPageControl14.PointToScreen(dc2);
+            dlg2.Location = dc;
+            dlg2.ShowDialog();
+            Link_Date_Edit.Text = dlg2.ToString();
+            LinkDate = dlg2.PickedDate;
+        }
+
+        private void checkBox_EnterDate_CheckedChanged(object sender, EventArgs e)
+        {
+            Enter_Date_Edit.Enabled = checkBox_EnterDate.Checked;
+            Enter_Date_Button.Enabled = checkBox_EnterDate.Checked;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            Document_Encoding.Enabled = checkBox2.Checked;
+            Document_Format.Enabled = checkBox2.Checked;
+        }
+        #endregion DateTime
+
+        
+
+        #region KeyWords
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true; 
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            this.Document_Word_Edit.Text = this.Document_Word_Edit.Text + this.Document_Word.Text.ToString().Trim() + " , ";
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            string s = this.Document_Word_Edit.Text;
+            string s1 = this.Document_Word.Text.ToString().Trim() + " , ";
+            s = s.Replace(s1, "");
+            this.Document_Word_Edit.Text = s;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            this.Document_Word_Edit.Text = "";
+        }
+        #endregion KeyWords
+
+        // ----------------------------------------------------------------------------------
+        #region CodexDocumentInfot Class Def
+        public class CodexDocumentInfo
+        {
+            public int ID;            // D_ID
+            public string Caption;    // D_CAPTION
+            public int Author;        // C_AUTHOR
+            public int Subject;       // C_TOPIC
+            public int Type;          // C_TYPE
+            public string Words;      // C_WORDS
+            public string DocNumber;  // C_NUMBER
+            public DateTime DocDate;  // C_DATE
+            public DateTime LastEditDate; // C_LASTEDIT
+            public DateTime EntDate;  // C_ENTERDATE
+            public byte[] C_LINKS;
+            public byte[] C_TEXT;
+            public int Status;        // status
+            public int TO_DO;         // C_TODO
+            public int DocFormat;     // C_DocFormat
+            public string DocEncoding; // C_DocEncoding
+            public string DocText;    // C_DocText
+
+
+            public int Number;
+            // Links
+            public DataSet Links;
+            public int L_Author;
+            public int L_Type;
+            public DateTime L_EntDate;
+            public int L_Number;
+            public string L_Name;
+
+            public DataSet FoundedLinks;
+
+
+
+            // Save / Edit Document
+
+
+
+            public CodexDocumentInfo()
+            {
+                DateTime Today = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
+                ID = -1;
+                Caption = "";
+                DocDate = Today;
+                Author = -1;
+                Type = -1;
+                Subject = -1;
+                Words = "";
+                Status = 100;
+                EntDate = Today;
+                Number = -1;
+                DocEncoding = "Unicode";
+                Links = new DataSet("LinkDataSet");
+                Links.ReadXmlSchema(ILG.Codex.Codex2007.Properties.Settings.Default.CodexCurrentDirectory + @"\Links.xsd");
+
+            }
+
+        }
+        #endregion CodexDocumentInfot Class Def
+
+        public CodexDocumentInfo ActiveCodexDoc;
+        public int callfrom = 0;
+
+        #region LinkPreview
+        private void ultraTabControl1_ActiveTabChanging(object sender, Infragistics.Win.UltraWinTabControl.ActiveTabChangingEventArgs e)
+        {
+            DataTable CodexVisited = new DataTable("VisitedTable");
+            DataColumn dcdvs = new DataColumn("Visited");
+            dcdvs.ReadOnly = false;
+            dcdvs.DataType = System.Type.GetType("System.Int32");
+            dcdvs.AutoIncrement = false;
+            CodexVisited.Columns.Add(dcdvs);
+            CodexVisited.PrimaryKey = new DataColumn[] { CodexVisited.Columns["Visited"] };
+
+            linkListBox2.DataSource = ActiveCodexDoc.Links.Tables[0].Select("", "LinkType DESC");
+            linkListBox2.Visited = CodexVisited;
+            linkListBox2.InitializeVarialbles(2);
+            linkListBox2.ProgramName = "CODEX";
+            linkListBox2.FillGrid();
+
+        }
+
+        private void linkListBox2_DocumentClick(object sender, ILG.Codex.LinkListBox.LinkListEventArgs e)
+        {
+
+        }
+        #endregion LinkPreview
+
+
+
+        #region Find Link
+        private String GenerateLinkFindSQL(DateTime d, int number, int DAuthor, int DType)
+        {
+            String Fields = "D_ID,D_Caption,C_Author,C_Topic,C_Type,C_Number,C_Date,C_Status";
+            String StrHeader = "SELECT " + Fields + " FROM CODEX_DDOCS WHERE ";
+            String Strd = "( " +
+                " ( C_Date >= CONVERT(DATETIME, '" + d.Day.ToString() + @"/" + d.Month.ToString() + @"/" + d.Year.ToString() + " 00:00:00.000' ,103) )" +
+                " And ( C_Date < CONVERT(DATETIME, '" + d.Day.ToString() + @"/" + d.Month.ToString() + @"/" + d.Year.ToString() + " 23:59:59.999' ,103) ) ";
+
+            String Strn = "";
+            if (number != -1) Strn = " And ( C_Number = " + number.ToString() + ") ";
+
+            String Stra = " And (C_AUTHOR =" + DAuthor.ToString() + " ) ";
+
+            String Strt = " And (C_Type =" + DType.ToString() + " ) ";
+
+            return StrHeader + Strd + Strn + Stra + Strt + ")";
+
+        }
+
+        private string TrancalteGrammar(string str)
+        {
+            string s = str;
+            s = s.Replace("წელი", "წლის");
+
+            s = s.Replace("იანვარი", "იანვრის");
+            s = s.Replace("თებერვალი", "თებერვლის");
+            s = s.Replace("მარტი", "მარტის");
+            s = s.Replace("აპრილი", "აპრილის");
+            s = s.Replace("მაისი", "მაისის");
+            s = s.Replace("ივნისი", "ივნისის");
+            s = s.Replace("ივლისი", "ივლისის");
+            s = s.Replace("აგვისტო", "აგვისტოს");
+            s = s.Replace("სექტემბერი", "სექტემბრის");
+            s = s.Replace("ოქტომბერი", "ოქტომბრის");
+            s = s.Replace("ნოემბერი", "ნოემბრის");
+            s = s.Replace("დეკემბერი", "დეკემბრის");
+            return s;
+
+
+        }
+        private void ultraButton8_Click(object sender, EventArgs e)
+        {
+            if ((this.Link_Author.Text.Trim() == "") ||
+                (this.Link_Type.Text.Trim() == "") ||
+                (this.Link_TypeCaption.Text.Trim() == "")) { ILG.Windows.Forms.ILGMessageBox.Show("ინფორმაცია კავშირის მოსაძებნად არ არის საკმარისი"); return; }
+
+            this.Link_Caption.ForeColor = Color.Black;
+            this.Link_Caption.Text = "";
+            int num = -1;
+            if (this.Link_Number.Text.Trim() != "")
+            {
+                try
+                {
+                    num = Int32.Parse(this.Link_Number.Text.Trim());
+                }
+                catch
+                {
+                    MessageBox.Show("დოკუმენტის ნომერი არაკორექტულია"); return;
+                }
+            }
+
+
+            string sql = this.GenerateLinkFindSQL(this.LinkDate, num, (int)this.Link_Author.Value, (int)this.Link_Type.Value);
+
+            //System.Windows.Forms.Clipboard.SetDataObject(sql);
+            try
+            {
+                this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+
+                ActiveCodexDoc.FoundedLinks = new DataSet();
+                SqlDataAdapter FDA = new SqlDataAdapter(sql, ILG.Codex.Codex2007.Properties.Settings.Default.ConnectionString);
+                FDA.Fill(ActiveCodexDoc.FoundedLinks);
+                // Change Captions
+                for (int i = 0; i < ActiveCodexDoc.FoundedLinks.Tables[0].Rows.Count; i++)
+                {
+                    string s = "[განუსაზღვრეული სტატუსი]";
+                    if ((int)ActiveCodexDoc.FoundedLinks.Tables[0].Rows[i]["C_Status"] == 0) s = "[ჩვეულებრივი]";
+                    if ((int)ActiveCodexDoc.FoundedLinks.Tables[0].Rows[i]["C_Status"] == 1) s = "[კოდიფიცირებული]";
+                    s = s + " " + ActiveCodexDoc.FoundedLinks.Tables[0].Rows[i]["D_Caption"].ToString();
+                    ActiveCodexDoc.FoundedLinks.Tables[0].Rows[i]["D_Caption"] = s;
+                }
+
+
+
+
+            }
+            catch (System.Exception ex)
+            {
+                this.Cursor = System.Windows.Forms.Cursors.Default;
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                this.Cursor = System.Windows.Forms.Cursors.Default;
+            }
+
+
+
+            if (ActiveCodexDoc.FoundedLinks.Tables[0].Rows.Count != 0)
+            {
+                this.listBox2.DataSource = null;
+                this.listBox2.DataSource = ActiveCodexDoc.FoundedLinks.Tables[0];
+                this.listBox2.DisplayMember = "D_Caption";
+                this.listBox2.ValueMember = "D_ID";
+
+                string numb = " ";
+                if (this.Link_Number.Text.Trim() != "") numb = " N " + Link_Number.Text.Trim() + " ";
+                this.Link_Caption.Text = this.Link_TypeCaption.Text.Trim() + " " + ILG.Codex.WindowsForms.PickDate.DateToString(this.LinkDate) + " წლის " + this.Link_Author.Text.Trim() + " " + numb + " " + this.Link_Type.Text.Trim();
+                this.Link_Caption.Text = this.TrancalteGrammar(this.Link_Caption.Text);
+                this.Link_Caption.ForeColor = Color.Blue;
+                if (ILG.Windows.Forms.ILGMessageBox.Show("ინფორმაცია მოძებნილია ძირითად ბაზაში\n" + "გავაგრძელო განახლების ბაზაში ?", "", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) ==
+                   System.Windows.Forms.DialogResult.No) return;
+            }
+
+            // InUpdate
+
+
+            try
+            {
+                this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+                
+                ActiveCodexDoc.FoundedLinks = new DataSet();
+                SqlDataAdapter FDA = new SqlDataAdapter(sql, ILG.Codex.Codex2007.Properties.Settings.Default.ConnectionStringUpdate);
+                FDA.Fill(ActiveCodexDoc.FoundedLinks);
+                // Change Captions
+                for (int i = 0; i < ActiveCodexDoc.FoundedLinks.Tables[0].Rows.Count; i++)
+                {
+                    string s = "[განუსაზღვრეული სტატუსი]";
+                    if ((int)ActiveCodexDoc.FoundedLinks.Tables[0].Rows[i]["C_Status"] == 0) s = "[ჩვეულებრივი]";
+                    if ((int)ActiveCodexDoc.FoundedLinks.Tables[0].Rows[i]["C_Status"] == 1) s = "[კოდიფიცირებული]";
+                    s = s + " " + ActiveCodexDoc.FoundedLinks.Tables[0].Rows[i]["D_Caption"].ToString();
+                    ActiveCodexDoc.FoundedLinks.Tables[0].Rows[i]["D_Caption"] = s;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                this.Cursor = System.Windows.Forms.Cursors.Default;
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                this.Cursor = System.Windows.Forms.Cursors.Default;
+            }
+
+            if (ActiveCodexDoc.FoundedLinks.Tables[0].Rows.Count != 0)
+            {
+                this.listBox2.DataSource = null;
+                this.listBox2.DataSource = ActiveCodexDoc.FoundedLinks.Tables[0];
+                this.listBox2.DisplayMember = "D_Caption";
+                this.listBox2.ValueMember = "D_ID";
+
+                string numb = "";
+                if (this.Link_Number.Text.Trim() != "") numb = " N " + Link_Number.Text.Trim() + " ";
+                this.Link_Caption.Text = this.Link_TypeCaption.Text.Trim() + " " + ILG.Codex.WindowsForms.PickDate.DateToString(this.LinkDate) + " წლის " + this.Link_Author.Text.Trim() + " " + numb + " " + this.Link_Type.Text.Trim();
+                this.Link_Caption.Text = this.TrancalteGrammar(Link_Caption.Text);
+
+                this.Link_Caption.ForeColor = Color.Green;
+                return;
+            }
+            else
+            {
+                this.listBox2.DataSource = null;
+            }
+
+            this.Link_Caption.Text = "დასაკავშირებელი დოკუმენტი, არ მოიძებნა";
+            this.Link_Caption.ForeColor = Color.Red;
+
+
+        }
+
+        private void Link_Caption_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = ILG.Codex.KeyBoard.Layout.U[e.KeyChar];
+        }
+
+        private void Link_Number_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (e.KeyChar <= ' '))  e.Handled = false;
+        }
+
+        #endregion Find Linl
+
+        #region Links Operation
+        private void ultraButton7_Click(object sender, EventArgs e)
+        {
+            // Add Links
+
+            if ((this.Link_Caption.ForeColor == Color.Red) || (this.Link_Caption.Text.Trim() == ""))
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("კავშირი არ არის მოძებნილი"); return;
+            }
+
+            if (ILG.Windows.Forms.ILGMessageBox.Show("კავშირის დამატება ?", "", System.Windows.Forms.MessageBoxButtons.YesNo) ==
+                System.Windows.Forms.DialogResult.No) return;
+
+            // if exist wanr end exit
+            bool exs = false;
+            for (int ii = 0; ii < ActiveCodexDoc.Links.Tables[0].Rows.Count; ii++)
+            {
+                if (ActiveCodexDoc.Links.Tables[0].Rows[ii]["Link"].ToString() == "") continue;
+                if (ActiveCodexDoc.Links.Tables[0].Rows[ii]["Link"].ToString() == this.listBox2.SelectedValue.ToString())
+                    exs = true;
+            }
+            if (exs == true)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("კავშირი ამ დოკუმენტზე უკვე არსებობს სიაში");
+                return;
+            }
+
+            //Link infor
+            int LL_LinkType = 2147353348;
+            int LL_Order = 0;
+            int LL_Status = 0;
+
+
+            // შეტანილია ცვლილება
+            //>>შეიტანა ცვლილება
+            //გაუქმებულია
+            //>>გააუქმა
+            //.პირველადი სახე
+            //.საბოლოო სახე
+            switch ((int)this.Link_TypeCaption.SelectedIndex)
+            {
+                // case 0: LL_LinkType = 1; break;
+                //case 1: LL_LinkType = 2147353348; break;
+                //case 2: LL_LinkType = 3; break;
+                //case 3: LL_LinkType = 2147353348; break;
+                //case 4: LL_LinkType = 100; break;
+                //case 5: LL_LinkType = 200; break;
+                case 0: LL_LinkType = 1; break;
+                case 1: LL_LinkType = 3; break;
+                case 2: LL_LinkType = 100; break;
+                case 3: LL_LinkType = 200; break;
+            }
+
+
+            try
+            {
+                DataRow nl;
+                nl = ActiveCodexDoc.Links.Tables[0].NewRow();
+
+                nl["Link"] = this.listBox2.SelectedValue;
+                nl["Caption"] = this.Link_Caption.Text.Trim();
+                nl["LinkType"] = LL_LinkType;
+                nl["Order"] = LL_Order;
+                nl["Status"] = LL_Status;
+
+
+                if (this.checkBox3.Checked == true)
+                {
+                    ActiveCodexDoc.Links.Tables[0].Rows.InsertAt(nl, 0);
+                    ActiveCodexDoc.Links.Tables[0].AcceptChanges();
+                }
+                else
+                {
+                    ActiveCodexDoc.Links.Tables[0].Rows.Add(new Object[] {
+																							   this.listBox2.SelectedValue,  // Links
+																							   this.Link_Caption.Text.Trim(),    // Caption
+																							   LL_LinkType,                     // LinkType
+																							   LL_Order,                        // Order in List
+																							   LL_Status                        // Link Status
+																						   });
+                }
+            }
+            catch (System.Exception ex)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("არ ხერხდება კავშირის დამატება \n" + ex.ToString());
+                return;
+            }
+            ILG.Windows.Forms.ILGMessageBox.Show("კავშირი დამატებულია");
+            Link_Caption.Text = "";
+
+        }
+        
+        private void ultraButton4_Click(object sender, EventArgs e)
+        {
+            // Change Links
+
+            if ((this.Link_Caption.ForeColor == Color.Red) || (this.Link_Caption.Text.Trim() == ""))
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("კავშირი არ არის მოძებნილი"); return;
+            }
+
+            if (this.ultraGrid1.Selected.Rows.Count != 1)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მონიშნეთ შესაცვლელი კავშირი"); return;
+            }
+
+
+            if (this.ultraGrid1.Selected.Rows[0].Cells["Link"].Value.ToString() == "")
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("არ შეიძლება ამ კავშირის მოდიფიკაცია, წაშალეთ ის !"); return;
+            }
+
+
+            if (ILG.Windows.Forms.ILGMessageBox.Show("კავშირის ცვლილება ?", "", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) ==
+                System.Windows.Forms.DialogResult.No) return;
+
+
+
+
+            //Link infor
+            int LL_LinkType = 2147353348;
+            int LL_Order = 0;
+            int LL_Status = 0;
+
+            // შეტანილია ცვლილება
+            //>>შეიტანა ცვლილება
+            //გაუქმებულია
+            //>>გააუქმა
+            //.პირველადი სახე
+            //.საბოლოო სახე
+            switch ((int)this.Link_TypeCaption.SelectedIndex)
+            {
+                // case 0: LL_LinkType = 1; break;
+                //case 1: LL_LinkType = 2147353348; break;
+                //case 2: LL_LinkType = 3; break;
+                //case 3: LL_LinkType = 2147353348; break;
+                //case 4: LL_LinkType = 100; break;
+                //case 5: LL_LinkType = 200; break;
+                case 0: LL_LinkType = 1; break;
+                case 1: LL_LinkType = 3; break;
+                case 2: LL_LinkType = 100; break;
+                case 3: LL_LinkType = 200; break;
+            }
+
+
+
+
+            try
+            {
+
+
+
+                int id = (int)this.ultraGrid1.Selected.Rows[0].Cells["Link"].Value;
+                int i = -1;
+
+                for (int j = 0; j < ActiveCodexDoc.Links.Tables[0].Rows.Count; j++)
+                {
+                    if (ActiveCodexDoc.Links.Tables[0].Rows[j]["Link"].ToString() == "") continue;
+                    if ((int)ActiveCodexDoc.Links.Tables[0].Rows[j]["Link"] == id) { i = j; break; }
+
+                }
+
+
+                if (i != -1)
+                {
+                    ActiveCodexDoc.Links.Tables[0].Rows[i]["Link"] = this.listBox2.SelectedValue;
+                    ActiveCodexDoc.Links.Tables[0].Rows[i]["Caption"] = this.Link_Caption.Text.Trim();
+                    ActiveCodexDoc.Links.Tables[0].Rows[i]["LinkType"] = LL_LinkType;
+                    ActiveCodexDoc.Links.Tables[0].Rows[i]["Order"] = LL_Order;
+                    ActiveCodexDoc.Links.Tables[0].Rows[i]["Status"] = LL_Status;
+
+                }
+            }
+            catch (System.Exception ex)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("არ ხერხდება კავშირის კორექტირება \n" + ex.ToString());
+                return;
+            }
+            ILG.Windows.Forms.ILGMessageBox.Show("კავშირი შეცვლილია");
+            Link_Caption.Text = "";
+
+        }
+
+        private void ultraButton3_Click(object sender, EventArgs e)
+        {
+            if (this.ultraGrid1.Selected.Rows.Count != 1)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მონიშნეთ წასაშლელი კავშირი"); return;
+            }
+
+            if (ILG.Windows.Forms.ILGMessageBox.Show("კავშირის წაშლა ?", "", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) ==
+                System.Windows.Forms.DialogResult.No) return;
+
+            try
+            {
+
+                if (this.ultraGrid1.Selected.Rows[0].Cells["Link"].Value.ToString() == "")
+                {
+                    int i = -1;
+                    for (int j = 0; j < ActiveCodexDoc.Links.Tables[0].Rows.Count; j++)
+                    {
+                        if (ActiveCodexDoc.Links.Tables[0].Rows[j]["Link"].ToString() == "") { i = j; break; }
+                    }
+
+                    if (i != -1)
+                    {
+                        ActiveCodexDoc.Links.Tables[0].Rows.RemoveAt(i);
+                    }
+                }
+                else
+                {
+
+                    int id = (int)this.ultraGrid1.Selected.Rows[0].Cells["Link"].Value;
+                    int i = -1;
+
+                    for (int j = 0; j < ActiveCodexDoc.Links.Tables[0].Rows.Count; j++)
+                    {
+                        if ((int)ActiveCodexDoc.Links.Tables[0].Rows[j]["Link"] == id) { i = j; break; }
+                    }
+
+                    if (i != -1)
+                    {
+                        ActiveCodexDoc.Links.Tables[0].Rows.RemoveAt(i);
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("არ ხერხდება კავშირის წაშლა \n" + ex.ToString());
+                return;
+            }
+            ILG.Windows.Forms.ILGMessageBox.Show("კავშირი წაშლილია");
+			
+
+
+        }
+
+        private void ultraButton6_Click(object sender, EventArgs e)
+        {
+            if (ILG.Windows.Forms.ILGMessageBox.Show("კავშირების სიის გაწმენდა ?", "", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) ==
+                System.Windows.Forms.DialogResult.No) return;
+            if (ILG.Windows.Forms.ILGMessageBox.Show("კავშირების სიის გაწმენდა ? დაადასტურეთ", "", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) ==
+                System.Windows.Forms.DialogResult.No) return;
+
+            try
+            {
+                ActiveCodexDoc.Links.Tables[0].Rows.Clear();
+            }
+            catch (System.Exception ex)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("არ ხერხდება კავშირის სიის გაწმენდა \n" + ex.ToString());
+                return;
+            }
+            ILG.Windows.Forms.ILGMessageBox.Show("კავშირის სია გაწმენდილია");
+
+        }
+
+        
+
+        private void ultraButton5_Click(object sender, EventArgs e)
+        {
+            if (this.ultraGrid1.Selected.Rows.Count != 1)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მონიშნეთ კავშირი"); return;
+            }
+
+            int id = (int)this.ultraGrid1.Selected.Rows[0].Cells["Link"].Value;
+
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            Form_Codex_View tf = new Form_Codex_View();
+            tf.Show();
+            tf.LocadDocCodex(id);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+
+        }
+
+        #endregion Links Operation
+        // ----------------------------------------------------------------
+        public bool isACCII(string str)
+        {
+            bool result = false;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if ((str[i] >= 192) && (str[i] <= 255)) { result = true; break; }
+            }
+            return result;
+        }
+
+
+
+        #region Document Object Operation
+        // Document operations
+        private C1.C1Zip.C1ZipFile zf;
+        private ILG.Codex.Cryptography.IDEA.Class1 c;
+        private string @resultText;
+        private byte[] resultdoc;
+        private byte[] linkresult;
+
+        private void CreareDocument()
+        {
+            textControl_Codex.Save(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\i.txt", TXTextControl.StreamType.RichTextFormat);
+            TXTextControl.SaveSettings s = new TXTextControl.SaveSettings();
+            textControl_Codex.Save(out @resultText, TXTextControl.StringStreamType.PlainText);//.PlainText,s);
+            zf = new C1.C1Zip.C1ZipFile();
+            zf.Create(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\Doc2.Zip");
+
+            zf.Entries.Add(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\i.txt", "i.txt");
+            zf.Close();
+            c = new ILG.Codex.Cryptography.IDEA.Class1();
+            c.IDEAEncrypt(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\Doc2.zip",
+                ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\Doc2.tmp",
+                "D0CFD0CFCBCFDDC9E0C5C0CDE0C9CBC9", "");
+
+            FileStream fs = new FileStream(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\Doc2.tmp", FileMode.Open, FileAccess.Read);
+            resultdoc = new byte[(int)fs.Length];
+            fs.Read(resultdoc, 0, (int)fs.Length);
+            fs.Close();
+            File.Delete(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\Doc2.tmp");
+            File.Delete(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\Doc2.Zip");
+            File.Delete(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\i.txt");
+            if (File.Exists(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\1.RTF") == true) File.Delete(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\1.RTF");
+
+        }
+        private void CreareLinks()
+        {
+            
+            ActiveCodexDoc.Links.WriteXml(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\2.XML");
+            c.IDEAEncrypt(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\2.XML", ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\2.DAT",
+                "D0CFD0CFCBCFDDC9E0C5C0CDE0C9CBC9", "");
+
+            File.Delete(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\2.XML");
+
+            FileStream fs = new FileStream(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\2.DAT", FileMode.Open, FileAccess.Read);
+            linkresult = new byte[fs.Length];
+            fs.Read(linkresult, 0, (int)fs.Length);
+            fs.Close();
+            File.Delete(ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\2.DAT");
+        }
+        private void UpdateActiveDoc()
+        {
+            DateTime Today = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
+
+            ActiveCodexDoc.Author = (int)this.Document_Author.Value;
+            ActiveCodexDoc.Type = (int)this.Document_Type.Value;
+            ActiveCodexDoc.Subject = (int)this.Document_Subject.Value;
+            ActiveCodexDoc.DocDate = DocumentDate;
+            ActiveCodexDoc.Status = (int)this.Document_Status.SelectedIndex;
+            ActiveCodexDoc.Words = this.Document_Word_Edit.Text;
+            #region EnterDate
+            if (checkBox_EnterDate.Checked == true) ActiveCodexDoc.EntDate = EnterDate;
+            #endregion EnterDate
+            #region C_Number
+            string sn = Document_Number.Text;
+            if (sn.Trim() == "") sn = "0";
+            int i = 0;
+            try
+            {
+                i = Int32.Parse(sn);
+            }
+            catch
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტის ნომერი არაკორექტულია");
+                return;
+            }
+
+            ActiveCodexDoc.Number = i;
+            #endregion C_Number
+            
+            
+            ActiveCodexDoc.Caption = Document_Caption.Text;
+            ActiveCodexDoc.DocFormat = 1; //RTF
+            
+            string DocEnc = "1252";
+            if ( Document_Encoding.SelectedIndex == 0) DocEnc = "1252";
+            if ( Document_Encoding.SelectedIndex == 1) DocEnc = "Unicode";
+            ActiveCodexDoc.DocEncoding =  DocEnc;
+            ActiveCodexDoc.LastEditDate = Today;
+        
+            // 1) Document RTF Text
+            this.CreareDocument();
+            this.CreareLinks();
+            
+            ActiveCodexDoc.C_TEXT = this.resultdoc;
+            ActiveCodexDoc.C_LINKS = this.linkresult;
+            ActiveCodexDoc.DocText = this.resultText;
+
+
+        }
+
+
+        #endregion Document Object Operation
+
+
+        #region Document DB operations
+
+        // Update Active Document
+        public int UpdateActiceDocument()
+        {
+
+            SqlCommand sqlUpdateCommand1 = new System.Data.SqlClient.SqlCommand();
+            sqlUpdateCommand1.CommandText = @"UPDATE Codex_DDOCS SET D_CAPTION = @D_CAPTION, C_AUTHOR = @C_AUTHOR, C_TOPIC = @C_TOPIC, C_TYPE = @C_TYPE, C_WORDS = @C_WORDS, C_NUMBER = @C_NUMBER, C_DATE = @C_DATE, C_LASTEDIT = @C_LASTEDIT, C_ENTERDATE = @C_ENTERDATE, C_TEXT = @C_TEXT, C_LINK = @C_LINK, C_STATUS = @C_STATUS, C_DocFormat = @C_DocFormat, C_DocEncoding = @C_DocEncoding, C_DocText = @C_DocText WHERE (D_ID = @Original_D_ID)";
+            sqlUpdateCommand1.CommandType = CommandType.Text;
+
+            #region Parameters
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@D_CAPTION", System.Data.SqlDbType.NVarChar, 255, "D_CAPTION"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_AUTHOR", System.Data.SqlDbType.Int, 4, "C_AUTHOR"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_TOPIC", System.Data.SqlDbType.Int, 4, "C_TOPIC"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_TYPE", System.Data.SqlDbType.Int, 4, "C_TYPE"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_WORDS", System.Data.SqlDbType.NVarChar, 255, "C_WORDS"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_NUMBER", System.Data.SqlDbType.Int, 4, "C_NUMBER"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_DATE", System.Data.SqlDbType.DateTime, 8, "C_DATE"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_LASTEDIT", System.Data.SqlDbType.DateTime, 8, "C_LASTEDIT"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_ENTERDATE", System.Data.SqlDbType.DateTime, 8, "C_ENTERDATE"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_TEXT", System.Data.SqlDbType.VarBinary, 2147483647, "C_TEXT"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_LINK", System.Data.SqlDbType.VarBinary, 2147483647, "C_LINK"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_STATUS", System.Data.SqlDbType.Int, 4, "C_STATUS"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_DocFormat", System.Data.SqlDbType.Int, 4, "C_DocFormat"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_DocEncoding", System.Data.SqlDbType.VarChar, 10, "C_DocEncoding"));
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_DocText", System.Data.SqlDbType.NVarChar, 1073741823, "C_DocText"));
+
+
+            sqlUpdateCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@Original_D_ID", System.Data.SqlDbType.Int, 4, System.Data.ParameterDirection.Input, false, ((System.Byte)(0)), ((System.Byte)(0)), "D_ID", System.Data.DataRowVersion.Original, null));
+
+
+            #endregion
+
+            // Attributes
+            try
+            {
+                DateTime Today = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
+                sqlUpdateCommand1.Parameters["@D_Caption"].Value =  ActiveCodexDoc.Caption;
+                sqlUpdateCommand1.Parameters["@C_Author"].Value = ActiveCodexDoc.Author;
+                sqlUpdateCommand1.Parameters["@C_Topic"].Value = ActiveCodexDoc.Subject;
+                sqlUpdateCommand1.Parameters["@C_Type"].Value = ActiveCodexDoc.Type;
+                sqlUpdateCommand1.Parameters["@C_Words"].Value = ActiveCodexDoc.Words;
+                sqlUpdateCommand1.Parameters["@C_Number"].Value = ActiveCodexDoc.Number;
+                sqlUpdateCommand1.Parameters["@C_Date"].Value = ActiveCodexDoc.DocDate;
+                sqlUpdateCommand1.Parameters["@C_LastEdit"].Value = Today;
+                sqlUpdateCommand1.Parameters["@C_EnterDate"].Value = ActiveCodexDoc.EntDate;
+                sqlUpdateCommand1.Parameters["@C_TEXT"].Value = ActiveCodexDoc.C_TEXT;
+                sqlUpdateCommand1.Parameters["@C_LINK"].Value = ActiveCodexDoc.C_LINKS;
+                sqlUpdateCommand1.Parameters["@C_Status"].Value = ActiveCodexDoc.Status;
+                sqlUpdateCommand1.Parameters["@C_DocFormat"].Value = ActiveCodexDoc.DocFormat;
+                sqlUpdateCommand1.Parameters["@C_DocEncoding"].Value = ActiveCodexDoc.DocEncoding;
+                sqlUpdateCommand1.Parameters["@C_DocText"].Value = ActiveCodexDoc.DocText;
+
+                sqlUpdateCommand1.Parameters["@Original_D_ID"].Value = ActiveCodexDoc.ID;
+
+
+                //["C_TODO"]  NOT MODIFIED
+                
+                SqlConnection cn_update = new SqlConnection(ILG.Codex.Codex2007.Properties.Settings.Default.ConnectionStringUpdate);
+
+                sqlUpdateCommand1.Connection = cn_update;
+                cn_update.Open();
+                sqlUpdateCommand1.ExecuteNonQuery();
+                cn_update.Close();
+
+
+            }
+            catch (System.Exception ex)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("არ ხერხდება ინფორმაციის ჩაწერა \n" + ex.ToString());
+                return 1;
+            }
+            return 0;
+
+
+        }
+
+        // Update Delete Document
+        public  int DeleteActiceDocument()
+        {
+            SqlConnection cn = new SqlConnection(ILG.Codex.Codex2007.Properties.Settings.Default.ConnectionStringUpdate); ;
+            // Attributes
+            try
+            {
+                cn.Open();
+                SqlCommand scm = new SqlCommand("DELETE FROM CODEX_DDOCS WHERE (D_ID = @p1)", cn);
+                scm.Parameters.Add(new System.Data.SqlClient.SqlParameter("@p1", System.Data.SqlDbType.Int, 4, "D_ID"));
+                scm.Parameters["@p1"].Value = ActiveCodexDoc.ID;
+                scm.ExecuteNonQuery();
+                cn.Close();
+
+            }
+            catch (System.Exception ex)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("არ ხერხდება ინფორმაციის წაშლა \n" + ex.ToString());
+                return 1;
+            }
+            finally
+            {
+                if (cn != null)
+                {
+                    if (cn.State != System.Data.ConnectionState.Closed) cn.Close();
+                }
+            }
+
+
+
+
+
+            return 0;
+
+
+        }
+
+        // New Active Document
+        public int DeleteActiceDocument(int ID)
+        {
+            SqlConnection cn = new SqlConnection(ILG.Codex.Codex2007.Properties.Settings.Default.ConnectionStringUpdate); ;
+            // Attributes
+            try
+            {
+                cn.Open();
+                SqlCommand scm = new SqlCommand("DELETE FROM CODEX_DDOCS WHERE (D_ID = @p1)", cn);
+                scm.Parameters.Add(new System.Data.SqlClient.SqlParameter("@p1", System.Data.SqlDbType.Int, 4, "D_ID"));
+                scm.Parameters["@p1"].Value = ID;
+                scm.ExecuteNonQuery();
+                cn.Close();
+
+            }
+            catch (System.Exception ex)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("არ ხერხდება ინფორმაციის წაშლა \n" + ex.ToString());
+                return 1;
+            }
+            finally
+            {
+                if (cn != null)
+                {
+                    if (cn.State != System.Data.ConnectionState.Closed) cn.Close();
+                }
+            }
+
+
+
+
+
+            return 0;
+
+
+        }
+
+
+        public int NewActiceDocument()
+        {
+
+            // Attributes
+            try
+            {
+                // Caluculate ID 
+                // ID is Maximum of Update and Main  Database 
+                string str1 = "SELECT MAX(D_ID) FROM CODEX_DDOCS";
+                SqlConnection cn_update = new SqlConnection(ILG.Codex.Codex2007.Properties.Settings.Default.ConnectionStringUpdate);
+                SqlConnection cn_main = new SqlConnection(ILG.Codex.Codex2007.Properties.Settings.Default.ConnectionString);
+
+                cn_update.Open();
+                SqlCommand cmd1 = new SqlCommand(str1, cn_update);
+                int max_update = 0;
+                if (cmd1.ExecuteScalar() != System.DBNull.Value) max_update = (int)cmd1.ExecuteScalar();
+                cn_update.Close();
+
+                cn_main.Open();
+                cmd1 = new SqlCommand(str1, cn_main);
+                int max_main = (int)cmd1.ExecuteScalar();
+                cn_main.Close();
+
+                int ID = System.Math.Max(max_update, max_main) + 1;
+
+                // Main Data
+                SqlCommand sqlInsertCommand1 = new SqlCommand();
+                sqlInsertCommand1.CommandText = @"INSERT INTO Codex_DDOCS(D_ID, D_CAPTION, C_AUTHOR, C_TOPIC, C_TYPE, C_WORDS, C_NUMBER, C_DATE, C_LASTEDIT, C_ENTERDATE, C_TEXT, C_LINK, C_STATUS, C_DocFormat, C_DocEncoding, C_DocText, C_TODO) VALUES (@D_ID, @D_CAPTION, @C_AUTHOR, @C_TOPIC, @C_TYPE, @C_WORDS, @C_NUMBER, @C_DATE, @C_LASTEDIT, @C_ENTERDATE, @C_TEXT, @C_LINK, @C_STATUS, @C_DocFormat, @C_DocEncoding, @C_DocText, @C_TODO)";
+                sqlInsertCommand1.CommandType = CommandType.Text;
+
+                #region sqlInsertCommand1 Parameters
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@D_ID", System.Data.SqlDbType.Int, 4, "D_ID"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@D_CAPTION", System.Data.SqlDbType.NVarChar, 255, "D_CAPTION"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_AUTHOR", System.Data.SqlDbType.Int, 4, "C_AUTHOR"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_TOPIC", System.Data.SqlDbType.Int, 4, "C_TOPIC"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_TYPE", System.Data.SqlDbType.Int, 4, "C_TYPE"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_WORDS", System.Data.SqlDbType.NVarChar, 255, "C_WORDS"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_NUMBER", System.Data.SqlDbType.Int, 4, "C_NUMBER"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_DATE", System.Data.SqlDbType.DateTime, 8, "C_DATE"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_LASTEDIT", System.Data.SqlDbType.DateTime, 8, "C_LASTEDIT"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_ENTERDATE", System.Data.SqlDbType.DateTime, 8, "C_ENTERDATE"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_TEXT", System.Data.SqlDbType.VarBinary, 2147483647, "C_TEXT"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_LINK", System.Data.SqlDbType.VarBinary, 2147483647, "C_LINK"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_STATUS", System.Data.SqlDbType.Int, 4, "C_STATUS"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_DocFormat", System.Data.SqlDbType.Int, 4, "C_DocFormat"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_DocEncoding", System.Data.SqlDbType.VarChar, 10, "C_DocEncoding"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_DocText", System.Data.SqlDbType.NVarChar, 1073741823, "C_DocText"));
+                sqlInsertCommand1.Parameters.Add(new System.Data.SqlClient.SqlParameter("@C_TODO", System.Data.SqlDbType.Int, 4, "C_TODO"));
+
+                #endregion sqlInsertCommand1 Parameters
+
+                DateTime Today = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
+                sqlInsertCommand1.Parameters["@D_ID"].Value = ID;
+                sqlInsertCommand1.Parameters["@D_Caption"].Value = @ActiveCodexDoc.Caption;
+                sqlInsertCommand1.Parameters["@C_Author"].Value = ActiveCodexDoc.Author;
+                sqlInsertCommand1.Parameters["@C_Topic"].Value = ActiveCodexDoc.Subject;
+                sqlInsertCommand1.Parameters["@C_Type"].Value = ActiveCodexDoc.Type;
+                sqlInsertCommand1.Parameters["@C_Words"].Value = ActiveCodexDoc.Words;
+                sqlInsertCommand1.Parameters["@C_Number"].Value = ActiveCodexDoc.Number;
+                sqlInsertCommand1.Parameters["@C_Date"].Value = ActiveCodexDoc.DocDate;
+                sqlInsertCommand1.Parameters["@C_LastEdit"].Value = Today;
+                sqlInsertCommand1.Parameters["@C_EnterDate"].Value = ActiveCodexDoc.EntDate;
+                sqlInsertCommand1.Parameters["@C_Text"].Value = ActiveCodexDoc.C_TEXT;
+                sqlInsertCommand1.Parameters["@C_Link"].Value = ActiveCodexDoc.C_LINKS;
+                sqlInsertCommand1.Parameters["@C_Status"].Value = ActiveCodexDoc.Status;
+                sqlInsertCommand1.Parameters["@C_DocFormat"].Value = 1;
+                sqlInsertCommand1.Parameters["@C_DocEncoding"].Value = ActiveCodexDoc.DocEncoding;
+                sqlInsertCommand1.Parameters["@C_DocText"].Value = @ActiveCodexDoc.DocText;
+                sqlInsertCommand1.Parameters["@C_TODO"].Value = 1;
+
+                sqlInsertCommand1.Connection = cn_update;
+                cn_update.Open();
+                sqlInsertCommand1.ExecuteNonQuery();
+                cn_update.Close();
+
+
+            }
+            catch (System.Exception ex)
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("არ ხერხდება ინფორმაციის ჩაწერა +\n" + ex.Message.ToString());
+                return 1;
+            }
+            return 0;
+
+
+        }
+
+
+        #endregion Document DB operations
+
+
+
+        public void UpdateDocument()
+        {
+            if (ILG.Codex.Codex2007.Properties.Settings.Default.Confirmation == true)
+            {
+                if (ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტში ცვლილებების ჩაწერა ? ", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) return;
+            }
+
+            
+            // Checking Saves
+            #region Checking
+            if (Document_Caption.Text.Trim() == "")
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტის სათაური ცარიელია");
+                return;
+            }
+
+            if (isACCII(this.Document_Caption.Text) == true)
+            {
+                if (ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტის სათაური შეიცავს არა უნიკოდ სიმბოლოებს. გავაგრძელო ჩაწერა ?"
+                    , "", System.Windows.Forms.MessageBoxButtons.YesNo,
+                    System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) ==
+                    System.Windows.Forms.DialogResult.No) return;
+            }
+
+            if (this.Document_Author.Text.Trim() == "")
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მიუთითეთ მიმღები ორგანო");
+                return;
+            }
+
+            if (this.Document_Type.Text.Trim() == "")
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მიუთითეთ დოკუმენტის ტიპი");
+                return;
+            }
+
+            if (this.Document_Subject.Text.Trim() == "")
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მიუთითეთ დარგი");
+                return;
+            }
+
+            if (ILG.Codex.Codex2007.Properties.Settings.Default.AskToRemoveSections == true)
+            {
+                if (textControl_Codex.Sections.Count > 1)
+                {
+                    if (ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტი შეიცავს სექციებს, ის არ გამოჩნდება კარგად კოდექს 2005 ში და კოდეს 2007 ის ადრეულ ვერსიებში \nგავაგრძელო ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) return;
+                }
+            }
+
+            #endregion Checking
+
+            // Save Change Documents
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            if (this.textControl_Codex.HeadersAndFooters.Count != 0)
+                this.textControl_Codex.HeadersAndFooters.Remove(TXTextControl.HeaderFooterType.All);
+
+            UpdateActiveDoc();
+            int i = UpdateActiceDocument();
+
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            if (i == 0) ILG.Windows.Forms.ILGMessageBox.Show("ინფორმაცია ჩაწერილია");
+        }
+
+        public int DeleteDocument()
+        {
+            if (ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტის წაშლა განხლების სიისდან.\n" +
+                " დარწმუნებული ხართ  ?", "", System.Windows.Forms.MessageBoxButtons.YesNo,
+                System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) ==
+                System.Windows.Forms.DialogResult.No) return 617;
+
+            if (ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტის წაშლა განხლების სიისდან\n" +
+                "განმეორებითი შეკითხვა ,\n" +
+                "დარწმუნებული ხართ  ?", "", System.Windows.Forms.MessageBoxButtons.YesNo,
+                System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) ==
+                System.Windows.Forms.DialogResult.No) return 617;
+
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            int i = DeleteActiceDocument();
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            if (i == 0) ILG.Windows.Forms.ILGMessageBox.Show("ინფორმაცია წაშლილია");
+            return i;
+        }
+
+        public void SaveNewDocument()
+        {
+            // Checking Saves
+            #region Checking
+            if (Document_Caption.Text.Trim() == "")
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტის სათაური ცარიელია");
+                return;
+            }
+
+            if (isACCII(this.Document_Caption.Text) == true)
+            {
+                if (ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტის სათაური შეიცავს არა უნიკოდ სიმბოლოებს. გავაგრძელო ჩაწერა ?"
+                    , "", System.Windows.Forms.MessageBoxButtons.YesNo,
+                    System.Windows.Forms.MessageBoxIcon.Question, System.Windows.Forms.MessageBoxDefaultButton.Button2) ==
+                    System.Windows.Forms.DialogResult.No) return;
+            }
+
+            if (this.Document_Author.Text.Trim() == "")
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მიუთითეთ მიმღები ორგანო");
+                return;
+            }
+
+            if (this.Document_Type.Text.Trim() == "")
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მიუთითეთ დოკუმენტის ტიპი");
+                return;
+            }
+
+            if (this.Document_Subject.Text.Trim() == "")
+            {
+                ILG.Windows.Forms.ILGMessageBox.Show("მიუთითეთ დარგი");
+                return;
+            }
+
+            if (ILG.Codex.Codex2007.Properties.Settings.Default.AskToRemoveSections == true)
+            {
+                if (textControl_Codex.Sections.Count > 1)
+                {
+                    if (ILG.Windows.Forms.ILGMessageBox.Show("დოკუმენტი შეიცავს სექციებს, ის არ გამოჩნდება კარგად კოდექს 2005 ში და კოდეს 2007 ის ადრეულ ვერსიებში \nგავაგრძელო ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) return;
+                }
+            }
+
+            #endregion Checking
+
+            // New Document
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            if (this.textControl_Codex.HeadersAndFooters.Count != 0)
+                this.textControl_Codex.HeadersAndFooters.Remove(TXTextControl.HeaderFooterType.All);
+            UpdateActiveDoc();
+            int i = NewActiceDocument();
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            if (i == 0) ILG.Windows.Forms.ILGMessageBox.Show("ინფორმაცია ჩაწერილია");
+        }
+
+        public void ShowInMSWord()
+        {
+            string Suffix = "none";
+            Suffix = "CODEX";
+
+
+            string fn = global::ILG.Codex.Codex2007.Properties.Settings.Default.TemporaryDir + @"\" + Suffix + DateTime.Now.Ticks.ToString();
+
+            int i = 1;
+            while (File.Exists(fn + "_" + i.ToString() + ".Doc") == true) { i++; }
+
+            fn = fn + "_" + i.ToString() + ".doc";
+
+            try
+            {
+                textControl_Codex.Save(fn, TXTextControl.StreamType.MSWord);
+                System.Diagnostics.Process.Start(@"file" + @":\\" + fn);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("არ ხერხდება დოკუმენტის ექსპორტი MS-Word ში\n" + ex.ToString());
+                return;
+            }
+        }
+    }
+}

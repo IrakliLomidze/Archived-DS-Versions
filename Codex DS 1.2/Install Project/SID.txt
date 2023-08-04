@@ -1,0 +1,10 @@
+System.Security.Principal.WindowsIdentity id = System.Security.Principal.WindowsIdentity.GetCurrent();
+            string sid = id.User.AccountDomainSid.ToString();System.Security.Principal.WindowsIdentity id = System.Security.Principal.WindowsIdentity.GetCurrent();
+            string <strong class="highlight">sid</strong> = id.User.AccountDomainSid.ToString();
+
+
+
+
+BUILTIN\USERS S-1-5-32-545 (=0x221)
+
+\EVERYONE S-1-1-0

@@ -1,0 +1,250 @@
+using System;
+using System.Drawing;
+using System.Collections;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Data;
+
+namespace WindowsApplication5
+{
+	/// <summary>
+	/// Summary description for Form1.
+	/// </summary>
+	public class Form1 : System.Windows.Forms.Form
+	{
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.ComboBox comboBox3;
+		private Infragistics.Win.UltraWinSchedule.UltraCalendarLook ultraCalendarLook1;
+		private System.Windows.Forms.Button button1;
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.Container components = null;
+
+		public Form1()
+		{
+			//
+			// Required for Windows Form Designer support
+			//
+			InitializeComponent();
+
+			//
+			// TODO: Add any constructor code after InitializeComponent call
+			//
+		}
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		protected override void Dispose( bool disposing )
+		{
+			if( disposing )
+			{
+				if (components != null) 
+				{
+					components.Dispose();
+				}
+			}
+			base.Dispose( disposing );
+		}
+
+		#region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.comboBox3 = new System.Windows.Forms.ComboBox();
+			this.ultraCalendarLook1 = new Infragistics.Win.UltraWinSchedule.UltraCalendarLook();
+			this.button1 = new System.Windows.Forms.Button();
+			this.SuspendLayout();
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.Location = new System.Drawing.Point(40, 48);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(112, 21);
+			this.comboBox1.TabIndex = 0;
+			this.comboBox1.Text = "comboBox1";
+			// 
+			// comboBox2
+			// 
+			this.comboBox2.Location = new System.Drawing.Point(152, 48);
+			this.comboBox2.Name = "comboBox2";
+			this.comboBox2.Size = new System.Drawing.Size(56, 21);
+			this.comboBox2.TabIndex = 1;
+			this.comboBox2.Text = "comboBox2";
+			// 
+			// comboBox3
+			// 
+			this.comboBox3.Location = new System.Drawing.Point(208, 48);
+			this.comboBox3.Name = "comboBox3";
+			this.comboBox3.Size = new System.Drawing.Size(64, 21);
+			this.comboBox3.TabIndex = 2;
+			this.comboBox3.Text = "comboBox3";
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(56, 128);
+			this.button1.Name = "button1";
+			this.button1.TabIndex = 3;
+			this.button1.Text = "button1";
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// Form1
+			// 
+			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+			this.ClientSize = new System.Drawing.Size(292, 266);
+			this.Controls.Add(this.button1);
+			this.Controls.Add(this.comboBox3);
+			this.Controls.Add(this.comboBox2);
+			this.Controls.Add(this.comboBox1);
+			this.Name = "Form1";
+			this.Text = "Form1";
+			this.Load += new System.EventHandler(this.Form1_Load);
+			this.ResumeLayout(false);
+
+		}
+		#endregion
+
+		/// <summary>
+		/// The main entry point for the application.
+		/// </summary>
+		[STAThread]
+		static void Main() 
+		{
+			Application.Run(new Form1());
+		}
+		private int DaysinMonth(int Month,int Year)
+		{   int Count = 0;
+			switch (Month) 
+			{ case 1: Count = 31;break;
+			  case 2: Count = 28; if (( (Year % 4) == 0) && (Year != 1900)) Count = 29;  break;
+			  case 3: Count = 31;break;
+			  case 4: Count = 30;break;
+			  case 5: Count = 31;break;
+			  case 6: Count = 30;break;
+			  case 7: Count = 31;break;
+			  case 8: Count = 31;break;
+			  case 9: Count = 30;break;
+			  case 10: Count = 31;break;
+			  case 11: Count = 30;break;
+			  case 12: Count = 31;break;
+			}
+			return Count;
+		}
+		private String MonthToString(int Month)
+		{ String Str = "";
+			switch (Month) 
+			{
+				case 1 : Str ="июмеюри"; break;
+				case 2 : Str ="хдадреюки"; break;
+				case 3 : Str ="люрти"; break;
+				case 4 : Str ="юприки"; break;
+				case 5 : Str ="люиси"; break;
+				case 6 : Str ="иемиси"; break;
+				case 7 : Str ="иекиси"; break;
+				case 8 : Str ="юбеисто"; break;
+				case 9 : Str ="сдьтдладри"; break;
+				case 10: Str ="оьтоладри"; break;
+				case 11: Str ="модладри"; break;
+				case 12: Str ="цдйдладри"; break;
+			}
+			return Str;
+
+		}
+
+		private int  StringToMonth(String Month)
+		{
+			int Ret = 0;;
+			switch (Month) 
+			{
+				case "июмеюри"   : Ret = 1; break;
+				case "хдадреюки" : Ret = 2; break;
+				case "люрти"     : Ret = 3; break;
+				case "юприки"    : Ret = 4; break;
+				case "люиси"     : Ret = 5; break;
+				case "иемиси"    : Ret = 6; break;
+				case "иекиси"    : Ret = 7; break;
+				case "юбеисто"   : Ret = 8; break;
+				case "сдьтдладри": Ret = 9; break;
+				case "оьтоладри" : Ret = 10; break;
+				case "модладри"  : Ret = 11; break;
+				case "цдйдладри" : Ret = 12; break;
+			}
+			return Ret;
+
+		}
+				  
+		private void Recalculate()
+		{ 
+          int Day,Year,Month;
+		  Year  = Int32.Parse(comboBox2.Text);
+		  Month = StringToMonth(comboBox1.Text.Trim());
+			
+
+			if ( DaysinMonth(Year,Month) < Int32.Parse(comboBox3.Text) )
+                 Day  = Int32.Parse(comboBox3.Text);
+			else Day = DaysinMonth(Year,Month);
+
+					
+		   comboBox3.Items.Clear();
+			for(int i=1;i<=DaysinMonth(Month,Year);i++)
+				comboBox3.Items.Add(i);
+
+
+
+		} 
+
+
+		private void Form1_Load(object sender, System.EventArgs e)
+		{
+			
+			DateTime dt = new DateTime();
+			dt = DateTime.Now;
+			this.comboBox1.Text =  dt.Month.ToString();
+			this.comboBox2.Text =  dt.Year.ToString();
+			for(int i=1973;i<=2010;i++)
+			  comboBox2.Items.Add(i);
+			
+			
+			comboBox1.Items.Add("июмеюри");
+			comboBox1.Items.Add("хдадреюки");
+			comboBox1.Items.Add("люрти");
+			comboBox1.Items.Add("юприки");
+			comboBox1.Items.Add("люиси");
+			comboBox1.Items.Add("иемиси");
+			comboBox1.Items.Add("иекиси");
+			comboBox1.Items.Add("юбеисто");
+			comboBox1.Items.Add("сдьтдладри");
+			comboBox1.Items.Add("оьтоладри");
+			comboBox1.Items.Add("модладри");
+			comboBox1.Items.Add("цдйдладри");
+
+
+//			for(int i=1;i<=12;i++)
+//				comboBox1.Items.Add(i);
+
+
+			for(int i=1;i<=DaysinMonth(dt.Month,dt.Year);i++)
+				comboBox3.Items.Add(i);
+
+			//this.comboBox1.Font.Name = "Geo_Times";
+			//this.comboBox2.Font.Name = "Geo_Times";
+			//this.comboBox3.Font.Name = "Geo_Times";
+
+
+
+			
+		}
+
+		private void button1_Click(object sender, System.EventArgs e)
+		{
+			this.Recalculate();
+		}
+	}
+}

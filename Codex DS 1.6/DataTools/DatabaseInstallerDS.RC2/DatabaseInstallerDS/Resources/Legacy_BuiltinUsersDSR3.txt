@@ -1,0 +1,65 @@
+declare  @builtin_users as nvarchar(128)
+set @builtin_users = suser_sname(0x01020000000000052000000021020000)
+
+
+if not exists (select * from master.dbo.syslogins where loginname = @builtin_users)
+	exec sp_grantlogin @builtin_users
+	exec sp_defaultdb  @builtin_users, N'master'
+	exec sp_defaultlanguage @builtin_users, N'us_english'
+
+GO
+
+declare   @builtin_users as nvarchar(128)
+set @builtin_users = suser_sname(0x01020000000000052000000021020000)
+
+exec sp_addsrvrolemember @builtin_users, sysadmin
+GO
+
+declare   @builtin_users as nvarchar(128)
+set @builtin_users = suser_sname(0x01020000000000052000000021020000)
+
+
+if not exists (select * from dbo.sysusers where name = @builtin_users and uid < 16382)
+	EXEC sp_grantdbaccess @builtin_users, @builtin_users
+GO
+
+declare   @builtin_users as nvarchar(128)
+set @builtin_users = suser_sname(0x01020000000000052000000021020000)
+
+
+USE master
+exec sp_addrolemember N'db_owner', @builtin_users
+GO
+
+declare   @builtin_users as nvarchar(128)
+set @builtin_users = suser_sname(0x01020000000000052000000021020000)
+
+
+USE codex2007DS
+exec sp_addrolemember N'db_owner', @builtin_users
+GO
+
+declare   @builtin_users as nvarchar(128)
+set @builtin_users = suser_sname(0x01020000000000052000000021020000)
+
+
+declare   @builtin_users as nvarchar(128)
+set @builtin_users = suser_sname(0x01020000000000052000000021020000)
+
+USE model
+exec sp_addrolemember N'db_owner', @builtin_users
+GO
+
+declare   @builtin_users as nvarchar(128)
+set @builtin_users = suser_sname(0x01020000000000052000000021020000)
+
+USE msdb
+exec sp_addrolemember N'db_owner', @builtin_users
+GO
+
+declare   @builtin_users as nvarchar(128)
+set @builtin_users = suser_sname(0x01020000000000052000000021020000)
+
+USE tempdb
+exec sp_addrolemember N'db_owner', @builtin_users
+GO

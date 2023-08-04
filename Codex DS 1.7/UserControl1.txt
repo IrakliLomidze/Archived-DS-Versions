@@ -1,0 +1,791 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Data;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+using ILG.Windows.Forms;
+
+namespace ILG.Codex.CodexListBox
+{
+
+    public class CodexListEventArgs : System.EventArgs
+    {
+        public int _ID;
+        public string _TCaption;
+        public string _DCaption;
+        public string _PreviewText;
+
+
+        public CodexListEventArgs(int ID, string TCaption, string DCaption)
+        {
+            this._ID = ID;
+            this._TCaption = TCaption;
+            this._DCaption = DCaption;
+        }
+    }
+
+    public delegate void CallDocumentEventHandler(object sender, CodexListEventArgs e);
+    public delegate void PreviewDocumentEventHandler(object sender);
+
+    
+    public partial class CodexListBox : UserControl
+    {
+        public string Active_TCaption;
+        public string Active_DCaption;
+        public int Active_ID;
+        public string Active_Preview;
+        public int Active_DocStatus;
+        public int Active_History;
+
+        public bool ShowHisotryIcon = false;
+        
+        public DataRow[] DataSource;
+        public string IDField;
+        public string DCaptionField;
+        public string TCaptionField;
+        public string StatusField;
+        public string NField;
+        public string PreviewField; // R4
+        public DataTable Visited;
+        public string ProgramName;
+        public int callfrom;
+        public bool usestatus;
+        public bool ShowEncoding = false;
+        public bool InternalMode = false;
+        public bool ShowIDMode = false;
+
+        int VisitedIndicatorWith = 3;
+        public bool Policy_VistiedLinksHiglitedInMagenta = false;
+
+        Bitmap Image_Selection;
+        Bitmap image2;
+        Bitmap image5;
+        Bitmap image3;
+        Bitmap image_VisitICON;
+        Bitmap imageh;
+
+        public Bitmap Image_Doc;
+        public Bitmap Image_Doc_Cod;
+
+        // A delegate type for hooking up change notifications.
+
+        public String HighlightedText = "";
+        
+       
+        public CodexListBox()
+        {
+            InitializeComponent();
+        }
+
+        public event CallDocumentEventHandler DocumentClick;
+        public event PreviewDocumentEventHandler PreviewDocument;
+
+ 
+         protected virtual void OnDocumentClick(CodexListEventArgs e)
+         {
+             DocumentClick(this, e);
+         }
+
+         protected virtual void OnDocumentPreview()
+         {
+             PreviewDocument(this);
+         }
+
+
+        public void InitializeVarialbles(int Varialbe)
+        {
+
+            
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint , true);
+            this.SetStyle(ControlStyles.ResizeRedraw,false);
+            this.UpdateStyles();
+            
+            
+            
+            
+
+            nfont = new Font("Sylfaen", 11.5f, FontStyle.Bold);
+            tfont = new Font("Sylfaen", 10, FontStyle.Regular);
+            colorn = Color.Black;
+            leftMargines = 8 +3+ 3; 
+            topMargines = 10;
+            distance = 12;
+            Form1 f = new Form1();
+            Image_Selection = new Bitmap(f.pictureBox_Selection.Image);//@"C:\1\1.bmp");
+            image2 = new Bitmap(f.pictureBox_Document_Codified.Image);
+            image5 = new Bitmap(f.pictureBox_Document.Image);
+            image3 = new Bitmap(f.pictureBox_Document.Image);
+            image_VisitICON = new Bitmap(f.pictureBox_VisidetICON.Image);
+            imageh = new Bitmap(f.pictureBox8_HistoryMark.Image);
+
+
+            Image_Doc = new Bitmap(f.pictureBoxDoc1.Image);
+            Image_Doc_Cod = new Bitmap(f.pictureBoxDoc2.Image);
+
+            switch (Varialbe)
+            {
+                case 2: // Codex
+                    {
+                        DCaptionField = "D_Caption";
+                        TCaptionField = "TopCaption";
+                        StatusField   = "C_Status";
+                        IDField = "D_ID";
+                        usestatus = true;
+                        PreviewField = "DocText";
+                    }
+                    break;
+
+                case 1: // CGL
+                    {
+                        DCaptionField = "D_Caption";
+                        TCaptionField = "TopCaption";
+                        StatusField = "C_Status";
+                        IDField = "D_ID";
+                        usestatus = true;
+                        PreviewField = "DocText";
+                    }
+                    break;
+                case 0: // ICG
+                    {
+                        DCaptionField = "C_Caption";
+                        TCaptionField = "TopCaption";
+                        StatusField = "C_LANGUAGE";
+                        IDField = "C_ID";
+                        usestatus = false;
+                        PreviewField = "DocText";
+                    }
+                    break;
+
+                
+            }
+            
+            
+
+            LWithSize = listBox1.ClientSize.Width;
+
+            
+        }
+
+        // ---------------------------------
+        Font nfont;
+        Color colorn;
+        int leftMargines;
+        int topMargines;
+
+
+        int distance;
+        Font tfont;
+
+        int LWithSize;
+        public void FillGrid()
+        {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
+            this.SuspendLayout();
+            this.listBox1.BeginUpdate();
+            this.LWithSize = listBox1.ClientSize.Width;
+            this.listBox1.HorizontalExtent = this.LWithSize;
+            this.listBox1.Enabled = false;
+            this.listBox1.SelectionMode = SelectionMode.One;
+            this.listBox1.DrawMode = DrawMode.OwnerDrawVariable;
+            this.listBox1.Items.Clear();
+
+            for (int i = 0; i <= DataSource.Length - 1; i++)
+               this.listBox1.Items.Add(i);
+            this.listBox1.Enabled = true;
+
+            this.listBox1.SelectedIndex = 0;
+            this.listBox1.EndUpdate();
+            this.ResumeLayout();          
+                                        
+        }
+
+        private void listBox1_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            Graphics gfx = e.Graphics;
+            int number = e.Index + 1;
+
+            string xcaption = @DataSource[e.Index][TCaptionField].ToString();
+            string dtext = @DataSource[e.Index][DCaptionField].ToString();
+
+
+            // New Measurment On R4 Version
+
+            char[] delimiterChars = { ' ' };                 // Word Delimiter 
+            string[] words = dtext.Split(delimiterChars);    // Get Words
+
+            List<String> Lines = new List<String>();         // Layter we will calcualte Lines
+            String CurrentLine = "";
+
+            int _DTextWith = this.LWithSize - leftMargines;
+
+            #region Words to Lines
+            int i = 0;
+            while (i < words.Length)
+            {
+                while (TextRenderer.MeasureText(gfx, CurrentLine + " " + words[i], tfont).Width < (_DTextWith - 8 - 8))
+                {
+                    CurrentLine = CurrentLine + " " + words[i];
+                    i++;
+                    if (i == words.Length) break;
+                }
+                Lines.Add(CurrentLine);
+                CurrentLine = "";
+
+            }
+            #endregion Words to Lines
+
+
+            float _Dtext_height = 0;
+            foreach (string l in Lines)
+            {
+                _Dtext_height = _Dtext_height + TextRenderer.MeasureText(gfx, l, tfont).Height + 6;
+            }
+
+         
+            SizeF f1 = gfx.MeasureString(number.ToString() + ".", nfont);
+            
+            e.ItemHeight = topMargines + (int)f1.Height + distance + (int)_Dtext_height + 8 + 8;
+        }
+
+        private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            this.listBox1.SuspendLayout();
+            int number = e.Index + 1;
+            int statusLine = (int)DataSource[e.Index][StatusField];
+            string statusString = "";
+            
+            if (usestatus == true)
+            {
+                switch (statusLine)
+                {
+                    case 0: statusString = " [ორიგინალი]"; break;
+                    case 1: statusString = " [კოდიფიცირებული]"; break;
+                    default: statusString = " {განუსაზღვრელი}"; break;
+                }
+            }
+
+
+
+            string xcaption = DataSource[e.Index][TCaptionField].ToString() + statusString;//+ "  "+statusLine.ToString();
+            string dtext = @DataSource[e.Index][DCaptionField].ToString();
+            int ind = (int)DataSource[e.Index][IDField];
+
+            if (ShowIDMode == true) xcaption = xcaption + " ID=" + ind.ToString();
+
+
+            if (ShowEncoding == true)
+            {
+                xcaption = xcaption + " {" + DataSource[e.Index]["C_DocEncoding"].ToString().Trim() + "}";
+            }
+
+
+            Brush TopColor = new SolidBrush(Color.FromArgb(44, 44, 44));
+
+            Brush UnVisitedIndicatorBrush = new SolidBrush(Color.FromArgb(0, 103, 176));
+            Pen UnVisitedIndicatorPen = new Pen(Color.FromArgb(0, 103, 176), 2);
+
+            Brush VisitedIndicatorBrush = new SolidBrush(Color.FromArgb(255, 255, 255));
+            Pen VisitedIndicatorPen = new Pen(Color.FromArgb(255, 255, 255), 2);
+
+            //if (this.Policy_VistiedLinksHiglitedInMagenta  == true)
+            //    VisitedIndicatorPen = new  Pen(Color.DarkMagenta, 2);
+
+
+            if (InternalMode == true)
+            {
+                int color = (int)DataSource[e.Index]["C_TODO"];
+                if (color == 1) TopColor = Brushes.ForestGreen;
+                if (color == 0) TopColor = Brushes.SteelBlue;
+                if (color == -1) TopColor = Brushes.Red;
+            }
+
+            // Measure Writing String in Lines and Prepoaring for Drawing Line to Line
+            #region Measure Writing String in Lines and Prepoaring for Drawing Line to Line
+            char[] delimiterChars = { ' ' };
+            string[] words = dtext.Split(delimiterChars);
+
+            List<String> Lines = new List<String>();
+            String CurrentLine = "";
+
+            Graphics gfx = e.Graphics;
+            int _DTextWith = this.LWithSize - leftMargines;
+
+            int i = 0;
+            while (i < words.Length)
+            {
+                while (TextRenderer.MeasureText(gfx, CurrentLine + " " + words[i], tfont).Width < (_DTextWith - 8 - 8))
+                {
+                    CurrentLine = CurrentLine + " " + words[i];
+                    i++;
+                    if (i == words.Length) break;
+                }
+                Lines.Add(CurrentLine);
+                CurrentLine = "";
+
+            }
+            #endregion
+
+
+
+
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            {
+
+                #region DrawItemState.Selected
+
+                Color Codex_DocumentCaption_TextColor = Color.Black;
+                if (this.Policy_VistiedLinksHiglitedInMagenta == true)
+                {
+                    if (Visited.Rows.Contains(new object[] { ind }) == true)
+                    {
+                        Codex_DocumentCaption_TextColor = Color.FromArgb(66, 00, 99);// (Color.Purple; // Color.MediumPurple
+                    }
+                }
+
+
+                Pen pen = new Pen(Color.FromArgb(30,57,91), 0.4f);
+                Pen pen2 = new Pen(Color.FromArgb(214, 229, 245), 0.4f);
+
+                    
+
+                Pen PenX3 = new Pen(Color.FromArgb(0x7d,0xa2,0xce), 1);
+                Pen PenX2 = new Pen(Color.FromArgb(0xeb,0xf4,0xfd), 1);
+                Pen PenX1 = new Pen(Color.FromArgb(0xd0,0xe4,0xf4), 1);
+                Brush B1 = new SolidBrush(Color.FromArgb(0xd0, 0xe4, 0xf4));
+                
+                gfx.DrawRectangle(PenX3, new Rectangle(e.Bounds.X + 2, e.Bounds.Y + 2, e.Bounds.Width - 3, e.Bounds.Height - 3));
+                gfx.DrawImage(Image_Selection, e.Bounds.X + 3, e.Bounds.Y + 3, e.Bounds.Width - 5, e.Bounds.Height - 5);
+
+
+                
+                gfx.DrawString(number.ToString() + ".", nfont, Brushes.Black, e.Bounds.X + leftMargines, e.Bounds.Y + topMargines);
+                SizeF f1 = gfx.MeasureString(number.ToString() + ".", nfont);
+
+                #region DrawXCaption
+                if ((usestatus == true))
+                {
+                    if (statusLine == 1)
+                    {
+                        // Codified
+                        gfx.DrawImage(image2, e.Bounds.X + leftMargines + f1.Width + 8, e.Bounds.Y + topMargines - 6);
+                        if (ShowHisotryIcon == true)
+                        {  if ((int)DataSource[e.Index]["C_ShowHistory"] != 0) 
+                           gfx.DrawImage(imageh, e.Bounds.X + leftMargines + f1.Width + 20 - 16, e.Bounds.Y + topMargines - 6 +0);
+                      
+                        }
+                       gfx.DrawString(xcaption, nfont, TopColor, e.Bounds.X + leftMargines + f1.Width + 8 + image2.Width + 2, e.Bounds.Y + topMargines);
+                      
+                    }
+                    else
+                    {
+                        // Original
+                        gfx.DrawImage(image5, e.Bounds.X + leftMargines + f1.Width + 8, e.Bounds.Y + topMargines - 6);
+                        if (ShowHisotryIcon == true)
+                        {
+                            if ((int)DataSource[e.Index]["C_ShowHistory"] != 0)
+                                gfx.DrawImage(imageh, e.Bounds.X + leftMargines + f1.Width + 20 - 16, e.Bounds.Y + topMargines - 6 + 0);
+                        }
+
+                        gfx.DrawString(xcaption, nfont, TopColor, e.Bounds.X + leftMargines + f1.Width + 8 + image2.Width + 2, e.Bounds.Y + topMargines);
+                     
+                    }
+                }
+                else
+                {
+                    gfx.DrawImage(image3, e.Bounds.X + leftMargines + f1.Width + 8, e.Bounds.Y + topMargines - 6);
+                    if (ShowHisotryIcon == true)
+                    {
+                        if ((int)DataSource[e.Index]["C_ShowHistory"] != 0)
+                           gfx.DrawImage(imageh, e.Bounds.X + leftMargines + f1.Width + 20 - 16, e.Bounds.Y + topMargines - 6 +0);
+                        
+                    }
+                    gfx.DrawString(xcaption, nfont, TopColor, e.Bounds.X + leftMargines + f1.Width + 8 + image2.Width + 2, e.Bounds.Y + topMargines);
+                }
+                
+                #endregion DrawXCaption
+                
+                SizeF f11 = gfx.MeasureString(xcaption, nfont);
+
+                //Rectangle rect = new Rectangle(e.Bounds.X + leftMargines  + 8, e.Bounds.Y + topMargines + (int)f1.Height + distance, this.LWithSize - leftMargines - (int)f1.Width - 8, this.ClientSize.Height);
+                //StringFormat stf = new StringFormat();
+                //stf.FormatFlags = StringFormatFlags.FitBlackBox;
+                //gfx.DrawString(dtext, tfont, Brushes.Black, rect, stf);
+
+
+                float _h = 0;
+                float Bound_Y = e.Bounds.Y + topMargines + (int)f1.Height + distance;
+                float Bound_X = e.Bounds.X + leftMargines;
+                foreach (string l in Lines)
+                {
+                    String l1 = l + " ";
+                    string[] sub_delimiter_ = { this.HighlightedText };
+                    string[] sub_words = l1.Split(sub_delimiter_, StringSplitOptions.None);
+                    int Position = 0;
+                    for (int j = 0; j < sub_words.Length; j++)
+                    {
+                        TextRenderer.DrawText(gfx, sub_words[j], tfont, new Point((int)(Bound_X + Position), (int)(Bound_Y + _h)), Codex_DocumentCaption_TextColor, Color.Transparent, TextFormatFlags.NoPadding);
+                        Position = Position + (int)TextRenderer.MeasureText(gfx, sub_words[j], tfont, new Size(10000, 1000), TextFormatFlags.NoPadding).Width;
+
+                        if (j != (sub_words.Length - 1))
+                        {
+                            TextRenderer.DrawText(gfx, HighlightedText, tfont, new Point((int)(Bound_X + Position), (int)(Bound_Y + _h)), Codex_DocumentCaption_TextColor, Color.FromArgb(255,238,128), TextFormatFlags.NoPadding);
+                            Position = Position + (int)TextRenderer.MeasureText(gfx, HighlightedText, tfont, new Size(10000, 1000), TextFormatFlags.NoPadding).Width;
+                        }
+                    }
+
+                    _h = _h + gfx.MeasureString(l, tfont).Height + 4;
+                }
+
+
+                #region Viisted Indicator
+                if (Visited.Rows.Contains(new object[] { ind }) == false)
+                { 
+                    gfx.DrawRectangle(UnVisitedIndicatorPen, e.Bounds.X+2, e.Bounds.Y+2, 3/2, e.Bounds.Height-4);
+                }
+                else
+                { 
+                  gfx.DrawRectangle(VisitedIndicatorPen, e.Bounds.X+2, e.Bounds.Y+2, 3/2, e.Bounds.Height-4);
+                }
+
+                #endregion Viisted Indicator
+
+                #endregion #region DrawItemState.Selected
+            }
+            else
+            {
+                
+               
+                gfx.FillRectangle(Brushes.White, e.Bounds.X , e.Bounds.Y , e.Bounds.Width , e.Bounds.Height );
+                
+                
+                #region if Higlited
+                /*
+                //if (((e.State & DrawItemState.HotLight) == DrawItemState.HotLight) || ((e.State & DrawItemState.NoAccelerator) == DrawItemState.NoAccelerator))
+                if ((e.State & DrawItemState.HotLight) == DrawItemState.HotLight)
+                {
+
+
+                    Pen PenX3 = new Pen(Color.FromArgb(216, 240, 250), 1);
+                    // Pen PenX2 = new Pen(Color.FromArgb(0xeb, 0xf4, 0xfd), 1);
+                    //Pen PenX1 = new Pen(Color.FromArgb(0xd0, 0xe4, 0xf4), 1);
+                    Brush B1 = new SolidBrush(Color.FromArgb(0xd0, 0xe4, 0xf4));
+                    //              Brush B2 = new LinearGradientBrush(new Rectangle(e.Bounds.X + 3, e.Bounds.Y + 3, e.Bounds.Width - 6, e.Bounds.Height - 6),
+                    //                                                     Color.FromArgb(239, 248, 253), Color.FromArgb(215, 239, 252),LinearGradientMode.Vertical);
+
+                    Brush B2 = new LinearGradientBrush(new Rectangle(e.Bounds.X + 3, e.Bounds.Y + 3, e.Bounds.Width - 6, e.Bounds.Height - 6),
+                                                         Color.FromArgb(248, 252, 254), Color.FromArgb(232, 245, 253), LinearGradientMode.Vertical);
+
+
+
+                    //gfx.DrawImage(image1, e.Bounds.X , e.Bounds.Y, e.Bounds.Width, e.Bounds.Height - 1);
+                    gfx.DrawRectangle(PenX3, new Rectangle(e.Bounds.X + 1, e.Bounds.Y + 1, e.Bounds.Width - 2, e.Bounds.Height - 2));
+                    //gfx.DrawRectangle(PenX2, new Rectangle(e.Bounds.X + 2, e.Bounds.Y + 2, e.Bounds.Width - 4, e.Bounds.Height - 4));
+                    gfx.FillRectangle(B2, new Rectangle(e.Bounds.X + 2, e.Bounds.Y + 2, e.Bounds.Width - 4, e.Bounds.Height - 4));
+
+                }
+                else
+                {
+                    Pen PenX3 = new Pen(Color.FromArgb(255, 255, 255), 1);
+                    gfx.DrawRectangle(PenX3, new Rectangle(e.Bounds.X + 1, e.Bounds.Y + 1, e.Bounds.Width - 2, e.Bounds.Height - 2));
+                }
+                 */
+                #endregion if Higlited
+
+                //gfx.FillRectangle(Brushes.LightGray, e.Bounds.X + 4, e.Bounds.Y + e.Bounds.Height - 1, e.Bounds.Width - 8, 1);
+                gfx.FillRectangle(new SolidBrush(Color.FromArgb(214, 229, 245)), e.Bounds.X + 4, e.Bounds.Y + e.Bounds.Height - 1, e.Bounds.Width - 8, 1);
+                
+                Pen pen = new Pen(Brushes.SteelBlue, 0.4f);
+
+                gfx.DrawString(number.ToString() + ".", nfont, Brushes.Black, e.Bounds.X + leftMargines, e.Bounds.Y + topMargines);
+                SizeF f1 = gfx.MeasureString(number.ToString() + ".", nfont);
+
+                #region DrawXCaption
+                if ((usestatus == true))
+                {
+                    if (statusLine == 1)
+                    {
+                        // Codified
+                        gfx.DrawImage(image2, e.Bounds.X + leftMargines + f1.Width + 8, e.Bounds.Y + topMargines - 6);
+                        if (ShowHisotryIcon == true)
+                        {
+                            if ((int)DataSource[e.Index]["C_ShowHistory"] != 0)
+                              gfx.DrawImage(imageh, e.Bounds.X + leftMargines + f1.Width + 20 - 16, e.Bounds.Y + topMargines - 6 +0);
+                        
+                        }
+                        gfx.DrawString(xcaption, nfont, TopColor, e.Bounds.X + leftMargines + f1.Width + 8 + image2.Width + 2, e.Bounds.Y + topMargines);
+                    
+                    }
+                    else
+                    {
+                        // Original
+                        gfx.DrawImage(image5, e.Bounds.X + leftMargines + f1.Width + 8, e.Bounds.Y + topMargines - 6);
+                        if (ShowHisotryIcon == true)
+                        {
+                            if ((int)DataSource[e.Index]["C_ShowHistory"] != 0)
+                               gfx.DrawImage(imageh, e.Bounds.X + leftMargines + f1.Width + 20 - 16, e.Bounds.Y + topMargines - 6 +0);               
+                        }
+
+                        gfx.DrawString(xcaption, nfont, TopColor, e.Bounds.X + leftMargines + f1.Width + 8 + image2.Width + 2, e.Bounds.Y + topMargines);
+                       
+                    
+                    }
+                }
+                else
+                {
+                    gfx.DrawImage(image3, e.Bounds.X + leftMargines + f1.Width + 8, e.Bounds.Y + topMargines - 6);
+                    if (ShowHisotryIcon == true)
+                    {
+                        if ((int)DataSource[e.Index]["C_ShowHistory"] != 0)
+                           gfx.DrawImage(imageh, e.Bounds.X + leftMargines + f1.Width + 20 - 16, e.Bounds.Y + topMargines - 6 +0);
+                        
+                    }
+                    gfx.DrawString(xcaption, nfont, TopColor, e.Bounds.X + leftMargines + f1.Width + 8 + image2.Width + 2, e.Bounds.Y + topMargines);
+                
+                }
+                #endregion DrawXCaption
+         
+                SizeF f11 = gfx.MeasureString(xcaption, nfont);
+
+
+                //Rectangle rect = new Rectangle(e.Bounds.X + leftMargines  + 8, e.Bounds.Y + topMargines + (int)f1.Height + distance, this.LWithSize - leftMargines - (int)f1.Width - 8, this.ClientSize.Height);
+                //StringFormat stf = new StringFormat();
+                //stf.FormatFlags = StringFormatFlags.FitBlackBox;
+                //gfx.DrawString(dtext, tfont, Brushes.Black, rect, stf);
+
+                Color Codex_DocumentCaption_TextColor = Color.Black;
+                if (this.Policy_VistiedLinksHiglitedInMagenta == true)
+                {
+                    if (Visited.Rows.Contains(new object[] { ind }) == true)
+                    {
+                        Codex_DocumentCaption_TextColor = Color.FromArgb(66, 00, 99);// (Color.Purple; // Color.MediumPurple
+                    }
+                }
+
+
+
+                float _h = 0;
+                float Bound_Y = e.Bounds.Y + topMargines + (int)f1.Height + distance;
+                float Bound_X =  e.Bounds.X + leftMargines ;
+                foreach (string l in Lines)
+                {
+                    String l1 = l + " ";
+                    string[] sub_delimiter_ = { this.HighlightedText };
+                    string[] sub_words = l1.Split(sub_delimiter_, StringSplitOptions.None);
+                    int Position = 0;
+                    for (int j = 0; j < sub_words.Length; j++)
+                    {
+                        TextRenderer.DrawText(gfx, sub_words[j], tfont, new Point((int)(Bound_X + Position), (int)(Bound_Y + _h)), Codex_DocumentCaption_TextColor, Color.Transparent, TextFormatFlags.NoPadding);
+                        Position = Position + (int)TextRenderer.MeasureText(gfx, sub_words[j], tfont, new Size(10000, 1000), TextFormatFlags.NoPadding).Width;
+
+                        if (j != (sub_words.Length - 1))
+                        {
+                            TextRenderer.DrawText(gfx, HighlightedText, tfont, new Point((int)(Bound_X + Position), (int)(Bound_Y + _h)), Codex_DocumentCaption_TextColor, Color.FromArgb(255, 238, 128), TextFormatFlags.NoPadding);
+                            Position = Position + (int)TextRenderer.MeasureText(gfx, HighlightedText, tfont, new Size(10000, 1000), TextFormatFlags.NoPadding).Width;
+
+                        }
+
+                    }
+
+                    _h = _h + gfx.MeasureString(l, tfont).Height + 4;
+                }
+
+
+                #region Visited Indicator
+                if (Visited.Rows.Contains(new object[] { ind }) == false)
+                { 
+                     gfx.DrawRectangle(UnVisitedIndicatorPen, e.Bounds.X+2, e.Bounds.Y+2, 3/2, e.Bounds.Height-4);
+                }
+                else
+                {
+                    gfx.DrawRectangle(VisitedIndicatorPen, e.Bounds.X+2, e.Bounds.Y+2, 3/2, e.Bounds.Height-4);
+                }
+                #endregion Visited Indicator
+            }
+
+            e.DrawFocusRectangle();
+            this.listBox1.ResumeLayout();
+				
+
+        }
+
+
+        private void DoVisited()
+        {
+            int id = (int)DataSource[this.listBox1.SelectedIndex][IDField]; ;
+            if (Visited.Rows.Contains(new object[] { id }) == false)
+                Visited.Rows.Add(new object[] { id });
+            //MessageBox.Show(id.ToString());
+            //MessageBox.Show(DataSource[this.listBox1.SelectedIndex][TCaptionField].ToString());
+            OnDocumentClick(new CodexListEventArgs(id,DataSource[this.listBox1.SelectedIndex][TCaptionField].ToString(),DataSource[this.listBox1.SelectedIndex][DCaptionField].ToString()));
+            
+            
+        }
+
+        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            DoVisited();
+        }
+
+        private void listBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) DoVisited();
+        }
+
+
+
+        #region Save List to File
+        private string toRTFString(String Str)
+        {
+            StringBuilder st = new StringBuilder("");
+
+
+            for (int i = 0; i <= Str.Length - 1; i++)
+            {
+                if (Convert.ToInt16(Str[i]) < 32) continue;
+
+                if (Convert.ToInt16(Str[i]) > 255)
+                {
+
+                    st.Append(String.Format(@"\u{0}?", Convert.ToInt16(Str[i])));
+                }
+                else st.Append(String.Format(@"\'{0:x2}", Convert.ToInt16(Str[i])));
+            }
+            return st.ToString();
+
+        }
+
+        public void CopyListToClipboard()
+        {
+            String[] rt = generetelistfile();
+            String RTFList = "";
+            foreach(String str in rt)
+            {
+                RTFList = RTFList + str + Environment.NewLine;
+            }
+            System.Windows.Forms.Clipboard.SetText(RTFList, TextDataFormat.Rtf);
+        }
+
+        private String[] generetelistfile()
+        {
+            String[] str = new string[8 + DataSource.Length * 5 + 3];
+            str[0] = @"{\rtf1\ansi\ansicpg1252\deff0\deflang1033";
+            str[1] = @"{\fonttbl";
+            str[2] = @"{\f0\froman\fprq2\fcharset0 Sylfaen;}";
+            str[3] = @"{\f1\fswiss\fcharset0 Arial;}}";
+            str[4] = @"{\colortbl;\red0\green0\blue0;\red0\green64\blue128;\red0\green0\blue0;}";
+            str[5] = @"{\*\generator Codex R4 6.2015.2015.200;}";
+            str[6] = @"\deftab720\paperw11906\paperh16837\margl1440\margt1440\margr1440\margb1440\pard\cf1\f0\fs20\lang3079" + @toRTFString("მოძებნილი დოკუმენტების სია, რაოდენობა =  " + DataSource.Length) + @"\par";
+            str[7] = @"\par";
+            int j = 7 + 1;
+            for (int i = 0; i < DataSource.Length; i++)
+            {
+                str[j] = @"\cf2\par";
+                j++;
+                str[j] = (i + 1).ToString() + ". " + @"\lang3079" + @toRTFString(DataSource[i][TCaptionField].ToString()) + @"\par";
+                j++;
+                str[j] = @"\par";
+                j++;
+                str[j] = @"\cf1" + @toRTFString(@DataSource[i][DCaptionField].ToString()) + @"\par";
+                j++;
+                str[j] = @"\par";
+            }   
+            j++;
+            str[j] = @"\tab\cf0\lang1033\f1\par";
+            j++;
+            str[j] = @"}";
+
+            return str;
+
+
+        }
+
+        public void SaveToRTF()
+        {
+
+            Stream f;
+            SaveFileDialog d = new SaveFileDialog();
+            d.FileName = "DocumentsList";
+            d.Filter = "Rich Text Format  (*.rtf)| *.rtf";
+            d.Title = "Save Document List";
+            string CodexDocuments = @Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+            d.InitialDirectory = CodexDocuments;
+
+
+
+            if (d.ShowDialog() == DialogResult.OK)
+            {
+
+                string s = System.IO.Path.GetExtension(d.FileName);
+
+                string savepath = System.IO.Path.GetDirectoryName(d.FileName);
+                if (savepath[savepath.Length - 1] != '\\') savepath = savepath + "\\";
+                string savefilename = System.IO.Path.GetFileNameWithoutExtension(d.FileName);
+                if (savefilename.ToLower() != "rtf") savefilename = savefilename + ".rtf";
+                string savefullpath = savepath + savefilename;
+
+                //if (File.Exists(savefullpath) == true)
+                //{
+                //    if (MessageBox.Show("ფაილი უკვე არსებობს გადავაწერო ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No) return;
+                //
+                //}
+
+
+                try
+                {
+                    f = new FileStream(savefullpath, FileMode.Create);
+                    StreamWriter f1 = new StreamWriter(f);
+                    string[] res = generetelistfile();
+                    foreach (string r in res)
+                    {
+                        if (r != null) f1.WriteLine(r);
+                    }
+                    f1.Close();
+                    f.Close();
+
+                    ILGMessageBox.Show("სია ჩაწერილია");
+                }
+                catch
+                {
+                    ILG.Windows.Forms.ILGMessageBox.Show("არ ხერხდება სიის ჩაწერა");
+                }
+
+                
+                
+
+            }
+
+        }
+
+
+        #endregion Save List to File
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Active_DCaption = @DataSource[this.listBox1.SelectedIndex][DCaptionField].ToString();
+            Active_TCaption = @DataSource[this.listBox1.SelectedIndex][TCaptionField].ToString();
+            Active_ID = (int)@DataSource[this.listBox1.SelectedIndex][IDField];
+            Active_Preview = @DataSource[this.listBox1.SelectedIndex][PreviewField].ToString();
+            Active_DocStatus = (int)@DataSource[this.listBox1.SelectedIndex][StatusField];
+
+            OnDocumentPreview();
+
+        }
+
+        private void listBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+    }
+}

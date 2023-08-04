@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILTextBox", "ILTextBox.csproj", "{8210E70A-03E3-4EED-95ED-CF4B1AB89F55}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{8210E70A-03E3-4EED-95ED-CF4B1AB89F55}.Debug.ActiveCfg = Debug|.NET
+		{8210E70A-03E3-4EED-95ED-CF4B1AB89F55}.Debug.Build.0 = Debug|.NET
+		{8210E70A-03E3-4EED-95ED-CF4B1AB89F55}.Release.ActiveCfg = Release|.NET
+		{8210E70A-03E3-4EED-95ED-CF4B1AB89F55}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

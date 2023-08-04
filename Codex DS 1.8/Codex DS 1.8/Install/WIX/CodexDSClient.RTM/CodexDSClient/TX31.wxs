@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLDIR" >
+            <Component Id="cmp8C91C141FFE516175D573AD8E9BB1946" Guid="*">
+                <File Id="fil2AB31978C5F8B2A9F7840EFBD8F81829" KeyPath="yes" Source="$(var.SourceDirTX31)\tx31_css.dll" />
+            </Component>
+            <Component Id="cmp05BB65D410BAE13DBE76DFC7BB43C1FA" Guid="*">
+                <File Id="filBBFDB29572931F2DE4F7FF354E9763A3" KeyPath="yes" Source="$(var.SourceDirTX31)\tx31_doc.dll" />
+            </Component>
+            <Component Id="cmpB69DDD888BC24A4945BD82BE0E2EA002" Guid="*">
+                <File Id="fil83AFA6A49C58E5C116CD8750D8EB04C2" KeyPath="yes" Source="$(var.SourceDirTX31)\tx31_dox.dll" />
+            </Component>
+            <Component Id="cmp3490B94730993DC5EADC979D7F6D5DF8" Guid="*">
+                <File Id="fil82BB06C6340439846188CFB72FE5E6F4" KeyPath="yes" Source="$(var.SourceDirTX31)\tx31_htm.dll" />
+            </Component>
+            <Component Id="cmp8163A30627E2778C0F6D64947CA1B7C3" Guid="*">
+                <File Id="fil4317518D5850F644E100F313E8EC3D68" KeyPath="yes" Source="$(var.SourceDirTX31)\tx31_pdf.dll" />
+            </Component>
+            <Component Id="cmpD114F77B11A5EF609AB4515BD07C3692" Guid="*">
+                <File Id="filDDC70E4BE4955DBFC7C46F723F89338E" KeyPath="yes" Source="$(var.SourceDirTX31)\tx31_rtf.dll" />
+            </Component>
+            <Component Id="cmpF07A73AF823313E400DFFA223983F9B7" Guid="*">
+                <File Id="fil8DB8AAC253A5654FC3D555A50A486C81" KeyPath="yes" Source="$(var.SourceDirTX31)\tx31_xlx.dll" />
+            </Component>
+            <Component Id="cmp55FCC12BCAD87298174D8B403D0A042B" Guid="*">
+                <File Id="fil8664EFCBD80D6EA84A43E3EB1783ACFF" KeyPath="yes" Source="$(var.SourceDirTX31)\tx31_xml.dll" />
+            </Component>
+            <Component Id="cmp237C6D9ADF57C9D65EE901990CC09D7A" Guid="*">
+                <File Id="fil50EA014CDC6BA7A717DCEE8C1C16CAF6" KeyPath="yes" Source="$(var.SourceDirTX31)\TXBarcode.dll" />
+            </Component>
+            <Component Id="cmp0F6F51A44EA9D684633459412EB61729" Guid="*">
+                <File Id="filB00C543F9DC7B5D50E6DEE277F5CD6CC" KeyPath="yes" Source="$(var.SourceDirTX31)\TXBarcode.Windows.Forms.dll" />
+            </Component>
+            <Component Id="cmp0995AF608BA6AC93B7CA53C58F694F72" Guid="*">
+                <File Id="fil3E69A843737C31FBA15378FD50E5290C" KeyPath="yes" Source="$(var.SourceDirTX31)\TXBarcode.Windows.Forms.xml" />
+            </Component>
+            <Component Id="cmpBB8875C735804293044A40BE63B3100A" Guid="*">
+                <File Id="fil1251B723E68B39D5ED20C8BEC210B780" KeyPath="yes" Source="$(var.SourceDirTX31)\TXBarcode.xml" />
+            </Component>
+            <Component Id="cmp85C5B80E8F2545E22D85C079EA64D7BB" Guid="*">
+                <File Id="filBC3358BEFB11250835560EF96ECB8E01" KeyPath="yes" Source="$(var.SourceDirTX31)\TXDocumentServer.dll" />
+            </Component>
+            <Component Id="cmp52E98649576727AF9E49DCE6E437F584" Guid="*">
+                <File Id="filC82D256F25EC16D3B01F4C66E85EB1D4" KeyPath="yes" Source="$(var.SourceDirTX31)\TXDocumentServer.Windows.Forms.Design.dll" />
+            </Component>
+            <Component Id="cmpA2879CAEFF1919DED10A9E732028693B" Guid="*">
+                <File Id="filF4BC8B6948FCBD0D3CCE70C48B1E30FB" KeyPath="yes" Source="$(var.SourceDirTX31)\TXDocumentServer.Windows.Forms.dll" />
+            </Component>
+            <Component Id="cmp971F00BFC5F32A961B3932B17A1FB91F" Guid="*">
+                <File Id="fil9333032BA6D08929845A492EC9785CE1" KeyPath="yes" Source="$(var.SourceDirTX31)\TXDocumentServer.Windows.Forms.xml" />
+            </Component>
+            <Component Id="cmp6875C313A29F3A20ACE0612650F7915E" Guid="*">
+                <File Id="fil377114945ABFF371AAE488A4583235EE" KeyPath="yes" Source="$(var.SourceDirTX31)\TXDocumentServer.xml" />
+            </Component>
+            <Component Id="cmp75C2B6D71F35128925251D3AF2DCEE72" Guid="*">
+                <File Id="fil018B926CF8A47FFEB84AE9B2691C09AF" KeyPath="yes" Source="$(var.SourceDirTX31)\TXDrawing.dll" />
+            </Component>
+            <Component Id="cmp8B88AA50F760156A1E304E8E69BBB72C" Guid="*">
+                <File Id="filD6C5B74DEF3133B880D3B5FBD61A8BD6" KeyPath="yes" Source="$(var.SourceDirTX31)\TXDrawing.Windows.Forms.dll" />
+            </Component>
+            <Component Id="cmpAE7087D98D76BE24E8CBA8114D20E342" Guid="*">
+                <File Id="filEEA38B5EE79ABBF48643E43BD8446C94" KeyPath="yes" Source="$(var.SourceDirTX31)\TXDrawing.Windows.Forms.xml" />
+            </Component>
+            <Component Id="cmpED6A543B8BB433EA35DC892A91BE26E1" Guid="*">
+                <File Id="filDC694B445B34ADAE17DF5607CDDA624B" KeyPath="yes" Source="$(var.SourceDirTX31)\TXDrawing.xml" />
+            </Component>
+            <Component Id="cmpF068FB81BA45C8E2D0B1A19F1CAD1DCF" Guid="*">
+                <File Id="filB18357EFBCA26505781C0FB99573B911" KeyPath="yes" Source="$(var.SourceDirTX31)\txic.dll" />
+            </Component>
+            <Component Id="cmp4D0ED607CC08F514CD94D208CDC4577F" Guid="*">
+                <File Id="fil7AA8282686C984F05F914EED628E71ED" KeyPath="yes" Source="$(var.SourceDirTX31)\TXImageProvider.dll" />
+            </Component>
+            <Component Id="cmp1D6C8FC3357D5BCB8D6A4ED7879DECA0" Guid="*">
+                <File Id="fil8D1E68B3EC149F1668FA3A5EB594AF1D" KeyPath="yes" Source="$(var.SourceDirTX31)\txkernel.dll" />
+            </Component>
+            <Component Id="cmp6F879FF17F99EBFBA1E9374439413852" Guid="*">
+                <File Id="fil5E64B9A9B9E3A10AD2150AF4DB1EA718" KeyPath="yes" Source="$(var.SourceDirTX31)\txpdf.dll" />
+            </Component>
+            <Component Id="cmp461F13F200FA7EFF18572FBC95E81707" Guid="*">
+                <File Id="fil06B01DCC954A1E7B624E7198D1A9DF24" KeyPath="yes" Source="$(var.SourceDirTX31)\TXTextControl.dll" />
+            </Component>
+            <Component Id="cmpCEB224CB1DA864876D10944E8A4A0DC9" Guid="*">
+                <File Id="filD227074D2FED6F55B03D77AF1866C1CD" KeyPath="yes" Source="$(var.SourceDirTX31)\TXTextControl.Server.dll" />
+            </Component>
+            <Component Id="cmp9AEA5833D12FCEF81FA62D0758172D2B" Guid="*">
+                <File Id="fil60935F26139DF97C8181253A17925E63" KeyPath="yes" Source="$(var.SourceDirTX31)\TXTextControl.Server.xml" />
+            </Component>
+            <Component Id="cmp61FDD6FE995F5E6F4C9D03BA96A26F6C" Guid="*">
+                <File Id="filB64C6802321830A98D35D3D4CA420D90" KeyPath="yes" Source="$(var.SourceDirTX31)\TXTextControl.Windows.Forms.Design.dll" />
+            </Component>
+            <Component Id="cmp9E89870451E29F26B9C495A777B275B7" Guid="*">
+                <File Id="fil2F2C5B001DCCA5980345D0811EA6E95B" KeyPath="yes" Source="$(var.SourceDirTX31)\TXTextControl.Windows.Forms.dll" />
+            </Component>
+            <Component Id="cmp66BB964DC39B7B8397F5ED71300DD6E1" Guid="*">
+                <File Id="fil89224D182EB4ABA3B68025D1649C3D4E" KeyPath="yes" Source="$(var.SourceDirTX31)\TXTextControl.Windows.Forms.xml" />
+            </Component>
+            <Component Id="cmp184678905CE43AF3CC1FCC943978BD8B" Guid="*">
+                <File Id="fil7B6E079FB12D25F8F431E912C7AE3B9D" KeyPath="yes" Source="$(var.SourceDirTX31)\TXTextControl.xml" />
+            </Component>
+            <Component Id="cmp93D7F4247119142F28C8F0DAA4EE0E20" Guid="*">
+                <File Id="fil494CAA87F6654F69F06A92D5F1F21186" KeyPath="yes" Source="$(var.SourceDirTX31)\txtools.dll" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="TX31G" Directory="INSTALLDIR">
+            <ComponentRef Id="cmp8C91C141FFE516175D573AD8E9BB1946" />
+            <ComponentRef Id="cmp05BB65D410BAE13DBE76DFC7BB43C1FA" />
+            <ComponentRef Id="cmpB69DDD888BC24A4945BD82BE0E2EA002" />
+            <ComponentRef Id="cmp3490B94730993DC5EADC979D7F6D5DF8" />
+            <ComponentRef Id="cmp8163A30627E2778C0F6D64947CA1B7C3" />
+            <ComponentRef Id="cmpD114F77B11A5EF609AB4515BD07C3692" />
+            <ComponentRef Id="cmpF07A73AF823313E400DFFA223983F9B7" />
+            <ComponentRef Id="cmp55FCC12BCAD87298174D8B403D0A042B" />
+            <ComponentRef Id="cmp237C6D9ADF57C9D65EE901990CC09D7A" />
+            <ComponentRef Id="cmp0F6F51A44EA9D684633459412EB61729" />
+            <ComponentRef Id="cmp0995AF608BA6AC93B7CA53C58F694F72" />
+            <ComponentRef Id="cmpBB8875C735804293044A40BE63B3100A" />
+            <ComponentRef Id="cmp85C5B80E8F2545E22D85C079EA64D7BB" />
+            <ComponentRef Id="cmp52E98649576727AF9E49DCE6E437F584" />
+            <ComponentRef Id="cmpA2879CAEFF1919DED10A9E732028693B" />
+            <ComponentRef Id="cmp971F00BFC5F32A961B3932B17A1FB91F" />
+            <ComponentRef Id="cmp6875C313A29F3A20ACE0612650F7915E" />
+            <ComponentRef Id="cmp75C2B6D71F35128925251D3AF2DCEE72" />
+            <ComponentRef Id="cmp8B88AA50F760156A1E304E8E69BBB72C" />
+            <ComponentRef Id="cmpAE7087D98D76BE24E8CBA8114D20E342" />
+            <ComponentRef Id="cmpED6A543B8BB433EA35DC892A91BE26E1" />
+            <ComponentRef Id="cmpF068FB81BA45C8E2D0B1A19F1CAD1DCF" />
+            <ComponentRef Id="cmp4D0ED607CC08F514CD94D208CDC4577F" />
+            <ComponentRef Id="cmp1D6C8FC3357D5BCB8D6A4ED7879DECA0" />
+            <ComponentRef Id="cmp6F879FF17F99EBFBA1E9374439413852" />
+            <ComponentRef Id="cmp461F13F200FA7EFF18572FBC95E81707" />
+            <ComponentRef Id="cmpCEB224CB1DA864876D10944E8A4A0DC9" />
+            <ComponentRef Id="cmp9AEA5833D12FCEF81FA62D0758172D2B" />
+            <ComponentRef Id="cmp61FDD6FE995F5E6F4C9D03BA96A26F6C" />
+            <ComponentRef Id="cmp9E89870451E29F26B9C495A777B275B7" />
+            <ComponentRef Id="cmp66BB964DC39B7B8397F5ED71300DD6E1" />
+            <ComponentRef Id="cmp184678905CE43AF3CC1FCC943978BD8B" />
+            <ComponentRef Id="cmp93D7F4247119142F28C8F0DAA4EE0E20" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>
