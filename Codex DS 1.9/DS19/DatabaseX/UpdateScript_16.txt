@@ -1,0 +1,53 @@
+USE [Codex2007DS]
+GO
+
+/****** Object:  Table [dbo].[CodexDS_DDOCS_History]    Script Date: 9/2/2018 9:24:33 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[CodexDS_DDOCS_History](
+	[id] [int] IDENTITY(0,1) NOT NULL,
+	[H_Date] [datetime] NOT NULL,
+	[H_Caption] [nvarchar](1024) NOT NULL,
+	[H_Title] [nvarchar](1024) NOT NULL,
+	[H_Status] [int] NOT NULL,
+	[H_OperationStatus] [int] NOT NULL,
+	[H_TimeStamp] [timestamp] NOT NULL,
+	[H_ByUser] [nvarchar](1024) NOT NULL,
+	[C_ID] [int] NOT NULL,
+	[C_CAPTION] [nvarchar](1024) NULL,
+	[C_AUTHOR] [int] NOT NULL,
+	[C_Subject] [int] NOT NULL,
+	[C_TYPE] [int] NOT NULL,
+	[C_WORDS] [nvarchar](2048) NULL,
+	[C_NUMBER] [int] NULL,
+	[C_NumberStr] [nchar](64) NULL,
+	[C_DATE] [datetime] NULL,
+	[C_LASTEDIT] [datetime] NULL,
+	[C_ENTERDATE] [datetime] NULL,
+	[C_TEXT] [image] NULL,
+	[C_LINK] [image] NULL,
+	[C_STATUS] [int] NOT NULL,
+	[C_DocFormat] [int] NULL,
+	[C_DocEncoding] [char](10) NULL,
+	[C_DocText] [ntext] NULL,
+	[C_Coments] [nchar](1024) NULL,
+	[C_Version] [int] NULL,
+	[C_Presentation] [image] NULL,
+	[C_Original] [image] NULL,
+	[C_Attach] [image] NULL,
+	[C_Group] [int] NULL,
+	[C_Category] [int] NULL,
+	[C_Addtional] [nchar](1024) NULL,
+	[C_Picture] [image] NULL,
+ CONSTRAINT [PK_Codex_DDOCS_H] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [Blobs]
+GO
+
+

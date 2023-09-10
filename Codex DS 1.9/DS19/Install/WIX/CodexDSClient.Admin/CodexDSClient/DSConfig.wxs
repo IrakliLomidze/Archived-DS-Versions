@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="INSTALLDIR">
+
+			<Component Id="cmp_role" Guid="{86C1A9D2-19CD-4D63-94EC-CC1C4AF35277}">
+				<File Id="file_role_lxs" KeyPath="no" Source="$(var.SourceDirApp)\Role.lxs"  />
+			</Component>
+			<Component Id="cmp_rule1" Guid="{D1F916CB-FB68-407D-91B0-24D78FF48C95}">
+				<File Id="file_rule1_rxs" KeyPath="no" Source="$(var.SourceDirApp)\Rule1.RXS"  />
+			</Component>
+			<Component Id="cmp_rule2" Guid="{2A70F113-8DC4-484C-AE68-C30C6A8168E2}">
+				<File Id="file_rule2_rxs" KeyPath="no" Source="$(var.SourceDirApp)\Rule2.RXS"  />
+			</Component>
+			<Component Id="cmp_rule3" Guid="{03899D24-41C8-416D-AE48-DCFC42B7DD55}">
+				<File Id="file_rule3_rxs" KeyPath="no" Source="$(var.SourceDirApp)\Rule3.RXS"  />
+			</Component>
+
+			<Component Id="cmp_history_role" Guid="{FF80A11C-A77E-488D-AF10-FD0BB4921DB4}">
+				<File Id="file_history_role" KeyPath="no" Source="$(var.SourceDirApp)\History_Role.json"  />
+			</Component>
+
+			<Component Id="cmp_dsbehaviour" Guid="{C4E27251-404E-490F-8FE6-C119864E0362}">
+				<File Id="file_dsbehaviour" KeyPath="no" Source="$(var.SourceDirApp)\dsbehaviour.json"  />
+			</Component>
+
+			<Component Id="cmp_dsstaticdata" Guid="{B7EF7F12-EFCC-4C2C-91F2-75B112DDA339}">
+				<File Id="file_dsstaticdata" KeyPath="no" Source="$(var.SourceDirApp)\dsstaticdata.json" />
+			</Component>
+
+			<Component Id="cmp_dsdocument" Guid="{EBB43015-3D86-4A7E-BB9A-AB877A77C680}">
+				<File Id="file_dsdocument" KeyPath="no" Source="$(var.SourceDirApp)\dsdocument.json"  />
+			</Component>
+
+			<Component Id="cmp_codexds_exe_config" Guid="{5BC16685-C30D-4A91-A37D-B2EDE7488674}">
+				<File Id="file_codexds_exe_config" KeyPath="no" Source="$(var.SourceDirApp)\CodexDS.exe.config" />
+			</Component>
+		
+		</DirectoryRef>
+	</Fragment>
+	<Fragment>
+		<ComponentGroup Id="DSConfigs">
+			<ComponentRef Id="cmp_role" />
+			<ComponentRef Id="cmp_rule1" />
+			<ComponentRef Id="cmp_rule2" />
+			<ComponentRef Id="cmp_rule3" />
+			<ComponentRef Id="cmp_history_role" />
+			<ComponentRef Id="cmp_dsstaticdata"/>
+			<ComponentRef Id="cmp_dsbehaviour"/>
+			<ComponentRef Id="cmp_dsdocument" />
+			<ComponentRef Id="cmp_codexds_exe_config" />
+
+		</ComponentGroup>
+
+	</Fragment>
+	
+</Wix>

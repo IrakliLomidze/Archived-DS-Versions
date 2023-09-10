@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+          xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Fragment>
+
+    <Icon Id="icon_codexicon.exe" SourceFile="$(var.SourceDir)\App\CodexDS.exe" />
+
+
+    <ComponentGroup Id="id_codexdsclient" Directory="INSTALLDIR">
+
+      <!-- ********************************************************************************************************************* -->
+      <!-- CodexR4 Execution Start -->
+
+      <Component Id="CodexDS.exe" Guid="{194F2F74-4117-4FC9-B3FF-12E8869CB4CB}" Location="either">
+        <CreateFolder Directory="INSTALLDIR" />
+        <File Id="codexds.exe" Name="CodexDS.exe" KeyPath="yes"  Source="$(var.SourceDir)\app\CodexDS.exe" >
+
+
+
+			<Shortcut Id="CodexdsShortcut"
+					Directory="CodexDSClientMenu"
+					Name="Codex DS 1.9 Client"
+					Description="Codex DS 1.9 Client"
+					Icon="icon_codexicon.exe"
+					IconIndex="0"
+					Show="normal"
+					WorkingDirectory="INSTALLDIR"
+					Advertise="yes" />
+
+			<Shortcut Id="CodexDSDesktopShortcut"
+					  Directory="DesktopFolder"
+					  Name="Codex DS 1.9 Client"
+					  Description="Codex DS 1.9 Client"
+					  Icon="icon_codexicon.exe"
+					  IconIndex="0"
+					  Show="normal"
+					  WorkingDirectory="INSTALLDIR"
+					  Advertise="yes" />
+        </File>
+
+        <RemoveFolder Id="Remove_Folder_Codex_DS_Client"
+                      Directory="CodexDSClientMenu"
+                      On="uninstall" />
+
+
+
+      </Component>
+
+   </ComponentGroup>
+	  
+  </Fragment>
+</Wix>

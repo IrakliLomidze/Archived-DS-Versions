@@ -1,0 +1,78 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ILG.Codex.CodexR4.CodexSettings" GeneratedClassName="CodexStatusSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="UseStatusBehavior" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ID_OriginalDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ID_CodifiedDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="ID_ObsoleteDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="ID_ArchivedDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ID_UnknowDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ID_Specified" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Color_OriginalDocument" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">30, 57, 91</Value>
+    </Setting>
+    <Setting Name="Color_CodifiedDocument" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">Green</Value>
+    </Setting>
+    <Setting Name="Color_ObsoleteDocument" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">OrangeRed</Value>
+    </Setting>
+    <Setting Name="Color_UnknowDocument" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">30, 57, 91</Value>
+    </Setting>
+    <Setting Name="Color_Specified" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">30, 57, 91</Value>
+    </Setting>
+    <Setting Name="Color_Default" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">30, 57, 91</Value>
+    </Setting>
+    <Setting Name="IconIndex_OriginalDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="IconIndex_CodifiedDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="IconIndex_ObsoleteDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">56</Value>
+    </Setting>
+    <Setting Name="IconIndex_ArchivedDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IconIndex_UnknowDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IconIndex_Specified" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IconIndex_Default" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ID_DraftDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Color_DraftDocument" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">30, 57, 91</Value>
+    </Setting>
+    <Setting Name="Color_ArchivedDocument" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">30, 57, 91</Value>
+    </Setting>
+    <Setting Name="IconIndex_DraftDocument" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

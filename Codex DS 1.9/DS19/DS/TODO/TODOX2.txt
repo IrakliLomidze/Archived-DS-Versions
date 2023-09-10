@@ -1,0 +1,68 @@
+Done 1)Finilizing Windows 7 Support
+Done   1.1) Codex
+Done   1.2) Codex DS
+Done   1.3) Russian
+Done 2) New Disrtiions
+Done   2.1) Codex
+Done   2.2) Codex DS
+Done   2.3) Russian
+Done 3) New Internal Russian
+Done 4) New Internal Codex
+5) Starting working on Convertor
+   5.1) New Macro for Convertor
+   5.2) Convert and Send to Attachments
+   5.3) Access to Attachments in Internal
+   5.4) Access to History in Internal
+   5.5) New Update Logic, Script to History and Attachments
+6) User Managment
+7) Customer Managment Web Software
+8) Live Update Server
+9) Live Update Client
+10) Client Access to Attachments
+11) Codex R3
+----------------------------------------------------------------
+April 30
+----------------------------------------------------------------
+12) New Database Stucture
+13) NEw SOA Strucute
+14) Codex Document Services Strucute
+----------------------------------------------------------------
+May-June 30
+----------------------------------------------------------------
+15) Database Convertor to new Strucutre
+16) Codex Services Finalization
+17) New Clinet Home/Find Pages
+----------------------------------------------------------------
+Jul-Aug 30   
+----------------------------------------------------------------
+18) List, Navigation Sorting
+19) User Access Managment
+20) Licening Module
+----------------------------------------------------------------
+Sept-Oct 30   
+----------------------------------------------------------------
+21) Document Module
+22) Data Installer
+23) Software Installer 
+24) Personal Edtion Done
+----------------------------------------------------------------   
+Nov-Dec 30      
+----------------------------------------------------------------
+25) Licening Model for Network
+----------------------------------------------------------------
+Jun 30 2011
+----------------------------------------------------------------
+26) Biling Model
+27) Updater Model
+28) Configuration Model
+29) Proxy Model
+-----------------------------------------------------------------
+March-April 30 2011
+-----------------------------------------------------------------
+30) Internet Version too
+31) Update Personal Edition
+32) Update NetWork Edition
+-----------------------------------------------------------------
+May 30 2011
+-----------------------------------------------------------------
+

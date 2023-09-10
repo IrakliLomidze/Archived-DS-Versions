@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ILG.Codex.CodexR4.CodexSettings" GeneratedClassName="SQLServerConfigurationStatic">
+  <Profiles />
+  <Settings>
+    <Setting Name="CodexDS_User_Client_SQLUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CodexDSUser</Value>
+    </Setting>
+    <Setting Name="CodexDS_User_Client_SQLPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CodexDS2007</Value>
+    </Setting>
+    <Setting Name="CodexDS_XUser_Client_SQLUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CodexDSXUser</Value>
+    </Setting>
+    <Setting Name="CodexDS_XUser_Client_SQLPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">...your password....</Value>
+    </Setting>
+    <Setting Name="CodexDS_DefaultDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Codex2007DS</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

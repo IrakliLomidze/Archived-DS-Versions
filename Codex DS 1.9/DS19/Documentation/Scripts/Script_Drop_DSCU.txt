@@ -1,0 +1,34 @@
+-- Codex DS Scripts
+-- Drop CodexUsers from all Database
+-- Version 2.0
+-- (C) Copyright By Gergian Microsystems 2005-2016 DS 1.5
+
+
+--Codex2007DS
+-- ***************************************************************************************************
+USE [Codex2007DS]
+
+if exists (select * from sys.schemas where name = N'CodexDSUser')
+	DROP SCHEMA  CodexDSUser
+
+
+USE [Codex2007DS]
+
+if exists (select * from dbo.sysusers where name = N'CodexDSUser' and uid < 16382)
+	DROP USER CodexDSUser
+
+
+
+--CodexDS
+-- ***************************************************************************************************
+
+
+-- Drop Logonss
+-- ***************************************************************************************************
+
+if exists (select * from master.dbo.syslogins where loginname = N'CodexDSUser')
+    DROP LOGIN CodexDSUser
+
+
+-- Drop Lons
+-- ***************************************************************************************************

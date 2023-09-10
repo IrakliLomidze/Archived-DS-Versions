@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9CCDA4F2-682D-4806-89D1-D41111F93B0C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DSPDFViewer</RootNamespace>
+    <AssemblyName>DSPDFViewer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomScrollControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HitTest.cs" />
+    <Compile Include="IPdfDocument.cs" />
+    <Compile Include="IPdfMarker.cs" />
+    <Compile Include="LinkClickEventHandler.cs" />
+    <Compile Include="MouseWheelMode.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="NativeMethods.Pdfium.cs" />
+    <Compile Include="NativeTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PanningZoomingScrollControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordForm.Designer.cs">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfBookmarkCollection.cs" />
+    <Compile Include="PdfCharacterInformation.cs" />
+    <Compile Include="PdfDocument.cs" />
+    <Compile Include="PdfError.cs" />
+    <Compile Include="PdfException.cs" />
+    <Compile Include="PdfFile.cs" />
+    <Compile Include="PdfInformation.cs" />
+    <Compile Include="PdfiumResolveEventHandler.cs" />
+    <Compile Include="PdfiumResolver.cs" />
+    <Compile Include="PdfLibrary.cs" />
+    <Compile Include="PdfMarker.cs" />
+    <Compile Include="PdfMarkerCollection.cs" />
+    <Compile Include="PdfMatch.cs" />
+    <Compile Include="PdfMatches.cs" />
+    <Compile Include="PdfPageLink.cs" />
+    <Compile Include="PdfPageLinks.cs" />
+    <Compile Include="PdfPoint.cs" />
+    <Compile Include="PdfPrintDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PdfPrintMode.cs" />
+    <Compile Include="PdfPrintMultiplePages.cs" />
+    <Compile Include="PdfPrintSettings.cs" />
+    <Compile Include="PdfRectangle.cs" />
+    <Compile Include="PdfRenderer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PdfRenderFlags.cs" />
+    <Compile Include="PdfRotation.cs" />
+    <Compile Include="PdfSearchManager.cs" />
+    <Compile Include="PdfTextSpan.cs" />
+    <Compile Include="PdfViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfViewer.Designer.cs">
+      <DependentUpon>PdfViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfViewerCursorMode.cs" />
+    <Compile Include="PdfViewerZoomMode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollAction.cs" />
+    <Compile Include="SetCursorEventHandler.cs" />
+    <Compile Include="ShadeBorder.cs" />
+    <Compile Include="StreamExtensions.cs" />
+    <Compile Include="StreamManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PasswordForm.resx">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfViewer.resx">
+      <DependentUpon>PdfViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pan.cur" />
+    <Content Include="Resources\disk_blue.png" />
+    <Content Include="Resources\printer.png" />
+    <Content Include="Resources\ShadeBorder-E.png" />
+    <Content Include="Resources\ShadeBorder-N.png" />
+    <Content Include="Resources\ShadeBorder-NE.png" />
+    <Content Include="Resources\ShadeBorder-NW.png" />
+    <Content Include="Resources\ShadeBorder-S.png" />
+    <Content Include="Resources\ShadeBorder-SE.png" />
+    <Content Include="Resources\ShadeBorder-SW.png" />
+    <Content Include="Resources\ShadeBorder-W.png" />
+    <Content Include="Resources\view-page-width%4016px.png" />
+    <Content Include="Resources\view-page-width%4024px.png" />
+    <Content Include="Resources\view-page-width%4032px.png" />
+    <Content Include="Resources\zoom-in%4016px.png" />
+    <Content Include="Resources\zoom-in%4024px.png" />
+    <Content Include="Resources\zoom-in%4032px.png" />
+    <Content Include="Resources\zoom-out%4016px.png" />
+    <Content Include="Resources\zoom-out%4024px.png" />
+    <Content Include="Resources\zoom-out%4032px.png" />
+    <Content Include="Resources\zoom_in.png" />
+    <Content Include="Resources\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
