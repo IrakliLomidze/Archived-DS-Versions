@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="INSTALLDIR">
+			<Component Id="cmp7C7F1058AF5B8FE42C5C092A55A721BD" Guid="*">
+				<File Id="filF8E4060ACF0786D14E8A7197230875D9" KeyPath="yes" Source="$(var.SourceDirApp)\CodexCommonDialogs.dll" />
+			</Component>
+			<Component Id="cmpDFD40144D9D8AD247929E7439A08904D" Guid="*">
+				<File Id="fil6039F468EDFD14909AA3E805284F8B8A" KeyPath="yes" Source="$(var.SourceDirApp)\CodexDSHistoryListBox.dll" />
+			</Component>
+			<Component Id="cmpED903F8B457C83E25DDDA7D46722B30F" Guid="*">
+				<File Id="filD46294F10CC06B04DD12D1B56E62C639" KeyPath="yes" Source="$(var.SourceDirApp)\CodexListBoxDS.dll" />
+			</Component>
+			<Component Id="cmp68E751C2184C52F0C8BA409B03893013" Guid="*">
+				<File Id="filD8BAA4776AE46650CEEDC525168FC6E4" KeyPath="yes" Source="$(var.SourceDirApp)\DSClient.exe" />
+			</Component>
+			<Component Id="cmp0EA631F3C37CEE59FA48BD0BEF83E618" Guid="*">
+				<File Id="fil499CDEC5766BFC152A4679948FB52860" KeyPath="yes" Source="$(var.SourceDirApp)\DSClient.exe.config" />
+			</Component>
+			<Component Id="cmpEED24D8E3D374CE1B0A1C64CF4B7E036" Guid="*">
+				<File Id="fil4621914BFD668A61F3078C504D02EB9E" KeyPath="yes" Source="$(var.SourceDirApp)\DSCommon.dll" />
+			</Component>
+			<Component Id="cmp950EFFA5311D80049EF391D67D33DCB4" Guid="*">
+				<File Id="filEE3DFB82F5BEF10FB377A29DFC5AAAC8" KeyPath="yes" Source="$(var.SourceDirApp)\DSCommon.dll.config" />
+			</Component>
+			<Component Id="cmpB381B20CE248273D18E8AFFDC5CCB69E" Guid="*">
+				<File Id="fil36F34511CF0B993F8380FCAC98AE6EC7" KeyPath="yes" Source="$(var.SourceDirApp)\DSPDFViewer.dll" />
+			</Component>
+			<Component Id="cmpF2DCC7EA35A3880455A5F2C23CF65113" Guid="*">
+				<File Id="fil2AB7B5B85878AB348A9E39280A9FE9F7" KeyPath="yes" Source="$(var.SourceDirApp)\DSPDFViewer.dll.config" />
+			</Component>
+			<Component Id="cmp234F2019EBC42DA846063F541706F260" Guid="*">
+				<File Id="filB6836133DF4375251AE7A456E3E09C0C" KeyPath="yes" Source="$(var.SourceDirApp)\dsstaticdata.json" />
+			</Component>
+			<Component Id="cmp48210C1659AE5C6736057D6BA2F93B37" Guid="*">
+				<File Id="fil5139206F1B60DDB7411105CA8A99C605" KeyPath="yes" Source="$(var.SourceDirApp)\DSWPFComponents.dll" />
+			</Component>
+			<Component Id="cmp11737BF12A56AFE94B7AB2177A8F5E3F" Guid="*">
+				<File Id="filC0A3667A3963A900234613FB7C3627FC" KeyPath="yes" Source="$(var.SourceDirApp)\EntityFramework.dll" />
+			</Component>
+			<Component Id="cmp2733BAEDC10CA9B6A9075E80045BA867" Guid="*">
+				<File Id="fil4F7DDFC38A17CA81A7544F637FB6AB55" KeyPath="yes" Source="$(var.SourceDirApp)\EntityFramework.SqlServer.dll" />
+			</Component>
+			<Component Id="cmp004724C1839B75E28F073395EF8DF52D" Guid="*">
+				<File Id="fil5CF44AE853FA24972B552587B5419E6F" KeyPath="yes" Source="$(var.SourceDirApp)\EntityFramework.SqlServer.xml" />
+			</Component>
+			<Component Id="cmp96A78D3EC2C754692DCCA883DB9AA9EE" Guid="*">
+				<File Id="filCF64DDCBE5F571C54645084E27863D64" KeyPath="yes" Source="$(var.SourceDirApp)\EntityFramework.xml" />
+			</Component>
+			<Component Id="cmp485120EA8D0672AA16470BAB85E03F17" Guid="*">
+				<File Id="filB8AA6A56A8CC1E7B3235A0995EE2801F" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.Core.v23.2.dll" />
+			</Component>
+			<Component Id="cmpF180A6D926860C5A94D86DA8947F7D47" Guid="*">
+				<File Id="filC6FAAE1E9785957704B01C57D0F1A0B1" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.Core.v23.2.xml" />
+			</Component>
+			<Component Id="cmp5E3CAE8AF036DA66FA78AFF84193CA91" Guid="*">
+				<File Id="fil518C2D22CCA6FC8993DF0D1B0DDBE1A6" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.Excel.v23.2.dll" />
+			</Component>
+			<Component Id="cmpCC1861A18B37F2EEDA176CD0A3A04ED9" Guid="*">
+				<File Id="fil9976B0537A7C413E8C791DC20787F292" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.Excel.v23.2.xml" />
+			</Component>
+			<Component Id="cmpFD2E027BC34909D043494D541959F132" Guid="*">
+				<File Id="filDBA6FD1D8E9B4B4A6793EB8968FCCE12" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.IO.v23.2.dll" />
+			</Component>
+			<Component Id="cmpFFF40EF66BBD13CA4AA6D661D0422B3E" Guid="*">
+				<File Id="filCD5220541DDABE3591B628876DF7A394" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.IO.v23.2.xml" />
+			</Component>
+			<Component Id="cmp9F3C0A62FF18C46EC5D24D7D91F16B8D" Guid="*">
+				<File Id="fil2899F701DE7D7DB81504B7DF8E9BB5D4" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.Reports.v23.2.dll" />
+			</Component>
+			<Component Id="cmpEC660134C0D3B6A7C8B44C5D4E0AC6F4" Guid="*">
+				<File Id="filBF270069EFFCC453DED9D84A2EA66EE8" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.Reports.v23.2.XML" />
+			</Component>
+			<Component Id="cmp25DC4784C96CD55132BCA591C343E2C4" Guid="*">
+				<File Id="fil701C1116976F9DB86681DEE42B8B63F4" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.TextDocument.CSharp.v23.2.dll" />
+			</Component>
+			<Component Id="cmp0CF34BB921AB578487961535989FEC5C" Guid="*">
+				<File Id="fil3CDEBB87F6CF0E365E64A5DF93B16DDD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.TextDocument.CSharp.v23.2.XML" />
+			</Component>
+			<Component Id="cmp33187B6C62C8D35CEC36EA1F1D1BA9EB" Guid="*">
+				<File Id="filA256B7F89ACBDBFD98AF40B74D5E9177" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.TextDocument.TSql.v23.2.dll" />
+			</Component>
+			<Component Id="cmp02C250FC6E9C869900C58AAAEEA240D1" Guid="*">
+				<File Id="fil0EFE4D8E89A5A5AD32DB258192E1A4DD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.TextDocument.TSql.v23.2.XML" />
+			</Component>
+			<Component Id="cmp670055BEC669A0CE2D8FD288A6442B04" Guid="*">
+				<File Id="filB9B560A971E4BC3244549184D13FAEB6" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.TextDocument.v23.2.dll" />
+			</Component>
+			<Component Id="cmp0BA5158F99DECF308FA9F04580984D74" Guid="*">
+				<File Id="filFD914F1E1C881025B48B5020FA964770" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.TextDocument.v23.2.XML" />
+			</Component>
+			<Component Id="cmpE388268715BA1757E0E612FABD1EB0B1" Guid="*">
+				<File Id="fil8F1E795C9C813E71C8F0BA76B17D7DE1" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.TextDocument.VisualBasic.v23.2.dll" />
+			</Component>
+			<Component Id="cmp06AADDACEC08122FB4595740DD4EA5AD" Guid="*">
+				<File Id="filB0C926F0312F398103562E7ED2C40A31" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.TextDocument.VisualBasic.v23.2.XML" />
+			</Component>
+			<Component Id="cmp74737E05ED8E46EF928F1356A8EB115D" Guid="*">
+				<File Id="filA8DC183686634F3DA9B7F4B146F962FF" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.Word.v23.2.dll" />
+			</Component>
+			<Component Id="cmp76E51E875F173AAE439CABBF9AF52226" Guid="*">
+				<File Id="fil218146116AD22F06400841DDADD789A2" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Documents.Word.v23.2.xml" />
+			</Component>
+			<Component Id="cmp358CB0E714CC77FDE57B17DC39293366" Guid="*">
+				<File Id="fil2D930D909B42D35D70388539A20F96DD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Math.v23.2.dll" />
+			</Component>
+			<Component Id="cmp9C9547922FFE3FC59E205044417C4D23" Guid="*">
+				<File Id="fil5C9C79D6F6FDDC8EEE3756B555811814" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Math.v23.2.XML" />
+			</Component>
+			<Component Id="cmp704577E2D313D7F5FB103DB39AA2FE12" Guid="*">
+				<File Id="filEEADACF998B984C71C993CB216F0C5E7" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.Core.v23.2.dll" />
+			</Component>
+			<Component Id="cmp3FFC0BCEECD112ECF06B9605F3B63500" Guid="*">
+				<File Id="fil18ECC5DED3F4C4DF71753A7C6FA0203F" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.Core.v23.2.XML" />
+			</Component>
+			<Component Id="cmpF1200AB22E43F685F58F6F4E63C169DE" Guid="*">
+				<File Id="fil887CD4A1B24E8CDB2DFEE7EE9BF243B1" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataProvider.Adomd.v23.2.dll" />
+			</Component>
+			<Component Id="cmpB3AA255CCAD36AB5D3B65272CCDB0B3A" Guid="*">
+				<File Id="fil374556976D45D879245BEA6622EE64A2" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataProvider.Adomd.v23.2.XML" />
+			</Component>
+			<Component Id="cmp2AA4BA1AB189CC9A27AC481E75B036EB" Guid="*">
+				<File Id="fil42BEAAA1F948945264B6FA7C56F43DAD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataProvider.Flat.v23.2.dll" />
+			</Component>
+			<Component Id="cmp96EFF08766CB3E79BCE532D831A27D46" Guid="*">
+				<File Id="fil5CF4500CF4BBF6F9781FCD7FF09876BD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataProvider.Flat.v23.2.XML" />
+			</Component>
+			<Component Id="cmp53C8846189662D5F34557C272A2FBC82" Guid="*">
+				<File Id="fil262CABE263A8CC16DBF9DEB28B7CD798" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataProvider.v23.2.dll" />
+			</Component>
+			<Component Id="cmp778F3878EFE901908B2E822ECFE1762A" Guid="*">
+				<File Id="fil66CF3293362E9D0A78DF15AA01AA3670" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataProvider.v23.2.XML" />
+			</Component>
+			<Component Id="cmp91ECBC794F8083E654B43B314AD848CA" Guid="*">
+				<File Id="fil501E7C654DDF7A9539ECEB3ABE62808C" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataProvider.Xmla.v23.2.dll" />
+			</Component>
+			<Component Id="cmpBF93CFDACC2C0ED6FE9739BC334CFA0A" Guid="*">
+				<File Id="fil552A726D169806A28FE037299EF42F61" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataProvider.Xmla.v23.2.XML" />
+			</Component>
+			<Component Id="cmp885F32699B1ADB9FFDB3686D7F5F7930" Guid="*">
+				<File Id="filABC712D72CA2A778C287CF0F4C7E1D3C" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataSource.Flat.v23.2.dll" />
+			</Component>
+			<Component Id="cmp8BEEC2B96C10FFF1009DDBEBD6B36E38" Guid="*">
+				<File Id="fil42A865A337ECDEB0753E121978BD7565" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataSource.Flat.v23.2.XML" />
+			</Component>
+			<Component Id="cmp7E7883FFEC52FC10CCC4E4F4D6678C05" Guid="*">
+				<File Id="fil7DD98617F014CC91F05B5EB14CF7FF1B" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataSource.Mdx.v23.2.dll" />
+			</Component>
+			<Component Id="cmp9B64A46F69218B573A09643950F72683" Guid="*">
+				<File Id="fil3E4DE877B052632DC1939A5CFDAB8427" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataSource.Mdx.v23.2.XML" />
+			</Component>
+			<Component Id="cmpADB9375095366AECF4B678E6974BAEF7" Guid="*">
+				<File Id="fil63349F6A9142008F4CD610C4523B91BC" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataSource.v23.2.dll" />
+			</Component>
+			<Component Id="cmp56D055F31AF138373631B72DC00A3571" Guid="*">
+				<File Id="fil12D7D792E38CDC2F38E821269D226DDC" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataSource.v23.2.XML" />
+			</Component>
+			<Component Id="cmp3B0215BDE540A8F2966A8AB75B6BB6F4" Guid="*">
+				<File Id="filE08C85D18BF3C20E04BD6F40D44A70BA" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataSource.Xmla.v23.2.dll" />
+			</Component>
+			<Component Id="cmpA86194C59EBBE85F891849B9C14B22E6" Guid="*">
+				<File Id="fil1597FFBF86787E4EA8F085803A2A9391" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Olap.DataSource.Xmla.v23.2.XML" />
+			</Component>
+			<Component Id="cmp7C7A58873474904F71CA893D5888D000" Guid="*">
+				<File Id="fil05AEFDF754E7621FABB511D191CB1F56" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Shared.v23.2.dll" />
+			</Component>
+			<Component Id="cmp95056144FE386A98CFA01D7B9721D309" Guid="*">
+				<File Id="fil45E685F80DB9643D97FEAB9BBDEC3003" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Shared.v23.2.XML" />
+			</Component>
+			<Component Id="cmp8700F2A0A267670517F04F67C89B86EB" Guid="*">
+				<File Id="fil61FCE38D5BA2DA2C821B666B8654D6DE" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Undo.v23.2.dll" />
+			</Component>
+			<Component Id="cmpF8AA2F80B392EF201E3D5709ABF5C1F8" Guid="*">
+				<File Id="filCA07A1E6AE27F7D874B2E05A6A2AD8FA" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Undo.v23.2.XML" />
+			</Component>
+			<Component Id="cmp1C8C8EC9CDEC23FAF585D64850E929E8" Guid="*">
+				<File Id="fil7122572746D8617E007D55026F1D9B52" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.AppStylistSupport.v23.2.dll" />
+			</Component>
+			<Component Id="cmpA953FE02BDF7EDB081CF297F078A6CD0" Guid="*">
+				<File Id="fil7D8F6C601AAFC647FB1A184223384EA2" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.AppStylistSupport.v23.2.xml" />
+			</Component>
+			<Component Id="cmp5C95FD35399A500D99B5E329E465226B" Guid="*">
+				<File Id="filF3A8E227FEDD246F8B52E2C4343B758D" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.Barcode.v23.2.dll" />
+			</Component>
+			<Component Id="cmpDB60FD9CD61082E8F8287C8B57387C0D" Guid="*">
+				<File Id="filD0F8878D59D0295A10C63CC6EFD79311" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.Barcode.v23.2.XML" />
+			</Component>
+			<Component Id="cmpADC8FC5F896922DC11F9AEE3E53F88EE" Guid="*">
+				<File Id="fil4644C396B913AC5E85621561FF3C7CCE" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.Shared.v23.2.dll" />
+			</Component>
+			<Component Id="cmpE56B8F27D60C33A2C7B54A84F17ECA5B" Guid="*">
+				<File Id="filE8F0735B11FC86F3ED57820999FF2657" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.Shared.v23.2.XML" />
+			</Component>
+			<Component Id="cmp569202C3E87D876F5B96463DA28CF163" Guid="*">
+				<File Id="fil33FF717458036AEF2885D43880EC9356" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.UltraDataChart.v23.2.dll" />
+			</Component>
+			<Component Id="cmp494851CFC67B0C1236ECE236F3556353" Guid="*">
+				<File Id="filF434A0D350D0B2DF7D050F0BB34E2E7E" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.UltraDataChart.v23.2.XML" />
+			</Component>
+			<Component Id="cmpBFF01EE82A1429E2DE99794A8BA09798" Guid="*">
+				<File Id="fil9E92D6D334872BA1826FF20A360871DD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.UltraGauges.v23.2.dll" />
+			</Component>
+			<Component Id="cmp625D7690FD5179BBC3FD6C785F64F3BF" Guid="*">
+				<File Id="fil82913A6E44B818EC366F261D30D660AA" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.UltraGauges.v23.2.xml" />
+			</Component>
+			<Component Id="cmp3339B0CF18F611601BA45D2868AC703D" Guid="*">
+				<File Id="fil6B7BCCD451D2B76DE9B70EC5CA3FCAE4" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.UltraGeographicMap.v23.2.dll" />
+			</Component>
+			<Component Id="cmpADF6A609AC44CE7E5BBF034C6B4A156D" Guid="*">
+				<File Id="fil9F2ABD3CB2DFFDC6D992970B79AA95F3" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.UltraGeographicMap.v23.2.XML" />
+			</Component>
+			<Component Id="cmpC4D71A79CCA231BAFD5CFC9576966A85" Guid="*">
+				<File Id="fil455CC58434780517AAA441749997F34B" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.UltraSparkline.v23.2.dll" />
+			</Component>
+			<Component Id="cmpB80F9A0D115E3E8329EACA1FF43F88FA" Guid="*">
+				<File Id="fil5F161B8DDC357E71BBA99D0514AF8591" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.DataVisualization.UltraSparkline.v23.2.XML" />
+			</Component>
+			<Component Id="cmp13C4ABE72B2981D6FD5334D4033A922A" Guid="*">
+				<File Id="fil4A0F9968EF4B51385688A8FB7B0D200E" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.Misc.v23.2.dll" />
+			</Component>
+			<Component Id="cmp86BEB1A3B55DB63CAD03FD9ABB4B6056" Guid="*">
+				<File Id="fil0F72EE92DC3375BF460328437271BB39" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.Misc.v23.2.xml" />
+			</Component>
+			<Component Id="cmp1BF3BDFC0D06C218D148970D138922CC" Guid="*">
+				<File Id="fil1BD6A796D7D874FB1D95AD8CF1D0076A" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.Portable.Core.v23.2.dll" />
+			</Component>
+			<Component Id="cmpCBCC85580DDC615A00965D011318E211" Guid="*">
+				<File Id="fil5E3D6336FB4139E01BC4663A96B7D937" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.Portable.Core.v23.2.XML" />
+			</Component>
+			<Component Id="cmpBEDEACD4E02CA53BEFEA583F0A8BF7B2" Guid="*">
+				<File Id="fil6E74285CD5B4AAA1FBF32337608FA219" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.SupportDialogs.v23.2.dll" />
+			</Component>
+			<Component Id="cmp538D6E413C50971B219454BEBC718053" Guid="*">
+				<File Id="filD471B11BBA0BD1C9D5B71E6A0CEEB5C3" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.SupportDialogs.v23.2.XML" />
+			</Component>
+			<Component Id="cmpD12F9F20F115E7DB9A8130B6FB1BD528" Guid="*">
+				<File Id="filA5F1FA2A19B49CA15CE4C791CD58B7C2" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraChart.v23.2.Design.dll" />
+			</Component>
+			<Component Id="cmpBC63BB7AE9814103712ABD30F44048CC" Guid="*">
+				<File Id="filCD9C63CFA0899D971001FF50549CDF77" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraGauge.v23.2.Design.dll" />
+			</Component>
+			<Component Id="cmpC57DFBA6B7C6D6AAD7FC659BE9E25C52" Guid="*">
+				<File Id="fil0CEB9EDB15D69C5E1D2AEA37C3EA00F0" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinCalcManager.v23.2.dll" />
+			</Component>
+			<Component Id="cmp450E6F530A40409CFC61038EE4665BC7" Guid="*">
+				<File Id="fil9DD0131FA7E5AE3C8F773CBE80BF4239" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinCalcManager.v23.2.FormulaBuilder.dll" />
+			</Component>
+			<Component Id="cmp5B1932A856CF79365E3E2E05926EB5D4" Guid="*">
+				<File Id="fil29B5DD4762E62A636D38F8505896C6B7" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinCalcManager.v23.2.FormulaBuilder.xml" />
+			</Component>
+			<Component Id="cmp50E5337FBDDCA3BB13DB65F5376DBD81" Guid="*">
+				<File Id="filE5B176AFB1C0E15E13ACA2ABE70184CB" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinCalcManager.v23.2.xml" />
+			</Component>
+			<Component Id="cmpA5B95DC51103CE0D8315C53267D45B19" Guid="*">
+				<File Id="filE30D7822234FB85A6C132D3DB1B1722D" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinCarousel.v23.2.dll" />
+			</Component>
+			<Component Id="cmp54C6B2B3B6C24F4981E68B735302C47C" Guid="*">
+				<File Id="filA288A92C172786B451051FFF82BD0847" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinCarousel.v23.2.XML" />
+			</Component>
+			<Component Id="cmp1E183FB3C89B55A1B4947D98DE401276" Guid="*">
+				<File Id="filA59BCA76DDC79E3CEB098051AD595671" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinChart.v23.2.dll" />
+			</Component>
+			<Component Id="cmp70A8F0F097F32D22716A049F832C6ACE" Guid="*">
+				<File Id="fil2105F0F0C5C89862A04A5063190199BC" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinChart.v23.2.XML" />
+			</Component>
+			<Component Id="cmp1BBBB4BC925C3E81BC4259A71EF9C20C" Guid="*">
+				<File Id="fil808A60C6626FA08084AACC087F2D29CB" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinDataSource.v23.2.dll" />
+			</Component>
+			<Component Id="cmp94A4CD0BBA535C499D690BB148FE5574" Guid="*">
+				<File Id="filCA1327AD88BFD886440BD181D4B3DCE7" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinDataSource.v23.2.XML" />
+			</Component>
+			<Component Id="cmp2D46EB4B74537466E7304FA4E8D3247F" Guid="*">
+				<File Id="fil396D2992F7EBBF41730629BC61F42861" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinDock.v23.2.dll" />
+			</Component>
+			<Component Id="cmp28DD4135CE17BEF2C8C4800E553B3401" Guid="*">
+				<File Id="filBC606008B3888262767121CDF09685DA" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinDock.v23.2.xml" />
+			</Component>
+			<Component Id="cmpC21C82AD0CA9FA3623800ECBD35AD208" Guid="*">
+				<File Id="fil0B0A690CC0871703639B8C8B400AD478" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinEditors.v23.2.dll" />
+			</Component>
+			<Component Id="cmpCB3171947086FAE9A575ACEDB0AD3DED" Guid="*">
+				<File Id="fil4EE630D0E3B37128D9FDF9B31F1583C8" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinEditors.v23.2.xml" />
+			</Component>
+			<Component Id="cmp736353C92E139E17F73FF20AD7C3E4B5" Guid="*">
+				<File Id="fil52783B1D14CBBA5D0A9403A8FAE5835E" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinExplorerBar.v23.2.dll" />
+			</Component>
+			<Component Id="cmpE24923CFF263C62FD6AC8A802A22F168" Guid="*">
+				<File Id="filF7E999DB3FF6EDCA298F11A72EE047E4" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinExplorerBar.v23.2.XML" />
+			</Component>
+			<Component Id="cmpE0CF4750D636CD003C515D95CB0F43AD" Guid="*">
+				<File Id="fil94BC9164C3D78E9208DD50B3DD301415" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinFormattedText.WordWriter.v23.2.dll" />
+			</Component>
+			<Component Id="cmpE3657B4DFA6FA67D4EA4601CEF03B219" Guid="*">
+				<File Id="filCD1B70A8603F3B08FAF37AE0F16E97FD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinFormattedText.WordWriter.v23.2.XML" />
+			</Component>
+			<Component Id="cmpE0AE90C3ACBB029D63193F8C0C9F847D" Guid="*">
+				<File Id="fil19D2950AC72EBBDA576327930239B3B1" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGanttView.v23.2.dll" />
+			</Component>
+			<Component Id="cmpA4A2FD80F7D615B7FF1B0800D629201E" Guid="*">
+				<File Id="fil9E8CAC5F48EA6BE12F4CF598B519B3B6" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGanttView.v23.2.XML" />
+			</Component>
+			<Component Id="cmpA5F9BF8A4F3BB2C46F976F4D8A96AB22" Guid="*">
+				<File Id="filCC1B253F29B377FBA9869E504D736802" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGauge.v23.2.dll" />
+			</Component>
+			<Component Id="cmpD6129B32EE4E9D35959B7ECC5A312268" Guid="*">
+				<File Id="fil1903D098B70898CA04CDE2B369AD07E0" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGauge.v23.2.xml" />
+			</Component>
+			<Component Id="cmp0B92CE3923EA56FDF88A898AF05456B2" Guid="*">
+				<File Id="filBE3E759DBE7FF6BE58E9FD73D4940BE9" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGrid.DocumentExport.v23.2.dll" />
+			</Component>
+			<Component Id="cmpA592D4E1706E3E1D63CE539E9D4874F2" Guid="*">
+				<File Id="filDDF8A894918CF89B0EF1DCECC00C1001" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGrid.DocumentExport.v23.2.XML" />
+			</Component>
+			<Component Id="cmp0B98803D1EC4F0A8CE5C6B9DA522ECCA" Guid="*">
+				<File Id="fil9C351373135481A5DEE1576430BE1365" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGrid.ExcelExport.v23.2.dll" />
+			</Component>
+			<Component Id="cmp014360865C6EF77EC9119AA0F0521D6A" Guid="*">
+				<File Id="fil7014E317F8AEB0E8C7E753A0CC17FFBD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGrid.ExcelExport.v23.2.XML" />
+			</Component>
+			<Component Id="cmp7F3A03C56CC74C75627B335C24238910" Guid="*">
+				<File Id="filA95C70BF346AC69BF7BB1E5F8DCE6EAC" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGrid.v23.2.dll" />
+			</Component>
+			<Component Id="cmp7582265B3A62E36CB57356382CBB9952" Guid="*">
+				<File Id="fil4C696BBEC14575A54726A4B78E236AB7" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGrid.v23.2.XML" />
+			</Component>
+			<Component Id="cmpDBFDA444626C09D0149CF120013262DD" Guid="*">
+				<File Id="filDCC8156C99CD2F80B59FCDC6D9971E4B" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGrid.WordWriter.v23.2.dll" />
+			</Component>
+			<Component Id="cmpC6FABCD15EBB740842B6A68959C0CB9C" Guid="*">
+				<File Id="fil55C0067C23E90FE869260AD4C7BB0CB1" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinGrid.WordWriter.v23.2.XML" />
+			</Component>
+			<Component Id="cmp71497B694911382E5A54D822887288BD" Guid="*">
+				<File Id="fil87D3A405F0D56814BCC3D179823F7600" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinInkProvider.Ink17.v23.2.dll" />
+			</Component>
+			<Component Id="cmpA81BD486D4DE22BD15D3B2981B8C7CDF" Guid="*">
+				<File Id="fil627B7B538B52D14076095A7C0CEC82D7" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinInkProvider.Ink17.v23.2.XML" />
+			</Component>
+			<Component Id="cmp19B72942D6E1AEBDB90E4686D6192ACE" Guid="*">
+				<File Id="fil3E2649B8C38FDA2BE353EE6BF4E9295B" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinListBar.v23.2.dll" />
+			</Component>
+			<Component Id="cmp129E07AF766F6AC3A9039D467B8EA62A" Guid="*">
+				<File Id="filD0FC87605643520FC77ACA3F1C064CAF" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinListBar.v23.2.XML" />
+			</Component>
+			<Component Id="cmpC9543EB24D0CA6EA1E72B382751AD25B" Guid="*">
+				<File Id="fil7A26EF2BA2D78082E10103E8CB56B841" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinListView.v23.2.dll" />
+			</Component>
+			<Component Id="cmp657493D1AEC7C5B45914065740B5BD5A" Guid="*">
+				<File Id="fil8AD3830C1D7C8515D2DA4D2A0C8DD0AD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinListView.v23.2.XML" />
+			</Component>
+			<Component Id="cmpACF5045778E54D2256F2A4B742012DC0" Guid="*">
+				<File Id="fil8C46A4B57C3263252EE9CD2A2C4B0937" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinLiveTileView.v23.2.dll" />
+			</Component>
+			<Component Id="cmp7F36506A34821DE0913CC8B0496F9366" Guid="*">
+				<File Id="fil2FF2733A47A57CFCB19C1AE7BDCC7110" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinLiveTileView.v23.2.XML" />
+			</Component>
+			<Component Id="cmp648D60BAA1E038144A32505ED2853B64" Guid="*">
+				<File Id="filBBC0F822AC8D930C17527284CAB3C794" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinMaskedEdit.v23.2.dll" />
+			</Component>
+			<Component Id="cmp995B31C09BF8327D81FC45EB4C2C6B8C" Guid="*">
+				<File Id="fil8BA8D9820FA9DCD03A020213EF80A5DB" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinMaskedEdit.v23.2.xml" />
+			</Component>
+			<Component Id="cmp9D7625401318284EFD8194D3497A90A8" Guid="*">
+				<File Id="fil99055DEC7BBDECC58E32B07CE2552C1E" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinOfficeNavBar.v23.2.dll" />
+			</Component>
+			<Component Id="cmp7E3B15F983F83D8AD01517C61AC588ED" Guid="*">
+				<File Id="filB72135C1280AE360818CB3DC812B3280" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinOfficeNavBar.v23.2.XML" />
+			</Component>
+			<Component Id="cmp3BA7F291015B2156E2C6164242E49930" Guid="*">
+				<File Id="fil269ABDDA605351E1A6358B9D0C1DA3D5" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinPivotGrid.v23.2.dll" />
+			</Component>
+			<Component Id="cmp960C5ECD2E116597A5534CA8A40A4F0C" Guid="*">
+				<File Id="fil8E86C9B1481151FBB92C3CAE76C0E919" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinPivotGrid.v23.2.XML" />
+			</Component>
+			<Component Id="cmpBB6727EC6CA9A8AB691ED2AA4DC10EA5" Guid="*">
+				<File Id="fil51636F95E95D417620FB7A012F032864" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinPrintPreviewDialog.v23.2.dll" />
+			</Component>
+			<Component Id="cmp43D46A18741D5AF299BAFF925EACFBC1" Guid="*">
+				<File Id="fil76A13C92446FD55C0C6ED5B453424D82" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinPrintPreviewDialog.v23.2.XML" />
+			</Component>
+			<Component Id="cmp6412A3C9A9D829C28069BC9E3BBE839C" Guid="*">
+				<File Id="fil63B4FA1F9E72125F3DD7F40AEFD9ECE6" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinRadialMenu.v23.2.dll" />
+			</Component>
+			<Component Id="cmp0F8B27841035043FC0CEC2074FAC1B9B" Guid="*">
+				<File Id="fil6EAB0EA1B2DB4F7E8C53001E6EDDD9FF" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinRadialMenu.v23.2.XML" />
+			</Component>
+			<Component Id="cmpA2A8B6C482D9DA3683EC853C3CA75BE0" Guid="*">
+				<File Id="fil763ED09CE05EB65E54BDF6280082FE16" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinSchedule.v23.2.dll" />
+			</Component>
+			<Component Id="cmp6CA7B81BA67B9000351B533D43CEE1B4" Guid="*">
+				<File Id="filEC9CA5E2A811269963D1E04B45E690A5" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinSchedule.v23.2.xml" />
+			</Component>
+			<Component Id="cmp76810FA0082678ABECBFA06042AD607E" Guid="*">
+				<File Id="fil5581E0EE682FE163BEC1DF45ED50E0AA" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinSpellChecker.v23.2.dll" />
+			</Component>
+			<Component Id="cmpE1DF8AB77893FC828184F4F8A1F13F15" Guid="*">
+				<File Id="fil0FBCD7EC8ADED9AEC2EE9EDC51789054" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinSpellChecker.v23.2.xml" />
+			</Component>
+			<Component Id="cmp9E6D7B28A4F0C640C006C01C4FC13D9F" Guid="*">
+				<File Id="filC846F1446E4EED146C672FA86703039D" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinSpreadsheet.ChartAdapter.v23.2.dll" />
+			</Component>
+			<Component Id="cmp709B2E1881FBED568842E5D40C7A1862" Guid="*">
+				<File Id="fil0E70260B75DFFA274E573E67AE3C9556" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinSpreadsheet.ChartAdapter.v23.2.XML" />
+			</Component>
+			<Component Id="cmp87963368335220E044E4E9A36265466A" Guid="*">
+				<File Id="filB2E6EDBA9621F5CEDD97D1F231BF0C48" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinSpreadsheet.v23.2.dll" />
+			</Component>
+			<Component Id="cmp4CE4B8DB090D8DC6D6EE42068D34F7BC" Guid="*">
+				<File Id="filD5DD83F1F0FC2AD2E6440E67C5357006" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinSpreadsheet.v23.2.XML" />
+			</Component>
+			<Component Id="cmp030980139C6DF6527BF2994B69E41931" Guid="*">
+				<File Id="fil8E35DE1AAA71A0B6BE329400DACBF504" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinStatusBar.v23.2.dll" />
+			</Component>
+			<Component Id="cmp1BE9237A654E41EA849F63661A6C7FC1" Guid="*">
+				<File Id="filD600059844A5D0BCB1AADBFDDED10FDD" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinStatusBar.v23.2.xml" />
+			</Component>
+			<Component Id="cmp13C0B68BBDAFDF37686DDC6A45D9BD5F" Guid="*">
+				<File Id="fil2372E7C76998FB3F6CC9D6A9476293C7" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinTabbedMdi.v23.2.dll" />
+			</Component>
+			<Component Id="cmpC211A90B64F16DC24BA06DA48A6BA7C6" Guid="*">
+				<File Id="fil2D499F91162606C9F80012AB78876B01" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinTabbedMdi.v23.2.xml" />
+			</Component>
+			<Component Id="cmpCF386D8665AF8A552736C76A75E6602E" Guid="*">
+				<File Id="fil4ABD41F19CC1B9EA4E8FB1215BEEA3C4" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinTabControl.v23.2.dll" />
+			</Component>
+			<Component Id="cmp82C743B65F5F10287CB2B5AD06D9105E" Guid="*">
+				<File Id="fil076142D51AA5188E523CA59723B21F23" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinTabControl.v23.2.xml" />
+			</Component>
+			<Component Id="cmp639BF4C7FADABA0DE7E738E774AF7918" Guid="*">
+				<File Id="fil204443DC639C944B220AFF78CA008A2D" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinToolbars.v23.2.dll" />
+			</Component>
+			<Component Id="cmpF22EDC426FEA6E0D49464A1CFE4EDD77" Guid="*">
+				<File Id="fil93F7E1B4FF7101C63C32ABAC8C3E493A" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinToolbars.v23.2.xml" />
+			</Component>
+			<Component Id="cmp4583E6F53A1FACCD49F44D1C98789E80" Guid="*">
+				<File Id="fil2FB30530F5E9F72DA3FE07CE7A7AC9B1" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinTree.v23.2.dll" />
+			</Component>
+			<Component Id="cmpDA9AEBE841D244E9A4194F9B38F84574" Guid="*">
+				<File Id="filE6E1C2EDFF7D4EB0ECD8E4F4A448F61E" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.UltraWinTree.v23.2.XML" />
+			</Component>
+			<Component Id="cmp56D549FD550EC6825DD3D6EF5469C779" Guid="*">
+				<File Id="fil561F147990B57DF29A9420A9381B3112" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.v23.2.Design.dll" />
+			</Component>
+			<Component Id="cmp5E01A8332F0D683157573A2E051AB943" Guid="*">
+				<File Id="fil647188CCF387E6F31A10364F07D25A61" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.v23.2.Design.XML" />
+			</Component>
+			<Component Id="cmp074BF95BC2AD0752E20FA6CF6E0A2240" Guid="*">
+				<File Id="filD26B63238262F4A281FC03BBEB18F2DC" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.v23.2.dll" />
+			</Component>
+			<Component Id="cmp5AD17208C42073C5453E923617C6354E" Guid="*">
+				<File Id="fil4B0AE3EF3F55B2A0A8BA86C2D514DC1F" KeyPath="yes" Source="$(var.SourceDirApp)\Infragistics4.Win.v23.2.XML" />
+			</Component>
+			<Component Id="cmpF675CA4F3520AF9130DB444EB9ACD086" Guid="*">
+				<File Id="fil179BB353CD87106C960DA0820673B514" KeyPath="yes" Source="$(var.SourceDirApp)\LinkListBoxDS.dll" />
+			</Component>
+			<Component Id="cmp048AC8F0C2477C058CF90524C079F361" Guid="*">
+				<File Id="fil39D39F9F30BA0969E0BD594A83B3C60D" KeyPath="yes" Source="$(var.SourceDirApp)\links.xsd" />
+			</Component>
+			<Component Id="cmpC423762678487238A5F3BC281ADFFED5" Guid="*">
+				<File Id="fil2F9435AFDED635D57E105060914CAA1C" KeyPath="yes" Source="$(var.SourceDirApp)\Microsoft.Bcl.AsyncInterfaces.dll" />
+			</Component>
+			<Component Id="cmp6F68A84DBF551FD79B1055CCE862C21A" Guid="*">
+				<File Id="filE6BA911EF1BF29BD561F9D5E68B1D78B" KeyPath="yes" Source="$(var.SourceDirApp)\Microsoft.Bcl.AsyncInterfaces.xml" />
+			</Component>
+			<Component Id="cmpDD1CC82678172625967F059F0584AE1D" Guid="*">
+				<File Id="fil64707DFCF29FF13D9C9970CAB1FAD4B9" KeyPath="yes" Source="$(var.SourceDirApp)\Newtonsoft.Json.dll" />
+			</Component>
+			<Component Id="cmp0D50A30F7096271AC3292B1C5145A8F3" Guid="*">
+				<File Id="filECB89195EC82A34D4A50092A2766A024" KeyPath="yes" Source="$(var.SourceDirApp)\Newtonsoft.Json.xml" />
+			</Component>
+			<Component Id="cmp58DC28DE8E5C5371165AA25975991656" Guid="*">
+				<File Id="fil9951D1E1EAE4A0A0FD65434D04C65BD6" KeyPath="yes" Source="$(var.SourceDirApp)\sqlite3.dll" />
+			</Component>
+			<Component Id="cmp4DA69DB03915E635331298E0CD364340" Guid="*">
+				<File Id="fil9A20600CC2A1A121AF5C8A3950BF5FC5" KeyPath="yes" Source="$(var.SourceDirApp)\System.Buffers.dll" />
+			</Component>
+			<Component Id="cmpFD3FD3464D5D342C788C954414614BEA" Guid="*">
+				<File Id="fil6CEC6754180279561FA497CFA61F0D42" KeyPath="yes" Source="$(var.SourceDirApp)\System.Buffers.xml" />
+			</Component>
+			<Component Id="cmp7307EAF39B352EB520E8CF7018878F85" Guid="*">
+				<File Id="filDEFDE50F88594E1FB424F030C59BCA8A" KeyPath="yes" Source="$(var.SourceDirApp)\System.Configuration.ConfigurationManager.dll" />
+			</Component>
+			<Component Id="cmpD1E6731255323A88C27589C27BD3B380" Guid="*">
+				<File Id="fil2C1C079E7F8FB7054446B74A1A479084" KeyPath="yes" Source="$(var.SourceDirApp)\System.Configuration.ConfigurationManager.xml" />
+			</Component>
+			<Component Id="cmp6885B878454349BD2C8C3D241024C4BD" Guid="*">
+				<File Id="fil34DC7D5BFD7DD8C61C09E39D81D87CFD" KeyPath="yes" Source="$(var.SourceDirApp)\System.Data.SQLite.dll" />
+			</Component>
+			<Component Id="cmp355B794CA9DA680FBB376B2BBC302527" Guid="*">
+				<File Id="fil6F0ED74ED9FD5A82C1BA5892F9B192EC" KeyPath="yes" Source="$(var.SourceDirApp)\System.Data.SQLite.EF6.dll" />
+			</Component>
+			<Component Id="cmp175618B5F12195269CD43C6A133BB53F" Guid="*">
+				<File Id="fil6C8102DFBB4DA1D2D6AEA1343FC46A8B" KeyPath="yes" Source="$(var.SourceDirApp)\System.Data.SQLite.Linq.dll" />
+			</Component>
+			<Component Id="cmp1223B0F07C586FB2E83AEE8D278D7CDE" Guid="*">
+				<File Id="filF07B9E944015CD1B02D687339F89F81E" KeyPath="yes" Source="$(var.SourceDirApp)\System.Data.SQLite.xml" />
+			</Component>
+			<Component Id="cmp3F6A3ABB48DAE52D80BE6427C7E17DFC" Guid="*">
+				<File Id="fil88333E26DB85643E718681B10D3B6F29" KeyPath="yes" Source="$(var.SourceDirApp)\System.Drawing.Common.dll" />
+			</Component>
+			<Component Id="cmpB5AE6AB4EB2FD3282D020D1E6A963F6B" Guid="*">
+				<File Id="fil8E6D95C2789222772CBA6A68BB39F8CD" KeyPath="yes" Source="$(var.SourceDirApp)\System.Drawing.Common.xml" />
+			</Component>
+			<Component Id="cmp04A64D48996AD019B8F665A14A188107" Guid="*">
+				<File Id="fil740A03EBC47AB65EA927735952891B04" KeyPath="yes" Source="$(var.SourceDirApp)\System.Memory.dll" />
+			</Component>
+			<Component Id="cmp5004AACA5E2A82F59DCE03013C04220B" Guid="*">
+				<File Id="fil439422EFB06E216161AB3E42A2067ACC" KeyPath="yes" Source="$(var.SourceDirApp)\System.Memory.xml" />
+			</Component>
+			<Component Id="cmp02F0EDA63FCC2DD22A53F9CF4D7C91DA" Guid="*">
+				<File Id="fil2D696097D5949FF5E7BD0F2076B0B2FD" KeyPath="yes" Source="$(var.SourceDirApp)\System.Numerics.Vectors.dll" />
+			</Component>
+			<Component Id="cmpE5933700E079DBEDDCFB9EECB3FA45EF" Guid="*">
+				<File Id="filEDA51F8F452E0E152DC5B6149D71D333" KeyPath="yes" Source="$(var.SourceDirApp)\System.Numerics.Vectors.xml" />
+			</Component>
+			<Component Id="cmp45947776844F6EE258697AC5D8AE00D5" Guid="*">
+				<File Id="fil3F44BF01ADE80951EC008CE7A6CDC053" KeyPath="yes" Source="$(var.SourceDirApp)\System.Runtime.CompilerServices.Unsafe.dll" />
+			</Component>
+			<Component Id="cmp57FFD0B335DC1C03BF988CC7418192D8" Guid="*">
+				<File Id="fil875E80D7D9EDB17D62F7B6A5EA584CA4" KeyPath="yes" Source="$(var.SourceDirApp)\System.Runtime.CompilerServices.Unsafe.xml" />
+			</Component>
+			<Component Id="cmpDCF92115C23AE128C4C9BFB953997188" Guid="*">
+				<File Id="fil81EFEAC736FA022D20E126190A5E8021" KeyPath="yes" Source="$(var.SourceDirApp)\System.Security.AccessControl.dll" />
+			</Component>
+			<Component Id="cmp38DD93113291B104C56055AE4CF801A3" Guid="*">
+				<File Id="filE1145409BB7A50D37ACC237440F9FBFB" KeyPath="yes" Source="$(var.SourceDirApp)\System.Security.AccessControl.xml" />
+			</Component>
+			<Component Id="cmp0309203DBFFCF8063A9343B421F27F75" Guid="*">
+				<File Id="fil7AE9C6F9F870AAFD66CDEF83AB991DF4" KeyPath="yes" Source="$(var.SourceDirApp)\System.Security.Permissions.dll" />
+			</Component>
+			<Component Id="cmp7EBB6228E0EAAE08C2BFB1B334AB8257" Guid="*">
+				<File Id="filAC5FEDFE425136C267C5D45A91447B01" KeyPath="yes" Source="$(var.SourceDirApp)\System.Security.Permissions.xml" />
+			</Component>
+			<Component Id="cmpB5E5F046B23D776C047C95B1E4B24517" Guid="*">
+				<File Id="filC84EE320FFC4F1CEF0D348A6BAD24B02" KeyPath="yes" Source="$(var.SourceDirApp)\System.Security.Principal.Windows.dll" />
+			</Component>
+			<Component Id="cmpFA8991CA19FB3E246EA4D2F951F8C4A6" Guid="*">
+				<File Id="fil9B0363CA356D1FE5C4C37089F23D5E70" KeyPath="yes" Source="$(var.SourceDirApp)\System.Security.Principal.Windows.xml" />
+			</Component>
+			<Component Id="cmp381D365E1354AFBC6B158952360BC0C7" Guid="*">
+				<File Id="filDCBF9DD33A41FCE95435FED6F3554A71" KeyPath="yes" Source="$(var.SourceDirApp)\System.Text.Encodings.Web.dll" />
+			</Component>
+			<Component Id="cmp957E61227C5C92B6AA4582EBBBAB93A4" Guid="*">
+				<File Id="fil5A84054A6DAF89A415637E5B33827A8F" KeyPath="yes" Source="$(var.SourceDirApp)\System.Text.Encodings.Web.xml" />
+			</Component>
+			<Component Id="cmp70BCE0D4A7D7176FC2D10F54A7902BFB" Guid="*">
+				<File Id="fil8535E1DF6836EE737602738093CA2F23" KeyPath="yes" Source="$(var.SourceDirApp)\System.Text.Json.dll" />
+			</Component>
+			<Component Id="cmp4DFB348891FFF5634BDC7931C83FCB17" Guid="*">
+				<File Id="fil02C50B67891F226D9FE6A7C9FC97B2A6" KeyPath="yes" Source="$(var.SourceDirApp)\System.Text.Json.xml" />
+			</Component>
+			<Component Id="cmp14D6BCFEABEB23D2F6D52AD2F13D67B2" Guid="*">
+				<File Id="fil43AC79D3F93F779D24B8CD3E2862E701" KeyPath="yes" Source="$(var.SourceDirApp)\System.Threading.Tasks.Extensions.dll" />
+			</Component>
+			<Component Id="cmp1B2A273FA35DF94C0BC464322564026D" Guid="*">
+				<File Id="filBD3BE66070210EAE7DF5AB359032C048" KeyPath="yes" Source="$(var.SourceDirApp)\System.Threading.Tasks.Extensions.xml" />
+			</Component>
+			<Component Id="cmp3A24669F3619E64F32A539F8016E0B54" Guid="*">
+				<File Id="fil545EBB420FA8324A5EE37B30B859CDC4" KeyPath="yes" Source="$(var.SourceDirApp)\System.ValueTuple.dll" />
+			</Component>
+			<Component Id="cmp575823F407E7D33DBF6E15AC84083F52" Guid="*">
+				<File Id="filB1C0A0FD6EE129DFDE741E43EAC452AD" KeyPath="yes" Source="$(var.SourceDirApp)\System.ValueTuple.xml" />
+			</Component>
+			<Component Id="cmpE092BBFC5205D1579CC1EFA33E25813C" Guid="*">
+				<File Id="fil1BDA86EA01C155C55C555D00464A9AFD" KeyPath="yes" Source="$(var.SourceDirApp)\TXBarcode.dll" />
+			</Component>
+			<Component Id="cmpBFC01EBAEAB60C32BF5A7DD01B9D8688" Guid="*">
+				<File Id="fil6C7BA19A4B95A75EB092AFE3D7F38DF6" KeyPath="yes" Source="$(var.SourceDirApp)\TXBarcode.Windows.Forms.dll" />
+			</Component>
+			<Component Id="cmp1F46B98CACE4F1E190AFC6F7BB3107C3" Guid="*">
+				<File Id="fil214D78ACC7F153CEDB86C79C22423612" KeyPath="yes" Source="$(var.SourceDirApp)\TXBarcode.Windows.Forms.xml" />
+			</Component>
+			<Component Id="cmp22CC5344A2B2E55DBD32C14EBFCD0491" Guid="*">
+				<File Id="fil59D09A6F4F3E43A9149EB44692A143CB" KeyPath="yes" Source="$(var.SourceDirApp)\TXBarcode.xml" />
+			</Component>
+			<Component Id="cmp51CF21DF06214ACD19660E93355EAECE" Guid="*">
+				<File Id="filB742C3358EFE8859D9881F7F394A7FD2" KeyPath="yes" Source="$(var.SourceDirApp)\TXDocumentServer.dll" />
+			</Component>
+			<Component Id="cmpB542E8A451F8381CE6AC3D6A344C2CF7" Guid="*">
+				<File Id="fil3CBD519E73C51D376E09FC76836CE62B" KeyPath="yes" Source="$(var.SourceDirApp)\TXDocumentServer.Windows.Forms.dll" />
+			</Component>
+			<Component Id="cmpB798DD68CABC4CAAA0D19C65658C5D2C" Guid="*">
+				<File Id="filD007902A1843185ED043F970096FF644" KeyPath="yes" Source="$(var.SourceDirApp)\TXDocumentServer.Windows.Forms.xml" />
+			</Component>
+			<Component Id="cmpA07FD95DE3C54EFB55738226868A241C" Guid="*">
+				<File Id="fil4475AF10B614907FFCB1F46C27722FC6" KeyPath="yes" Source="$(var.SourceDirApp)\TXDocumentServer.xml" />
+			</Component>
+			<Component Id="cmp9E722AC6564EE2B6F65ADBBB7AFBBEEE" Guid="*">
+				<File Id="filFC881FD66DBAE1E5EBD2307F68444109" KeyPath="yes" Source="$(var.SourceDirApp)\TXDrawing.dll" />
+			</Component>
+			<Component Id="cmp314E637D807508DEBDB04E607731F9C8" Guid="*">
+				<File Id="filC388E8A78EF9CAA8DA87F0C53E2DC4EA" KeyPath="yes" Source="$(var.SourceDirApp)\TXDrawing.Windows.Forms.dll" />
+			</Component>
+			<Component Id="cmp0B08D80CF221548D9468E42864750B23" Guid="*">
+				<File Id="fil1AD608C28090E5EBA1AFE961BFC23FEC" KeyPath="yes" Source="$(var.SourceDirApp)\TXDrawing.Windows.Forms.xml" />
+			</Component>
+			<Component Id="cmp3F281B8CAECE113ED235E6ED3C54EE5B" Guid="*">
+				<File Id="filF26C2255543741975CEC4F8705475242" KeyPath="yes" Source="$(var.SourceDirApp)\TXDrawing.xml" />
+			</Component>
+			<Component Id="cmp770069BA9E3C79AA0403E0B0559442F3" Guid="*">
+				<File Id="fil4B007A18819138DD550719C1C9D2ABF0" KeyPath="yes" Source="$(var.SourceDirApp)\TXImageProvider.dll" />
+			</Component>
+			<Component Id="cmp1A344BDD3A79B8EE7B86EBEB48FF166B" Guid="*">
+				<File Id="fil0474AACAD6EB96B793EEDB739CDFED39" KeyPath="yes" Source="$(var.SourceDirApp)\TXTextControl.dll" />
+			</Component>
+			<Component Id="cmp6EB431B16FFFE9AEF623CBA5D0D5B4B3" Guid="*">
+				<File Id="filB4719F027479BB18A0DD3F5A5ABEDABC" KeyPath="yes" Source="$(var.SourceDirApp)\TXTextControl.Server.dll" />
+			</Component>
+			<Component Id="cmpF845C47B7C9A737137689DCCD62A87D0" Guid="*">
+				<File Id="fil7E186B9D2AC6CF00C6CE4C2D3ACB47D0" KeyPath="yes" Source="$(var.SourceDirApp)\TXTextControl.Server.xml" />
+			</Component>
+			<Component Id="cmp67F5F4AFF127BE991D8D6248DF93E9B9" Guid="*">
+				<File Id="filB4D5F90FD6716EE5B54383C04FD78F27" KeyPath="yes" Source="$(var.SourceDirApp)\TXTextControl.Windows.Forms.Design.dll" />
+			</Component>
+			<Component Id="cmpF0A78ED43945C7D3AF0181E0A92E1061" Guid="*">
+				<File Id="filB3AC7EB34F2C6B44C0C7558902E84FD8" KeyPath="yes" Source="$(var.SourceDirApp)\TXTextControl.Windows.Forms.dll" />
+			</Component>
+			<Component Id="cmp55A6DF3D24D7C3D496EB21FE3A0EDD2D" Guid="*">
+				<File Id="fil8658176460C1B52D4E8E3916583135D8" KeyPath="yes" Source="$(var.SourceDirApp)\TXTextControl.Windows.Forms.xml" />
+			</Component>
+			<Component Id="cmp64B6B360E38FC4EF64F36A133A74BEFD" Guid="*">
+				<File Id="filFD9F8BDB0EEAC1B2BFDD689AE864D2BA" KeyPath="yes" Source="$(var.SourceDirApp)\TXTextControl.xml" />
+			</Component>
+			<Directory Id="dirAD34CAB01DDD723D0F5171673F8E51D6" Name="cs">
+				<Component Id="cmpA3F6ADC6D966D11B3DD4F9F37D8EAF09" Guid="*">
+					<File Id="fil18B899B87B909B54BE69B00F2186B4AF" KeyPath="yes" Source="$(var.SourceDirApp)\cs\CodexCommonDialogs.resources.dll" />
+				</Component>
+			</Directory>
+			<Directory Id="dir493438800BE03D2E893261598E11A7E7" Name="de">
+				<Component Id="cmp731FDF72D7E74E3B297883CA4BF6E875" Guid="*">
+					<File Id="fil3F2A38CB9C115CBF0D6A643E67A65216" KeyPath="yes" Source="$(var.SourceDirApp)\de\TXBarcode.resources.dll" />
+				</Component>
+				<Component Id="cmp4E8E7C699C6FE3F28F88D5E7D2704149" Guid="*">
+					<File Id="fil0A9A7AC20FE5084D326300BD475F5448" KeyPath="yes" Source="$(var.SourceDirApp)\de\TXDocumentServer.resources.dll" />
+				</Component>
+				<Component Id="cmp6C7BCB2B6D3733886A5CF69D9470C333" Guid="*">
+					<File Id="fil7A3C52137A2583E2C2D83401305FC567" KeyPath="yes" Source="$(var.SourceDirApp)\de\TXDrawing.resources.dll" />
+				</Component>
+				<Component Id="cmp35575053696A8809A0EAAD9BBCECB6C5" Guid="*">
+					<File Id="fil016675433DD638B2F0A46C3F3F34C591" KeyPath="yes" Source="$(var.SourceDirApp)\de\TXTextControl.resources.dll" />
+				</Component>
+				<Component Id="cmpBECA38FE006B30541054BCE1D36D5766" Guid="*">
+					<File Id="fil852E1AE52E5D06541F8ECF34B642E9F1" KeyPath="yes" Source="$(var.SourceDirApp)\de\TXTextControl.Windows.Forms.Design.resources.dll" />
+				</Component>
+			</Directory>
+			<Directory Id="dir30751C725337E47CCC4C052C076C01DD" Name="x64">
+				<Component Id="cmp1B15298EA8975DB6C18909305675D32D" Guid="*">
+					<File Id="fil24CED6620E619EF468952F2ECB6BAFD1" KeyPath="yes" Source="$(var.SourceDirApp)\x64\pdfium.dll" />
+				</Component>
+				<Component Id="cmpFBFBD241CFD63E8FC934948464085257" Guid="*">
+					<File Id="filD5C10F2640B8D2E8C82E5A73388B21A5" KeyPath="yes" Source="$(var.SourceDirApp)\x64\SQLite.Interop.dll" />
+				</Component>
+			</Directory>
+			<Directory Id="dirDFB5CF9BCE91F639D58798659A20C433" Name="x86">
+				<Component Id="cmp7AC96CD279C12DCDD91593FED30594B2" Guid="*">
+					<File Id="fil533A910725967575E81B06EF2AC1D0A0" KeyPath="yes" Source="$(var.SourceDirApp)\x86\pdfium.dll" />
+				</Component>
+				<Component Id="cmp3681BA6A238A08D699FB907851F76761" Guid="*">
+					<File Id="fil61D477BFC101F5F4AC741A1E1BEBC5BE" KeyPath="yes" Source="$(var.SourceDirApp)\x86\SQLite.Interop.dll" />
+				</Component>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+	<Fragment>
+		<ComponentGroup Id="AppDS19">
+			<ComponentRef Id="cmp7C7F1058AF5B8FE42C5C092A55A721BD" />
+			<ComponentRef Id="cmpDFD40144D9D8AD247929E7439A08904D" />
+			<ComponentRef Id="cmpED903F8B457C83E25DDDA7D46722B30F" />
+			<ComponentRef Id="cmp68E751C2184C52F0C8BA409B03893013" />
+			<ComponentRef Id="cmp0EA631F3C37CEE59FA48BD0BEF83E618" />
+			<ComponentRef Id="cmpEED24D8E3D374CE1B0A1C64CF4B7E036" />
+			<ComponentRef Id="cmp950EFFA5311D80049EF391D67D33DCB4" />
+			<ComponentRef Id="cmpB381B20CE248273D18E8AFFDC5CCB69E" />
+			<ComponentRef Id="cmpF2DCC7EA35A3880455A5F2C23CF65113" />
+			<ComponentRef Id="cmp234F2019EBC42DA846063F541706F260" />
+			<ComponentRef Id="cmp48210C1659AE5C6736057D6BA2F93B37" />
+			<ComponentRef Id="cmp11737BF12A56AFE94B7AB2177A8F5E3F" />
+			<ComponentRef Id="cmp2733BAEDC10CA9B6A9075E80045BA867" />
+			<ComponentRef Id="cmp004724C1839B75E28F073395EF8DF52D" />
+			<ComponentRef Id="cmp96A78D3EC2C754692DCCA883DB9AA9EE" />
+			<ComponentRef Id="cmp485120EA8D0672AA16470BAB85E03F17" />
+			<ComponentRef Id="cmpF180A6D926860C5A94D86DA8947F7D47" />
+			<ComponentRef Id="cmp5E3CAE8AF036DA66FA78AFF84193CA91" />
+			<ComponentRef Id="cmpCC1861A18B37F2EEDA176CD0A3A04ED9" />
+			<ComponentRef Id="cmpFD2E027BC34909D043494D541959F132" />
+			<ComponentRef Id="cmpFFF40EF66BBD13CA4AA6D661D0422B3E" />
+			<ComponentRef Id="cmp9F3C0A62FF18C46EC5D24D7D91F16B8D" />
+			<ComponentRef Id="cmpEC660134C0D3B6A7C8B44C5D4E0AC6F4" />
+			<ComponentRef Id="cmp25DC4784C96CD55132BCA591C343E2C4" />
+			<ComponentRef Id="cmp0CF34BB921AB578487961535989FEC5C" />
+			<ComponentRef Id="cmp33187B6C62C8D35CEC36EA1F1D1BA9EB" />
+			<ComponentRef Id="cmp02C250FC6E9C869900C58AAAEEA240D1" />
+			<ComponentRef Id="cmp670055BEC669A0CE2D8FD288A6442B04" />
+			<ComponentRef Id="cmp0BA5158F99DECF308FA9F04580984D74" />
+			<ComponentRef Id="cmpE388268715BA1757E0E612FABD1EB0B1" />
+			<ComponentRef Id="cmp06AADDACEC08122FB4595740DD4EA5AD" />
+			<ComponentRef Id="cmp74737E05ED8E46EF928F1356A8EB115D" />
+			<ComponentRef Id="cmp76E51E875F173AAE439CABBF9AF52226" />
+			<ComponentRef Id="cmp358CB0E714CC77FDE57B17DC39293366" />
+			<ComponentRef Id="cmp9C9547922FFE3FC59E205044417C4D23" />
+			<ComponentRef Id="cmp704577E2D313D7F5FB103DB39AA2FE12" />
+			<ComponentRef Id="cmp3FFC0BCEECD112ECF06B9605F3B63500" />
+			<ComponentRef Id="cmpF1200AB22E43F685F58F6F4E63C169DE" />
+			<ComponentRef Id="cmpB3AA255CCAD36AB5D3B65272CCDB0B3A" />
+			<ComponentRef Id="cmp2AA4BA1AB189CC9A27AC481E75B036EB" />
+			<ComponentRef Id="cmp96EFF08766CB3E79BCE532D831A27D46" />
+			<ComponentRef Id="cmp53C8846189662D5F34557C272A2FBC82" />
+			<ComponentRef Id="cmp778F3878EFE901908B2E822ECFE1762A" />
+			<ComponentRef Id="cmp91ECBC794F8083E654B43B314AD848CA" />
+			<ComponentRef Id="cmpBF93CFDACC2C0ED6FE9739BC334CFA0A" />
+			<ComponentRef Id="cmp885F32699B1ADB9FFDB3686D7F5F7930" />
+			<ComponentRef Id="cmp8BEEC2B96C10FFF1009DDBEBD6B36E38" />
+			<ComponentRef Id="cmp7E7883FFEC52FC10CCC4E4F4D6678C05" />
+			<ComponentRef Id="cmp9B64A46F69218B573A09643950F72683" />
+			<ComponentRef Id="cmpADB9375095366AECF4B678E6974BAEF7" />
+			<ComponentRef Id="cmp56D055F31AF138373631B72DC00A3571" />
+			<ComponentRef Id="cmp3B0215BDE540A8F2966A8AB75B6BB6F4" />
+			<ComponentRef Id="cmpA86194C59EBBE85F891849B9C14B22E6" />
+			<ComponentRef Id="cmp7C7A58873474904F71CA893D5888D000" />
+			<ComponentRef Id="cmp95056144FE386A98CFA01D7B9721D309" />
+			<ComponentRef Id="cmp8700F2A0A267670517F04F67C89B86EB" />
+			<ComponentRef Id="cmpF8AA2F80B392EF201E3D5709ABF5C1F8" />
+			<ComponentRef Id="cmp1C8C8EC9CDEC23FAF585D64850E929E8" />
+			<ComponentRef Id="cmpA953FE02BDF7EDB081CF297F078A6CD0" />
+			<ComponentRef Id="cmp5C95FD35399A500D99B5E329E465226B" />
+			<ComponentRef Id="cmpDB60FD9CD61082E8F8287C8B57387C0D" />
+			<ComponentRef Id="cmpADC8FC5F896922DC11F9AEE3E53F88EE" />
+			<ComponentRef Id="cmpE56B8F27D60C33A2C7B54A84F17ECA5B" />
+			<ComponentRef Id="cmp569202C3E87D876F5B96463DA28CF163" />
+			<ComponentRef Id="cmp494851CFC67B0C1236ECE236F3556353" />
+			<ComponentRef Id="cmpBFF01EE82A1429E2DE99794A8BA09798" />
+			<ComponentRef Id="cmp625D7690FD5179BBC3FD6C785F64F3BF" />
+			<ComponentRef Id="cmp3339B0CF18F611601BA45D2868AC703D" />
+			<ComponentRef Id="cmpADF6A609AC44CE7E5BBF034C6B4A156D" />
+			<ComponentRef Id="cmpC4D71A79CCA231BAFD5CFC9576966A85" />
+			<ComponentRef Id="cmpB80F9A0D115E3E8329EACA1FF43F88FA" />
+			<ComponentRef Id="cmp13C4ABE72B2981D6FD5334D4033A922A" />
+			<ComponentRef Id="cmp86BEB1A3B55DB63CAD03FD9ABB4B6056" />
+			<ComponentRef Id="cmp1BF3BDFC0D06C218D148970D138922CC" />
+			<ComponentRef Id="cmpCBCC85580DDC615A00965D011318E211" />
+			<ComponentRef Id="cmpBEDEACD4E02CA53BEFEA583F0A8BF7B2" />
+			<ComponentRef Id="cmp538D6E413C50971B219454BEBC718053" />
+			<ComponentRef Id="cmpD12F9F20F115E7DB9A8130B6FB1BD528" />
+			<ComponentRef Id="cmpBC63BB7AE9814103712ABD30F44048CC" />
+			<ComponentRef Id="cmpC57DFBA6B7C6D6AAD7FC659BE9E25C52" />
+			<ComponentRef Id="cmp450E6F530A40409CFC61038EE4665BC7" />
+			<ComponentRef Id="cmp5B1932A856CF79365E3E2E05926EB5D4" />
+			<ComponentRef Id="cmp50E5337FBDDCA3BB13DB65F5376DBD81" />
+			<ComponentRef Id="cmpA5B95DC51103CE0D8315C53267D45B19" />
+			<ComponentRef Id="cmp54C6B2B3B6C24F4981E68B735302C47C" />
+			<ComponentRef Id="cmp1E183FB3C89B55A1B4947D98DE401276" />
+			<ComponentRef Id="cmp70A8F0F097F32D22716A049F832C6ACE" />
+			<ComponentRef Id="cmp1BBBB4BC925C3E81BC4259A71EF9C20C" />
+			<ComponentRef Id="cmp94A4CD0BBA535C499D690BB148FE5574" />
+			<ComponentRef Id="cmp2D46EB4B74537466E7304FA4E8D3247F" />
+			<ComponentRef Id="cmp28DD4135CE17BEF2C8C4800E553B3401" />
+			<ComponentRef Id="cmpC21C82AD0CA9FA3623800ECBD35AD208" />
+			<ComponentRef Id="cmpCB3171947086FAE9A575ACEDB0AD3DED" />
+			<ComponentRef Id="cmp736353C92E139E17F73FF20AD7C3E4B5" />
+			<ComponentRef Id="cmpE24923CFF263C62FD6AC8A802A22F168" />
+			<ComponentRef Id="cmpE0CF4750D636CD003C515D95CB0F43AD" />
+			<ComponentRef Id="cmpE3657B4DFA6FA67D4EA4601CEF03B219" />
+			<ComponentRef Id="cmpE0AE90C3ACBB029D63193F8C0C9F847D" />
+			<ComponentRef Id="cmpA4A2FD80F7D615B7FF1B0800D629201E" />
+			<ComponentRef Id="cmpA5F9BF8A4F3BB2C46F976F4D8A96AB22" />
+			<ComponentRef Id="cmpD6129B32EE4E9D35959B7ECC5A312268" />
+			<ComponentRef Id="cmp0B92CE3923EA56FDF88A898AF05456B2" />
+			<ComponentRef Id="cmpA592D4E1706E3E1D63CE539E9D4874F2" />
+			<ComponentRef Id="cmp0B98803D1EC4F0A8CE5C6B9DA522ECCA" />
+			<ComponentRef Id="cmp014360865C6EF77EC9119AA0F0521D6A" />
+			<ComponentRef Id="cmp7F3A03C56CC74C75627B335C24238910" />
+			<ComponentRef Id="cmp7582265B3A62E36CB57356382CBB9952" />
+			<ComponentRef Id="cmpDBFDA444626C09D0149CF120013262DD" />
+			<ComponentRef Id="cmpC6FABCD15EBB740842B6A68959C0CB9C" />
+			<ComponentRef Id="cmp71497B694911382E5A54D822887288BD" />
+			<ComponentRef Id="cmpA81BD486D4DE22BD15D3B2981B8C7CDF" />
+			<ComponentRef Id="cmp19B72942D6E1AEBDB90E4686D6192ACE" />
+			<ComponentRef Id="cmp129E07AF766F6AC3A9039D467B8EA62A" />
+			<ComponentRef Id="cmpC9543EB24D0CA6EA1E72B382751AD25B" />
+			<ComponentRef Id="cmp657493D1AEC7C5B45914065740B5BD5A" />
+			<ComponentRef Id="cmpACF5045778E54D2256F2A4B742012DC0" />
+			<ComponentRef Id="cmp7F36506A34821DE0913CC8B0496F9366" />
+			<ComponentRef Id="cmp648D60BAA1E038144A32505ED2853B64" />
+			<ComponentRef Id="cmp995B31C09BF8327D81FC45EB4C2C6B8C" />
+			<ComponentRef Id="cmp9D7625401318284EFD8194D3497A90A8" />
+			<ComponentRef Id="cmp7E3B15F983F83D8AD01517C61AC588ED" />
+			<ComponentRef Id="cmp3BA7F291015B2156E2C6164242E49930" />
+			<ComponentRef Id="cmp960C5ECD2E116597A5534CA8A40A4F0C" />
+			<ComponentRef Id="cmpBB6727EC6CA9A8AB691ED2AA4DC10EA5" />
+			<ComponentRef Id="cmp43D46A18741D5AF299BAFF925EACFBC1" />
+			<ComponentRef Id="cmp6412A3C9A9D829C28069BC9E3BBE839C" />
+			<ComponentRef Id="cmp0F8B27841035043FC0CEC2074FAC1B9B" />
+			<ComponentRef Id="cmpA2A8B6C482D9DA3683EC853C3CA75BE0" />
+			<ComponentRef Id="cmp6CA7B81BA67B9000351B533D43CEE1B4" />
+			<ComponentRef Id="cmp76810FA0082678ABECBFA06042AD607E" />
+			<ComponentRef Id="cmpE1DF8AB77893FC828184F4F8A1F13F15" />
+			<ComponentRef Id="cmp9E6D7B28A4F0C640C006C01C4FC13D9F" />
+			<ComponentRef Id="cmp709B2E1881FBED568842E5D40C7A1862" />
+			<ComponentRef Id="cmp87963368335220E044E4E9A36265466A" />
+			<ComponentRef Id="cmp4CE4B8DB090D8DC6D6EE42068D34F7BC" />
+			<ComponentRef Id="cmp030980139C6DF6527BF2994B69E41931" />
+			<ComponentRef Id="cmp1BE9237A654E41EA849F63661A6C7FC1" />
+			<ComponentRef Id="cmp13C0B68BBDAFDF37686DDC6A45D9BD5F" />
+			<ComponentRef Id="cmpC211A90B64F16DC24BA06DA48A6BA7C6" />
+			<ComponentRef Id="cmpCF386D8665AF8A552736C76A75E6602E" />
+			<ComponentRef Id="cmp82C743B65F5F10287CB2B5AD06D9105E" />
+			<ComponentRef Id="cmp639BF4C7FADABA0DE7E738E774AF7918" />
+			<ComponentRef Id="cmpF22EDC426FEA6E0D49464A1CFE4EDD77" />
+			<ComponentRef Id="cmp4583E6F53A1FACCD49F44D1C98789E80" />
+			<ComponentRef Id="cmpDA9AEBE841D244E9A4194F9B38F84574" />
+			<ComponentRef Id="cmp56D549FD550EC6825DD3D6EF5469C779" />
+			<ComponentRef Id="cmp5E01A8332F0D683157573A2E051AB943" />
+			<ComponentRef Id="cmp074BF95BC2AD0752E20FA6CF6E0A2240" />
+			<ComponentRef Id="cmp5AD17208C42073C5453E923617C6354E" />
+			<ComponentRef Id="cmpF675CA4F3520AF9130DB444EB9ACD086" />
+			<ComponentRef Id="cmp048AC8F0C2477C058CF90524C079F361" />
+			<ComponentRef Id="cmpC423762678487238A5F3BC281ADFFED5" />
+			<ComponentRef Id="cmp6F68A84DBF551FD79B1055CCE862C21A" />
+			<ComponentRef Id="cmpDD1CC82678172625967F059F0584AE1D" />
+			<ComponentRef Id="cmp0D50A30F7096271AC3292B1C5145A8F3" />
+			<ComponentRef Id="cmp58DC28DE8E5C5371165AA25975991656" />
+			<ComponentRef Id="cmp4DA69DB03915E635331298E0CD364340" />
+			<ComponentRef Id="cmpFD3FD3464D5D342C788C954414614BEA" />
+			<ComponentRef Id="cmp7307EAF39B352EB520E8CF7018878F85" />
+			<ComponentRef Id="cmpD1E6731255323A88C27589C27BD3B380" />
+			<ComponentRef Id="cmp6885B878454349BD2C8C3D241024C4BD" />
+			<ComponentRef Id="cmp355B794CA9DA680FBB376B2BBC302527" />
+			<ComponentRef Id="cmp175618B5F12195269CD43C6A133BB53F" />
+			<ComponentRef Id="cmp1223B0F07C586FB2E83AEE8D278D7CDE" />
+			<ComponentRef Id="cmp3F6A3ABB48DAE52D80BE6427C7E17DFC" />
+			<ComponentRef Id="cmpB5AE6AB4EB2FD3282D020D1E6A963F6B" />
+			<ComponentRef Id="cmp04A64D48996AD019B8F665A14A188107" />
+			<ComponentRef Id="cmp5004AACA5E2A82F59DCE03013C04220B" />
+			<ComponentRef Id="cmp02F0EDA63FCC2DD22A53F9CF4D7C91DA" />
+			<ComponentRef Id="cmpE5933700E079DBEDDCFB9EECB3FA45EF" />
+			<ComponentRef Id="cmp45947776844F6EE258697AC5D8AE00D5" />
+			<ComponentRef Id="cmp57FFD0B335DC1C03BF988CC7418192D8" />
+			<ComponentRef Id="cmpDCF92115C23AE128C4C9BFB953997188" />
+			<ComponentRef Id="cmp38DD93113291B104C56055AE4CF801A3" />
+			<ComponentRef Id="cmp0309203DBFFCF8063A9343B421F27F75" />
+			<ComponentRef Id="cmp7EBB6228E0EAAE08C2BFB1B334AB8257" />
+			<ComponentRef Id="cmpB5E5F046B23D776C047C95B1E4B24517" />
+			<ComponentRef Id="cmpFA8991CA19FB3E246EA4D2F951F8C4A6" />
+			<ComponentRef Id="cmp381D365E1354AFBC6B158952360BC0C7" />
+			<ComponentRef Id="cmp957E61227C5C92B6AA4582EBBBAB93A4" />
+			<ComponentRef Id="cmp70BCE0D4A7D7176FC2D10F54A7902BFB" />
+			<ComponentRef Id="cmp4DFB348891FFF5634BDC7931C83FCB17" />
+			<ComponentRef Id="cmp14D6BCFEABEB23D2F6D52AD2F13D67B2" />
+			<ComponentRef Id="cmp1B2A273FA35DF94C0BC464322564026D" />
+			<ComponentRef Id="cmp3A24669F3619E64F32A539F8016E0B54" />
+			<ComponentRef Id="cmp575823F407E7D33DBF6E15AC84083F52" />
+			<ComponentRef Id="cmpE092BBFC5205D1579CC1EFA33E25813C" />
+			<ComponentRef Id="cmpBFC01EBAEAB60C32BF5A7DD01B9D8688" />
+			<ComponentRef Id="cmp1F46B98CACE4F1E190AFC6F7BB3107C3" />
+			<ComponentRef Id="cmp22CC5344A2B2E55DBD32C14EBFCD0491" />
+			<ComponentRef Id="cmp51CF21DF06214ACD19660E93355EAECE" />
+			<ComponentRef Id="cmpB542E8A451F8381CE6AC3D6A344C2CF7" />
+			<ComponentRef Id="cmpB798DD68CABC4CAAA0D19C65658C5D2C" />
+			<ComponentRef Id="cmpA07FD95DE3C54EFB55738226868A241C" />
+			<ComponentRef Id="cmp9E722AC6564EE2B6F65ADBBB7AFBBEEE" />
+			<ComponentRef Id="cmp314E637D807508DEBDB04E607731F9C8" />
+			<ComponentRef Id="cmp0B08D80CF221548D9468E42864750B23" />
+			<ComponentRef Id="cmp3F281B8CAECE113ED235E6ED3C54EE5B" />
+			<ComponentRef Id="cmp770069BA9E3C79AA0403E0B0559442F3" />
+			<ComponentRef Id="cmp1A344BDD3A79B8EE7B86EBEB48FF166B" />
+			<ComponentRef Id="cmp6EB431B16FFFE9AEF623CBA5D0D5B4B3" />
+			<ComponentRef Id="cmpF845C47B7C9A737137689DCCD62A87D0" />
+			<ComponentRef Id="cmp67F5F4AFF127BE991D8D6248DF93E9B9" />
+			<ComponentRef Id="cmpF0A78ED43945C7D3AF0181E0A92E1061" />
+			<ComponentRef Id="cmp55A6DF3D24D7C3D496EB21FE3A0EDD2D" />
+			<ComponentRef Id="cmp64B6B360E38FC4EF64F36A133A74BEFD" />
+			<ComponentRef Id="cmpA3F6ADC6D966D11B3DD4F9F37D8EAF09" />
+			<ComponentRef Id="cmp731FDF72D7E74E3B297883CA4BF6E875" />
+			<ComponentRef Id="cmp4E8E7C699C6FE3F28F88D5E7D2704149" />
+			<ComponentRef Id="cmp6C7BCB2B6D3733886A5CF69D9470C333" />
+			<ComponentRef Id="cmp35575053696A8809A0EAAD9BBCECB6C5" />
+			<ComponentRef Id="cmpBECA38FE006B30541054BCE1D36D5766" />
+			<ComponentRef Id="cmp1B15298EA8975DB6C18909305675D32D" />
+			<ComponentRef Id="cmpFBFBD241CFD63E8FC934948464085257" />
+			<ComponentRef Id="cmp7AC96CD279C12DCDD91593FED30594B2" />
+			<ComponentRef Id="cmp3681BA6A238A08D699FB907851F76761" />
+		</ComponentGroup>
+	</Fragment>
+</Wix>

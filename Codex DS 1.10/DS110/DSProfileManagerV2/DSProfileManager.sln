@@ -1,0 +1,50 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSProfileManager", "DSProfileManager.csproj", "{6FA587A8-7FDF-4ABD-9248-0C15CC015D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodexDSCommonDialogs", "..\DSCommon\CodexDialogControls\CodexCommonDialogs\CodexCommonDialogs\CodexDSCommonDialogs.csproj", "{1E7F7E25-237D-4321-8F82-452F0CD5C746}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSCommon", "..\DSCommon\DSCommonSource\DSCommon\DSCommon.csproj", "{D7FCB6A5-DDB6-4DDF-BE08-D5114430FB32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FA587A8-7FDF-4ABD-9248-0C15CC015D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA587A8-7FDF-4ABD-9248-0C15CC015D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA587A8-7FDF-4ABD-9248-0C15CC015D2D}.Debug|x86.ActiveCfg = Debug|x86
+		{6FA587A8-7FDF-4ABD-9248-0C15CC015D2D}.Debug|x86.Build.0 = Debug|x86
+		{6FA587A8-7FDF-4ABD-9248-0C15CC015D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA587A8-7FDF-4ABD-9248-0C15CC015D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA587A8-7FDF-4ABD-9248-0C15CC015D2D}.Release|x86.ActiveCfg = Release|x86
+		{6FA587A8-7FDF-4ABD-9248-0C15CC015D2D}.Release|x86.Build.0 = Release|x86
+		{1E7F7E25-237D-4321-8F82-452F0CD5C746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E7F7E25-237D-4321-8F82-452F0CD5C746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E7F7E25-237D-4321-8F82-452F0CD5C746}.Debug|x86.ActiveCfg = Debug|x86
+		{1E7F7E25-237D-4321-8F82-452F0CD5C746}.Debug|x86.Build.0 = Debug|x86
+		{1E7F7E25-237D-4321-8F82-452F0CD5C746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E7F7E25-237D-4321-8F82-452F0CD5C746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E7F7E25-237D-4321-8F82-452F0CD5C746}.Release|x86.ActiveCfg = Release|x86
+		{1E7F7E25-237D-4321-8F82-452F0CD5C746}.Release|x86.Build.0 = Release|x86
+		{D7FCB6A5-DDB6-4DDF-BE08-D5114430FB32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7FCB6A5-DDB6-4DDF-BE08-D5114430FB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7FCB6A5-DDB6-4DDF-BE08-D5114430FB32}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D7FCB6A5-DDB6-4DDF-BE08-D5114430FB32}.Debug|x86.Build.0 = Debug|Any CPU
+		{D7FCB6A5-DDB6-4DDF-BE08-D5114430FB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7FCB6A5-DDB6-4DDF-BE08-D5114430FB32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7FCB6A5-DDB6-4DDF-BE08-D5114430FB32}.Release|x86.ActiveCfg = Release|Any CPU
+		{D7FCB6A5-DDB6-4DDF-BE08-D5114430FB32}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03010576-C534-4A12-A9EB-5595425317B8}
+	EndGlobalSection
+EndGlobal

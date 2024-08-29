@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="TRANSPORTATION_DIR">
+
+			<Component Id="TRANSPORTATION_cmp_role" Guid="{30C1A9D2-19CD-4D63-94EC-CC1C4AF35277}">
+				<File Id="TRANSPORTATION_file_role_lxs" KeyPath="no" Source="$(var.SourceDirApp)\PROFILES\TRANSPORTATION\Role.lxs"  />
+			</Component>
+			<Component Id="TRANSPORTATION_cmp_rule1" Guid="{30F916CB-FB68-407D-91B0-24D78FF48C95}">
+				<File Id="TRANSPORTATION_file_rule1_rxs" KeyPath="no" Source="$(var.SourceDirApp)\PROFILES\TRANSPORTATION\Rule1.RXS"  />
+			</Component>
+			<Component Id="TRANSPORTATION_cmp_rule2" Guid="{3070F113-8DC4-484C-AE68-C30C6A8168E2}">
+				<File Id="TRANSPORTATION_file_rule2_rxs" KeyPath="no" Source="$(var.SourceDirApp)\PROFILES\TRANSPORTATION\Rule2.RXS"  />
+			</Component>
+			<Component Id="TRANSPORTATION_cmp_rule3" Guid="{30899D24-41C8-416D-AE48-DCFC42B7DD55}">
+				<File Id="TRANSPORTATION_file_rule3_rxs" KeyPath="no" Source="$(var.SourceDirApp)\PROFILES\TRANSPORTATION\Rule3.RXS"  />
+			</Component>
+
+			<Component Id="TRANSPORTATION_cmp_history_role" Guid="{3080A11C-A77E-488D-AF10-FD0BB4921DB4}">
+				<File Id="TRANSPORTATION_file_history_role" KeyPath="no" Source="$(var.SourceDirApp)\PROFILES\TRANSPORTATION\History_Role.json"  />
+			</Component>
+
+			<Component Id="TRANSPORTATION_cmp_dsbehaviour" Guid="{30E27251-404E-490F-8FE6-C119864E0362}">
+				<File Id="TRANSPORTATION_file_dsbehaviour" KeyPath="no" Source="$(var.SourceDirApp)\PROFILES\TRANSPORTATION\dsbehaviour.json"  />
+			</Component>
+		
+			<Component Id="TRANSPORTATION_cmp_dsdocument" Guid="{30B43015-3D86-4A7E-BB9A-AB877A77C680}">
+				<File Id="TRANSPORTATION_file_dsdocument" KeyPath="no" Source="$(var.SourceDirApp)\PROFILES\TRANSPORTATION\dsdocument.json"  />
+			</Component>
+		
+		</DirectoryRef>
+		<DirectoryRef Id="PROFILES">
+			<Component Id="TRANSPORTATION_cmp_dsprofile" Guid="{30B45F58-06E2-403E-97F4-F735AFB62E3D}">
+				<File Id="TRANSPORTATION.dsprofile" KeyPath="no"  Source="$(var.SourceDirApp)\PROFILES\TRANSPORTATION.dsprofile"  />
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+	<Fragment>
+		<ComponentGroup Id="TRANSPORTATION_PROFILE_GROUP">
+			<ComponentRef Id="TRANSPORTATION_cmp_role" />
+			<ComponentRef Id="TRANSPORTATION_cmp_rule1" />
+			<ComponentRef Id="TRANSPORTATION_cmp_rule2" />
+			<ComponentRef Id="TRANSPORTATION_cmp_rule3" />
+			<ComponentRef Id="TRANSPORTATION_cmp_history_role" />
+			<ComponentRef Id="TRANSPORTATION_cmp_dsbehaviour"/>
+			<ComponentRef Id="TRANSPORTATION_cmp_dsdocument" />
+
+			<ComponentRef Id="TRANSPORTATION_cmp_dsprofile" />
+		</ComponentGroup>
+
+	</Fragment>
+	
+</Wix>

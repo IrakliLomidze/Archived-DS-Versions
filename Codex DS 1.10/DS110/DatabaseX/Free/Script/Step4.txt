@@ -1,0 +1,33 @@
+if not exists (select * from master.dbo.syslogins where loginname = N'BUILTIN\Users')
+	exec sp_grantlogin N'BUILTIN\Users'
+	exec sp_defaultdb N'BUILTIN\Users', N'master'
+	exec sp_defaultlanguage N'BUILTIN\Users', N'us_english'
+GO
+
+exec sp_addsrvrolemember N'BUILTIN\Users', sysadmin
+GO
+
+if not exists (select * from dbo.sysusers where name = N'BUILTIN\Users' and uid < 16382)
+	EXEC sp_grantdbaccess N'BUILTIN\Users', N'BUILTIN\Users'
+GO
+
+USE master
+exec sp_addrolemember N'db_owner', N'BUILTIN\Users'
+GO
+
+
+USE codex2007DS
+exec sp_addrolemember N'db_owner', N'BUILTIN\Users'
+GO
+
+USE model
+exec sp_addrolemember N'db_owner', N'BUILTIN\Users'
+GO
+
+USE msdb
+exec sp_addrolemember N'db_owner', N'BUILTIN\Users'
+GO
+
+USE tempdb
+exec sp_addrolemember N'db_owner', N'BUILTIN\Users'
+GO

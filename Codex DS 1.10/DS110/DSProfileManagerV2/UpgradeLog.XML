@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="UpdateManager">
+</Property><Property Name="Solution File" Value="W:\Codex 2007 R3\Main\UpdateManager\UpdateManager.sln">
+</Property><Property Name="User Options File" Value="W:\Codex 2007 R3\Main\UpdateManager\UpdateManager.suo">
+</Property><Property Name="Date" Value="Friday, July 23, 2010">
+</Property><Property Name="Time" Value="5:38 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="UpdateManager.sln" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\UpdateManager.sln">
+</Event><Event ErrorLevel="0" Project="" Source="UpdateManager.suo" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\UpdateManager.suo">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="UpdateManager.csproj" Description="Project file successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\UpdateManager.csproj">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="UpdateManager.csproj.user" Description="Project user file successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\UpdateManager.csproj.user">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="About.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\About.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="About.designer.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\About.designer.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="AssemblyInfo.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Codex2005updateheader.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Codex2005updateheader.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Codex2007updateheader.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Codex2007updateheader.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Common.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Common.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="CUFHeader.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\CUFHeader.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="DataBaseInfo.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\DataBaseInfo.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="DisplayInfo.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\DisplayInfo.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Form1.C2005.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Form1.C2005.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Form1.C2007.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Form1.C2007.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Form1.CCommon.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Form1.CCommon.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Form1.Convert.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Form1.Convert.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Form1.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Form1.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Form1.Extraction.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Form1.Extraction.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Form2.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Form2.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="LocalVar.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\LocalVar.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Properties\Resources.Designer.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Properties\Settings.Designer.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="UpdateMerger.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\UpdateMerger.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Wizard.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Wizard.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Wizard.Designer.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Wizard.Designer.cs">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="app.config" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\app.config">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\disk_yellow.png" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\disk_yellow.png">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\disk_green.png" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\disk_green.png">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\disk_blue.png" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\disk_blue.png">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\arrow_left_blue.png" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\arrow_left_blue.png">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\close_b_16.png" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\close_b_16.png">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\info_16.png" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\info_16.png">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\folder.png" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\folder.png">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\About\Midle1.jpg" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\About\Midle1.jpg">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\About\Left.jpg" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\About\Left.jpg">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Images\About\aa3.bmp" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Images\About\aa3.bmp">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Properties\Images\TOP\Midle.jpg" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Properties\Images\TOP\Midle.jpg">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Properties\Settings.settings" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="App.ico" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\App.ico">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Codex2007Tools.ico" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Codex2007Tools.ico">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="About.resx" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\About.resx">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Form1.resx" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Form1.resx">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Form2.resx" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Form2.resx">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="licenses.licx" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\licenses.licx">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Properties\Resources.resx" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="Wizard.resx" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\Wizard.resx">
+</Event><Event ErrorLevel="1" Project="UpdateManager" Source="UpdateManager.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="UpdateManager.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="UpdateManager" Source="UpdateManager.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="ILFormContainer" Source="..\..\CodexCommon\ILFormContainer\ILFormContainer.csproj" Description="Warning: The project file is being backed up to a relative path that differs from the original solution relative path.  The difference in folder hierarchy may create problems in opening or building the backed up solution and project.">
+</Event><Event ErrorLevel="0" Project="ILFormContainer" Source="..\..\CodexCommon\ILFormContainer\ILFormContainer.csproj" Description="Project file successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\ILFormContainer\ILFormContainer.csproj">
+</Event><Event ErrorLevel="0" Project="ILFormContainer" Source="..\..\CodexCommon\ILFormContainer\ILFormContainer.csproj.user" Description="Project user file successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\ILFormContainer\ILFormContainer.csproj.user">
+</Event><Event ErrorLevel="0" Project="ILFormContainer" Source="..\..\CodexCommon\ILFormContainer\AssemblyInfo.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\ILFormContainer\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="ILFormContainer" Source="..\..\CodexCommon\ILFormContainer\UserControl1.cs" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\ILFormContainer\UserControl1.cs">
+</Event><Event ErrorLevel="0" Project="ILFormContainer" Source="..\..\CodexCommon\ILFormContainer\UserControl1.resx" Description="File successfully backed up as W:\Codex 2007 R3\Main\UpdateManager\Backup\ILFormContainer\UserControl1.resx">
+</Event><Event ErrorLevel="0" Project="ILFormContainer" Source="..\..\CodexCommon\ILFormContainer\ILFormContainer.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="ILFormContainer" Source="..\..\CodexCommon\ILFormContainer\ILFormContainer.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="UpdateManager.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="UpdateManager.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="UpdateManager" Source="UpdateManager.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

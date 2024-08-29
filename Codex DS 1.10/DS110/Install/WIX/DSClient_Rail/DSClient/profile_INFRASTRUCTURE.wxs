@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="INFRASTRUCTURE_DIR">
+
+			<Component Id="INFRASTRUCTURE_cmp_role" Guid="{20C1A9D2-19CD-4D63-94EC-CC1C4AF35277}">
+				<File Id="INFRASTRUCTURE_file_role_lxs" KeyPath="no" Source="$(var.SourceDirApp)PROFILES\INFRASTRUCTURE\Role.lxs"  />
+			</Component>
+			<Component Id="INFRASTRUCTURE_cmp_rule1" Guid="{20F916CB-FB68-407D-91B0-24D78FF48C95}">
+				<File Id="INFRASTRUCTURE_file_rule1_rxs" KeyPath="no" Source="$(var.SourceDirApp)PROFILES\INFRASTRUCTURE\Rule1.RXS"  />
+			</Component>
+			<Component Id="INFRASTRUCTURE_cmp_rule2" Guid="{2070F113-8DC4-484C-AE68-C30C6A8168E2}">
+				<File Id="INFRASTRUCTURE_file_rule2_rxs" KeyPath="no" Source="$(var.SourceDirApp)PROFILES\INFRASTRUCTURE\Rule2.RXS"  />
+			</Component>
+			<Component Id="INFRASTRUCTURE_cmp_rule3" Guid="{20899D24-41C8-416D-AE48-DCFC42B7DD55}">
+				<File Id="INFRASTRUCTURE_file_rule3_rxs" KeyPath="no" Source="$(var.SourceDirApp)PROFILES\INFRASTRUCTURE\Rule3.RXS"  />
+			</Component>
+
+			<Component Id="INFRASTRUCTURE_cmp_history_role" Guid="{2080A11C-A77E-488D-AF10-FD0BB4921DB4}">
+				<File Id="INFRASTRUCTURE_file_history_role" KeyPath="no" Source="$(var.SourceDirApp)PROFILES\INFRASTRUCTURE\History_Role.json"  />
+			</Component>
+
+			<Component Id="INFRASTRUCTURE_cmp_dsbehaviour" Guid="{20E27251-404E-490F-8FE6-C119864E0362}">
+				<File Id="INFRASTRUCTURE_file_dsbehaviour" KeyPath="no" Source="$(var.SourceDirApp)PROFILES\INFRASTRUCTURE\dsbehaviour.json"  />
+			</Component>
+		
+			<Component Id="INFRASTRUCTURE_cmp_dsdocument" Guid="{20B43015-3D86-4A7E-BB9A-AB877A77C680}">
+				<File Id="INFRASTRUCTURE_file_dsdocument" KeyPath="no" Source="$(var.SourceDirApp)PROFILES\INFRASTRUCTURE\dsdocument.json"  />
+			</Component>
+		
+		</DirectoryRef>
+		<DirectoryRef Id="PROFILES">
+			<Component Id="INFRASTRUCTURE_cmp_dsprofile" Guid="{20B45F58-96E2-403E-97F4-F735AFB62E3D}">
+				<File Id="INFRASTRUCTURE.dsprofile" KeyPath="no"  Source="$(var.SourceDirApp)PROFILES\INFRASTRUCTURE.dsprofile"  />
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+	<Fragment>
+		<ComponentGroup Id="INFRASTRUCTURE_PROFILE_GROUP">
+			<ComponentRef Id="INFRASTRUCTURE_cmp_role" />
+			<ComponentRef Id="INFRASTRUCTURE_cmp_rule1" />
+			<ComponentRef Id="INFRASTRUCTURE_cmp_rule2" />
+			<ComponentRef Id="INFRASTRUCTURE_cmp_rule3" />
+			<ComponentRef Id="INFRASTRUCTURE_cmp_history_role" />
+			<ComponentRef Id="INFRASTRUCTURE_cmp_dsbehaviour"/>
+			<ComponentRef Id="INFRASTRUCTURE_cmp_dsdocument" />
+
+			<ComponentRef Id="INFRASTRUCTURE_cmp_dsprofile" />
+		</ComponentGroup>
+
+	</Fragment>
+	
+</Wix>

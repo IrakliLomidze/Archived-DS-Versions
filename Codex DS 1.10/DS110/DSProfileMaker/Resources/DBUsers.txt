@@ -1,0 +1,44 @@
+-- ************************************************************************************
+-- DS Scripts
+-- Users Creation
+-- Version 2.0
+-- (C) Copyright By Irakli Lomidze 2007-2023
+-- ************************************************************************************
+
+USE [__DBNAME__]
+if exists (select * from sys.schemas where name = N'__DBUSERNAME__')
+	DROP SCHEMA  __DBUSERNAME__
+
+USE [__DBNAME__]
+if exists (select * from dbo.sysusers where name = N'__DBUSERNAME__' and uid < 16382)
+	DROP USER __DBUSERNAME__
+
+
+-- Drop Logonss
+
+if exists (select * from master.dbo.syslogins where loginname = N'__DBUSERNAME__')
+    DROP LOGIN __DBUSERNAME__
+
+
+
+USE [__DBNAME__]
+
+declare @logindb nvarchar(132), @loginlang nvarchar(132)
+
+if not exists (select * from master.dbo.syslogins where loginname = N'__DBUSERNAME__')
+BEGIN
+    select @logindb = N'__DBUSERNAME__', @loginlang = null
+	if @logindb is null or not exists (select * from master.dbo.sysdatabases where name = @logindb)
+		select @logindb = N'master'
+	if @loginlang is null or (not exists (select * from master.dbo.syslanguages where name = @loginlang) and @loginlang <> N'us_english')
+		select @loginlang = @@language
+	exec sp_addlogin N'__DBUSERNAME__', N'__DBUSERNAMEPASSWORD__', @logindb, @loginlang
+END
+
+
+if not exists (select * from dbo.sysusers where name = N'__DBUSERNAME__' and uid < 16382)
+	EXEC sp_grantdbaccess N'__DBUSERNAME__', N'__DBUSERNAME__'
+
+exec sp_addrolemember N'db_datawriter', N'__DBUSERNAME__'
+exec sp_addrolemember N'db_datareader', N'__DBUSERNAME__'
+

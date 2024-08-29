@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+>
+	
+<?define NetFx480MinRelease = 528033 ?>
+
+	<!--<Product Id="{1985D6DB-AC4E-41A2-AD05-125FE70A4285}" Name="DS Client 1.10"-->
+	<!--<Product Id="{1985D6DB-AC4E-41A2-AD05-125FE70A4287}" Name="DS Client 1.10"-->		 
+	<Product Id="{1985D6DB-AC4E-41A2-AD05-125FE70A4314}" Name="DS Client 1.10"
+    	   Language="1033" Version="10.10.314"
+           Manufacturer="Georgian Microsystems" 
+           UpgradeCode="{2591B595-34E8-49DE-B23B-B21861BF5499}"
+   >
+
+		<!--1.8 Legacy -->
+		<!--UpgradeCode="{71E6FFB2-FF79-447E-84BA-0B2882FDCCF8}"--> 
+
+		<Package InstallerVersion="405" Compressed="no" InstallScope="perMachine" Platform="x86" InstallPrivileges="elevated"
+             Description="(DS) Document Storage Client 1.10"
+             Manufacturer="Georgian Microsystems"
+			 AdminImage="yes"
+             ReadOnly="no"
+        />
+ 
+    
+   
+    <!--არ მუშაობს, როცა ლიცენზიის ცვილებას ვახდენ ინსტლააციისთ, ვაცილებ განახლების ლიცენზიაც და ვტოვებ მხოლოდ კლიენტის ლიცენზიას--> 
+    
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+ 
+  <Condition Message="[ProductName] Requires .NET Framework 4.8.0 or later to be installed. Please install from the `Pre-Reqs` folder.">
+    <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_480_OR_LATER_INSTALLED]]>
+  </Condition>
+
+  <MediaTemplate  EmbedCab="yes"   />
+    <!--<MediaTemplate  DiskPrompt="1" VolumeLabel="DISK1"  EmbedCab ="no"   />
+    <Property Id="DiskPrompt" Value="[1]" />-->
+
+
+    <Property Id="INSTALLDATABASE" Value="false"/>
+    
+    <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+    <Property Id="WIX_IS_NETFRAMEWORK_480_OR_LATER_INSTALLED" Value="1" />
+    
+    <Icon Id="theicon.ico" SourceFile="$(var.SourceDir)\icon\CodexNewDSIcon2.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="theicon.ico" />
+
+  
+
+ 
+
+ 
+    
+    <!--<Property Id="ALLUSERS"><![CDATA[2]]></Property>-->
+    
+    <UI>
+     <!--<DialogRef Id="FeaturesDlg"/>-->
+
+      <UIRef Id="WixUI_FeatureTree" />
+      
+      <UIRef Id="WixUI_ErrorProgressText" />
+    
+    </UI>
+
+		
+		
+   <WixVariable Id="WixUIDialogBmp" Value="Codex_Banner_Client.bmp"/>
+   <WixVariable Id="WixUIBannerBmp" Value="CodexTopBanner.bmp" />
+   <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+   <Property Id="WIXUI_INSTALLDIR"  Value="INSTALLDIR" />
+
+		<!--Installation Sequence-->
+	<InstallExecuteSequence>
+   	  <Custom Action='CopyProfileFiles' After='InstallInitialize'>NOT Installed</Custom>
+	</InstallExecuteSequence>
+
+		<Feature Id="ProductFeature" Title="Codex DS 1.10 Client" Level="1" Display="expand">
+
+
+    <Feature Id="Application" Title="Codex DS 1.10 Client" Level="1" Absent="disallow" ConfigurableDirectory="INSTALLDIR"  >
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+   
+  
+  </Feature>
+
+
+  </Product>
+
+  
+  <Fragment>
+    <!--<util:RegistrySearch Id="CurrentBuild"
+                       Variable="CBNumber"
+                       Root="HKLM"
+                       Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+                       Result="value" />-->
+
+    <Condition Message="Codex DS 1.10 is supported on Windows 10 version 1903 (build 18362) or higher.">
+      WindowsBuild &lt; 18362
+    </Condition>
+    
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">
+	  <ComponentGroupRef Id="AppDS19"/>
+	  <ComponentGroupRef Id="DSConfigs"/>
+	  <!--<ComponentGroupRef Id="BASEPROFILEGROUP" />-->
+	  <ComponentGroupRef Id="id_codexdsclient" />
+      <!--<ComponentGroupRef Id="Infragistics221"/>-->
+      <!--<ComponentGroupRef Id="TX31G"/>-->
+    </ComponentGroup>
+  </Fragment>
+
+    
+	<Fragment>
+		<CustomAction Id="CopyProfileFiles" ExeCommand="xcopy.exe $(sys.CURRENTDIR)\DS Client 110\PROFILES\*.* [PROFILES]" Directory="INSTALLDIR" Impersonate="no"  Execute="deferred" Return="asyncWait" />
+	</Fragment>
+
+
+
+  
+  
+</Wix>

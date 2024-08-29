@@ -1,0 +1,37 @@
+{
+  "general": {
+    "isSaveConnectionStringInProgramFolder": true,
+    "appMaxCodList": -1,
+    "isOptions": true,
+    "isLimitation": false,
+    "isKeyboard": false,
+    "appKeyboardLayout": 0,
+    "applicationDocumentDirectory": "",
+    "displayCheck": false,
+    "appSaveConnectionStringInProgramFolder": false,
+    "whenCrash": 1
+  },
+  "saving": {
+    "askToRemoveSections": true,
+    "checkSaveNewConditionOnDublicate": true,
+    "checkSaveChangeConditionOnDublicate": false,
+    "checkSaveConditionWithDocumentCaption": true,
+    "checkSaveConditionWithDocumentStatus": true,
+    "checkSaveWarnOnly": false,
+    "dsAfterSaveNewDoc": false
+  },
+  "view": {
+    "appViewDS": 0,
+    "appDockDS": 0,
+    "appZoomDS": 0,
+    "codexPrintLogic": false
+  },
+  "attributes": {
+    "showAdvancedAttributes": true,
+    "useStatusAsMandatory": true,
+    "useCategoryAsMandatory": true,
+    "useNumberAsManadatory": true,
+    "isDefaultParameterStatus": false,
+    "defaultStatus": ""
+  }
+}

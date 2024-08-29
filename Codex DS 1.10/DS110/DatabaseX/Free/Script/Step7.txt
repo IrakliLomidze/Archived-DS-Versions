@@ -1,0 +1,3 @@
+EXEC sp_fulltext_table CodexDS_DDOCS, 'Start_change_tracking'
+EXEC sp_fulltext_table CodexDS_DDOCS, 'Start_background_updateindex'
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+  
+      <Directory Id="TARGETDIR" Name="SourceDir">
+        <Directory Id='DesktopFolder'/>
+        
+        
+        <Directory Id="ProgramMenuFolder">
+          
+            <Directory Id="CodexDSServerMenu" Name="DS Server Tools 1.8"/>
+          
+        </Directory>
+
+        <Directory Id="ProgramFilesFolder">
+          
+            <Directory Id="INSTALLDIR" Name="DS Server 18 Tools">
+              
+              
+            </Directory>
+          
+         </Directory>
+
+        
+      </Directory>
+ 
+  </Fragment>
+</Wix>

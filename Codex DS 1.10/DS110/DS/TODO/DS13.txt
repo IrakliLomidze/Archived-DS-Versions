@@ -1,0 +1,30 @@
+Document Storage 1.4         
+Update Pack#2        
+
+-----------------------------------------
+Delayed to next Version (1.4)
+1) Dinamic Load PDF Viewer ( The maximum number of PDF documents that can be simultaneous openned in the browser has been exceeded) KB
+11) Additional Modules                     4:00
+9) Add Logo on Ribbon	                  1:00
+6) Optional Caption Printing              1:00
+8) More Sort&Filter Options
+6) Better Loading                         3:00
+
+Update Pack#2
+
+
+Document Storage 1.5                      (October)
+
+1) Database Changed 
+2) History on Documents
+3) Special Access on History Documents
+4) Operations in Histor Documents
+5) ICons on Attributes
+6) Attributes ICONS
+7) Category Tab Show/Hidden
+8) Bug Fixes
+9) Prfiler
+10) HTML
+Service Pack #2
+
+Document Storage 2.0       	             (November)

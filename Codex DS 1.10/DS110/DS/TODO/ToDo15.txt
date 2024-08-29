@@ -1,0 +1,84 @@
+Codex DS 1.5
+
+1) Dinamic Load PDF Viewer 
+2) Add Font Choiser on PDF /Text Location
+3) Better Links (Finder)
+4) Fix: Attriutes Refresh Problem
+5) Save Document to Disk Icon
+6) Fix (Installer Full Text Index)
+7) Fix DataInfo File Localtion
+8) Fix Sylfaen Unistall Problem
+9) Add More Doc&KB
+
+10) DataBase Changer/Tools for History Tables
+11) Doc History Tree
+12) Doc Change logic In System
+13) Persmition on Hisotry
+14) Deleted Documents History List
+15) ICON Changes
+
+16) Print Logo change Alowed
+17) Print Margin Load When Laod Document On Clinet
+18) Hisotry Document Viewer
+19) Get infor When Document Was Changed
+20) Parameters on Find Display is Optional Show/Hide
+21) Paramenter with Requerd Marker to Configuration File
+22) Better Configuration File
+
+Codex DS 2007 1.5 
+  1) Keep Historical Documents
+  2) Special Access Rule On Historical Docuemnts
+  3) Special Right to Delete Historical Docuemnts (Move to Deelte)
+  5) Better Interface and Document Information (if Access)
+  6) Custom Printing Options
+  7) Customize Interface
+  9) Document Info If Have Access
+                  
+------------------------------------------------------------------------------------------------------
+USE [Codex2007DS]
+GO
+/****** Object:  Table [dbo].[CodexDS_DDOCS]    Script Date: 02/10/2009 16:05:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[History_CodexDS_DDOCS](
+	[ID] [int] IDENTITY(0,1) NOT NULL,
+    [DATE] [datetime] NOT NULL,
+    [Operation] [int] NOT NULL,
+	[C_ID] [int] NOT NULL,
+	[C_CAPTION] [nvarchar](1024) NULL,
+	[C_AUTHOR] [int] NOT NULL,
+	[C_Subject] [int] NOT NULL,
+	[C_TYPE] [int] NOT NULL,
+	[C_WORDS] [nvarchar](2048) NULL,
+	[C_NUMBER] [int] NULL,
+	[C_NumberStr] [nchar](64) NULL,
+	[C_DATE] [datetime] NULL,
+	[C_LASTEDIT] [datetime] NULL,
+	[C_ENTERDATE] [datetime] NULL,
+	[C_TEXT] [image] NULL,
+	[C_LINK] [image] NULL,
+	[C_STATUS] [int] NOT NULL,
+	[C_DocFormat] [int] NULL,
+	[C_DocEncoding] [char](10) NULL,
+	[C_DocText] [ntext] NULL,
+	[C_Coments] [nchar](1024) NULL,
+	[C_Version] [int] NULL,
+	[C_Presentation] [image] NULL,
+	[C_Original] [image] NULL,
+	[C_Attach] [image] NULL,
+	[C_Group] [int] NULL,
+	[C_Category] [int] NULL,
+	[C_Addtional] [nchar](1024) NULL,
+	[C_Picture] [image] NULL,
+ CONSTRAINT [PK_History_Codex_DDOCS] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [Blobs]
+
+GO
+SET ANSI_PADDING OFF

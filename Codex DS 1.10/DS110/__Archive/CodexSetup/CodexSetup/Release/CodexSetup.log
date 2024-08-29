@@ -1,0 +1,8 @@
+﻿  ConsoleApplication3.cpp
+  detectFX.cpp
+  GeneralRun.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 118 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  CodexSetup.vcxproj -> C:\Users\Irakli Lomidze\source\repos\development\Codex DS\Install\CodexSetup\Release\CodexSetup.exe
