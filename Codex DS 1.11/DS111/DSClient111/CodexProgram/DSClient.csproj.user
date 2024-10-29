@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <_LastSelectedProfileId>C:\Users\Irakli Lomidze\source\repos\development\Codex DS\DS111\DSClient111\CodexProgram\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="AboutDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Codex.Document.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CodexDocumentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Configurations\ConfigurationDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Configurations\ConfigurationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Configurations\DSProfileSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Configurations\DSProfileSQLServerConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\BaseTxDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TxSpecified\frmHeaderSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TxSpecified\frmInsertBreak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TxSpecified\frmInsertTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TX\CommonHelpers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TX\ContextMenu_AppFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TX\HTMLOptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TX\InputBoxDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TX\InsertBreakDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TX\Mailings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TX\PDFOptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TX\Shapes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\TX\TextControlEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DocumentForm\ZoomDialog\DocumentZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ErrorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FavoritesWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ForAdmin\HistoryForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.DS.Find.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.DS.List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.Document.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.Navigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.Tree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="HistoryDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="IDFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LookUps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Notifications\Reminders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Notifications\SetReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PrintDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SearchInText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TestDoc.Document.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="WordComparations\CompareDocumentFormV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

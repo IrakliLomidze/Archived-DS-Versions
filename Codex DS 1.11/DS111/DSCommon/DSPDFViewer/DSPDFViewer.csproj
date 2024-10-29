@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+	<OutputType>Library</OutputType>
+	<UseWindowsForms>true</UseWindowsForms>
+	<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <RootNamespace>DSPDFViewer</RootNamespace>
+    <AssemblyName>DSPDFViewer</AssemblyName>
+    <PlatformTarget>x64</PlatformTarget>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Content Include="pan.cur" />
+    <Content Include="Resources\disk_blue.png" />
+    <Content Include="Resources\printer.png" />
+    <Content Include="Resources\ShadeBorder-E.png" />
+    <Content Include="Resources\ShadeBorder-N.png" />
+    <Content Include="Resources\ShadeBorder-NE.png" />
+    <Content Include="Resources\ShadeBorder-NW.png" />
+    <Content Include="Resources\ShadeBorder-S.png" />
+    <Content Include="Resources\ShadeBorder-SE.png" />
+    <Content Include="Resources\ShadeBorder-SW.png" />
+    <Content Include="Resources\ShadeBorder-W.png" />
+    <Content Include="Resources\view-page-width%4016px.png" />
+    <Content Include="Resources\view-page-width%4024px.png" />
+    <Content Include="Resources\view-page-width%4032px.png" />
+    <Content Include="Resources\zoom-in%4016px.png" />
+    <Content Include="Resources\zoom-in%4024px.png" />
+    <Content Include="Resources\zoom-in%4032px.png" />
+    <Content Include="Resources\zoom-out%4016px.png" />
+    <Content Include="Resources\zoom-out%4024px.png" />
+    <Content Include="Resources\zoom-out%4032px.png" />
+    <Content Include="Resources\zoom_in.png" />
+    <Content Include="Resources\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+</Project>

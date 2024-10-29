@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="BASEPROFILE_DIR">
+
+			<Component Id="cmp_role" Guid="{86C1A9D2-19CD-4D63-94EC-CC1C4AF35277}" Win64="yes">
+				<File Id="file_role_lxs" KeyPath="no" Source="$(var.SourceDir)\PROFILES\DSProfile\Role.lxs"  />
+			</Component>
+			<Component Id="cmp_rule1" Guid="{D1F916CB-FB68-407D-91B0-24D78FF48C95}" Win64="yes">
+				<File Id="file_rule1_rxs" KeyPath="no" Source="$(var.SourceDir)\PROFILES\DSProfile\Rule1.RXS"  />
+			</Component>
+			<Component Id="cmp_rule2" Guid="{2A70F113-8DC4-484C-AE68-C30C6A8168E2}" Win64="yes">
+				<File Id="file_rule2_rxs" KeyPath="no" Source="$(var.SourceDir)\PROFILES\DSProfile\Rule2.RXS"  />
+			</Component>
+			<Component Id="cmp_rule3" Guid="{03899D24-41C8-416D-AE48-DCFC42B7DD55}" Win64="yes">
+				<File Id="file_rule3_rxs" KeyPath="no" Source="$(var.SourceDir)\PROFILES\DSProfile\Rule3.RXS"  />
+			</Component>
+
+			<Component Id="cmp_history_role" Guid="{FF80A11C-A77E-488D-AF10-FD0BB4921DB4}" Win64="yes">
+				<File Id="file_history_role" KeyPath="no" Source="$(var.SourceDir)\PROFILES\DSProfile\History_Role.json"  />
+			</Component>
+
+			<Component Id="cmp_dsbehaviour" Guid="{C4E27251-404E-490F-8FE6-C119864E0362}" Win64="yes">
+				<File Id="file_dsbehaviour" KeyPath="no" Source="$(var.SourceDir)\PROFILES\DSProfile\dsbehaviour.json"  />
+			</Component>
+		
+			<Component Id="cmp_dsdocument" Guid="{EBB43015-3D86-4A7E-BB9A-AB877A77C680}" Win64="yes">
+				<File Id="file_dsdocument" KeyPath="no" Source="$(var.SourceDir)\PROFILES\DSProfile\dsdocument.json"  />
+			</Component>
+		
+		</DirectoryRef>
+	</Fragment>
+	<Fragment>
+		<ComponentGroup Id="BASEPROFILEGROUP">
+			<ComponentRef Id="cmp_role" />
+			<ComponentRef Id="cmp_rule1" />
+			<ComponentRef Id="cmp_rule2" />
+			<ComponentRef Id="cmp_rule3" />
+			<ComponentRef Id="cmp_history_role" />
+			<ComponentRef Id="cmp_dsbehaviour"/>
+			<ComponentRef Id="cmp_dsdocument" />
+		</ComponentGroup>
+
+	</Fragment>
+	
+</Wix>

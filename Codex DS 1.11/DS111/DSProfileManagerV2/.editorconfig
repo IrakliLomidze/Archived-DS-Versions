@@ -1,0 +1,8 @@
+﻿[*.cs]
+
+# CS8765: Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
+dotnet_diagnostic.CS8765.severity = none
+dotnet_diagnostic.CS0219.severity = none
+dotnet_diagnostic.CS0168.severity = none
+dotnet_diagnostic.CS0169.severity = none
+dotnet_diagnostic.CA1416.severity = none

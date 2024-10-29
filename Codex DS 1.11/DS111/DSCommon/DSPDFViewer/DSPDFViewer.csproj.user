@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="CustomScrollControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="NativeTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="PanningZoomingScrollControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="PasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PdfPrintDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="PdfRenderer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="PdfViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

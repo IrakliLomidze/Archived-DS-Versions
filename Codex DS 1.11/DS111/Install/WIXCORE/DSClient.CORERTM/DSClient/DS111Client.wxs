@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+>
+	
+
+	<!--<Product Id="{1985D6DB-AC4E-41A2-AD05-125FE70C4323}" Name="DS Client 1.10"-->
+	<!--<Product Id="{1985D6DB-AC4E-41A2-AD05-125FE70C4352}" Name="DS Client 1.10"-->
+	<Product Id="{1985D6DB-AC4E-41A2-AD05-125FE70CF409}" Name="DS Client 1.11"
+    	   Language="1033" Version="11.14.409"
+           Manufacturer="Georgian Microsystems" 
+           UpgradeCode="{6E1BD2B1-8686-48DC-FFF9-D9D02B01385D}"
+   >
+
+
+		<Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" Platform="x64" InstallPrivileges="elevated"
+             Description="(DS) Document Storage Client 1.11"
+             Manufacturer="Georgian Microsystems"
+			 AdminImage="no"
+             ReadOnly="no"
+        />
+ 
+    
+    
+ <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+ 
+
+  <MediaTemplate  EmbedCab="yes"   />
+ 
+
+    <Property Id="INSTALLDATABASE" Value="false"/>
+    
+    <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+    
+    <Icon Id="theicon.ico" SourceFile="$(var.SourceDir)\icon\CodexNewDSIcon2.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="theicon.ico" />
+
+  
+   
+    <UI>
+     <!--<DialogRef Id="FeaturesDlg"/>-->
+
+      <UIRef Id="WixUI_FeatureTree" />
+      
+      <UIRef Id="WixUI_ErrorProgressText" />
+    
+    </UI>
+
+		
+		
+   <WixVariable Id="WixUIDialogBmp" Value="Codex_Banner_Client.bmp"/>
+   <WixVariable Id="WixUIBannerBmp" Value="CodexTopBanner.bmp" />
+   <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+   <Property Id="WIXUI_INSTALLDIR"  Value="INSTALLDIR" />
+
+		<!--Installation Sequence--><!--
+	<InstallExecuteSequence>
+   	  <Custom Action='CopyProfileFiles' After='InstallInitialize'>NOT Installed</Custom>
+	</InstallExecuteSequence>-->
+
+  <Feature Id="ProductFeature" Title="Codex DS 1.11 Client" Level="1" Display="expand">
+
+
+    <Feature Id="Application" Title="Codex DS 1.11 Client" Level="1" Absent="disallow" ConfigurableDirectory="INSTALLDIR"  >
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+  </Feature>
+
+
+  </Product>
+
+  
+  <Fragment>
+
+    <Condition Message="Codex DS 1.11 is supported on Windows 10 x64 version 22H2 (build 18362) or higher.">
+      WindowsBuild &lt; 18362
+    </Condition>
+    
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">
+	  <ComponentGroupRef Id="AppDS19"/>
+   	  <ComponentGroupRef Id="AppDS20_VSRuntime" />
+	   <ComponentRef Id="readme" />
+	  <ComponentGroupRef Id="id_codexdsclient" />
+	  <ComponentGroupRef Id="BASEPROFILEGROUP" />
+	  <ComponentRef Id="cmp_baseprofile_dsprofile" />
+		
+		
+    </ComponentGroup>
+  </Fragment>
+
+    
+	
+
+
+  
+  
+</Wix>

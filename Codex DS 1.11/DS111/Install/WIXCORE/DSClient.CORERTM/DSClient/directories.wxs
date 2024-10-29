@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+  
+      <Directory Id="TARGETDIR" Name="SourceDir">
+        <Directory Id='DesktopFolder'/>
+        
+        <Directory Id="FontsFolder" />
+        
+        <Directory Id="ProgramMenuFolder">
+          
+            <Directory Id="DSClientMenu" Name="DS Client 1.11"/>
+          
+        </Directory>
+
+		  <Directory Id="ProgramFiles64Folder">
+          
+            <Directory Id="INSTALLDIR" Name="DS Client 111">
+				<Directory Id="PDFIUMX86" Name="x86"/>
+				<Directory Id="PDFIUMX64" Name="x64"/>
+				<Directory Id="PROFILES" Name="PROFILES">
+			    <Directory Id="BASEPROFILE_DIR" Name="DSPROFILE"/>
+					<!--<Directory Id="TRANSPORTATION_DIR" Name="TRANSPORTATION"/>
+					<Directory Id="PASSENGER_DIR" Name="PASSENGER"/>
+					<Directory Id="INFRASTRUCTURE_DIR" Name="INFRASTRUCTURE"/>-->
+				</Directory>
+            </Directory>
+
+			
+					   
+         </Directory>
+
+        
+      </Directory>
+ 
+  </Fragment>
+</Wix>

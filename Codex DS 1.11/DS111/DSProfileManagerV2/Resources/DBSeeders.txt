@@ -1,0 +1,96 @@
+﻿-- ************************************************************************************
+-- DS Scripts
+-- Data Seeders
+-- Version 2.0
+-- (C) Copyright By Irakli Lomidze 2007-2023
+-- ************************************************************************************
+
+USE [__DBNAME__]
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DAuthor] ON 
+GO
+INSERT [dbo].[CodexDS_DAuthor] ([A_ID], [A_ORDER], [A_CAPTION]) VALUES (0, 0, N'                                                                                                                                                                                                        ')
+GO
+INSERT [dbo].[CodexDS_DAuthor] ([A_ID], [A_ORDER], [A_CAPTION]) VALUES (1, 1000, N'პრეზიდენტი                                                                                                                                                                                              ')
+GO
+INSERT [dbo].[CodexDS_DAuthor] ([A_ID], [A_ORDER], [A_CAPTION]) VALUES (2, 1000, N'აღმასრულებელი დირექტორი                                                                                                                                                                                 ')
+GO
+INSERT [dbo].[CodexDS_DAuthor] ([A_ID], [A_ORDER], [A_CAPTION]) VALUES (3, 1000, N'ფინასნური მენეჯერი                                                                                                                                                                                      ')
+GO
+INSERT [dbo].[CodexDS_DAuthor] ([A_ID], [A_ORDER], [A_CAPTION]) VALUES (4, 1000, N'იურიდიული დეპარტამენტი                                                                                                                                                                                  ')
+GO
+INSERT [dbo].[CodexDS_DAuthor] ([A_ID], [A_ORDER], [A_CAPTION]) VALUES (5, 1000, N'საზოგადოებასთან ურთიერთობის დეპარტამენტი                                                                                                                                                                ')
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DAuthor] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DCategory] ON 
+GO
+INSERT [dbo].[CodexDS_DCategory] ([C_ID], [C_ORDER], [C_CAPTION]) VALUES (0, 0, N'                                                                                                                                                                                                        ')
+GO
+INSERT [dbo].[CodexDS_DCategory] ([C_ID], [C_ORDER], [C_CAPTION]) VALUES (1, 1000, N'ახალი                                                                                                                                                                                                   ')
+GO
+INSERT [dbo].[CodexDS_DCategory] ([C_ID], [C_ORDER], [C_CAPTION]) VALUES (2, 1000, N'ძველი                                                                                                                                                                                                   ')
+GO
+INSERT [dbo].[CodexDS_DCategory] ([C_ID], [C_ORDER], [C_CAPTION]) VALUES (3, 1000, N'არქივი                                                                                                                                                                                                  ')
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DCategory] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DStatus] ON 
+GO
+INSERT [dbo].[CodexDS_DStatus] ([C_ID], [C_ORDER], [C_CAPTION]) VALUES (0, 0, N'                                                                                                                                                                                                        ')
+GO
+INSERT [dbo].[CodexDS_DStatus] ([C_ID], [C_ORDER], [C_CAPTION]) VALUES (1, 1000, N'ორიგინალი                                                                                                                                                                                               ')
+GO
+INSERT [dbo].[CodexDS_DStatus] ([C_ID], [C_ORDER], [C_CAPTION]) VALUES (2, 1000, N'კოდიფიცირებული                                                                                                                                                                                          ')
+GO
+INSERT [dbo].[CodexDS_DStatus] ([C_ID], [C_ORDER], [C_CAPTION]) VALUES (3, 1000, N'გაუქმებული                                                                                                                                                                                              ')
+GO
+INSERT [dbo].[CodexDS_DStatus] ([C_ID], [C_ORDER], [C_CAPTION]) VALUES (4, 1000, N'განუსაზღვრელი                                                                                                                                                                                           ')
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DStatus] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DSUBJECT] ON 
+GO
+INSERT [dbo].[CodexDS_DSUBJECT] ([S_ID], [S_ORDER], [S_CAPTION]) VALUES (0, 0, N'                                                                                                                                                                                                        ')
+GO
+INSERT [dbo].[CodexDS_DSUBJECT] ([S_ID], [S_ORDER], [S_CAPTION]) VALUES (1, 1000, N'ფინანსური ანგარიში                                                                                                                                                                                      ')
+GO
+INSERT [dbo].[CodexDS_DSUBJECT] ([S_ID], [S_ORDER], [S_CAPTION]) VALUES (2, 1000, N'სტრატეგიული გეგმა                                                                                                                                                                                       ')
+GO
+INSERT [dbo].[CodexDS_DSUBJECT] ([S_ID], [S_ORDER], [S_CAPTION]) VALUES (3, 1000, N'უხოელი პარტნიორები                                                                                                                                                                                      ')
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DSUBJECT] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DTYPE] ON 
+GO
+INSERT [dbo].[CodexDS_DTYPE] ([T_ID], [T_ORDER], [T_CAPTION]) VALUES (0, 0, N'                                                                                          ')
+GO
+INSERT [dbo].[CodexDS_DTYPE] ([T_ID], [T_ORDER], [T_CAPTION]) VALUES (1, 1000, N'წერილი                                                                                    ')
+GO
+INSERT [dbo].[CodexDS_DTYPE] ([T_ID], [T_ORDER], [T_CAPTION]) VALUES (2, 900, N'ბრძანება                                                                                  ')
+GO
+INSERT [dbo].[CodexDS_DTYPE] ([T_ID], [T_ORDER], [T_CAPTION]) VALUES (3, 1000, N'დებულება                                                                                  ')
+GO
+INSERT [dbo].[CodexDS_DTYPE] ([T_ID], [T_ORDER], [T_CAPTION]) VALUES (4, 1000, N'განაწესი                                                                                  ')
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DTYPE] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DWORDS] ON 
+GO
+INSERT [dbo].[CodexDS_DWORDS] ([W_ID], [W_ORDER], [W_CAPTION]) VALUES (0, 0, N'                                                                                          ')
+GO
+INSERT [dbo].[CodexDS_DWORDS] ([W_ID], [W_ORDER], [W_CAPTION]) VALUES (1, 1000, N'ვალდებულებები                                                                             ')
+GO
+INSERT [dbo].[CodexDS_DWORDS] ([W_ID], [W_ORDER], [W_CAPTION]) VALUES (2, 1000, N'ვალები                                                                                    ')
+GO
+INSERT [dbo].[CodexDS_DWORDS] ([W_ID], [W_ORDER], [W_CAPTION]) VALUES (3, 1000, N'გადასახადები                                                                              ')
+GO
+INSERT [dbo].[CodexDS_DWORDS] ([W_ID], [W_ORDER], [W_CAPTION]) VALUES (4, 1000, N'სტრატეგია                                                                                 ')
+GO
+INSERT [dbo].[CodexDS_DWORDS] ([W_ID], [W_ORDER], [W_CAPTION]) VALUES (5, 1000, N'პოლიტიკა                                                                                  ')
+GO
+SET IDENTITY_INSERT [dbo].[CodexDS_DWORDS] OFF
+GO
+INSERT [dbo].[CodexDS2007] ([C_Version], [C_Date], [C_CodexDSDocs], [C_CodexDate], [C_CodexDSVersion]) 
+VALUES (50, CAST(N'2023-03-06T00:00:00.000' AS DateTime), 0, CAST(N'2023-03-06T00:00:00.000' AS DateTime), 65)
+GO

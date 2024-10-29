@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="PROFILES">
+
+			<Component Id="readme" Guid="{30C1A9D2-19CD-4D63-94EC-CC1C4AF35277}" Win64="yes">
+				<File Id="readme_txt" KeyPath="no" Source="$(var.SourceDir)\PROFILES\readme.txt"  />
+			</Component>
+			
+			<Component Id="cmp_baseprofile_dsprofile" Guid="{FAB45F58-06E2-403E-97F4-F735AFB62E3D}" Win64="yes">
+				<File Id="dsprofile.dsprofile" KeyPath="no"  Source="$(var.SourceDir)\PROFILES\DSProfile.dsprofile"  />
+			</Component>
+
+		</DirectoryRef>
+	</Fragment>
+	
+	
+</Wix>

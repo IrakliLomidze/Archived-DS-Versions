@@ -1,0 +1,217 @@
+-- ************************************************************************************
+-- DS Scripts
+-- Create Database 
+-- Version 2.0
+-- (C) Copyright By Irakli Lomidze 2007-2023
+-- ************************************************************************************
+
+USE [__DBNAME__]
+GO
+/****** Object:  Table [dbo].[Codex_Formats]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Codex_Formats](
+	[F_ID] [int] IDENTITY(0,1) NOT NULL,
+	[F_Format] [nchar](32) NULL,
+	[F_BigName] [nchar](128) NULL,
+	[F_Comment] [nchar](128) NULL,
+	[F_Order] [float] NULL,
+ CONSTRAINT [PK_Codex_Formats] PRIMARY KEY CLUSTERED 
+(
+	[F_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CodexDS_DAuthor]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CodexDS_DAuthor](
+	[A_ID] [int] IDENTITY(0,1) NOT NULL,
+	[A_ORDER] [real] NULL,
+	[A_CAPTION] [nchar](200) NULL,
+ CONSTRAINT [PK_Codex_DAUTHOR] PRIMARY KEY CLUSTERED 
+(
+	[A_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CodexDS_DCategory]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CodexDS_DCategory](
+	[C_ID] [int] IDENTITY(0,1) NOT NULL,
+	[C_ORDER] [real] NULL,
+	[C_CAPTION] [nchar](200) NULL,
+ CONSTRAINT [PK_Codex_DCategory] PRIMARY KEY CLUSTERED 
+(
+	[C_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CodexDS_DDOCS]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CodexDS_DDOCS](
+	[C_ID] [int] IDENTITY(0,1) NOT NULL,
+	[C_CAPTION] [nvarchar](1024) NULL,
+	[C_AUTHOR] [int] NOT NULL,
+	[C_Subject] [int] NOT NULL,
+	[C_TYPE] [int] NOT NULL,
+	[C_WORDS] [nvarchar](2048) NULL,
+	[C_NUMBER] [int] NULL,
+	[C_NumberStr] [nchar](64) NULL,
+	[C_DATE] [datetime] NULL,
+	[C_LASTEDIT] [datetime] NULL,
+	[C_ENTERDATE] [datetime] NULL,
+	[C_TEXT] [image] NULL,
+	[C_LINK] [image] NULL,
+	[C_STATUS] [int] NOT NULL,
+	[C_DocFormat] [int] NULL,
+	[C_DocEncoding] [char](10) NULL,
+	[C_DocText] [ntext] NULL,
+	[C_Coments] [nchar](1024) NULL,
+	[C_Version] [int] NULL,
+	[C_Presentation] [image] NULL,
+	[C_Original] [image] NULL,
+	[C_Attach] [image] NULL,
+	[C_Group] [int] NULL,
+	[C_Category] [int] NULL,
+	[C_Addtional] [nchar](1024) NULL,
+	[C_Picture] [image] NULL,
+ CONSTRAINT [PK_Codex_DDOCS] PRIMARY KEY CLUSTERED 
+(
+	[C_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [Blobs]
+GO
+/****** Object:  Table [dbo].[CodexDS_DDOCS_History]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CodexDS_DDOCS_History](
+	[id] [int] IDENTITY(0,1) NOT NULL,
+	[H_Date] [datetime] NOT NULL,
+	[H_Caption] [nvarchar](1024) NOT NULL,
+	[H_Title] [nvarchar](1024) NOT NULL,
+	[H_Status] [int] NOT NULL,
+	[H_OperationStatus] [int] NOT NULL,
+	[H_TimeStamp] [timestamp] NOT NULL,
+	[H_ByUser] [nvarchar](1024) NOT NULL,
+	[C_ID] [int] NOT NULL,
+	[C_CAPTION] [nvarchar](1024) NULL,
+	[C_AUTHOR] [int] NOT NULL,
+	[C_Subject] [int] NOT NULL,
+	[C_TYPE] [int] NOT NULL,
+	[C_WORDS] [nvarchar](2048) NULL,
+	[C_NUMBER] [int] NULL,
+	[C_NumberStr] [nchar](64) NULL,
+	[C_DATE] [datetime] NULL,
+	[C_LASTEDIT] [datetime] NULL,
+	[C_ENTERDATE] [datetime] NULL,
+	[C_TEXT] [image] NULL,
+	[C_LINK] [image] NULL,
+	[C_STATUS] [int] NOT NULL,
+	[C_DocFormat] [int] NULL,
+	[C_DocEncoding] [char](10) NULL,
+	[C_DocText] [ntext] NULL,
+	[C_Coments] [nchar](1024) NULL,
+	[C_Version] [int] NULL,
+	[C_Presentation] [image] NULL,
+	[C_Original] [image] NULL,
+	[C_Attach] [image] NULL,
+	[C_Group] [int] NULL,
+	[C_Category] [int] NULL,
+	[C_Addtional] [nchar](1024) NULL,
+	[C_Picture] [image] NULL,
+ CONSTRAINT [PK_Codex_DDOCS_H] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [Blobs]
+GO
+/****** Object:  Table [dbo].[CodexDS_DStatus]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CodexDS_DStatus](
+	[C_ID] [int] IDENTITY(0,1) NOT NULL,
+	[C_ORDER] [real] NULL,
+	[C_CAPTION] [nchar](200) NULL,
+ CONSTRAINT [PK_Codex_DStatus] PRIMARY KEY CLUSTERED 
+(
+	[C_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CodexDS_DSUBJECT]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CodexDS_DSUBJECT](
+	[S_ID] [int] IDENTITY(0,1) NOT NULL,
+	[S_ORDER] [real] NULL,
+	[S_CAPTION] [nchar](200) NULL,
+ CONSTRAINT [PK_Codex_DSUBJECT] PRIMARY KEY CLUSTERED 
+(
+	[S_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CodexDS_DTYPE]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CodexDS_DTYPE](
+	[T_ID] [int] IDENTITY(0,1) NOT NULL,
+	[T_ORDER] [real] NULL,
+	[T_CAPTION] [nchar](90) NULL,
+ CONSTRAINT [PK_Codex_DTYPE] PRIMARY KEY CLUSTERED 
+(
+	[T_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CodexDS_DWORDS]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CodexDS_DWORDS](
+	[W_ID] [int] IDENTITY(0,1) NOT NULL,
+	[W_ORDER] [real] NULL,
+	[W_CAPTION] [nchar](90) NULL,
+ CONSTRAINT [PK_Codex_DWORDS] PRIMARY KEY CLUSTERED 
+(
+	[W_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CodexDS2007]    Script Date: 4/4/2023 12:31:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CodexDS2007](
+	[C_Version] [int] NOT NULL,
+	[C_Date] [datetime] NULL,
+	[C_CodexDSDocs] [int] NULL,
+	[C_CodexDate] [datetime] NULL,
+	[C_CodexDSVersion] [int] NULL,
+ CONSTRAINT [PK_Codex2007DS] PRIMARY KEY CLUSTERED 
+(
+	[C_Version] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

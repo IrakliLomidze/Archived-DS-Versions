@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows8.0</TargetFramework>
+    <ProjectType>Local</ProjectType>
+	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+    <ApplicationIcon>CodexDatabaseTools.ico</ApplicationIcon>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ILG.DS.Profile</RootNamespace>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<NoWarn>$(NoWarn);SYSLIB0021;SYSLIB0023</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <Compile Remove="packages\**" />
+    <EmbeddedResource Remove="packages\**" />
+    <None Remove="packages\**" />
+  </ItemGroup>
+   
+  <ItemGroup>
+    <Content Include="CodexDatabaseTools.ico" />
+    <Resource Include="Resources\dsbehaviour.json" />
+    <Resource Include="Resources\dsdocument.json" />
+    <Resource Include="Resources\dsstaticdata.json" />
+    <Resource Include="Resources\FullText.txt" />
+    <Resource Include="Resources\DBUsers.txt" />
+    <Resource Include="Resources\DBStructure.txt" />
+    <Resource Include="Resources\DBSeeders.txt" />
+    <Resource Include="Resources\DBCreation.txt" />
+    <Content Include="App.ico" />
+    <Resource Include="Resources\History_Role.json" />
+    <Resource Include="Resources\Role.lxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DSCommon\DSCommonDialogs\DSCommonDialogs\DSCommonDialogs.csproj" />
+    <ProjectReference Include="..\DSCommon\DSCommonSource\DSCommon\DSCommon.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Infragistics.WinForms" Version="23.2.180" />
+    <PackageReference Include="Infragistics.WinForms.AppStylistSupport" Version="23.2.180" />
+    <PackageReference Include="Infragistics.WinForms.Editors" Version="23.2.180" />
+    <PackageReference Include="Infragistics.WinForms.ListView" Version="23.2.180" />
+    <PackageReference Include="Infragistics.WinForms.Misc" Version="23.2.180" />
+    <PackageReference Include="Infragistics.WinForms.Portable.Core" Version="23.2.180" />
+    <PackageReference Include="Infragistics.WinForms.StatusBar" Version="23.2.180" />
+    <PackageReference Include="Infragistics.WinForms.TabControl" Version="23.2.180" />
+    <PackageReference Include="Infragistics.WinForms.WinGrid" Version="23.2.180" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="COFHeaders\COFHeader.cs" />
+    <Compile Remove="COFHeaders\CUF2007.cs" />
+    <Compile Remove="COFHeaders\ICUF.cs" />
+    <Compile Remove="Legacy\IO\IO.CGL.cs" />
+    <Compile Remove="Legacy\IO\IO.Codex.cs" />
+    <Compile Remove="Legacy\IO\IO.Common.cs" />
+    <Compile Remove="Legacy\IO\IO.ICG.cs" />
+    <Compile Remove="Legacy\IO\IO.Interface.cs" />
+    <Compile Remove="Legacy\IO\UpdateCheckData.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <AssemblyTitle>DS Profile Manager</AssemblyTitle>
+    <Description>DS Profile Manager</Description>
+    <Company>Irakli Lomidze</Company>
+    <Product>DS 1.11</Product>
+    <Copyright>%28C%29 Copyright 2007-2024 By Irakli Lomidze</Copyright>
+    <AssemblyVersion>11.2024.2022.300</AssemblyVersion>
+    <FileVersion>11.2024.1000.300</FileVersion>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,45 @@
+-- Codex DS Scripts
+-- Full Text from all Database
+-- Version 1.0 
+-- (C) Copyright By Gergian Microsystems 2005-2017 
+-- V 2017 October 5
+
+
+
+DECLARE @IsFullTextInstalled int
+SET @IsFullTextInstalled = (SELECT FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+
+IF (@IsFullTextInstalled <> 1)
+BEGIN
+ RAISERROR ('Full Text is not installed on SQL Server',0,0);
+END
+
+USE [Codex2007DS]
+if (select DATABASEPROPERTY(DB_NAME(), N'IsFullTextEnabled')) <> 1 
+exec sp_fulltext_database N'enable' 
+	
+if exists (select * from dbo.sysfulltextcatalogs where name = N'CodeXDSFullText')
+exec sp_fulltext_catalog N'CodeXDSFullText', N'drop'
+	
+
+if not exists (select * from dbo.sysfulltextcatalogs where name = N'CodeXDSFullText')
+exec sp_fulltext_catalog N'CodeXDSFullText', N'create' 
+	
+
+
+if (select DATABASEPROPERTY(DB_NAME(), N'IsFullTextEnabled')) <> 1 
+exec sp_fulltext_database N'enable' 
+	
+
+if not exists (select * from dbo.sysfulltextcatalogs where name = N'CodeXDSFullText')
+exec sp_fulltext_catalog N'CodeXDSFullText', N'create' 
+	
+
+exec sp_fulltext_table N'[dbo].[CodexDS_DDOCS]', N'create', N'CodeXDSFullText', N'PK_Codex_DDOCS'
+
+exec sp_fulltext_column N'[dbo].[CodexDS_DDOCS]', N'C_DocText', N'add', 1033  
+
+exec sp_fulltext_table N'[dbo].[CodexDS_DDOCS]', N'activate'  
+
+	
+
